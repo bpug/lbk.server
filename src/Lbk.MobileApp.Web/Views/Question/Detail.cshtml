@@ -1,0 +1,28 @@
+﻿@model Lbk.MobileApp.Web.Models.QuestionFormModel
+@{
+    ViewBag.Title = "Quiz - [Detail Question]";
+}
+<h2>
+    Detail</h2>
+<fieldset>
+    <legend>Detail Question</legend>
+    <div class="display-label">
+        Description</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+    <div class="display-label">
+        Number</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Number)
+    </div>
+    <div class="display-label">
+        Points</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Points)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "List", new { id = Model.SerieId })
+</p>

@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{850A9682-3429-4250-B486-3FABBCADA13A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lbk.MobileApp.Data.SqlCe</RootNamespace>
+    <AssemblyName>Lbk.MobileApp.Data.SqlCe</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.4.2.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Gpo.SemanticVersion.Core">
+      <HintPath>..\packages\Gpo.SemanticVersion.Core.dev.1.3.11110.0\lib\net35\Gpo.SemanticVersion.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\SqlServerCompact.4.0.8482.1\lib\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SolutionItems\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\SolutionItems\CommonAssemblyInfoVersion.cs">
+      <Link>Properties\CommonAssemblyInfoVersion.cs</Link>
+    </Compile>
+    <Compile Include="Initializers\DropCreateIfModelChangesSqlCeInitializer.cs" />
+    <Compile Include="Initializers\DropCreateAlwaysSqlCeInitializer.cs" />
+    <Compile Include="Initializers\CreateIfNotExistsSqlCeInitializer.cs" />
+    <Compile Include="Initializers\SqlCeInitializer.cs" />
+    <Compile Include="MobileAppDbContextSeedData.cs" />
+    <Compile Include="Repositories\CategoryRepository.cs" />
+    <Compile Include="Repositories\QuestionRepository.cs" />
+    <Compile Include="Repositories\MenuRepository.cs" />
+    <Compile Include="Repositories\EventRepository.cs" />
+    <Compile Include="Repositories\FoodRepository.cs" />
+    <Compile Include="Repositories\SerieRepository.cs" />
+    <Compile Include="Repositories\Specifications\AnswerPagedDataInputSpecification.cs" />
+    <Compile Include="Repositories\AnswerRepository.cs" />
+    <Compile Include="Repositories\BaseRepository.cs" />
+    <Compile Include="Repositories\Specifications\CategoryPagedDataInputSpecification.cs" />
+    <Compile Include="Repositories\Specifications\EventPagedDataInputSpecification.cs" />
+    <Compile Include="Repositories\Specifications\FoodPagedDataInputSpecification.cs" />
+    <Compile Include="Repositories\Specifications\MenuPagedDataInputSpecification.cs" />
+    <Compile Include="Repositories\Specifications\QuestionPagedDataInputSpecification.cs" />
+    <Compile Include="Repositories\Specifications\SeriePagedDataInputSpecification.cs" />
+    <Compile Include="RepositoryInitializer.cs" />
+    <Compile Include="ISeedDatabase.cs" />
+    <Compile Include="MobileAppDbContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lbk.MobileApp.Core\Lbk.MobileApp.Core.csproj">
+      <Project>{0B90C6C0-F842-4892-A611-3D2C4610839B}</Project>
+      <Name>Lbk.MobileApp.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lbk.MobileApp.Data.Core\Lbk.MobileApp.Data.Core.csproj">
+      <Project>{C27ADD0B-18C4-494D-B983-3F8A6BA60B0E}</Project>
+      <Name>Lbk.MobileApp.Data.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lbk.MobileApp.Data\Lbk.MobileApp.Data.csproj">
+      <Project>{0064844D-10C2-45FD-921D-F8213213ADDF}</Project>
+      <Name>Lbk.MobileApp.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lbk.MobileApp.Model\Lbk.MobileApp.Model.csproj">
+      <Project>{699EECD3-AACA-42C6-BD8C-9E939A004B28}</Project>
+      <Name>Lbk.MobileApp.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+if not exist "$(TargetDir)x86" md "$(TargetDir)x86"
+xcopy /s /y "$(SolutionDir)packages\SqlServerCompact.4.0.8482.1\NativeBinaries\x86\*.*" "$(TargetDir)x86"
+if not exist "$(TargetDir)amd64" md "$(TargetDir)amd64"
+xcopy /s /y "$(SolutionDir)packages\SqlServerCompact.4.0.8482.1\NativeBinaries\amd64\*.*" "$(TargetDir)amd64"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

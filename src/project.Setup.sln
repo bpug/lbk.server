@@ -1,0 +1,13 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8C6761D4-ADA7-4DB9-B3DD-5DAF348CA6CB}"
+	ProjectSection(SolutionItems) = preProject
+		SolutionItems\Changelog.Setup.txt = SolutionItems\Changelog.Setup.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003"
+         DefaultTargets="Build"
+         ToolsVersion="4.0">
+
+    <!-- Initialization -->
+
+    <PropertyGroup>
+        <WildCard>%2A</WildCard>
+        <DoubleWildCard>$(WildCard)$(WildCard)</DoubleWildCard>
+    </PropertyGroup>
+
+    <!-- ExcludeArtifactsFilePatterns -->
+    <ItemGroup>
+        <ExcludeArtifactsFilePatterns Include="$(DoubleWildCard)\$(WildCard).pdb">
+            <Pattern>**\*.pdb</Pattern>
+        </ExcludeArtifactsFilePatterns>
+        <ExcludeArtifactsFilePatterns Include="$(DoubleWildCard)\$(WildCard)nunit$(WildCard).$(WildCard)">
+            <Pattern>**\*nunit*.*</Pattern>
+        </ExcludeArtifactsFilePatterns>
+        <ExcludeArtifactsFilePatterns Include="$(DoubleWildCard)\$(WildCard)tests$(WildCard).$(WildCard)">
+            <Pattern>**\*tests*.*</Pattern>
+        </ExcludeArtifactsFilePatterns>
+    </ItemGroup>
+
+    <PropertyGroup>
+
+        <!-- Common properties -->
+        <ExtFolder>$(MSBuildProjectDirectory)\ext</ExtFolder>
+        <LibFolder>$(MSBuildProjectDirectory)\lib</LibFolder>
+        <SrcFolder>$(MSBuildProjectDirectory)\src</SrcFolder>
+        <ToolsFolder>$(MSBuildProjectDirectory)\tools</ToolsFolder>
+        <BuildFolder>$(MSBuildProjectDirectory)\build</BuildFolder>
+        <BinFolder>$(BuildFolder)\bin\release</BinFolder>
+        <BinSetupFolder>$(BuildFolder)\bin\setup</BinSetupFolder>
+
+        <ExcludeArtifactsFilePattern>@(ExcludeArtifactsFilePatterns-&gt;'$(BinFolder)\%(Pattern)',';')</ExcludeArtifactsFilePattern>
+        <ExcludeArtifactsShortFilePattern>@(ExcludeArtifactsFilePatterns, ';')</ExcludeArtifactsShortFilePattern>
+
+        <TargetPlatform>Any CPU</TargetPlatform>
+
+        <!-- Jenkins or Svn build number -->
+        <Version>$(BUILD_NUMBER)</Version>
+
+        <!-- IncrementAssemblyVersion properties -->
+        <ProductName>Lbk.MobileApp</ProductName>
+        <BaseBuildDate>2011-11-04</BaseBuildDate>
+        <VersionInputFile>$(SrcFolder)\SolutionItems\AssemblyVersionInfo.txt</VersionInputFile>
+        <VersionOutputFile>$(SrcFolder)\**\AssemblyInfo.cs;$(SrcFolder)\**\CommonAssemblyInfoVersion.cs</VersionOutputFile>
+        <BranchDescription Condition=" '$(BranchDescription)' == '' ">stable</BranchDescription>
+
+        <!-- Version control system properties -->
+        <VcsType>hg</VcsType>
+        <VcsServerUrl>https://repository-server/name/</VcsServerUrl>
+        <VcsTrunkPath>trunk</VcsTrunkPath>
+        <VcsTagsPath>tags</VcsTagsPath>
+        <VcsUsername>username</VcsUsername>
+        <VcsPassword>password</VcsPassword>
+
+        <!-- Testing properties -->
+        <NUnitToolPath>$(LibFolder)\nunit</NUnitToolPath>
+
+        <!-- Publishing properties -->
+        <ArtifactsFolder Condition=" '$(ArtifactsFolder)' == '' ">$(BuildFolder)\builds</ArtifactsFolder>
+        <ArtifactsCurrentFolderName Condition=" '$(ArtifactsCurrentFolderName)' == '' ">latest</ArtifactsCurrentFolderName>
+        <ArtifactsSubFolder Condition=" '$(ArtifactsSubFolder)' == '' ">binaries</ArtifactsSubFolder>
+        <AsZipArchive Condition=" '$(AsZipArchive)' == '' ">true</AsZipArchive>
+        <ZipArchiveFileNamePrefix>v</ZipArchiveFileNamePrefix>
+        <UseSemanticVersionNaming Condition=" '$(UseSemanticVersionNaming)' == '' ">false</UseSemanticVersionNaming>
+
+        <!-- Nuget packaging properties -->
+        <IsNuGetPackage Condition=" '$(IsNuGetPackage)' == '' ">false</IsNuGetPackage>
+        <NuGetExe>$(ToolsFolder)\nuget\NuGet.exe</NuGetExe>
+        <NuGetPackageFolder>$(BuildFolder)\nuget</NuGetPackageFolder>
+        <NuGetServer>https://nuget-server/</NuGetServer>
+        <NuGetApiKey>B0AA456D-BE73-47BA-AAE5-AF4783EFD878</NuGetApiKey>
+
+        <!-- IlMerge properties -->
+        <MergeWithIlMerge Condition=" '$(MergeWithIlMerge)' == '' ">false</MergeWithIlMerge>
+        <IlMergeExe>$(ToolsFolder)\ilmerge\ILMerge.exe</IlMergeExe>
+        <IlMergeArtifactFolder>$(BuildFolder)\bin\ilmerge</IlMergeArtifactFolder>
+        <IlMergeOutputFileName>Core.dll</IlMergeOutputFileName>
+        <IlMergeMainInputFile>$(BinFolder)\Core.dll</IlMergeMainInputFile>
+        <IlMergeTargetPlatform>v4, %SystemRoot%\Microsoft.NET\Framework\v4.0.30319</IlMergeTargetPlatform>
+        <IlMergeTarget>dll</IlMergeTarget>
+        <IlMergeKeyfile>$(ExtFolder)\keys\Core.snk</IlMergeKeyfile>
+
+        <!-- Sign Assembly -->
+        <SignAssembly Condition=" '$(SignAssembly)' == '' ">false</SignAssembly>
+    </PropertyGroup>
+
+    <Import Project="$(LibFolder)\msbuild\Gapon.MSBuild.Tasks.Targets" />
+
+
+    <!-- Coordinating Targets -->
+
+    <Target Name="Build">
+        <CallTarget Targets="Clean" />
+        <CallTarget Targets="Compile" />
+        <CallTarget Targets="IlMerge" />
+        <!--<CallTarget Targets="Compile-Msi" />-->
+        <CallTarget Targets="Test" />
+        <CallTarget Targets="Package" />
+    </Target>
+
+    <Target Name="CiBuild">
+        <CallTarget Targets="Clean" />
+        <CallTarget Targets="SetVersion" />
+        <CallTarget Targets="Compile" />
+        <CallTarget Targets="IlMerge" />
+        <!--<CallTarget Targets="Compile-Msi" />-->
+        <CallTarget Targets="Test" />
+        <CallTarget Targets="Package" />
+        <CallTarget Targets="CheckinStable" />
+        <CallTarget Targets="NuGetStable" />
+    </Target>
+
+    <Target Name="DevCiBuild">
+        <CallTarget Targets="Clean" />
+        <CallTarget Targets="SetVersion" />
+        <CallTarget Targets="Compile" />
+        <CallTarget Targets="IlMerge" />
+        <!--<CallTarget Targets="Compile-Msi" />-->
+        <CallTarget Targets="Test" />
+        <CallTarget Targets="Package" />
+        <CallTarget Targets="CheckinDev" />
+        <CallTarget Targets="NuGetDev" />
+    </Target>
+
+    <Target Name="StableCiBuild">
+        <CallTarget Targets="Clean" />
+        <CallTarget Targets="SetVersion" />
+        <CallTarget Targets="Compile" />
+        <CallTarget Targets="IlMerge" />
+        <!--<CallTarget Targets="Compile-Msi" />-->
+        <CallTarget Targets="Test" />
+        <CallTarget Targets="Package" />
+        <CallTarget Targets="CheckinStable" />
+        <CallTarget Targets="NuGetStable" />
+    </Target>
+
+    <Target Name="Package">
+        <MSBuild Projects="$(MSBuildProjectFile)"
+                 Properties="ArtifactsSrcFolder=$(BinFolder);ArtifactsSubFolder=binaries"
+                 Targets="Publish" />
+
+        <!--<MSBuild Projects="$(MSBuildProjectFile)"
+                 Properties="ArtifactsSrcFolder=$(BinSetupFolder);ArtifactsSubFolder=setup;AsZipArchive=false"
+                 Targets="Publish" />-->
+    </Target>
+
+    <Target Name="CheckinDev">
+        <MSBuild Projects="$(MSBuildProjectFile)"
+                 Properties="BranchDescription=dev;NewAssemblyFileVersion=$(NewAssemblyFileVersion)"
+                 Targets="VcsCommit" />
+        <CallTarget Targets="VcsPush" />
+    </Target>
+
+    <Target Name="CheckinStable">
+        <MSBuild Projects="$(MSBuildProjectFile)"
+                 Properties="BranchDescription=stable;NewAssemblyFileVersion=$(NewAssemblyFileVersion)"
+                 Targets="VcsCommit" />
+        <MSBuild Projects="$(MSBuildProjectFile)"
+                 Properties="BranchDescription=stable;NewAssemblyFileVersion=$(NewAssemblyFileVersion)"
+                 Targets="VcsTag" />
+        <CallTarget Targets="VcsPush" />
+    </Target>
+
+    <Target Name="NuGetDev"
+            Condition=" '$(IsNuGetPackage)' == 'true' ">
+        <PropertyGroup>
+            <NuGetSpecFilePattern>$(SrcFolder)\**\*.dev.nuspec</NuGetSpecFilePattern>
+        </PropertyGroup>
+
+        <MSBuild Projects="$(MSBuildProjectFile)"
+                 Properties="NuGetSpecFilePattern=$(NuGetSpecFilePattern);NewAssemblyFileVersion=$(NewAssemblyFileVersion)"
+                 Targets="NuGet" />
+    </Target>
+
+    <Target Name="NuGetStable"
+            Condition=" '$(IsNuGetPackage)' == 'true' ">
+        <PropertyGroup>
+            <NuGetSpecFilePattern>$(SrcFolder)\**\*.stable.nuspec</NuGetSpecFilePattern>
+        </PropertyGroup>
+
+        <MSBuild Projects="$(MSBuildProjectFile)"
+                 Properties="NuGetSpecFilePattern=$(NuGetSpecFilePattern);NewAssemblyFileVersion=$(NewAssemblyFileVersion)"
+                 Targets="NuGet" />
+    </Target>
+
+
+    <!-- Building -->
+
+    <Target Name="Clean">
+        <MSBuild Projects="$(SrcFolder)\project.sln"
+                 Targets="Clean" />
+        <!--<MSBuild Projects="$(SrcFolder)\project.Setup.sln"
+                 Targets="Clean" />-->
+        <RemoveDir ContinueOnError="true"
+                   Directories="$(BuildFolder)" />
+    </Target>
+
+    <Target Name="Compile">
+        <!-- Compile to "OutputFolder" -->
+        <MSBuild Projects="$(SrcFolder)\project.sln"
+                 Properties="Configuration=Release;Platform=$(TargetPlatform);OutputPath=$(BinFolder);SignAssembly=$(SignAssembly);AssemblyOriginatorKeyFile=$(IlMergeKeyfile)"
+                 Targets="Build" />
+        <!-- Compile to "regular" output folder for devs using VS locally -->
+        <MSBuild Projects="$(SrcFolder)\project.sln"
+                 Properties="SignAssembly=$(SignAssembly);AssemblyOriginatorKeyFile=$(IlMergeKeyfile)"
+                 Targets="Build" />
+    </Target>
+
+    <Target Name="Compile-Msi">
+        <!-- Compile to "OutputFolder" -->
+        <MSBuild Projects="$(SrcFolder)\project.Setup.sln"
+                 Properties="Configuration=Release;Platform=$(TargetPlatform);BuildFolder=$(BinSetupFolder)"
+                 Targets="Build" />
+    </Target>
+
+
+    <!-- Testing -->
+    <Target Name="Test">
+        <Message Importance="high"
+                 Text="Run unit test assemblies..." />
+
+        <!-- Run unit test assemblies -->
+        <ItemGroup>
+            <TestAssemblies Include="$(BinFolder)\*.Tests.*dll" />
+        </ItemGroup>
+
+        <Gapon.MSBuild.Tasks.Testing.NUnit Assemblies="@(TestAssemblies)"
+                                           Condition=" '@(TestAssemblies)' != '' "
+                                           Force32Bit="true"
+                                           OutputXmlFile="$(BuildFolder)\$(ProductName).Tests.xml"
+                                           ToolPath="$(NUnitToolPath)"
+                                           WorkingDirectory="$(BinFolder)" />
+    </Target>
+
+    <!-- SetVersion -->
+    <Target Name="SetVersion">
+        <Message Importance="high"
+                 Text="Incrementing the assembly version $(VersionInputFile)..." />
+
+        <Gapon.MSBuild.Tasks.Versioning.Version BaseBuildDate="$(BaseBuildDate)"
+                                                BuildType="AutomaticMs"
+                                                RevisionType="BuildIncrement"
+                                                UseSemanticVersioning="true"
+                                                UseVersionPrefix="true"
+                                                VersionFile="$(VersionInputFile)">
+            <Output PropertyName="Major"
+                    TaskParameter="Major" />
+            <Output PropertyName="Minor"
+                    TaskParameter="Minor" />
+            <Output PropertyName="Build"
+                    TaskParameter="Build" />
+            <Output PropertyName="Revision"
+                    TaskParameter="Revision" />
+            <Output PropertyName="DevelopmentStage"
+                    TaskParameter="DevelopmentStage" />
+            <Output PropertyName="Patch"
+                    TaskParameter="Patch" />
+            <Output PropertyName="Step"
+                    TaskParameter="Step" />
+        </Gapon.MSBuild.Tasks.Versioning.Version>
+
+        <PropertyGroup>
+            <NewAssemblyFileVersion>$(Major).$(Minor).$(Build).$(Revision)</NewAssemblyFileVersion>
+            <NewAssemblySemanticVersion>$(Major).$(Minor).$(Patch)$(DevelopmentStage)$(Step)</NewAssemblySemanticVersion>
+            <NewAssemblyVersion>$(Major).$(Minor).0.0</NewAssemblyVersion>
+        </PropertyGroup>
+
+        <Message Importance="high"
+                 Text="Updating version files $(VersionOutputFile) with incremented assembly version $(NewAssemblyFileVersion)..." />
+
+        <ItemGroup>
+            <AssemblyInfoFiles Include="$(VersionOutputFile)" />
+        </ItemGroup>
+
+        <Gapon.MSBuild.Tasks.Versioning.AssemblyInfo AssemblyFileVersion="$(NewAssemblyFileVersion)"
+                                                     AssemblySemanticVersion="$(NewAssemblySemanticVersion)"
+                                                     AssemblyVersion="$(NewAssemblyVersion)"
+                                                     FileNames="@(AssemblyInfoFiles)">
+            <Output PropertyName="ChangedFileNames"
+                    TaskParameter="ChangedFileNames" />
+        </Gapon.MSBuild.Tasks.Versioning.AssemblyInfo>
+
+        <Message Importance="high"
+                 Text="Updated version files $(ChangedFileNames) with incremented assembly version $(NewAssemblyFileVersion)..." />
+    </Target>
+
+    <!-- Publish -->
+    <Target Name="Publish">
+        <Message Importance="high"
+                 Text="Read assembly version from $(VersionInputFile)..." />
+
+        <Gapon.MSBuild.Tasks.Versioning.Version ReadOnly="true"
+                                                UseSemanticVersioning="true"
+                                                VersionFile="$(VersionInputFile)">
+            <Output PropertyName="Major"
+                    TaskParameter="Major" />
+            <Output PropertyName="Minor"
+                    TaskParameter="Minor" />
+            <Output PropertyName="Build"
+                    TaskParameter="Build" />
+            <Output PropertyName="Revision"
+                    TaskParameter="Revision" />
+            <Output PropertyName="DevelopmentStage"
+                    TaskParameter="DevelopmentStage" />
+            <Output PropertyName="Patch"
+                    TaskParameter="Patch" />
+            <Output PropertyName="Step"
+                    TaskParameter="Step" />
+        </Gapon.MSBuild.Tasks.Versioning.Version>
+
+        <PropertyGroup>
+            <VersionFolderName Condition=" '$(UseSemanticVersionNaming)' != 'true' ">$(Major).$(Minor).$(Build).$(Revision)</VersionFolderName>
+            <VersionFolderName Condition=" '$(UseSemanticVersionNaming)' == 'true' ">$(Major).$(Minor).$(Patch)$(DevelopmentStage)$(Step)</VersionFolderName>
+            <ArtifactsVersionFolder Condition=" '$(ArtifactsSubFolder)' != '' ">$(ArtifactsFolder)\$(VersionFolderName)\$(ArtifactsSubFolder)</ArtifactsVersionFolder>
+            <ArtifactsVersionFolder Condition=" '$(ArtifactsSubFolder)' == '' ">$(ArtifactsFolder)\$(VersionFolderName)</ArtifactsVersionFolder>
+            <ArtifactsCurrentFolder Condition=" '$(ArtifactsSubFolder)' != '' ">$(ArtifactsFolder)\$(ArtifactsCurrentFolderName)\$(ArtifactsSubFolder)</ArtifactsCurrentFolder>
+            <ArtifactsCurrentFolder Condition=" '$(ArtifactsSubFolder)' == '' ">$(ArtifactsFolder)\$(ArtifactsCurrentFolderName)</ArtifactsCurrentFolder>
+            <ZipArchiveFileName Condition=" '$(AsZipArchive)' == 'true' AND '$(ZipArchiveFileName)' == '' ">$(ZipArchiveFileNamePrefix)$(VersionFolderName)</ZipArchiveFileName>
+        </PropertyGroup>
+
+        <Message Importance="high"
+                 Text="Drop and create artifacts directory $(ArtifactsVersionFolder)..." />
+        <RemoveDir Condition=" Exists('$(ArtifactsVersionFolder)') "
+                   Directories="$(ArtifactsVersionFolder)" />
+        <MakeDir Condition=" !Exists('$(ArtifactsVersionFolder)') "
+                 Directories="$(ArtifactsVersionFolder)" />
+
+        <Message Importance="high"
+                 Text="Drop and create artifacts current directory $(ArtifactsCurrentFolder)..." />
+        <RemoveDir Condition=" Exists('$(ArtifactsCurrentFolder)') "
+                   Directories="$(ArtifactsCurrentFolder)" />
+        <MakeDir Condition=" !Exists('$(ArtifactsCurrentFolder)') "
+                 Directories="$(ArtifactsCurrentFolder)" />
+
+        <ItemGroup>
+            <BuildOutputFiles Exclude="$(ExcludeArtifactsFilePattern)"
+                              Include="$(ArtifactsSrcFolder)\**\*.*" />
+        </ItemGroup>
+
+        <Message Importance="high"
+                 Text="Publish artifacts to $(ArtifactsFolder)..." />
+        <Copy Condition=" '$(AsZipArchive)' == 'false' "
+              DestinationFiles="@(BuildOutputFiles-&gt;'$(ArtifactsVersionFolder)\%(RecursiveDir)%(Filename)%(Extension)')"
+              SourceFiles="@(BuildOutputFiles)" />
+        <Copy Condition=" '$(AsZipArchive)' == 'false' "
+              DestinationFiles="@(BuildOutputFiles-&gt;'$(ArtifactsCurrentFolder)\%(RecursiveDir)%(Filename)%(Extension)')"
+              SourceFiles="@(BuildOutputFiles)" />
+
+        <Gapon.MSBuild.Tasks.Compression.DNZip CompressFiles="@(BuildOutputFiles)"
+                                               CompressionLevel="BestCompression"
+                                               Condition=" '$(AsZipArchive)' == 'true' "
+                                               RemoveRoot="$(BinFolder)"
+                                               TaskAction="Create"
+                                               ZipFileName="$(ArtifactsVersionFolder)\$(ZipArchiveFileName).zip" />
+        <Gapon.MSBuild.Tasks.Compression.DNZip CompressFiles="@(BuildOutputFiles)"
+                                               CompressionLevel="BestCompression"
+                                               Condition=" '$(AsZipArchive)' == 'true' "
+                                               RemoveRoot="$(BinFolder)"
+                                               TaskAction="Create"
+                                               ZipFileName="$(ArtifactsCurrentFolder)\$(ZipArchiveFileName).zip" />
+    </Target>
+
+    <!-- VcsCommit -->
+    <Target Name="VcsCommit">
+        <Message Importance="high"
+                 Text="Commit files to version control system..." />
+
+        <ItemGroup>
+            <UpdatedVersionFiles Include="$(VersionInputFile)" />
+            <UpdatedVersionFiles Include="$(VersionOutputFile)" />
+        </ItemGroup>
+
+        <!-- Svn specific -->
+        <Gapon.MSBuild.Tasks.Subversion.SvnCommit Condition=" '$(VcsType)' == 'svn' "
+                                                  Message="commit by automated build &gt;&gt;&gt; Associated with $(BranchDescription) Release: $(ProductName) v$(NewAssemblyFileVersion)"
+                                                  Password="$(VcsPassword)"
+                                                  Targets="@(UpdatedVersionFiles)"
+                                                  ToolPath="C:\Program Files\SlikSvn\bin"
+                                                  TrustServerCert="true"
+                                                  Username="$(VcsUsername)" />
+
+        <!-- Hg specific -->
+        <Gapon.MSBuild.Tasks.Mercurial.HgCommit Condition=" '$(VcsType)' == 'hg' "
+                                                Includes="@(UpdatedVersionFiles)"
+                                                LocalPath="$(MSBuildProjectDirectory)"
+                                                Message="commit by automated build &gt;&gt;&gt; Associated with $(BranchDescription) Release: $(ProductName) v$(NewAssemblyFileVersion)" />
+    </Target>
+
+    <!-- VcsTag -->
+    <Target Name="VcsTag">
+        <Message Importance="high"
+                 Text="Add tag to version control system..." />
+
+        <PropertyGroup>
+            <TagDescription>$(BranchDescription) Release-$(NewAssemblyFileVersion)</TagDescription>
+        </PropertyGroup>
+
+        <!-- Svn specific -->
+        <Gapon.MSBuild.Tasks.Subversion.SvnInfo Condition=" '$(VcsType)' == 'svn' "
+                                                Password="$(VcsPassword)"
+                                                ToolPath="C:\Program Files\SlikSvn\bin"
+                                                TrustServerCert="true"
+                                                Username="$(VcsUsername)">
+            <Output PropertyName="Changeset"
+                    TaskParameter="LastChangedRevision" />
+        </Gapon.MSBuild.Tasks.Subversion.SvnInfo>
+
+        <Gapon.MSBuild.Tasks.Subversion.SvnCopy Condition=" '$(VcsType)' == 'svn' "
+                                                DestinationPath="$(VcsServerUrl)$(VcsTagsPath)/rel-$(NewAssemblyFileVersion)"
+                                                Message="Added tag $(TagDescription) for changeset $(Changeset)"
+                                                Password="$(VcsPassword)"
+                                                SourcePath="$(VcsServerUrl)$(VcsTrunkPath)"
+                                                ToolPath="C:\Program Files\SlikSvn\bin"
+                                                TrustServerCert="true"
+                                                Username="$(VcsUsername)" />
+
+        <!-- Hg specific -->
+        <Gapon.MSBuild.Tasks.Mercurial.HgVersion Condition=" '$(VcsType)' == 'hg' "
+                                                 LocalPath="$(MSBuildProjectDirectory)">
+            <Output PropertyName="Changeset"
+                    TaskParameter="Changeset" />
+        </Gapon.MSBuild.Tasks.Mercurial.HgVersion>
+
+        <Gapon.MSBuild.Tasks.Mercurial.HgTag Condition=" '$(VcsType)' == 'hg' "
+                                             LocalPath="$(MSBuildProjectDirectory)"
+                                             Message="Added tag $(TagDescription) for changeset $(Changeset)"
+                                             Revision="$(Changeset)"
+                                             Tag="$(TagDescription)" />
+    </Target>
+
+    <!-- VcsPush -->
+    <Target Name="VcsPush">
+        <Message Importance="high"
+                 Text="Push to version control system..." />
+
+        <!-- Hg specific -->
+        <Gapon.MSBuild.Tasks.Mercurial.HgPush Condition=" '$(VcsType)' == 'hg' "
+                                              LocalPath="$(MSBuildProjectDirectory)" />
+    </Target>
+
+    <!-- NuGet -->
+    <Target Name="NuGet">
+        <RemoveDir Condition=" Exists('$(NuGetPackageFolder)') "
+                   Directories="$(NuGetPackageFolder)" />
+        <MakeDir Condition=" !Exists('$(NuGetPackageFolder)') "
+                 Directories="$(NuGetPackageFolder)" />
+
+        <CreateItem Include="$(NuGetSpecFilePattern)">
+            <Output ItemName="NuGetSpecFiles"
+                    TaskParameter="Include" />
+        </CreateItem>
+
+        <MSBuild Projects="$(MSBuildProjectFile)"
+                 Properties="NuGetSpecFile=%(NuGetSpecFiles.Identity);NewAssemblyFileVersion=$(NewAssemblyFileVersion)"
+                 Targets="NuGetPack" />
+
+        <ItemGroup>
+            <NuGetPkgFiles Include="$(NuGetPackageFolder)\*.nupkg" />
+        </ItemGroup>
+
+        <MSBuild Projects="$(MSBuildProjectFile)"
+                 Properties="NuGetPkgFile=%(NuGetPkgFiles.Identity)"
+                 Targets="NuGetPush" />
+    </Target>
+
+    <!-- NuGetPack -->
+    <Target Name="NuGetPack">
+        <Message Importance="high"
+                 Text="Pack NuGet Spec file $(NuGetSpecFile)..." />
+
+        <Exec Command="&quot;$(NuGetExe)&quot; pack &quot;$(NuGetSpecFile)&quot; -outputdirectory &quot;$(NuGetPackageFolder)&quot; -version $(NewAssemblyFileVersion) -basepath &quot;$(MSBuildProjectDirectory)&quot; -exclude $(ExcludeArtifactsShortFilePattern)"
+              WorkingDirectory="$(MSBuildProjectDirectory)" />
+    </Target>
+
+    <!-- NuGetPush -->
+    <Target Name="NuGetPush">
+        <Message Importance="high"
+                 Text="Push NuGet package $(NuGetPkgFile) to gallery server..." />
+
+        <Exec Command="&quot;$(NuGetExe)&quot; push &quot;$(NuGetPkgFile)&quot; $(NuGetApiKey) -source $(NuGetServer)"
+              WorkingDirectory="$(MSBuildProjectDirectory)" />
+    </Target>
+
+    <!-- IlMerge -->
+    <Target Name="IlMerge"
+            Condition=" '$(MergeWithIlMerge)' == 'true' ">
+        <Message Importance="high"
+                 Text="Package files with IlMerge..." />
+
+        <PropertyGroup>
+            <IlMergeKeyfileCommandParameter Condition=" '$(IlMergeKeyfile)' == '' "></IlMergeKeyfileCommandParameter>
+            <IlMergeKeyfileCommandParameter Condition=" '$(IlMergeKeyfile)' != '' ">/keyfile:"$(IlMergeKeyfile)" </IlMergeKeyfileCommandParameter>
+        </PropertyGroup>
+
+        <ItemGroup>
+            <IlMergeInputFiles Include="$(IlMergeMainInputFile)" />
+            <IlMergeInputFiles Exclude="$(IlMergeMainInputFile);$(ExcludeArtifactsFilePattern)"
+                               Include="$(BinFolder)\**\*.dll" />
+        </ItemGroup>
+
+        <MakeDir Condition=" !Exists('$(IlMergeArtifactFolder)') "
+                 Directories="$(IlMergeArtifactFolder)" />
+
+        <Exec Command="&quot;$(IlMergeExe)&quot; /targetplatform:&quot;$(IlMergeTargetPlatform)&quot; /target:$(IlMergeTarget) /log:&quot;$(IlMergeArtifactFolder)\ilmerge.log&quot; /ndebug /closed /allowdup $(IlMergeKeyfileCommandParameter)/out:$(IlMergeOutputFileName) @(IlMergeInputFiles-&gt;'&quot;%(FullPath)&quot;', ' ')"
+              WorkingDirectory="$(IlMergeArtifactFolder)" />
+
+        <ItemGroup>
+            <IlMergeOutputFiles Include="$(IlMergeArtifactFolder)\**\*.exe" />
+            <IlMergeOutputFiles Include="$(IlMergeArtifactFolder)\**\*.dll" />
+        </ItemGroup>
+
+        <Delete Files="@(IlMergeInputFiles)" />
+
+        <Copy DestinationFiles="@(IlMergeOutputFiles -&gt;'$(BinFolder)\%(RecursiveDir)%(Filename)%(Extension)')"
+              SourceFiles="@(IlMergeOutputFiles)" />
+    </Target>
+
+    <Target Name="AfterBuild">
+        <Message Importance="high"
+                 Text="Clean after build..." />
+        <RemoveDir Directories="$(MSBuildProjectDirectory)\obj" />
+    </Target>
+</Project>

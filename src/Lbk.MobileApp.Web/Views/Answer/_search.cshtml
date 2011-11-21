@@ -1,0 +1,34 @@
+﻿@model Lbk.MobileApp.Web.Models.GenericListViewModel<Lbk.MobileApp.Model.Answer, Lbk.MobileApp.Web.Models.AnswerSearchFormModel>
+<div id="searchRegion">
+    @using (Ajax.BeginForm("List", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "mainSearch" }))
+    {
+        <fieldset>
+            <legend>Search</legend>
+            <div style="vertical-align: middle; margin-top: 0.80em;">
+                <div style="float: left;">
+                    <div>
+                        Description
+                    </div>
+                    <div>
+                        <input type="text" id="description" name="Description" value="@Model.SearchItem.Description" />
+                    </div>
+                </div>
+                <div style="float: left; margin-left: 0.80em;">
+                    <div>
+                        Explanation
+                    </div>
+                    <div style="float: left;">
+                        <input type="text" id="explanation" name="Explanation" value="@Model.SearchItem.Explanation" />
+                    </div>
+                </div>
+                <div style="height: 1.80em; float: left; font-size: 0.80em; margin-top: 1.1em; margin-left: 0.80em;">
+                    <input type="submit" name="btnSubmit" value="Search" />
+                    <input type="submit" name="btnSubmit" value="Clear" />
+                </div>
+            </div>
+        </fieldset>
+    }
+</div>
+<div id="resultGrid">
+    @Html.Partial("_grid", Model.Results)
+</div>

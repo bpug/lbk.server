@@ -1,0 +1,5 @@
+2011-11-07
+    - Change all datamodel member from not nullable to allow nullable
+    - Implement breadcrumb for all levels in views/viewmodels
+    - Implement/Add multi language to all resources in db
+    - Extract generic repository

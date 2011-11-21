@@ -1,0 +1,17 @@
+2011-11-10
+    - Add new semantic versions
+    - Fixed search cookie for all levels in quiz; saved by id and level and remain
+
+2011-11-08
+    - Fixed bug by javascript error on change pagesize
+    - Add crud operations to answer level
+    - Add crud operations to question level
+    - Add prototype breadcrumb for navigation in quiz level
+    - Add localized (de-DE) jquery/validation format
+    - Implement details, edit serie
+    - Implement create, delete serie
+    - Implement search form models for grid searching
+
+2011-11-07
+    - Extract specifications for repositories
+    - Extract get pageddatalist iqueryable queries
