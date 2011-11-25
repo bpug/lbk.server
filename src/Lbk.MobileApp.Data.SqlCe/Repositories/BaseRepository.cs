@@ -13,6 +13,7 @@ namespace Lbk.MobileApp.Data.SqlCe.Repositories
     using System.Data;
     using System.Data.Entity;
     using System.Linq;
+    using System.Linq.Expressions;
 
     using Lbk.MobileApp.Core;
     using Lbk.MobileApp.Core.Extensions;
@@ -93,6 +94,45 @@ namespace Lbk.MobileApp.Data.SqlCe.Repositories
             }
 
             var set = this.GetDbSet<TEntity>();
+            var totalCount = set.Where(specification.SatisfiedBy()).Count();
+
+            return ascending
+                       ? set.Where(specification.SatisfiedBy()).OrderBy(orderBy).Skip(pageIndex * pageSize).Take(
+                           pageSize).ToPagedDataList(pageIndex, pageSize, totalCount)
+                       : set.Where(specification.SatisfiedBy()).OrderByDescending(orderBy).Skip(pageIndex * pageSize).
+                             Take(pageSize).ToPagedDataList(pageIndex, pageSize, totalCount);
+        }
+
+        protected virtual PagedDataList<TEntity> GetPagedDataListElements<TEntity, TProperty>(
+            int pageIndex, 
+            int pageSize, 
+            string orderBy, 
+            bool ascending, 
+            ISpecification<TEntity> specification, 
+            params Expression<Func<TEntity, TProperty>>[] paths) where TEntity : class
+        {
+            if (pageIndex < 0)
+            {
+                throw new ArgumentException("pageIndex");
+            }
+
+            if (pageSize <= 0)
+            {
+                throw new ArgumentException("pageSize");
+            }
+
+            if (string.IsNullOrWhiteSpace(orderBy))
+            {
+                throw new ArgumentNullException("orderBy");
+            }
+
+            if (specification == null)
+            {
+                throw new ArgumentNullException("specification");
+            }
+
+            var set = this.GetDbSet<TEntity>().Includes(paths);
+
             var totalCount = set.Where(specification.SatisfiedBy()).Count();
 
             return ascending

@@ -1,0 +1,14 @@
+﻿@model Lbk.MobileApp.Web.Models.GenericListViewModel<Lbk.MobileApp.Model.Menu, Lbk.MobileApp.Web.Models.MenuSearchFormModel>
+@{
+    ViewBag.Title = "Menu - [List Menus]";
+}
+<h3>
+    Menu</h3>
+<h2>
+    List Menus</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div id="mainSearch">
+    @Html.Partial("_search", Model)
+</div>

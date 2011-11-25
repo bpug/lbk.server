@@ -27,14 +27,14 @@ namespace Lbk.MobileApp.Web.Models
         [Display(Name = "QuestionDescriptionLabelText", ResourceType = typeof(Messages))]
         public string Description { get; set; }
 
-        [Range(1, 255, ErrorMessageResourceName = "QuestionNumberIntRangeValidationError", 
+        [Range(1, 255, ErrorMessageResourceName = "QuestionNumberRangeValidationError", 
             ErrorMessageResourceType = typeof(Messages))]
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "QuestionNumberRequired", 
             ErrorMessageResourceType = typeof(Messages))]
         [Display(Name = "QuestionNumberLabelText", ResourceType = typeof(Messages))]
         public int? Number { get; set; }
 
-        [Range(1, 255, ErrorMessageResourceName = "QuestionPointsIntRangeValidationError", 
+        [Range(1, 255, ErrorMessageResourceName = "QuestionPointsRangeValidationError", 
             ErrorMessageResourceType = typeof(Messages))]
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "QuestionPointsRequired", 
             ErrorMessageResourceType = typeof(Messages))]

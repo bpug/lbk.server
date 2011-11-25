@@ -156,7 +156,7 @@
   <data name="QuestionDescriptionStringLengthValidationError" xml:space="preserve">
     <value>Description must be less than 255 characters.</value>
   </data>
-  <data name="QuestionNumberIntRangeValidationError" xml:space="preserve">
+  <data name="QuestionNumberRangeValidationError" xml:space="preserve">
     <value>The number must be between 1 and 255.</value>
   </data>
   <data name="QuestionNumberLabelText" xml:space="preserve">
@@ -165,7 +165,7 @@
   <data name="QuestionNumberRequired" xml:space="preserve">
     <value>Number is required.</value>
   </data>
-  <data name="QuestionPointsIntRangeValidationError" xml:space="preserve">
+  <data name="QuestionPointsRangeValidationError" xml:space="preserve">
     <value>The points must be between 1 and 255.</value>
   </data>
   <data name="QuestionPointsLabelText" xml:space="preserve">
@@ -239,5 +239,74 @@
   </data>
   <data name="AnswerIsRightLabelText" xml:space="preserve">
     <value>Is right</value>
+  </data>
+  <data name="MenuDateLabelText" xml:space="preserve">
+    <value>Activated at</value>
+  </data>
+  <data name="MenuDateRequired" xml:space="preserve">
+    <value>Activated at is required.</value>
+  </data>
+  <data name="MenuDateYearRangeValidationError" xml:space="preserve">
+    <value>The activated at date must be between 1900 and 2100.</value>
+  </data>
+  <data name="MenuDescriptionLabelText" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="MenuDescriptionRequired" xml:space="preserve">
+    <value>Description is required.</value>
+  </data>
+  <data name="MenuDescriptionStringLengthValidationError" xml:space="preserve">
+    <value>Description must be less than 255 characters.</value>
+  </data>
+  <data name="UnableToRetrieveFoodExceptionMessage" xml:space="preserve">
+    <value>Unable to retrieve food.</value>
+  </data>
+  <data name="UnableToRetrieveMenuExceptionMessage" xml:space="preserve">
+    <value>Unable to retrieve menu.</value>
+  </data>
+  <data name="FoodDescriptionLabelText" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="FoodDescriptionRequired" xml:space="preserve">
+    <value>Description is required.</value>
+  </data>
+  <data name="FoodDescriptionStringLengthValidationError" xml:space="preserve">
+    <value>Description must be less than 255 characters.</value>
+  </data>
+  <data name="FoodPriceOrderLabelText" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="FoodPriceOrderRequired" xml:space="preserve">
+    <value>Price is required.</value>
+  </data>
+  <data name="FoodPriceRangeValidationError" xml:space="preserve">
+    <value>The Price must be between 0 and 1000.</value>
+  </data>
+  <data name="FoodSortOrderLabelText" xml:space="preserve">
+    <value>Sortorder</value>
+  </data>
+  <data name="FoodSortOrderRangeValidationError" xml:space="preserve">
+    <value>The Sortorder must be between 1 and 10000.</value>
+  </data>
+  <data name="FoodSortOrderRequired" xml:space="preserve">
+    <value>Sortorder is required.</value>
+  </data>
+  <data name="FoodTitleLabelText" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="FoodTitleRequired" xml:space="preserve">
+    <value>Title is required.</value>
+  </data>
+  <data name="FoodTitleStringLengthValidationError" xml:space="preserve">
+    <value>Title must be less than 255 characters.</value>
+  </data>
+  <data name="InvalidMultilineInput" xml:space="preserve">
+    <value>Only alpha-numeric characters, new lines, and [.,_-'] are allowed.</value>
+  </data>
+  <data name="TextMultilineValidatorRegEx" xml:space="preserve">
+    <value>^(?!.*--)([\w\.,'_ \-]|\r|\n)*$</value>
+  </data>
+  <data name="TextMultilineValidatorRegExUnicode" xml:space="preserve">
+    <value>^(?!.*--)([A-Za-z0-9\.,'_ \-]|\r|\n)*$</value>
   </data>
 </root>

@@ -1,0 +1,32 @@
+﻿@model Lbk.MobileApp.Core.PagedDataList<Lbk.MobileApp.Model.Menu>
+<script type="text/javascript">
+    $(function () {
+        $('#selectPageSize select').change(function () {
+            $.post('@Url.Action("List")', { PageSize: $(this).val() }, function (result) { $('#mainSearch').html(result); });
+        });
+    });
+</script>
+@{
+    var grid = new WebGrid(canPage: true, canSort: true, rowsPerPage: Model.PageSize, ajaxUpdateContainerId: "grid");
+    grid.Bind(Model.Items, rowCount: Model.TotalItemCount, autoSortAndPage: false);
+    @grid.GetHtml(htmlAttributes: new { id = "grid", width = "100%" },
+                columns: grid.Columns(
+            ////grid.Column("Id"),
+                    grid.Column("Description"),
+                    grid.Column("Date", format: @<text>@item.Date.ToShortDateString()</text>),
+                    grid.Column("Foods", format: (item) =>
+                    {
+                        return Html.ActionLink("Show Foods", "List", new { controller = "Food", id = item.Id });
+                    }, canSort: false),
+                    grid.Column("Commands", format: (item) =>
+                    {
+                        return new MvcHtmlString(string.Join(" | ",
+                            Html.ActionLink("Details", "Detail", new { id = item.Id }),
+                            Html.ActionLink("Edit", "Edit", new { id = item.Id }),
+                            Html.ActionLink("Delete", "Delete", new { id = item.Id })));
+                    }, canSort: false)),
+                    mode: WebGridPagerModes.FirstLast | WebGridPagerModes.Numeric | WebGridPagerModes.NextPrevious)
+}
+<div id="selectPageSize">
+    @Html.DropDownListFor(x => x.PageSize, new SelectList(new[] { "10", "20", "30", "40", "50", "100" }))
+</div>

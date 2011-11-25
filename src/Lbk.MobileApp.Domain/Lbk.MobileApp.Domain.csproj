@@ -47,6 +47,8 @@
     </Compile>
     <Compile Include="Contracts\BusinessServicesException.cs" />
     <Compile Include="Contracts\ICreateAnswerCommand.cs" />
+    <Compile Include="Contracts\ICreateFoodCommand.cs" />
+    <Compile Include="Contracts\ICreateMenuCommand.cs" />
     <Compile Include="Contracts\ICreateQuestionCommand.cs" />
     <Compile Include="Contracts\ICreateSerieCommand.cs" />
     <Compile Include="Extensions\CreateAnswerCommandExtensions.cs" />
@@ -55,9 +57,12 @@
     <Compile Include="Handlers\AddAnswer.cs" />
     <Compile Include="Handlers\AddQuestion.cs" />
     <Compile Include="Handlers\AddSerie.cs" />
+    <Compile Include="Handlers\GetMenuById.cs" />
     <Compile Include="Handlers\DeleteAnswerById.cs" />
     <Compile Include="Handlers\DeleteQuestionById.cs" />
     <Compile Include="Handlers\DeleteSerieById.cs" />
+    <Compile Include="Handlers\GetFoods.cs" />
+    <Compile Include="Handlers\GetMenus.cs" />
     <Compile Include="Handlers\GetQuestionById.cs" />
     <Compile Include="Handlers\GetQuestions.cs" />
     <Compile Include="Handlers\GetAnswerById.cs" />
@@ -75,12 +80,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Messages.resx</DependentUpon>
     </Compile>
+    <Compile Include="Validators\TextMultilineValidatorAttribute.cs" />
     <Compile Include="Validators\TextLineInputValidatorAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Messages.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Resources\Resources.resx" />

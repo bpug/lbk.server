@@ -1,0 +1,13 @@
+Version: 0.2.5alpha1
+Date: 2011-11-10
+Description: Löwenbräukeller MobileApp [version] is an initial alpha preview release.
+[h1]Improvements[/h1]
+- one
+- two
+- three
+[h1]Bugs fixed[/h1]
+- one
+- two
+- three
+- four
+[h1]Other changes[/h1]

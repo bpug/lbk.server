@@ -124,11 +124,182 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string FoodDescriptionLabelText {
+            get {
+                return ResourceManager.GetString("FoodDescriptionLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description is required..
+        /// </summary>
+        public static string FoodDescriptionRequired {
+            get {
+                return ResourceManager.GetString("FoodDescriptionRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description must be less than 255 characters..
+        /// </summary>
+        public static string FoodDescriptionStringLengthValidationError {
+            get {
+                return ResourceManager.GetString("FoodDescriptionStringLengthValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price.
+        /// </summary>
+        public static string FoodPriceOrderLabelText {
+            get {
+                return ResourceManager.GetString("FoodPriceOrderLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price is required..
+        /// </summary>
+        public static string FoodPriceOrderRequired {
+            get {
+                return ResourceManager.GetString("FoodPriceOrderRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Price must be between 0 and 1000..
+        /// </summary>
+        public static string FoodPriceRangeValidationError {
+            get {
+                return ResourceManager.GetString("FoodPriceRangeValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sortorder.
+        /// </summary>
+        public static string FoodSortOrderLabelText {
+            get {
+                return ResourceManager.GetString("FoodSortOrderLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Sortorder must be between 1 and 10000..
+        /// </summary>
+        public static string FoodSortOrderRangeValidationError {
+            get {
+                return ResourceManager.GetString("FoodSortOrderRangeValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sortorder is required..
+        /// </summary>
+        public static string FoodSortOrderRequired {
+            get {
+                return ResourceManager.GetString("FoodSortOrderRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title.
+        /// </summary>
+        public static string FoodTitleLabelText {
+            get {
+                return ResourceManager.GetString("FoodTitleLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title is required..
+        /// </summary>
+        public static string FoodTitleRequired {
+            get {
+                return ResourceManager.GetString("FoodTitleRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title must be less than 255 characters..
+        /// </summary>
+        public static string FoodTitleStringLengthValidationError {
+            get {
+                return ResourceManager.GetString("FoodTitleStringLengthValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Only alpha-numeric characters and [.,_-&apos;] are allowed..
         /// </summary>
         public static string InvalidInputCharacter {
             get {
                 return ResourceManager.GetString("InvalidInputCharacter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Only alpha-numeric characters, new lines, and [.,_-&apos;] are allowed..
+        /// </summary>
+        public static string InvalidMultilineInput {
+            get {
+                return ResourceManager.GetString("InvalidMultilineInput", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Activated at.
+        /// </summary>
+        public static string MenuDateLabelText {
+            get {
+                return ResourceManager.GetString("MenuDateLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Activated at is required..
+        /// </summary>
+        public static string MenuDateRequired {
+            get {
+                return ResourceManager.GetString("MenuDateRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The activated at date must be between 1900 and 2100..
+        /// </summary>
+        public static string MenuDateYearRangeValidationError {
+            get {
+                return ResourceManager.GetString("MenuDateYearRangeValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string MenuDescriptionLabelText {
+            get {
+                return ResourceManager.GetString("MenuDescriptionLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description is required..
+        /// </summary>
+        public static string MenuDescriptionRequired {
+            get {
+                return ResourceManager.GetString("MenuDescriptionRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description must be less than 255 characters..
+        /// </summary>
+        public static string MenuDescriptionStringLengthValidationError {
+            get {
+                return ResourceManager.GetString("MenuDescriptionStringLengthValidationError", resourceCulture);
             }
         }
         
@@ -160,20 +331,20 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The number must be between 1 and 255..
-        /// </summary>
-        public static string QuestionNumberIntRangeValidationError {
-            get {
-                return ResourceManager.GetString("QuestionNumberIntRangeValidationError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Number.
         /// </summary>
         public static string QuestionNumberLabelText {
             get {
                 return ResourceManager.GetString("QuestionNumberLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The number must be between 1 and 255..
+        /// </summary>
+        public static string QuestionNumberRangeValidationError {
+            get {
+                return ResourceManager.GetString("QuestionNumberRangeValidationError", resourceCulture);
             }
         }
         
@@ -187,20 +358,20 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The points must be between 1 and 255..
-        /// </summary>
-        public static string QuestionPointsIntRangeValidationError {
-            get {
-                return ResourceManager.GetString("QuestionPointsIntRangeValidationError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Points.
         /// </summary>
         public static string QuestionPointsLabelText {
             get {
                 return ResourceManager.GetString("QuestionPointsLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The points must be between 1 and 255..
+        /// </summary>
+        public static string QuestionPointsRangeValidationError {
+            get {
+                return ResourceManager.GetString("QuestionPointsRangeValidationError", resourceCulture);
             }
         }
         
@@ -322,6 +493,24 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ^(?!.*--)([\w\.,&apos;_ \-]|\r|\n)*$.
+        /// </summary>
+        public static string TextMultilineValidatorRegEx {
+            get {
+                return ResourceManager.GetString("TextMultilineValidatorRegEx", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ^(?!.*--)([A-Za-z0-9\.,&apos;_ \-]|\r|\n)*$.
+        /// </summary>
+        public static string TextMultilineValidatorRegExUnicode {
+            get {
+                return ResourceManager.GetString("TextMultilineValidatorRegExUnicode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unable to add answer..
         /// </summary>
         public static string UnableToAddAnswerExceptionMessage {
@@ -381,6 +570,24 @@ namespace Lbk.MobileApp.Domain.Resources {
         public static string UnableToRetrieveAnswerExceptionMessage {
             get {
                 return ResourceManager.GetString("UnableToRetrieveAnswerExceptionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to retrieve food..
+        /// </summary>
+        public static string UnableToRetrieveFoodExceptionMessage {
+            get {
+                return ResourceManager.GetString("UnableToRetrieveFoodExceptionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to retrieve menu..
+        /// </summary>
+        public static string UnableToRetrieveMenuExceptionMessage {
+            get {
+                return ResourceManager.GetString("UnableToRetrieveMenuExceptionMessage", resourceCulture);
             }
         }
         

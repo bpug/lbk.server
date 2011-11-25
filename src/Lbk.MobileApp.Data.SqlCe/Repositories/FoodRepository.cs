@@ -9,10 +9,12 @@ namespace Lbk.MobileApp.Data.SqlCe.Repositories
     #region using directives
 
     using System.Data;
+    using System.Data.Entity;
     using System.Linq;
 
     using Lbk.MobileApp.Core;
     using Lbk.MobileApp.Data.Core;
+    using Lbk.MobileApp.Data.Core.Extensions;
     using Lbk.MobileApp.Data.SqlCe.Repositories.Specifications;
     using Lbk.MobileApp.Model;
 
@@ -52,7 +54,8 @@ namespace Lbk.MobileApp.Data.SqlCe.Repositories
 
         public Food GetFood(long foodId)
         {
-            return this.GetDbSet<Food>().Include("Menu").Include("Category").Where(x => x.Id == foodId).Single();
+            return
+                this.GetDbSet<Food>().Include(x => x.Menu).Include(x => x.Category).Where(x => x.Id == foodId).Single();
         }
 
         public PagedDataList<Food> GetFoods(PagedDataInput<Food> pagedDataInput)
@@ -64,7 +67,8 @@ namespace Lbk.MobileApp.Data.SqlCe.Repositories
                 pagedDataInput.PageSize, 
                 ColumnNormalizer.FixupSortColumn(pagedDataInput.Sort), 
                 pagedDataInput.Ascending, 
-                specification);
+                specification, 
+                x => x.Category);
         }
 
         public void Update(Food food)

@@ -1,3 +1,10 @@
+2011-11-25
+    - Add dbset extensions for include pattern
+    - Add browser for menu > food
+
+2011-11-24
+    - Update to jquery 1.7.1
+
 2011-11-10
     - Add new semantic versions
     - Fixed search cookie for all levels in quiz; saved by id and level and remain

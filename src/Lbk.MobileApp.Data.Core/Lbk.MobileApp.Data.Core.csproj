@@ -31,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
     <Reference Include="Gpo.SemanticVersion.Core">
       <HintPath>..\packages\Gpo.SemanticVersion.Core.dev.1.3.11110.0\lib\net35\Gpo.SemanticVersion.Core.dll</HintPath>
     </Reference>
@@ -44,6 +45,7 @@
       <Link>Properties\CommonAssemblyInfoVersion.cs</Link>
     </Compile>
     <Compile Include="ColumnNormalizer.cs" />
+    <Compile Include="Extensions\IDbSetExtensions.cs" />
     <Compile Include="Extensions\IQueryableExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Specification\AndSpecification.cs" />
