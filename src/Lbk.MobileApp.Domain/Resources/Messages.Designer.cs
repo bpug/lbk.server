@@ -126,6 +126,78 @@ namespace Lbk.MobileApp.Domain.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Description.
         /// </summary>
+        public static string CategoryDescriptionLabelText {
+            get {
+                return ResourceManager.GetString("CategoryDescriptionLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description is required..
+        /// </summary>
+        public static string CategoryDescriptionRequired {
+            get {
+                return ResourceManager.GetString("CategoryDescriptionRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description must be less than 255 characters..
+        /// </summary>
+        public static string CategoryDescriptionStringLengthValidationError {
+            get {
+                return ResourceManager.GetString("CategoryDescriptionStringLengthValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title.
+        /// </summary>
+        public static string CategoryTitleLabelText {
+            get {
+                return ResourceManager.GetString("CategoryTitleLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title is required..
+        /// </summary>
+        public static string CategoryTitleRequired {
+            get {
+                return ResourceManager.GetString("CategoryTitleRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title must be less than 255 characters..
+        /// </summary>
+        public static string CategoryTitleStringLengthValidationError {
+            get {
+                return ResourceManager.GetString("CategoryTitleStringLengthValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Category.
+        /// </summary>
+        public static string FoodCategoryIdLabelText {
+            get {
+                return ResourceManager.GetString("FoodCategoryIdLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Category.
+        /// </summary>
+        public static string FoodCategoryNameLabelText {
+            get {
+                return ResourceManager.GetString("FoodCategoryNameLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
         public static string FoodDescriptionLabelText {
             get {
                 return ResourceManager.GetString("FoodDescriptionLabelText", resourceCulture);
@@ -210,15 +282,6 @@ namespace Lbk.MobileApp.Domain.Resources {
         public static string FoodTitleLabelText {
             get {
                 return ResourceManager.GetString("FoodTitleLabelText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Title is required..
-        /// </summary>
-        public static string FoodTitleRequired {
-            get {
-                return ResourceManager.GetString("FoodTitleRequired", resourceCulture);
             }
         }
         
@@ -520,6 +583,15 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unable to add category..
+        /// </summary>
+        public static string UnableToAddCategoryExceptionMessage {
+            get {
+                return ResourceManager.GetString("UnableToAddCategoryExceptionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unable to add food..
         /// </summary>
         public static string UnableToAddFoodExceptionMessage {
@@ -561,6 +633,15 @@ namespace Lbk.MobileApp.Domain.Resources {
         public static string UnableToDeleteAnswerExceptionMessage {
             get {
                 return ResourceManager.GetString("UnableToDeleteAnswerExceptionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to delete category..
+        /// </summary>
+        public static string UnableToDeleteCategoryExceptionMessage {
+            get {
+                return ResourceManager.GetString("UnableToDeleteCategoryExceptionMessage", resourceCulture);
             }
         }
         
@@ -610,6 +691,15 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unable to retrieve category..
+        /// </summary>
+        public static string UnableToRetrieveCategoryExceptionMessage {
+            get {
+                return ResourceManager.GetString("UnableToRetrieveCategoryExceptionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unable to retrieve food..
         /// </summary>
         public static string UnableToRetrieveFoodExceptionMessage {
@@ -651,6 +741,15 @@ namespace Lbk.MobileApp.Domain.Resources {
         public static string UnableToUpdateAnswerExceptionMessage {
             get {
                 return ResourceManager.GetString("UnableToUpdateAnswerExceptionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to update category..
+        /// </summary>
+        public static string UnableToUpdateCategoryExceptionMessage {
+            get {
+                return ResourceManager.GetString("UnableToUpdateCategoryExceptionMessage", resourceCulture);
             }
         }
         

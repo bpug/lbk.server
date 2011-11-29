@@ -8,6 +8,8 @@ namespace Lbk.MobileApp.Web.Controllers
 {
     #region using directives
 
+    using System.Collections.Generic;
+    using System.Linq;
     using System.Web.Mvc;
 
     using Lbk.MobileApp.Core;
@@ -49,6 +51,8 @@ namespace Lbk.MobileApp.Web.Controllers
 
         public ActionResult Create(long id)
         {
+            this.AddCategorySelectListToViewData();
+
             return this.View(new FoodFormModel { MenuId = id });
         }
 
@@ -90,6 +94,9 @@ namespace Lbk.MobileApp.Web.Controllers
         public ActionResult Edit(long id)
         {
             var food = this.Using<GetFoodById>().Execute(id);
+            var vm = FoodSearchFormModelExtensions.ToFormModel(food);
+
+            this.AddCategorySelectListToViewData(vm);
 
             return this.View(FoodSearchFormModelExtensions.ToFormModel(food));
         }
@@ -115,9 +122,15 @@ namespace Lbk.MobileApp.Web.Controllers
                     removeValue: btnSubmit == "Clear");
 
             var foods = this.Using<GetFoods>().Execute(pagedDataInputOfFoods);
+            var foodListViewModels =
+                new PagedDataList<FoodListViewModel>(
+                    FoodSearchFormModelExtensions.ToFoodListViewModels(foods.Items), 
+                    foods.PageIndex, 
+                    foods.PageSize, 
+                    foods.TotalItemCount);
 
-            var viewModel = new GenericListViewModel<Food, FoodSearchFormModel>();
-            viewModel.Results = foods;
+            var viewModel = new GenericListViewModel<FoodListViewModel, FoodSearchFormModel>();
+            viewModel.Results = foodListViewModels;
             viewModel.SearchItem = btnSubmit == "Clear"
                                        ? new FoodSearchFormModel()
                                        : FoodSearchFormModelExtensions.ToSearchFormModel(
@@ -129,6 +142,31 @@ namespace Lbk.MobileApp.Web.Controllers
             }
 
             return this.View(viewModel);
+        }
+
+        #endregion
+
+        #region - Methods -
+
+        private static SelectList EnumerableToSelectList<TEntity>(IEnumerable<TEntity> source, object selectValue)
+        {
+            return new SelectList(
+                source.Select(x => new { Value = x.ToString(), Text = x.ToString() }), "Value", "Text", selectValue);
+        }
+
+        private void AddCategorySelectListToViewData(FoodFormModel food = null)
+        {
+            var categories =
+                this.Using<GetCategories>().Execute(
+                    new PagedDataInput<Category> { Ascending = true, PageIndex = 0, PageSize = 1000 });
+
+            ////this.ViewData["Categories"] = EnumerableToSelectList(categories, (food != null) ? food.CategoryId : 0);
+            this.ViewData["Categories"] =
+                new SelectList(
+                    categories.Select(x => new { Value = x.Id, Text = x.GetCategoryCompleteDescription() }), 
+                    "Value", 
+                    "Text", 
+                    (food != null) ? food.CategoryId : 0);
         }
 
         #endregion

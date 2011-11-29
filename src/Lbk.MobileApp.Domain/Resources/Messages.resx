@@ -294,9 +294,6 @@
   <data name="FoodTitleLabelText" xml:space="preserve">
     <value>Title</value>
   </data>
-  <data name="FoodTitleRequired" xml:space="preserve">
-    <value>Title is required.</value>
-  </data>
   <data name="FoodTitleStringLengthValidationError" xml:space="preserve">
     <value>Title must be less than 255 characters.</value>
   </data>
@@ -326,5 +323,41 @@
   </data>
   <data name="UnableToUpdateMenuExceptionMessage" xml:space="preserve">
     <value>Unable to update menu.</value>
+  </data>
+  <data name="CategoryDescriptionLabelText" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="CategoryDescriptionRequired" xml:space="preserve">
+    <value>Description is required.</value>
+  </data>
+  <data name="CategoryDescriptionStringLengthValidationError" xml:space="preserve">
+    <value>Description must be less than 255 characters.</value>
+  </data>
+  <data name="CategoryTitleLabelText" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="CategoryTitleRequired" xml:space="preserve">
+    <value>Title is required.</value>
+  </data>
+  <data name="CategoryTitleStringLengthValidationError" xml:space="preserve">
+    <value>Title must be less than 255 characters.</value>
+  </data>
+  <data name="FoodCategoryIdLabelText" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="FoodCategoryNameLabelText" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="UnableToAddCategoryExceptionMessage" xml:space="preserve">
+    <value>Unable to add category.</value>
+  </data>
+  <data name="UnableToDeleteCategoryExceptionMessage" xml:space="preserve">
+    <value>Unable to delete category.</value>
+  </data>
+  <data name="UnableToRetrieveCategoryExceptionMessage" xml:space="preserve">
+    <value>Unable to retrieve category.</value>
+  </data>
+  <data name="UnableToUpdateCategoryExceptionMessage" xml:space="preserve">
+    <value>Unable to update category.</value>
   </data>
 </root>

@@ -20,7 +20,10 @@ namespace Lbk.MobileApp.Web.Models
     {
         #region - Properties -
 
+        [Display(Name = "FoodCategoryIdLabelText", ResourceType = typeof(Messages))]
         public long CategoryId { get; set; }
+
+        public string CategoryName { get; set; }
 
         [StringLength(255, ErrorMessageResourceName = "FoodDescriptionStringLengthValidationError", 
             ErrorMessageResourceType = typeof(Messages))]
@@ -49,8 +52,6 @@ namespace Lbk.MobileApp.Web.Models
         [StringLength(255, ErrorMessageResourceName = "FoodTitleStringLengthValidationError", 
             ErrorMessageResourceType = typeof(Messages))]
         [TextLineInputValidator]
-        [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "FoodTitleRequired", 
-            ErrorMessageResourceType = typeof(Messages))]
         [Display(Name = "FoodTitleLabelText", ResourceType = typeof(Messages))]
         public string Title { get; set; }
 

@@ -1,0 +1,17 @@
+﻿@model Lbk.MobileApp.Web.Models.GenericListViewModel<Lbk.MobileApp.Model.Category, Lbk.MobileApp.Web.Models.CategorySearchFormModel>
+@{
+    ViewBag.Title = "Menu - [List Categories]";
+}
+<h3>
+    @Html.ActionLink("Menu", "List", new { controller = "Menu" })
+    > @Html.ActionLink((string)ViewBag.MenuDescription, "List", new { controller = "Food", id = (object)ViewBag.MenuId })
+    @*> @Html.ActionLink((string)ViewBag.SerieDescription, "List", new { controller = "Question", id = (object)ViewBag.SerieId })*@
+</h3>
+<h2>
+    List Categories</h2>
+<p>
+    @Html.ActionLink("Create New", "Create", new { MenuId = (object)ViewBag.MenuId })
+</p>
+<div id="mainSearch">
+    @Html.Partial("_search", Model)
+</div>

@@ -1,6 +1,6 @@
-﻿@model Lbk.MobileApp.Web.Models.FoodFormModel
+﻿@model Lbk.MobileApp.Web.Models.CategoryFormModel
 @{
-    ViewBag.Title = "Menu - [Edit Food]";
+    ViewBag.Title = "Menu - [Edit Category]";
 }
 <h2>
     Edit</h2>
@@ -12,14 +12,7 @@
 {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>Edit Food</legend>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.CategoryId)
-        </div>
-        <div class="editor-field">
-            @Html.DropDownListFor(model => model.CategoryId, ViewData["Categories"] as SelectList, "--Select a Category--", new { @class = "editor-textbox" })
-            @Html.ValidationMessageFor(model => model.CategoryId)
-        </div>
+        <legend>Edit Category</legend>
         <div class="editor-label">
             @Html.LabelFor(model => model.Title)
         </div>
@@ -34,27 +27,13 @@
             @Html.EditorFor(model => model.Description)
             @Html.ValidationMessageFor(model => model.Description)
         </div>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Price)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Price)
-            @Html.ValidationMessageFor(model => model.Price)
-        </div>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.SortOrder)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.SortOrder)
-            @Html.ValidationMessageFor(model => model.SortOrder)
-        </div>
-        @Html.HiddenFor(model => model.MenuId)
         @Html.HiddenFor(model => model.Id)
+        @Html.Hidden("MenuId", (object)ViewBag.MenuId)
         <p>
             <input type="submit" value="Save" />
         </p>
     </fieldset>
 }
 <div>
-    @Html.ActionLink("Back to List", "List", new { id = Model.MenuId })
+    @Html.ActionLink("Back to List", "List", new { MenuId = (object)ViewBag.MenuId })
 </div>

@@ -1,3 +1,10 @@
+2011-11-29
+    - Fixed: Food > Title not required
+    - Add Categoryname in food (list, detail, delete)
+    - Add select category in create and edit food
+    - Add crud operations/controller/views for categories
+    - Add menuid querystring for better navigation from foods > categories > foods
+
 2011-11-28
     - Add detail, delete, edit menus
     - Add create, detail, delete, edit foods

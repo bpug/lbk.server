@@ -46,21 +46,28 @@
       <Link>Properties\CommonAssemblyInfoVersion.cs</Link>
     </Compile>
     <Compile Include="Contracts\BusinessServicesException.cs" />
+    <Compile Include="Contracts\ICreateCategoryCommand.cs" />
     <Compile Include="Contracts\ICreateAnswerCommand.cs" />
     <Compile Include="Contracts\ICreateFoodCommand.cs" />
     <Compile Include="Contracts\ICreateMenuCommand.cs" />
     <Compile Include="Contracts\ICreateQuestionCommand.cs" />
     <Compile Include="Contracts\ICreateSerieCommand.cs" />
+    <Compile Include="Extensions\CreateCategoryCommandExtensions.cs" />
     <Compile Include="Extensions\CreateFoodCommandExtensions.cs" />
     <Compile Include="Extensions\CreateMenuCommandExtensions.cs" />
     <Compile Include="Extensions\CreateAnswerCommandExtensions.cs" />
     <Compile Include="Extensions\CreateQuestionCommandExtensions.cs" />
     <Compile Include="Extensions\CreateSerieCommandExtensions.cs" />
     <Compile Include="Handlers\AddAnswer.cs" />
+    <Compile Include="Handlers\AddCategory.cs" />
     <Compile Include="Handlers\AddFood.cs" />
     <Compile Include="Handlers\AddMenu.cs" />
     <Compile Include="Handlers\AddQuestion.cs" />
     <Compile Include="Handlers\AddSerie.cs" />
+    <Compile Include="Handlers\DeleteCategoryById.cs" />
+    <Compile Include="Handlers\GetCategoryById.cs" />
+    <Compile Include="Handlers\GetCategories.cs" />
+    <Compile Include="Handlers\UpdateCategory.cs" />
     <Compile Include="Handlers\UpdateFood.cs" />
     <Compile Include="Handlers\GetFoodById.cs" />
     <Compile Include="Handlers\DeleteFoodById.cs" />

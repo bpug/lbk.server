@@ -1,8 +1,8 @@
-﻿@model Lbk.MobileApp.Core.PagedDataList<Lbk.MobileApp.Web.Models.FoodListViewModel>
+﻿@model Lbk.MobileApp.Core.PagedDataList<Lbk.MobileApp.Model.Category>
 <script type="text/javascript">
     $(function () {
         $('#selectPageSize select').change(function () {
-            $.post('@Url.Action("List")', { PageSize: $(this).val() }, function (result) { $('#mainSearch').html(result); });
+            $.post('@Url.Action("List", new { MenuId = (object)ViewBag.MenuId })', { PageSize: $(this).val() }, function (result) { $('#mainSearch').html(result); });
         });
     });
 </script>
@@ -12,18 +12,14 @@
     @grid.GetHtml(htmlAttributes: new { id = "grid", width = "100%" },
                 columns: grid.Columns(
             ////grid.Column("Id"),
-                            grid.Column("CategoryName", canSort: false),
-            ////grid.Column("Category", canSort: false, format: item => item.Category != null ? new MvcHtmlString(item.Category.Description) : new MvcHtmlString("none")),
                             grid.Column("Title"),
                             grid.Column("Description"),
-                            grid.Column("Price"),
-                            grid.Column("SortOrder"),
                             grid.Column("Commands", format: (item) =>
                             {
                                 return new MvcHtmlString(string.Join(" | ",
-                                    Html.ActionLink("Details", "Detail", new { id = item.Id }),
-                                    Html.ActionLink("Edit", "Edit", new { id = item.Id }),
-                                    Html.ActionLink("Delete", "Delete", new { id = item.Id })));
+                                    Html.ActionLink("Details", "Detail", new { id = item.Id, MenuId = (object)ViewBag.MenuId }),
+                                    Html.ActionLink("Edit", "Edit", new { id = item.Id, MenuId = (object)ViewBag.MenuId }),
+                                    Html.ActionLink("Delete", "Delete", new { id = item.Id, MenuId = (object)ViewBag.MenuId })));
                             }, canSort: false)),
                             mode: WebGridPagerModes.FirstLast | WebGridPagerModes.Numeric | WebGridPagerModes.NextPrevious)
 }

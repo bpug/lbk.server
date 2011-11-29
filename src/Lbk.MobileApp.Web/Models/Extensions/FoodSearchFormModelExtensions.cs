@@ -8,6 +8,9 @@ namespace Lbk.MobileApp.Web.Models.Extensions
 {
     #region using directives
 
+    using System.Collections.Generic;
+    using System.Linq;
+
     using Lbk.MobileApp.Model;
 
     #endregion
@@ -26,6 +29,32 @@ namespace Lbk.MobileApp.Web.Models.Extensions
             return item;
         }
 
+        public static FoodListViewModel ToFoodListViewModel(Food model)
+        {
+            if (model == null)
+            {
+                return null;
+            }
+
+            return new FoodListViewModel
+                {
+                    Category = model.Category, 
+                    CategoryId = model.CategoryId, 
+                    Description = model.Description, 
+                    Id = model.Id, 
+                    Menu = model.Menu, 
+                    MenuId = model.MenuId, 
+                    Price = model.Price, 
+                    SortOrder = model.SortOrder, 
+                    Title = model.Title
+                };
+        }
+
+        public static IEnumerable<FoodListViewModel> ToFoodListViewModels(IEnumerable<Food> models)
+        {
+            return models.Select(ToFoodListViewModel);
+        }
+
         public static FoodFormModel ToFormModel(Food model)
         {
             if (model == null)
@@ -37,6 +66,7 @@ namespace Lbk.MobileApp.Web.Models.Extensions
                 {
                     Id = model.Id, 
                     CategoryId = model.CategoryId, 
+                    CategoryName = model.Category != null ? model.Category.GetCategoryCompleteDescription() : null, 
                     Description = model.Description, 
                     MenuId = model.MenuId, 
                     Price = model.Price, 
