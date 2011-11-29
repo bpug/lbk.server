@@ -351,13 +351,25 @@
   <data name="UnableToAddCategoryExceptionMessage" xml:space="preserve">
     <value>Unable to add category.</value>
   </data>
+  <data name="UnableToAddEventExceptionMessage" xml:space="preserve">
+    <value>Unable to add event.</value>
+  </data>
   <data name="UnableToDeleteCategoryExceptionMessage" xml:space="preserve">
     <value>Unable to delete category.</value>
+  </data>
+  <data name="UnableToDeleteEventExceptionMessage" xml:space="preserve">
+    <value>Unable to delete event.</value>
   </data>
   <data name="UnableToRetrieveCategoryExceptionMessage" xml:space="preserve">
     <value>Unable to retrieve category.</value>
   </data>
+  <data name="UnableToRetrieveEventExceptionMessage" xml:space="preserve">
+    <value>Unable to retrieve event.</value>
+  </data>
   <data name="UnableToUpdateCategoryExceptionMessage" xml:space="preserve">
     <value>Unable to update category.</value>
+  </data>
+  <data name="UnableToUpdateEventExceptionMessage" xml:space="preserve">
+    <value>Unable to update event.</value>
   </data>
 </root>

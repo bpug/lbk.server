@@ -592,6 +592,15 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unable to add event..
+        /// </summary>
+        public static string UnableToAddEventExceptionMessage {
+            get {
+                return ResourceManager.GetString("UnableToAddEventExceptionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unable to add food..
         /// </summary>
         public static string UnableToAddFoodExceptionMessage {
@@ -642,6 +651,15 @@ namespace Lbk.MobileApp.Domain.Resources {
         public static string UnableToDeleteCategoryExceptionMessage {
             get {
                 return ResourceManager.GetString("UnableToDeleteCategoryExceptionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to delete event..
+        /// </summary>
+        public static string UnableToDeleteEventExceptionMessage {
+            get {
+                return ResourceManager.GetString("UnableToDeleteEventExceptionMessage", resourceCulture);
             }
         }
         
@@ -700,6 +718,15 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unable to retrieve event..
+        /// </summary>
+        public static string UnableToRetrieveEventExceptionMessage {
+            get {
+                return ResourceManager.GetString("UnableToRetrieveEventExceptionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unable to retrieve food..
         /// </summary>
         public static string UnableToRetrieveFoodExceptionMessage {
@@ -750,6 +777,15 @@ namespace Lbk.MobileApp.Domain.Resources {
         public static string UnableToUpdateCategoryExceptionMessage {
             get {
                 return ResourceManager.GetString("UnableToUpdateCategoryExceptionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to update event..
+        /// </summary>
+        public static string UnableToUpdateEventExceptionMessage {
+            get {
+                return ResourceManager.GetString("UnableToUpdateEventExceptionMessage", resourceCulture);
             }
         }
         

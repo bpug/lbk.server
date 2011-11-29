@@ -71,6 +71,7 @@
     <Compile Include="Controllers\AnswerController.cs" />
     <Compile Include="Controllers\AuthorizedController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\Class1.cs" />
     <Compile Include="Controllers\FoodController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\QuestionController.cs" />
@@ -223,6 +224,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Event\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
