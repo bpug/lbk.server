@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Class1.cs" company="ip-connect GmbH">
+// <copyright file="EventController.cs" company="ip-connect GmbH">
 //   Copyright (c) ip-connect GmbH. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
@@ -16,6 +16,7 @@ namespace Lbk.MobileApp.Web.Controllers
     using Lbk.MobileApp.Model;
     using Lbk.MobileApp.Web.Handler;
     using Lbk.MobileApp.Web.Models;
+    using Lbk.MobileApp.Web.Models.Extensions;
 
     using Microsoft.Practices.ServiceLocation;
 
@@ -49,14 +50,22 @@ namespace Lbk.MobileApp.Web.Controllers
 
         public ActionResult Create()
         {
-            return this.View(new EventFormModel { Date = DateTime.Now });
+            return
+                this.View(
+                    new EventFormModel
+                        {
+                            ActivatedAt = DateTime.Now, 
+                            DateOrder = DateTime.Now, 
+                            ExpiresAt = DateTime.Now, 
+                            Date = DateTime.Now.ToString("D")
+                        });
         }
 
         public ActionResult Delete(long id)
         {
             var @event = this.Using<GetEventById>().Execute(id);
 
-            return this.View(EventSearchFormModelExtensions.ToFormModel(@event));
+            return this.View(EventModelExtensions.ToFormModel(@event));
         }
 
         [HttpPost]
@@ -71,7 +80,7 @@ namespace Lbk.MobileApp.Web.Controllers
         {
             var @event = this.Using<GetEventById>().Execute(id);
 
-            return this.View(EventSearchFormModelExtensions.ToFormModel(@event));
+            return this.View(EventModelExtensions.ToFormModel(@event));
         }
 
         [HttpPost]
@@ -91,7 +100,7 @@ namespace Lbk.MobileApp.Web.Controllers
         {
             var @event = this.Using<GetEventById>().Execute(id);
 
-            return this.View(EventSearchFormModelExtensions.ToFormModel(@event));
+            return this.View(EventModelExtensions.ToFormModel(@event));
         }
 
         public ActionResult List(EventSearchFormModel @event, PagedDataInput pagedDataInput, string btnSubmit)
@@ -103,7 +112,7 @@ namespace Lbk.MobileApp.Web.Controllers
                     pagedDataInputOfEvent.PageSize as object, defaultValue: 10, nullValue: 0, keyName: "PageSize");
             pagedDataInputOfEvent.SearchItem =
                 this.GetItemFromTempData(
-                    EventSearchFormModelExtensions.ToModel(@event.GetValueOrDefault()), 
+                    EventModelExtensions.ToModel(@event.GetValueOrDefault()), 
                     keyPrefix: "SearchItem_", 
                     removeValue: btnSubmit == "Clear");
 
@@ -113,8 +122,8 @@ namespace Lbk.MobileApp.Web.Controllers
             viewModel.Results = events;
             viewModel.SearchItem = btnSubmit == "Clear"
                                        ? new EventSearchFormModel()
-                                       : EventSearchFormModelExtensions.ToSearchFormModel(
-                                           pagedDataInputOfEvent.SearchItem) ?? @event;
+                                       : EventModelExtensions.ToSearchFormModel(pagedDataInputOfEvent.SearchItem)
+                                         ?? @event;
 
             if (this.Request.IsAjaxRequest())
             {

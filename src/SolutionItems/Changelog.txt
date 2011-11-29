@@ -6,6 +6,7 @@
     - Add menuid querystring for better navigation from foods > categories > foods
     - Fix issue when search menus with date
     - Add handlers for event management
+    - Add crud operations/controller/views for events
 
 2011-11-28
     - Add detail, delete, edit menus

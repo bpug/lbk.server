@@ -1,0 +1,14 @@
+﻿@model Lbk.MobileApp.Web.Models.GenericListViewModel<Lbk.MobileApp.Model.Event, Lbk.MobileApp.Web.Models.EventSearchFormModel>
+@{
+    ViewBag.Title = "Event - [List Events]";
+}
+<h3>
+    Event</h3>
+<h2>
+    List Events</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div id="mainSearch">
+    @Html.Partial("_search", Model)
+</div>

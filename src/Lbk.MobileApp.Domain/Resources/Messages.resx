@@ -372,4 +372,61 @@
   <data name="UnableToUpdateEventExceptionMessage" xml:space="preserve">
     <value>Unable to update event.</value>
   </data>
+  <data name="EventActivatedAtLabelText" xml:space="preserve">
+    <value>Activated at</value>
+  </data>
+  <data name="EventActivatedAtRequired" xml:space="preserve">
+    <value>Activated at is required.</value>
+  </data>
+  <data name="EventActivatedAtYearRangeValidationError" xml:space="preserve">
+    <value>The activated at date must be between 1900 and 2100.</value>
+  </data>
+  <data name="EventDateLabelText" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="EventDateOrderLabelText" xml:space="preserve">
+    <value>Date order</value>
+  </data>
+  <data name="EventDateOrderRequired" xml:space="preserve">
+    <value>Date order is required.</value>
+  </data>
+  <data name="EventDateOrderYearRangeValidationError" xml:space="preserve">
+    <value>The Date order date must be between 1900 and 2100.</value>
+  </data>
+  <data name="EventDateRequired" xml:space="preserve">
+    <value>Date is required.</value>
+  </data>
+  <data name="EventDateStringLengthValidationError" xml:space="preserve">
+    <value>Date must be less than 255 characters.</value>
+  </data>
+  <data name="EventDescriptionLabelText" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="EventDescriptionRequired" xml:space="preserve">
+    <value>Description is required.</value>
+  </data>
+  <data name="EventDescriptionStringLengthValidationError" xml:space="preserve">
+    <value>Description must be less than 255 characters.</value>
+  </data>
+  <data name="EventExpiresAtLabelText" xml:space="preserve">
+    <value>Expires at</value>
+  </data>
+  <data name="EventExpiresAtRequired" xml:space="preserve">
+    <value>Expires at is required.</value>
+  </data>
+  <data name="EventExpiresAtYearRangeValidationError" xml:space="preserve">
+    <value>The expires at date must be between 1900 and 2100.</value>
+  </data>
+  <data name="EventIsActivatedLabelText" xml:space="preserve">
+    <value>Is activated</value>
+  </data>
+  <data name="EventTitleLabelText" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="EventTitleRequired" xml:space="preserve">
+    <value>Title is required.</value>
+  </data>
+  <data name="EventTitleStringLengthValidationError" xml:space="preserve">
+    <value>Title must be less than 255 characters.</value>
+  </data>
 </root>

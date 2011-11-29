@@ -178,6 +178,177 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Activated at.
+        /// </summary>
+        public static string EventActivatedAtLabelText {
+            get {
+                return ResourceManager.GetString("EventActivatedAtLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Activated at is required..
+        /// </summary>
+        public static string EventActivatedAtRequired {
+            get {
+                return ResourceManager.GetString("EventActivatedAtRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The activated at date must be between 1900 and 2100..
+        /// </summary>
+        public static string EventActivatedAtYearRangeValidationError {
+            get {
+                return ResourceManager.GetString("EventActivatedAtYearRangeValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date.
+        /// </summary>
+        public static string EventDateLabelText {
+            get {
+                return ResourceManager.GetString("EventDateLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date order.
+        /// </summary>
+        public static string EventDateOrderLabelText {
+            get {
+                return ResourceManager.GetString("EventDateOrderLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date order is required..
+        /// </summary>
+        public static string EventDateOrderRequired {
+            get {
+                return ResourceManager.GetString("EventDateOrderRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Date order date must be between 1900 and 2100..
+        /// </summary>
+        public static string EventDateOrderYearRangeValidationError {
+            get {
+                return ResourceManager.GetString("EventDateOrderYearRangeValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date is required..
+        /// </summary>
+        public static string EventDateRequired {
+            get {
+                return ResourceManager.GetString("EventDateRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date must be less than 255 characters..
+        /// </summary>
+        public static string EventDateStringLengthValidationError {
+            get {
+                return ResourceManager.GetString("EventDateStringLengthValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string EventDescriptionLabelText {
+            get {
+                return ResourceManager.GetString("EventDescriptionLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description is required..
+        /// </summary>
+        public static string EventDescriptionRequired {
+            get {
+                return ResourceManager.GetString("EventDescriptionRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description must be less than 255 characters..
+        /// </summary>
+        public static string EventDescriptionStringLengthValidationError {
+            get {
+                return ResourceManager.GetString("EventDescriptionStringLengthValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expires at.
+        /// </summary>
+        public static string EventExpiresAtLabelText {
+            get {
+                return ResourceManager.GetString("EventExpiresAtLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expires at is required..
+        /// </summary>
+        public static string EventExpiresAtRequired {
+            get {
+                return ResourceManager.GetString("EventExpiresAtRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The expires at date must be between 1900 and 2100..
+        /// </summary>
+        public static string EventExpiresAtYearRangeValidationError {
+            get {
+                return ResourceManager.GetString("EventExpiresAtYearRangeValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Is activated.
+        /// </summary>
+        public static string EventIsActivatedLabelText {
+            get {
+                return ResourceManager.GetString("EventIsActivatedLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title.
+        /// </summary>
+        public static string EventTitleLabelText {
+            get {
+                return ResourceManager.GetString("EventTitleLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title is required..
+        /// </summary>
+        public static string EventTitleRequired {
+            get {
+                return ResourceManager.GetString("EventTitleRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title must be less than 255 characters..
+        /// </summary>
+        public static string EventTitleStringLengthValidationError {
+            get {
+                return ResourceManager.GetString("EventTitleStringLengthValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Category.
         /// </summary>
         public static string FoodCategoryIdLabelText {
