@@ -1,6 +1,11 @@
+2011-11-28
+    - Add detail, delete, edit menus
+    - Add create, detail, delete, edit foods
+
 2011-11-25
     - Add dbset extensions for include pattern
     - Add browser for menu > food
+    - Add create menu
 
 2011-11-24
     - Update to jquery 1.7.1

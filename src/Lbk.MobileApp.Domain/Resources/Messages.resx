@@ -273,10 +273,10 @@
   <data name="FoodDescriptionStringLengthValidationError" xml:space="preserve">
     <value>Description must be less than 255 characters.</value>
   </data>
-  <data name="FoodPriceOrderLabelText" xml:space="preserve">
+  <data name="FoodPriceLabelText" xml:space="preserve">
     <value>Price</value>
   </data>
-  <data name="FoodPriceOrderRequired" xml:space="preserve">
+  <data name="FoodPriceRequired" xml:space="preserve">
     <value>Price is required.</value>
   </data>
   <data name="FoodPriceRangeValidationError" xml:space="preserve">
@@ -308,5 +308,23 @@
   </data>
   <data name="TextMultilineValidatorRegExUnicode" xml:space="preserve">
     <value>^(?!.*--)([A-Za-z0-9\.,'_ \-]|\r|\n)*$</value>
+  </data>
+  <data name="UnableToAddMenuExceptionMessage" xml:space="preserve">
+    <value>Unable to add menu.</value>
+  </data>
+  <data name="UnableToAddFoodExceptionMessage" xml:space="preserve">
+    <value>Unable to add food.</value>
+  </data>
+  <data name="UnableToDeleteFoodExceptionMessage" xml:space="preserve">
+    <value>Unable to delete food.</value>
+  </data>
+  <data name="UnableToDeleteMenuExceptionMessage" xml:space="preserve">
+    <value>Unable to delete menu.</value>
+  </data>
+  <data name="UnableToUpdateFoodExceptionMessage" xml:space="preserve">
+    <value>Unable to update food.</value>
+  </data>
+  <data name="UnableToUpdateMenuExceptionMessage" xml:space="preserve">
+    <value>Unable to update menu.</value>
   </data>
 </root>

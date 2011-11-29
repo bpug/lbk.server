@@ -8,6 +8,7 @@ namespace Lbk.MobileApp.Web.Controllers
 {
     #region using directives
 
+    using System;
     using System.Web.Mvc;
 
     using Lbk.MobileApp.Core;
@@ -33,6 +34,66 @@ namespace Lbk.MobileApp.Web.Controllers
         #endregion
 
         #region - Public Methods -
+
+        [HttpPost]
+        public ActionResult Create(MenuFormModel model)
+        {
+            if (model != null && this.ModelState.IsValid)
+            {
+                this.Using<AddMenu>().Execute(model);
+
+                return this.RedirectToAction("List", new { controller = "Food", id = model.Id });
+            }
+
+            return this.View(model);
+        }
+
+        public ActionResult Create()
+        {
+            return this.View(new MenuFormModel { Date = DateTime.Now });
+        }
+
+        public ActionResult Delete(long id)
+        {
+            var serie = this.Using<GetMenuById>().Execute(id);
+
+            return this.View(MenuSearchFormModelExtensions.ToFormModel(serie));
+        }
+
+        [HttpPost]
+        public ActionResult Delete(long id, object dummy)
+        {
+            this.Using<DeleteMenuById>().Execute(id);
+
+            return this.RedirectToAction("List");
+        }
+
+        public ActionResult Detail(long id)
+        {
+            var serie = this.Using<GetMenuById>().Execute(id);
+
+            return this.View(MenuSearchFormModelExtensions.ToFormModel(serie));
+        }
+
+        [HttpPost]
+        public ActionResult Edit(MenuFormModel model)
+        {
+            if (model != null && this.ModelState.IsValid)
+            {
+                this.Using<UpdateMenu>().Execute(model);
+
+                return this.RedirectToAction("List");
+            }
+
+            return this.View(model);
+        }
+
+        public ActionResult Edit(long id)
+        {
+            var serie = this.Using<GetMenuById>().Execute(id);
+
+            return this.View(MenuSearchFormModelExtensions.ToFormModel(serie));
+        }
 
         public ActionResult List(MenuSearchFormModel menu, PagedDataInput pagedDataInput, string btnSubmit)
         {

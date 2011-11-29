@@ -71,7 +71,11 @@ namespace Lbk.MobileApp.Web.Models.Extensions
 
             return new FoodSearchFormModel
                 {
-                   Id = model.Id, CategoryId = model.CategoryId, Description = model.Description, Title = model.Title 
+                    Id = model.Id, 
+                    CategoryId = model.CategoryId, 
+                    Description = model.Description, 
+                    MenuId = model.MenuId, 
+                    Title = model.Title
                 };
         }
 

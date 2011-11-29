@@ -153,18 +153,9 @@ namespace Lbk.MobileApp.Domain.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Price.
         /// </summary>
-        public static string FoodPriceOrderLabelText {
+        public static string FoodPriceLabelText {
             get {
-                return ResourceManager.GetString("FoodPriceOrderLabelText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Price is required..
-        /// </summary>
-        public static string FoodPriceOrderRequired {
-            get {
-                return ResourceManager.GetString("FoodPriceOrderRequired", resourceCulture);
+                return ResourceManager.GetString("FoodPriceLabelText", resourceCulture);
             }
         }
         
@@ -174,6 +165,15 @@ namespace Lbk.MobileApp.Domain.Resources {
         public static string FoodPriceRangeValidationError {
             get {
                 return ResourceManager.GetString("FoodPriceRangeValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price is required..
+        /// </summary>
+        public static string FoodPriceRequired {
+            get {
+                return ResourceManager.GetString("FoodPriceRequired", resourceCulture);
             }
         }
         
@@ -520,6 +520,24 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unable to add food..
+        /// </summary>
+        public static string UnableToAddFoodExceptionMessage {
+            get {
+                return ResourceManager.GetString("UnableToAddFoodExceptionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to add menu..
+        /// </summary>
+        public static string UnableToAddMenuExceptionMessage {
+            get {
+                return ResourceManager.GetString("UnableToAddMenuExceptionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unable to add question..
         /// </summary>
         public static string UnableToAddQuestionExceptionMessage {
@@ -543,6 +561,24 @@ namespace Lbk.MobileApp.Domain.Resources {
         public static string UnableToDeleteAnswerExceptionMessage {
             get {
                 return ResourceManager.GetString("UnableToDeleteAnswerExceptionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to delete food..
+        /// </summary>
+        public static string UnableToDeleteFoodExceptionMessage {
+            get {
+                return ResourceManager.GetString("UnableToDeleteFoodExceptionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to delete menu..
+        /// </summary>
+        public static string UnableToDeleteMenuExceptionMessage {
+            get {
+                return ResourceManager.GetString("UnableToDeleteMenuExceptionMessage", resourceCulture);
             }
         }
         
@@ -615,6 +651,24 @@ namespace Lbk.MobileApp.Domain.Resources {
         public static string UnableToUpdateAnswerExceptionMessage {
             get {
                 return ResourceManager.GetString("UnableToUpdateAnswerExceptionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to update food..
+        /// </summary>
+        public static string UnableToUpdateFoodExceptionMessage {
+            get {
+                return ResourceManager.GetString("UnableToUpdateFoodExceptionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to update menu..
+        /// </summary>
+        public static string UnableToUpdateMenuExceptionMessage {
+            get {
+                return ResourceManager.GetString("UnableToUpdateMenuExceptionMessage", resourceCulture);
             }
         }
         

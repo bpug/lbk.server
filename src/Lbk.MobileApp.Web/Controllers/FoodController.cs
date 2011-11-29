@@ -34,6 +34,66 @@ namespace Lbk.MobileApp.Web.Controllers
 
         #region - Public Methods -
 
+        [HttpPost]
+        public ActionResult Create(long menuId, long categoryId, FoodFormModel model)
+        {
+            if (model != null && this.ModelState.IsValid)
+            {
+                this.Using<AddFood>().Execute(menuId, categoryId, model);
+
+                return this.RedirectToAction("List", new { id = menuId });
+            }
+
+            return this.View(model);
+        }
+
+        public ActionResult Create(long id)
+        {
+            return this.View(new FoodFormModel { MenuId = id });
+        }
+
+        public ActionResult Delete(long id)
+        {
+            var answer = this.Using<GetFoodById>().Execute(id);
+
+            return this.View(FoodSearchFormModelExtensions.ToFormModel(answer));
+        }
+
+        [HttpPost]
+        public ActionResult Delete(long id, long menuId)
+        {
+            this.Using<DeleteFoodById>().Execute(id);
+
+            return this.RedirectToAction("List", new { id = menuId });
+        }
+
+        public ActionResult Detail(long id)
+        {
+            var food = this.Using<GetFoodById>().Execute(id);
+
+            return this.View(FoodSearchFormModelExtensions.ToFormModel(food));
+        }
+
+        [HttpPost]
+        public ActionResult Edit(FoodFormModel model)
+        {
+            if (model != null && this.ModelState.IsValid)
+            {
+                this.Using<UpdateFood>().Execute(model);
+
+                return this.RedirectToAction("List", new { id = model.MenuId });
+            }
+
+            return this.View(model);
+        }
+
+        public ActionResult Edit(long id)
+        {
+            var food = this.Using<GetFoodById>().Execute(id);
+
+            return this.View(FoodSearchFormModelExtensions.ToFormModel(food));
+        }
+
         public ActionResult List(long id, FoodSearchFormModel question, PagedDataInput pagedDataInput, string btnSubmit)
         {
             var menu = this.Using<GetMenuById>().Execute(id);
