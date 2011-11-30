@@ -21,6 +21,7 @@ namespace Lbk.MobileApp.Web.Controllers
         public ActionResult About()
         {
             this.ViewData["AppSemanticVersion"] = AppInfoExtensions.GetApplicationSemanticVersion();
+            this.ViewData["AppVersion"] = AppInfoExtensions.GetApplicationVersion();
 
             return this.View();
         }

@@ -25,10 +25,10 @@ namespace Lbk.MobileApp.Web.Extensions
             return SemanticVersionInfo.GetSemanticVersion(Assembly.GetExecutingAssembly()).ToDetailString();
         }
 
-        public static string GetApplicationVersion()
+        public static string GetApplicationVersion(bool usePrefix = false)
         {
             var fileVersion = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location);
-            return string.Format("v{0}", fileVersion.FileVersion);
+            return usePrefix ? string.Format("v{0}", fileVersion.FileVersion) : fileVersion.FileVersion;
         }
 
         #endregion

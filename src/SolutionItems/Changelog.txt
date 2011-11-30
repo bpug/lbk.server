@@ -1,5 +1,5 @@
 2011-11-29
-    - Fixed: Food > Title not required
+    - Fix issue by Food > Title not required
     - Add Categoryname in food (list, detail, delete)
     - Add select category in create and edit food
     - Add crud operations/controller/views for categories
@@ -7,6 +7,7 @@
     - Fix issue when search menus with date
     - Add handlers for event management
     - Add crud operations/controller/views for events
+    - Associated with release: 1.0.11130.4 | 1.0.0beta1
 
 2011-11-28
     - Add detail, delete, edit menus
