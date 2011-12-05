@@ -64,12 +64,6 @@
     <Compile Include="Specification\ISpecification.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Lbk.MobileApp.Core\Lbk.MobileApp.Core.csproj">
-      <Project>{0B90C6C0-F842-4892-A611-3D2C4610839B}</Project>
-      <Name>Lbk.MobileApp.Core</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

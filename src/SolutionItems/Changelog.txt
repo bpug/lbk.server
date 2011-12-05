@@ -1,3 +1,7 @@
+2011-12-05
+    - Refactoring ColumnNormalizer
+    - Remove dependency from *.data.core
+
 2011-11-29
     - Fix issue by Food > Title not required
     - Add Categoryname in food (list, detail, delete)

@@ -12,7 +12,7 @@ namespace Lbk.MobileApp.Data.Core
 
         public static string FixupSortColumn(string sort)
         {
-            if (string.IsNullOrEmpty(sort) || string.IsNullOrWhiteSpace(sort))
+            if (string.IsNullOrWhiteSpace(sort))
             {
                 return "Id";
             }
