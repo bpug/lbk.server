@@ -55,6 +55,8 @@
     <Compile Include="..\SolutionItems\CommonAssemblyInfoVersion.cs">
       <Link>Properties\CommonAssemblyInfoVersion.cs</Link>
     </Compile>
+    <Compile Include="SqlRepositoryInitializer.cs" />
+    <Compile Include="Initializers\DropCreateIfModelChangesSqlInitializer.cs" />
     <Compile Include="Initializers\DropCreateIfModelChangesSqlCeInitializer.cs" />
     <Compile Include="Initializers\DropCreateAlwaysSqlCeInitializer.cs" />
     <Compile Include="Initializers\CreateIfNotExistsSqlCeInitializer.cs" />

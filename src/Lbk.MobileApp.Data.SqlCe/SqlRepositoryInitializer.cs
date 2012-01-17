@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="RepositoryInitializer.cs" company="ip-connect GmbH">
+// <copyright file="SqlRepositoryInitializer.cs" company="ip-connect GmbH">
 //   Copyright (c) ip-connect GmbH. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
@@ -10,13 +10,12 @@ namespace Lbk.MobileApp.Data.SqlCe
 
     using System;
     using System.Data.Entity;
-    using System.Data.Entity.Infrastructure;
 
     using Lbk.MobileApp.Data.SqlCe.Initializers;
 
     #endregion
 
-    public class RepositoryInitializer : IRepositoryInitializer
+    public class SqlRepositoryInitializer : IRepositoryInitializer
     {
         #region - Constants and Fields -
 
@@ -26,7 +25,7 @@ namespace Lbk.MobileApp.Data.SqlCe
 
         #region - Constructors and Destructors -
 
-        public RepositoryInitializer(IUnitOfWork unitOfWork)
+        public SqlRepositoryInitializer(IUnitOfWork unitOfWork)
         {
             if (unitOfWork == null)
             {
@@ -35,8 +34,8 @@ namespace Lbk.MobileApp.Data.SqlCe
 
             this._unitOfWork = unitOfWork;
 
-            Database.DefaultConnectionFactory = new SqlCeConnectionFactory("System.Data.SqlServerCe.4.0");
-
+            ////Database.DefaultConnectionFactory = new SqlConnectionFactory("Server=mssql;Database=Lbk.MobileApp;Integrated Security=SSPI;");
+            ////Database.DefaultConnectionFactory.CreateConnection("MobileAppDbContext");
             Database.SetInitializer(new DropCreateIfModelChangesSqlCeInitializer<MobileAppDbContext>());
         }
 

@@ -1,2 +1,2 @@
-ver:1.0.11130.4
-semver:1.0.0beta1
+ver:1.1.20117.0
+semver:1.1.0beta1

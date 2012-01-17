@@ -1,3 +1,6 @@
+2012-01-17
+    - Add SqlRepositoryInitializer
+
 2011-12-05
     - Refactoring ColumnNormalizer
     - Remove dependency from *.data.core
