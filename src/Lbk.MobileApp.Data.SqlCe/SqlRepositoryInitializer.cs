@@ -34,8 +34,6 @@ namespace Lbk.MobileApp.Data.SqlCe
 
             this._unitOfWork = unitOfWork;
 
-            ////Database.DefaultConnectionFactory = new SqlConnectionFactory("Server=mssql;Database=Lbk.MobileApp;Integrated Security=SSPI;");
-            ////Database.DefaultConnectionFactory.CreateConnection("MobileAppDbContext");
             Database.SetInitializer(new DropCreateIfModelChangesSqlCeInitializer<MobileAppDbContext>());
         }
 
@@ -63,6 +61,7 @@ namespace Lbk.MobileApp.Data.SqlCe
         }
 
         #endregion
+
         #endregion
     }
 }

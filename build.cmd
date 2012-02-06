@@ -1,4 +1,4 @@
 @echo off
 
 if "%~1" == "" build Build
-msbuild /t:%~1 project.msbuild
+msbuild /t:%~1 project.msbuild /m /nr:false

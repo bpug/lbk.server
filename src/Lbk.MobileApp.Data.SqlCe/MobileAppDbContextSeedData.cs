@@ -38,6 +38,10 @@ namespace Lbk.MobileApp.Data.SqlCe
             // Seed for events
             this.SeedEvents();
             this.SaveChanges();
+
+            // Seed for pictures
+            this.SeedPictures();
+            this.SaveChanges();
         }
 
         #endregion
@@ -233,6 +237,42 @@ namespace Lbk.MobileApp.Data.SqlCe
         private void SeedMenus()
         {
             this.Menus.Add(new Menu { Date = new DateTime(2011, 07, 14), Description = "Schmankerl - Donnerstag" });
+        }
+
+        private void SeedPictures()
+        {
+            this.Pictures.Add(
+                new Picture
+                    {
+                        Description = "Leckerer Schweinsbratn...", 
+                        FileName = "schweinsbratn.jpg", 
+                        Link = @"D:\web\pictures\2012\02\", 
+                        SortOrder = 1
+                    });
+            this.Pictures.Add(
+                new Picture
+                    {
+                        Description = "Unser Kaiserschmarrn", 
+                        FileName = "ks.jpg", 
+                        Link = @"D:\web\pictures\2012\01\", 
+                        SortOrder = 2
+                    });
+            this.Pictures.Add(
+                new Picture
+                    {
+                        Description = "Obstsalat mit viieeel Quark... ;-)", 
+                        FileName = "oss.jpg", 
+                        Link = @"D:\web\pictures\2012\02\", 
+                        SortOrder = 3
+                    });
+            this.Pictures.Add(
+                new Picture
+                    {
+                        Description = "Fuer unsere Leistungssportler...", 
+                        FileName = "einfachNix.jpg", 
+                        Link = @"D:\web\pictures\2011\12\", 
+                        SortOrder = 4
+                    });
         }
 
         private void SeedQuestionsAndAnswers(long serieId)
@@ -443,12 +483,12 @@ namespace Lbk.MobileApp.Data.SqlCe
         private long SeedSeries()
         {
             var serie = new Serie
-                {
-                    ActivatedAt = new DateTime(2011, 07, 14), 
-                    Description = "Eröffnungsquiz", 
-                    ExpiresAt = new DateTime(2011, 08, 25), 
-                    IsActivated = true
-                };
+                            {
+                                ActivatedAt = new DateTime(2011, 07, 14), 
+                                Description = "Eröffnungsquiz", 
+                                ExpiresAt = new DateTime(2011, 08, 25), 
+                                IsActivated = true
+                            };
             this.Series.Add(serie);
 
             this.SaveChanges();

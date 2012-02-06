@@ -64,6 +64,7 @@ namespace Lbk.MobileApp.Data.SqlCe
         }
 
         #endregion
+
         #endregion
     }
 }

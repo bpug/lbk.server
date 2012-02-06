@@ -35,9 +35,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.4.2.0.0\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="Gpo.SemanticVersion.Core">
-      <HintPath>..\packages\Gpo.SemanticVersion.Core.dev.1.3.11110.0\lib\net35\Gpo.SemanticVersion.Core.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -55,8 +52,9 @@
     <Compile Include="..\SolutionItems\CommonAssemblyInfoVersion.cs">
       <Link>Properties\CommonAssemblyInfoVersion.cs</Link>
     </Compile>
+    <Compile Include="Repositories\PictureRepository.cs" />
+    <Compile Include="Repositories\Specifications\PicturePagedDataInputSpecification.cs" />
     <Compile Include="SqlRepositoryInitializer.cs" />
-    <Compile Include="Initializers\DropCreateIfModelChangesSqlInitializer.cs" />
     <Compile Include="Initializers\DropCreateIfModelChangesSqlCeInitializer.cs" />
     <Compile Include="Initializers\DropCreateAlwaysSqlCeInitializer.cs" />
     <Compile Include="Initializers\CreateIfNotExistsSqlCeInitializer.cs" />

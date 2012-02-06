@@ -16,6 +16,10 @@
                TaskName="Gapon.MSBuild.Tasks.Versioning.AssemblyInfo" />
     <UsingTask AssemblyFile="$(GaponMSBuildTasksLib)"
                TaskName="Gapon.MSBuild.Tasks.Versioning.AssemblyInfoCe" />
+    <UsingTask AssemblyFile="$(GaponMSBuildTasksLib)"
+               TaskName="Gapon.MSBuild.Tasks.Versioning.WixInfo" />
+    <UsingTask AssemblyFile="$(GaponMSBuildTasksLib)"
+               TaskName="Gapon.MSBuild.Tasks.Versioning.MsBuildInfo" />
 
     <!-- Mercurial -->
     <UsingTask AssemblyFile="$(GaponMSBuildTasksLib)"
@@ -65,7 +69,19 @@
     <UsingTask AssemblyFile="$(GaponMSBuildTasksLib)"
                TaskName="Gapon.MSBuild.Tasks.Testing.NUnit" />
 
+    <!-- xunit -->
+    <UsingTask AssemblyFile="$(GaponMSBuildTasksLib)"
+               TaskName="Gapon.MSBuild.Tasks.Testing.xunit" />
+    <UsingTask AssemblyFile="$(GaponMSBuildTasksLib)"
+               TaskName="Gapon.MSBuild.Tasks.Testing.xunitproject" />
+    <UsingTask AssemblyFile="$(GaponMSBuildTasksLib)"
+               TaskName="Gapon.MSBuild.Tasks.Testing.CombineXunitXml" />
+
     <!-- Compression -->
     <UsingTask AssemblyFile="$(GaponMSBuildTasksLib)"
+               TaskName="Gapon.MSBuild.Tasks.Compression.Cab" />
+    <UsingTask AssemblyFile="$(GaponMSBuildTasksLib)"
                TaskName="Gapon.MSBuild.Tasks.Compression.DNZip" />
+    <UsingTask AssemblyFile="$(GaponMSBuildTasksLib)"
+               TaskName="Gapon.MSBuild.Tasks.Compression.Zip" />
 </Project>

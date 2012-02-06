@@ -429,4 +429,16 @@
   <data name="EventTitleStringLengthValidationError" xml:space="preserve">
     <value>Title must be less than 255 characters.</value>
   </data>
+  <data name="UnableToAddPictureExceptionMessage" xml:space="preserve">
+    <value>Unable to add picture.</value>
+  </data>
+  <data name="UnableToDeletePictureExceptionMessage" xml:space="preserve">
+    <value>Unable to delete picture.</value>
+  </data>
+  <data name="UnableToRetrievePictureExceptionMessage" xml:space="preserve">
+    <value>Unable to retrieve picture.</value>
+  </data>
+  <data name="UnableToUpdatePictureExceptionMessage" xml:space="preserve">
+    <value>Unable to update picture.</value>
+  </data>
 </root>

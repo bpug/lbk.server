@@ -31,9 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Gpo.SemanticVersion.Core">
-      <HintPath>..\packages\Gpo.SemanticVersion.Core.dev.1.3.11110.0\lib\net35\Gpo.SemanticVersion.Core.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
@@ -48,6 +45,7 @@
     <Compile Include="IEventRepository.cs" />
     <Compile Include="IFoodRepository.cs" />
     <Compile Include="IMenuRepository.cs" />
+    <Compile Include="IPictureRepository.cs" />
     <Compile Include="IQuestionRepository.cs" />
     <Compile Include="IRepositoryInitializer.cs" />
     <Compile Include="ISerieRepository.cs" />
@@ -63,9 +61,6 @@
       <Project>{699EECD3-AACA-42C6-BD8C-9E939A004B28}</Project>
       <Name>Lbk.MobileApp.Model</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -31,9 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Gpo.SemanticVersion.Core">
-      <HintPath>..\packages\Gpo.SemanticVersion.Core.dev.1.3.11110.0\lib\net35\Gpo.SemanticVersion.Core.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
@@ -46,6 +43,7 @@
       <Link>Properties\CommonAssemblyInfoVersion.cs</Link>
     </Compile>
     <Compile Include="Contracts\BusinessServicesException.cs" />
+    <Compile Include="Contracts\ICreatePictureCommand.cs" />
     <Compile Include="Contracts\ICreateCategoryCommand.cs" />
     <Compile Include="Contracts\ICreateAnswerCommand.cs" />
     <Compile Include="Contracts\ICreateEventCommand.cs" />
@@ -53,6 +51,7 @@
     <Compile Include="Contracts\ICreateMenuCommand.cs" />
     <Compile Include="Contracts\ICreateQuestionCommand.cs" />
     <Compile Include="Contracts\ICreateSerieCommand.cs" />
+    <Compile Include="Extensions\CreatePictureCommandExtensions.cs" />
     <Compile Include="Extensions\CreateEventCommandExtensions.cs" />
     <Compile Include="Extensions\CreateCategoryCommandExtensions.cs" />
     <Compile Include="Extensions\CreateFoodCommandExtensions.cs" />
@@ -67,6 +66,7 @@
     <Compile Include="Handlers\AddMenu.cs" />
     <Compile Include="Handlers\AddQuestion.cs" />
     <Compile Include="Handlers\AddSerie.cs" />
+    <Compile Include="Handlers\AddPicture.cs" />
     <Compile Include="Handlers\UpdateEvent.cs" />
     <Compile Include="Handlers\GetEvents.cs" />
     <Compile Include="Handlers\GetEventById.cs" />
@@ -112,7 +112,6 @@
       <LastGenOutput>Messages.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Resources\Resources.resx" />
   </ItemGroup>
   <ItemGroup>

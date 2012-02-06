@@ -29,6 +29,8 @@ namespace Lbk.MobileApp.Data.SqlCe
 
         public DbSet<Menu> Menus { get; set; }
 
+        public DbSet<Picture> Pictures { get; set; }
+
         public DbSet<Question> Questions { get; set; }
 
         public DbSet<Serie> Series { get; set; }
@@ -65,6 +67,8 @@ namespace Lbk.MobileApp.Data.SqlCe
             SetupCategoryEntity(modelBuilder);
 
             SetupEventEntity(modelBuilder);
+
+            SetupPictureEntity(modelBuilder);
         }
 
         private static void SetupAnswerEntity(DbModelBuilder modelBuilder)
@@ -121,6 +125,17 @@ namespace Lbk.MobileApp.Data.SqlCe
             modelBuilder.Entity<Menu>().Property(m => m.Date).IsRequired();
             modelBuilder.Entity<Menu>().Property(m => m.Description).HasMaxLength(255);
             modelBuilder.Entity<Menu>().HasMany(m => m.Foods);
+        }
+
+        private static void SetupPictureEntity(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Picture>().HasKey(e => e.Id);
+            modelBuilder.Entity<Picture>().Property(e => e.Id).HasDatabaseGeneratedOption(
+                DatabaseGeneratedOption.Identity);
+            modelBuilder.Entity<Picture>().Property(e => e.Description).HasMaxLength(255);
+            modelBuilder.Entity<Picture>().Property(e => e.FileName).HasMaxLength(255).IsRequired();
+            modelBuilder.Entity<Picture>().Property(e => e.Link).HasMaxLength(255).IsRequired();
+            modelBuilder.Entity<Picture>().Property(e => e.SortOrder);
         }
 
         private static void SetupQuestionEntity(DbModelBuilder modelBuilder)

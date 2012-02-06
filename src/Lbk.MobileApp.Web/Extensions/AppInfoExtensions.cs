@@ -11,8 +11,7 @@ namespace Lbk.MobileApp.Web.Extensions
     using System.Diagnostics;
     using System.Reflection;
 
-    using Gpo.SemanticVersion.Core;
-    using Gpo.SemanticVersion.Core.Extensions;
+    using Gapon.SemanticVersion;
 
     #endregion
 
@@ -22,7 +21,10 @@ namespace Lbk.MobileApp.Web.Extensions
 
         public static string GetApplicationSemanticVersion()
         {
-            return SemanticVersionInfo.GetSemanticVersion(Assembly.GetExecutingAssembly()).ToDetailString();
+            return
+                SemanticVersionInfo.GetSemanticVersion(
+                    Assembly.GetExecutingAssembly(), 
+                    SemanticVersionInfo.VersionAttribute.AssemblyInformationalVersionAttribute).ToString();
         }
 
         public static string GetApplicationVersion(bool usePrefix = false)

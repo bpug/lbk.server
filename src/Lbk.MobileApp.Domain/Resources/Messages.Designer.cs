@@ -790,6 +790,15 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unable to add picture..
+        /// </summary>
+        public static string UnableToAddPictureExceptionMessage {
+            get {
+                return ResourceManager.GetString("UnableToAddPictureExceptionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unable to add question..
         /// </summary>
         public static string UnableToAddQuestionExceptionMessage {
@@ -849,6 +858,15 @@ namespace Lbk.MobileApp.Domain.Resources {
         public static string UnableToDeleteMenuExceptionMessage {
             get {
                 return ResourceManager.GetString("UnableToDeleteMenuExceptionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to delete picture..
+        /// </summary>
+        public static string UnableToDeletePictureExceptionMessage {
+            get {
+                return ResourceManager.GetString("UnableToDeletePictureExceptionMessage", resourceCulture);
             }
         }
         
@@ -916,6 +934,15 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unable to retrieve picture..
+        /// </summary>
+        public static string UnableToRetrievePictureExceptionMessage {
+            get {
+                return ResourceManager.GetString("UnableToRetrievePictureExceptionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unable to retrieve question..
         /// </summary>
         public static string UnableToRetrieveQuestionExceptionMessage {
@@ -975,6 +1002,15 @@ namespace Lbk.MobileApp.Domain.Resources {
         public static string UnableToUpdateMenuExceptionMessage {
             get {
                 return ResourceManager.GetString("UnableToUpdateMenuExceptionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to update picture..
+        /// </summary>
+        public static string UnableToUpdatePictureExceptionMessage {
+            get {
+                return ResourceManager.GetString("UnableToUpdatePictureExceptionMessage", resourceCulture);
             }
         }
         
