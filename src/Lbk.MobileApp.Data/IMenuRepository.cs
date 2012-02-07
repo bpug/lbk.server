@@ -17,6 +17,8 @@ namespace Lbk.MobileApp.Data
     {
         #region - Public Methods -
 
+        void Copy(Menu menu);
+
         void Create(Menu menu);
 
         void Delete(long menuId);

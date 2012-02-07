@@ -1,0 +1,33 @@
+﻿@model Lbk.MobileApp.Web.Models.PictureFormModel
+@{
+    ViewBag.Title = "Picture - [Detail Picture]";
+}
+<h2>
+    Detail</h2>
+<fieldset>
+    <legend>Detail Picture</legend>
+    <div class="display-label">
+        Description</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+    <div class="display-label">
+        FileName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FileName)
+    </div>
+    <div class="display-label">
+        Link</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Link)
+    </div>
+    <div class="display-label">
+        SortOrder</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SortOrder)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "List")
+</p>

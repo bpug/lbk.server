@@ -35,6 +35,21 @@ namespace Lbk.MobileApp.Web.Controllers
 
         #region - Public Methods -
 
+        public ActionResult Copy(long id)
+        {
+            var menu = this.Using<GetMenuById>().Execute(id);
+
+            return this.View(MenuSearchFormModelExtensions.ToFormModel(menu));
+        }
+
+        [HttpPost]
+        public ActionResult Copy(MenuFormModel model)
+        {
+            this.Using<CopyMenu>().Execute(model);
+
+            return this.RedirectToAction("List");
+        }
+
         [HttpPost]
         public ActionResult Create(MenuFormModel model)
         {
@@ -55,9 +70,9 @@ namespace Lbk.MobileApp.Web.Controllers
 
         public ActionResult Delete(long id)
         {
-            var serie = this.Using<GetMenuById>().Execute(id);
+            var menu = this.Using<GetMenuById>().Execute(id);
 
-            return this.View(MenuSearchFormModelExtensions.ToFormModel(serie));
+            return this.View(MenuSearchFormModelExtensions.ToFormModel(menu));
         }
 
         [HttpPost]
@@ -70,9 +85,9 @@ namespace Lbk.MobileApp.Web.Controllers
 
         public ActionResult Detail(long id)
         {
-            var serie = this.Using<GetMenuById>().Execute(id);
+            var menu = this.Using<GetMenuById>().Execute(id);
 
-            return this.View(MenuSearchFormModelExtensions.ToFormModel(serie));
+            return this.View(MenuSearchFormModelExtensions.ToFormModel(menu));
         }
 
         [HttpPost]
@@ -90,9 +105,9 @@ namespace Lbk.MobileApp.Web.Controllers
 
         public ActionResult Edit(long id)
         {
-            var serie = this.Using<GetMenuById>().Execute(id);
+            var menu = this.Using<GetMenuById>().Execute(id);
 
-            return this.View(MenuSearchFormModelExtensions.ToFormModel(serie));
+            return this.View(MenuSearchFormModelExtensions.ToFormModel(menu));
         }
 
         public ActionResult List(MenuSearchFormModel menu, PagedDataInput pagedDataInput, string btnSubmit)

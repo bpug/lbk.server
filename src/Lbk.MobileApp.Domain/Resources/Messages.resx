@@ -241,13 +241,13 @@
     <value>Is right</value>
   </data>
   <data name="MenuDateLabelText" xml:space="preserve">
-    <value>Activated at</value>
+    <value>Date</value>
   </data>
   <data name="MenuDateRequired" xml:space="preserve">
-    <value>Activated at is required.</value>
+    <value>Date at is required.</value>
   </data>
   <data name="MenuDateYearRangeValidationError" xml:space="preserve">
-    <value>The activated at date must be between 1900 and 2100.</value>
+    <value>The date must be between 1900 and 2100.</value>
   </data>
   <data name="MenuDescriptionLabelText" xml:space="preserve">
     <value>Description</value>
@@ -440,5 +440,44 @@
   </data>
   <data name="UnableToUpdatePictureExceptionMessage" xml:space="preserve">
     <value>Unable to update picture.</value>
+  </data>
+  <data name="PictureDescriptionLabelText" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="PictureDescriptionRequired" xml:space="preserve">
+    <value>Description is required.</value>
+  </data>
+  <data name="PictureDescriptionStringLengthValidationError" xml:space="preserve">
+    <value>Description must be less than 255 characters.</value>
+  </data>
+  <data name="PictureFileNameLabelText" xml:space="preserve">
+    <value>FileName</value>
+  </data>
+  <data name="PictureFileNameRequired" xml:space="preserve">
+    <value>FileName is required.</value>
+  </data>
+  <data name="PictureFileNameStringLengthValidationError" xml:space="preserve">
+    <value>FileName must be less than 255 characters.</value>
+  </data>
+  <data name="PictureLinkLabelText" xml:space="preserve">
+    <value>Link</value>
+  </data>
+  <data name="PictureLinkRequired" xml:space="preserve">
+    <value>Link is required.</value>
+  </data>
+  <data name="PictureLinkStringLengthValidationError" xml:space="preserve">
+    <value>Link must be less than 255 characters.</value>
+  </data>
+  <data name="PictureSortOrderLabelText" xml:space="preserve">
+    <value>Sortorder</value>
+  </data>
+  <data name="PictureSortOrderRangeValidationError" xml:space="preserve">
+    <value>The Sortorder must be between 1 and 10000.</value>
+  </data>
+  <data name="PictureSortOrderRequired" xml:space="preserve">
+    <value>Sortorder is required.</value>
+  </data>
+  <data name="UnableToCopyMenuExceptionMessage" xml:space="preserve">
+    <value>Unable to copy menu.</value>
   </data>
 </root>

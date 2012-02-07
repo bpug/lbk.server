@@ -484,7 +484,7 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Activated at.
+        ///   Looks up a localized string similar to Date.
         /// </summary>
         public static string MenuDateLabelText {
             get {
@@ -493,7 +493,7 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Activated at is required..
+        ///   Looks up a localized string similar to Date at is required..
         /// </summary>
         public static string MenuDateRequired {
             get {
@@ -502,7 +502,7 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The activated at date must be between 1900 and 2100..
+        ///   Looks up a localized string similar to The date must be between 1900 and 2100..
         /// </summary>
         public static string MenuDateYearRangeValidationError {
             get {
@@ -534,6 +534,114 @@ namespace Lbk.MobileApp.Domain.Resources {
         public static string MenuDescriptionStringLengthValidationError {
             get {
                 return ResourceManager.GetString("MenuDescriptionStringLengthValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string PictureDescriptionLabelText {
+            get {
+                return ResourceManager.GetString("PictureDescriptionLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description is required..
+        /// </summary>
+        public static string PictureDescriptionRequired {
+            get {
+                return ResourceManager.GetString("PictureDescriptionRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description must be less than 255 characters..
+        /// </summary>
+        public static string PictureDescriptionStringLengthValidationError {
+            get {
+                return ResourceManager.GetString("PictureDescriptionStringLengthValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FileName.
+        /// </summary>
+        public static string PictureFileNameLabelText {
+            get {
+                return ResourceManager.GetString("PictureFileNameLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FileName is required..
+        /// </summary>
+        public static string PictureFileNameRequired {
+            get {
+                return ResourceManager.GetString("PictureFileNameRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FileName must be less than 255 characters..
+        /// </summary>
+        public static string PictureFileNameStringLengthValidationError {
+            get {
+                return ResourceManager.GetString("PictureFileNameStringLengthValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Link.
+        /// </summary>
+        public static string PictureLinkLabelText {
+            get {
+                return ResourceManager.GetString("PictureLinkLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Link is required..
+        /// </summary>
+        public static string PictureLinkRequired {
+            get {
+                return ResourceManager.GetString("PictureLinkRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Link must be less than 255 characters..
+        /// </summary>
+        public static string PictureLinkStringLengthValidationError {
+            get {
+                return ResourceManager.GetString("PictureLinkStringLengthValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sortorder.
+        /// </summary>
+        public static string PictureSortOrderLabelText {
+            get {
+                return ResourceManager.GetString("PictureSortOrderLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Sortorder must be between 1 and 10000..
+        /// </summary>
+        public static string PictureSortOrderRangeValidationError {
+            get {
+                return ResourceManager.GetString("PictureSortOrderRangeValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sortorder is required..
+        /// </summary>
+        public static string PictureSortOrderRequired {
+            get {
+                return ResourceManager.GetString("PictureSortOrderRequired", resourceCulture);
             }
         }
         
@@ -813,6 +921,15 @@ namespace Lbk.MobileApp.Domain.Resources {
         public static string UnableToAddSerieExceptionMessage {
             get {
                 return ResourceManager.GetString("UnableToAddSerieExceptionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to copy menu..
+        /// </summary>
+        public static string UnableToCopyMenuExceptionMessage {
+            get {
+                return ResourceManager.GetString("UnableToCopyMenuExceptionMessage", resourceCulture);
             }
         }
         

@@ -33,6 +33,30 @@ namespace Lbk.MobileApp.Data.SqlCe.Repositories
 
         #region IMenuRepository
 
+        public void Copy(Menu menu)
+        {
+            // Get old menu with foods
+            var entity = this.GetDbSet<Menu>().Include("Foods").Single(x => x.Id == menu.Id);
+
+            // Set changed properties
+            entity.Date = menu.Date;
+            entity.Description = menu.Description;
+
+            // Readd foods to menu
+            foreach (var food in entity.Foods)
+            {
+                var newFood = food;
+                this.SetEntityState(newFood, EntityState.Added);
+                menu.Foods.Add(newFood);
+            }
+
+            // Add new menu
+            this.GetDbSet<Menu>().Add(entity);
+            this.SetEntityState(entity, EntityState.Added);
+
+            this.UnitOfWork.SaveChanges();
+        }
+
         public void Create(Menu menu)
         {
             this.GetDbSet<Menu>().Add(menu);
@@ -42,7 +66,7 @@ namespace Lbk.MobileApp.Data.SqlCe.Repositories
 
         public void Delete(long menuId)
         {
-            var entity = this.GetDbSet<Menu>().Where(x => x.Id == menuId).Single();
+            var entity = this.GetDbSet<Menu>().Single(x => x.Id == menuId);
             this.GetDbSet<Menu>().Remove(entity);
 
             this.UnitOfWork.SaveChanges();
@@ -50,7 +74,7 @@ namespace Lbk.MobileApp.Data.SqlCe.Repositories
 
         public Menu GetMenu(long menuId)
         {
-            return this.GetDbSet<Menu>().Include("Foods").Where(x => x.Id == menuId).Single();
+            return this.GetDbSet<Menu>().Include("Foods").Single(x => x.Id == menuId);
         }
 
         public PagedDataList<Menu> GetMenus(PagedDataInput<Menu> pagedDataInput)
@@ -67,7 +91,7 @@ namespace Lbk.MobileApp.Data.SqlCe.Repositories
 
         public void Update(Menu menu)
         {
-            var entity = this.GetDbSet<Menu>().Where(x => x.Id == menu.Id).Single();
+            var entity = this.GetDbSet<Menu>().Single(x => x.Id == menu.Id);
 
             entity.Date = menu.Date;
             entity.Description = menu.Description;

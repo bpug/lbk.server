@@ -16,7 +16,7 @@
     <?ifdef AssemblyFileVersionRevision?>
         <?error AssemblyFileVersionRevision variable is already defined?>
     <?endif?>
-    <?define AssemblyFileVersionRevision = "1"?>
+    <?define AssemblyFileVersionRevision = "2"?>
     <?ifdef AssemblyFileVersionMajorMinor?>
         <?error AssemblyFileVersionMajorMinor variable is already defined?>
     <?endif?>
@@ -24,7 +24,7 @@
     <?ifdef AssemblyFileVersion?>
         <?error AssemblyFileVersion variable is already defined?>
     <?endif?>
-    <?define AssemblyFileVersion = "1.2.20207.1"?>
+    <?define AssemblyFileVersion = "1.2.20207.2"?>
     <?ifdef AssemblyVersionMajor?>
         <?error AssemblyVersionMajor variable is already defined?>
     <?endif?>
@@ -36,7 +36,7 @@
     <?ifdef AssemblyVersionBuild?>
         <?error AssemblyVersionBuild variable is already defined?>
     <?endif?>
-    <?define AssemblyVersionBuild = "0"?>
+    <?define AssemblyVersionBuild = "1"?>
     <?ifdef AssemblyVersionRevision?>
         <?error AssemblyVersionRevision variable is already defined?>
     <?endif?>
@@ -48,7 +48,7 @@
     <?ifdef AssemblyVersion?>
         <?error AssemblyVersion variable is already defined?>
     <?endif?>
-    <?define AssemblyVersion = "1.2.0.0"?>
+    <?define AssemblyVersion = "1.2.1.0"?>
     <?ifdef AssemblyInformationalVersionMajor?>
         <?error AssemblyInformationalVersionMajor variable is already defined?>
     <?endif?>
@@ -60,7 +60,7 @@
     <?ifdef AssemblyInformationalVersionPatch?>
         <?error AssemblyInformationalVersionPatch variable is already defined?>
     <?endif?>
-    <?define AssemblyInformationalVersionPatch = "0"?>
+    <?define AssemblyInformationalVersionPatch = "1"?>
     <?ifdef AssemblyInformationalVersionStage?>
         <?error AssemblyInformationalVersionStage variable is already defined?>
     <?endif?>
@@ -76,7 +76,7 @@
     <?ifdef AssemblyInformationalVersionMajorMinorPatch?>
         <?error AssemblyInformationalVersionMajorMinorPatch variable is already defined?>
     <?endif?>
-    <?define AssemblyInformationalVersionMajorMinorPatch = "1.2.0"?>
+    <?define AssemblyInformationalVersionMajorMinorPatch = "1.2.1"?>
     <?ifdef AssemblyInformationalVersionStageStep?>
         <?error AssemblyInformationalVersionStageStep variable is already defined?>
     <?endif?>
@@ -88,5 +88,5 @@
     <?ifdef AssemblyInformationalVersion?>
         <?error AssemblyInformationalVersion variable is already defined?>
     <?endif?>
-    <?define AssemblyInformationalVersion = "1.2.0-rc1"?>
+    <?define AssemblyInformationalVersion = "1.2.1-rc1"?>
 </Include>

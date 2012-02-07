@@ -1,0 +1,14 @@
+﻿@model Lbk.MobileApp.Web.Models.GenericListViewModel<Lbk.MobileApp.Model.Picture, Lbk.MobileApp.Web.Models.PictureSearchFormModel>
+@{
+    ViewBag.Title = "Picture - [List Pictures]";
+}
+<h3>
+    Picture</h3>
+<h2>
+    List Pictures</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div id="mainSearch">
+    @Html.Partial("_search", Model)
+</div>

@@ -5,24 +5,24 @@
         <AssemblyFileVersionMajor>1</AssemblyFileVersionMajor>
         <AssemblyFileVersionMinor>2</AssemblyFileVersionMinor>
         <AssemblyFileVersionBuild>20207</AssemblyFileVersionBuild>
-        <AssemblyFileVersionRevision>1</AssemblyFileVersionRevision>
+        <AssemblyFileVersionRevision>2</AssemblyFileVersionRevision>
         <AssemblyFileVersionMajorMinor>1.2</AssemblyFileVersionMajorMinor>
-        <AssemblyFileVersion>1.2.20207.1</AssemblyFileVersion>
+        <AssemblyFileVersion>1.2.20207.2</AssemblyFileVersion>
         <AssemblyVersionMajor>1</AssemblyVersionMajor>
         <AssemblyVersionMinor>2</AssemblyVersionMinor>
-        <AssemblyVersionBuild>0</AssemblyVersionBuild>
+        <AssemblyVersionBuild>1</AssemblyVersionBuild>
         <AssemblyVersionRevision>0</AssemblyVersionRevision>
         <AssemblyVersionMajorMinor>1.2</AssemblyVersionMajorMinor>
-        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
         <AssemblyInformationalVersionMajor>1</AssemblyInformationalVersionMajor>
         <AssemblyInformationalVersionMinor>2</AssemblyInformationalVersionMinor>
-        <AssemblyInformationalVersionPatch>0</AssemblyInformationalVersionPatch>
+        <AssemblyInformationalVersionPatch>1</AssemblyInformationalVersionPatch>
         <AssemblyInformationalVersionStage>RC</AssemblyInformationalVersionStage>
         <AssemblyInformationalVersionStep>1</AssemblyInformationalVersionStep>
         <AssemblyInformationalVersionMajorMinor>1.2</AssemblyInformationalVersionMajorMinor>
-        <AssemblyInformationalVersionMajorMinorPatch>1.2.0</AssemblyInformationalVersionMajorMinorPatch>
+        <AssemblyInformationalVersionMajorMinorPatch>1.2.1</AssemblyInformationalVersionMajorMinorPatch>
         <AssemblyInformationalVersionStageStep>rc1</AssemblyInformationalVersionStageStep>
         <AssemblyInformationalVersionSpecialVersion>rc</AssemblyInformationalVersionSpecialVersion>
-        <AssemblyInformationalVersion>1.2.0-rc1</AssemblyInformationalVersion>
+        <AssemblyInformationalVersion>1.2.1-rc1</AssemblyInformationalVersion>
     </PropertyGroup>
 </Project>

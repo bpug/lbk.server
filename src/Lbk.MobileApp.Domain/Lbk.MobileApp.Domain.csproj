@@ -67,6 +67,11 @@
     <Compile Include="Handlers\AddQuestion.cs" />
     <Compile Include="Handlers\AddSerie.cs" />
     <Compile Include="Handlers\AddPicture.cs" />
+    <Compile Include="Handlers\CopyMenu.cs" />
+    <Compile Include="Handlers\UpdatePicture.cs" />
+    <Compile Include="Handlers\GetPictures.cs" />
+    <Compile Include="Handlers\GetPictureById.cs" />
+    <Compile Include="Handlers\DeletePictureById.cs" />
     <Compile Include="Handlers\UpdateEvent.cs" />
     <Compile Include="Handlers\GetEvents.cs" />
     <Compile Include="Handlers\GetEventById.cs" />
