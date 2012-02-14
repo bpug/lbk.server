@@ -34,7 +34,7 @@ namespace Lbk.MobileApp.Data.SqlCe
 
             this._unitOfWork = unitOfWork;
 
-            Database.SetInitializer(new DropCreateIfModelChangesSqlCeInitializer<MobileAppDbContext>());
+            Database.SetInitializer(new crea<MobileAppDbContext>());
         }
 
         #endregion
