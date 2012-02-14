@@ -6,6 +6,8 @@
     - Extend regex pattern for validation in view, to accept uri
     - Add new object level: videos
     - Associated with release: 1.3.20214.0 | 1.3.0-rc1
+    - Disable inital create migration task
+    - Associated with release: 1.3.20214.1 | 1.3.1-rc1
 
 2012-02-07
     - Implement pictures in models and views
