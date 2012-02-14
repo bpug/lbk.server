@@ -43,6 +43,7 @@
       <Link>Properties\CommonAssemblyInfoVersion.cs</Link>
     </Compile>
     <Compile Include="Contracts\BusinessServicesException.cs" />
+    <Compile Include="Contracts\ICreateVideoCommand.cs" />
     <Compile Include="Contracts\ICreatePictureCommand.cs" />
     <Compile Include="Contracts\ICreateCategoryCommand.cs" />
     <Compile Include="Contracts\ICreateAnswerCommand.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="Contracts\ICreateMenuCommand.cs" />
     <Compile Include="Contracts\ICreateQuestionCommand.cs" />
     <Compile Include="Contracts\ICreateSerieCommand.cs" />
+    <Compile Include="Extensions\CreateVideoCommandExtensions.cs" />
     <Compile Include="Extensions\CreatePictureCommandExtensions.cs" />
     <Compile Include="Extensions\CreateEventCommandExtensions.cs" />
     <Compile Include="Extensions\CreateCategoryCommandExtensions.cs" />
@@ -67,6 +69,11 @@
     <Compile Include="Handlers\AddQuestion.cs" />
     <Compile Include="Handlers\AddSerie.cs" />
     <Compile Include="Handlers\AddPicture.cs" />
+    <Compile Include="Handlers\AddVideo.cs" />
+    <Compile Include="Handlers\DeleteVideoById.cs" />
+    <Compile Include="Handlers\GetVideoById.cs" />
+    <Compile Include="Handlers\GetVideos.cs" />
+    <Compile Include="Handlers\UpdateVideo.cs" />
     <Compile Include="Handlers\CopyMenu.cs" />
     <Compile Include="Handlers\UpdatePicture.cs" />
     <Compile Include="Handlers\GetPictures.cs" />

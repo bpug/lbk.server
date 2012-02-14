@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="CreateEventCommandExtensions.cs" company="ip-connect GmbH">
+// <copyright file="CreateVideoCommandExtensions.cs" company="ip-connect GmbH">
 //   Copyright (c) ip-connect GmbH. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
@@ -13,28 +13,24 @@ namespace Lbk.MobileApp.Domain.Extensions
 
     #endregion
 
-    public static class CreateEventCommandExtensions
+    public static class CreateVideoCommandExtensions
     {
         #region - Public Methods -
 
-        public static Event ToEntity(this ICreateEventCommand source)
+        public static Video ToEntity(this ICreateVideoCommand source)
         {
             if (source == null)
             {
                 return null;
             }
 
-            return new Event
+            return new Video
                        {
-                           ActivatedAt = source.ActivatedAt, 
-                           Date = source.Date, 
-                           DateOrder = source.DateOrder, 
                            Description = source.Description, 
-                           ExpiresAt = source.ExpiresAt, 
+                           FileName = source.FileName, 
                            Id = source.Id, 
-                           IsActivated = source.IsActivated, 
-                           Title = source.Title, 
-                           ReservationLink = source.ReservationLink, 
+                           Link = source.Link, 
+                           SortOrder = source.SortOrder, 
                            ThumbnailLink = source.ThumbnailLink
                        };
         }

@@ -205,7 +205,7 @@
     <value>Is activated</value>
   </data>
   <data name="TextLineInputValidatorRegEx" xml:space="preserve">
-    <value>^(?!.*--)[\w\.,'_ \-]*$</value>
+    <value>^(?!.*--)[\w\.,'_ \-:\\\/]*$</value>
   </data>
   <data name="UnableToAddSerieExceptionMessage" xml:space="preserve">
     <value>Unable to add serie.</value>
@@ -217,7 +217,7 @@
     <value>Unable to update serie.</value>
   </data>
   <data name="TextLineInputValidatorRegExUnicode" xml:space="preserve">
-    <value>^(?!.*--)[A-Za-z0-9\.,'_ \-]*$</value>
+    <value>^(?!.*--)[A-Za-z0-9\.,'_ \-:\\\/]*$</value>
   </data>
   <data name="UnableToAddAnswerExceptionMessage" xml:space="preserve">
     <value>Unable to add answer.</value>
@@ -301,10 +301,10 @@
     <value>Only alpha-numeric characters, new lines, and [.,_-'] are allowed.</value>
   </data>
   <data name="TextMultilineValidatorRegEx" xml:space="preserve">
-    <value>^(?!.*--)([\w\.,'_ \-]|\r|\n)*$</value>
+    <value>^(?!.*--)([\w\.,'_ \-:\\\/]|\r|\n)*$</value>
   </data>
   <data name="TextMultilineValidatorRegExUnicode" xml:space="preserve">
-    <value>^(?!.*--)([A-Za-z0-9\.,'_ \-]|\r|\n)*$</value>
+    <value>^(?!.*--)([A-Za-z0-9\.,'_ \-:\\\/]|\r|\n)*$</value>
   </data>
   <data name="UnableToAddMenuExceptionMessage" xml:space="preserve">
     <value>Unable to add menu.</value>
@@ -479,5 +479,71 @@
   </data>
   <data name="UnableToCopyMenuExceptionMessage" xml:space="preserve">
     <value>Unable to copy menu.</value>
+  </data>
+  <data name="EventReservationLinkLabelText" xml:space="preserve">
+    <value>Reservationlink</value>
+  </data>
+  <data name="EventReservationLinkStringLengthValidationError" xml:space="preserve">
+    <value>Reservationlink must be less than 255 characters.</value>
+  </data>
+  <data name="EventThumbnailLinkLabelText" xml:space="preserve">
+    <value>Thumbnaillink</value>
+  </data>
+  <data name="EventThumbnailLinkStringLengthValidationError" xml:space="preserve">
+    <value>Thumbnaillink must be less than 255 characters.</value>
+  </data>
+  <data name="UnableToAddVideoExceptionMessage" xml:space="preserve">
+    <value>Unable to add video.</value>
+  </data>
+  <data name="UnableToDeleteVideoExceptionMessage" xml:space="preserve">
+    <value>Unable to delete video.</value>
+  </data>
+  <data name="UnableToRetrieveVideoExceptionMessage" xml:space="preserve">
+    <value>Unable to retrieve video.</value>
+  </data>
+  <data name="UnableToUpdateVideoExceptionMessage" xml:space="preserve">
+    <value>Unable to update video.</value>
+  </data>
+  <data name="VideoDescriptionLabelText" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="VideoDescriptionRequired" xml:space="preserve">
+    <value>Description is required.</value>
+  </data>
+  <data name="VideoDescriptionStringLengthValidationError" xml:space="preserve">
+    <value>Description must be less than 255 characters.</value>
+  </data>
+  <data name="VideoFileNameLabelText" xml:space="preserve">
+    <value>FileName</value>
+  </data>
+  <data name="VideoFileNameRequired" xml:space="preserve">
+    <value>FileName is required.</value>
+  </data>
+  <data name="VideoFileNameStringLengthValidationError" xml:space="preserve">
+    <value>FileName must be less than 255 characters.</value>
+  </data>
+  <data name="VideoLinkLabelText" xml:space="preserve">
+    <value>Link</value>
+  </data>
+  <data name="VideoLinkRequired" xml:space="preserve">
+    <value>Link is required.</value>
+  </data>
+  <data name="VideoLinkStringLengthValidationError" xml:space="preserve">
+    <value>Link must be less than 255 characters.</value>
+  </data>
+  <data name="VideoSortOrderLabelText" xml:space="preserve">
+    <value>Sortorder</value>
+  </data>
+  <data name="VideoSortOrderRangeValidationError" xml:space="preserve">
+    <value>The Sortorder must be between 1 and 10000.</value>
+  </data>
+  <data name="VideoSortOrderRequired" xml:space="preserve">
+    <value>Sortorder is required.</value>
+  </data>
+  <data name="VideoThumbnailLinkLabelText" xml:space="preserve">
+    <value>Thumbnaillink</value>
+  </data>
+  <data name="VideoThumbnailLinkStringLengthValidationError" xml:space="preserve">
+    <value>Thumbnaillink must be less than 255 characters.</value>
   </data>
 </root>

@@ -52,7 +52,27 @@
     <Compile Include="..\SolutionItems\CommonAssemblyInfoVersion.cs">
       <Link>Properties\CommonAssemblyInfoVersion.cs</Link>
     </Compile>
+    <Compile Include="Initializers\CreateIfNotExistsAndMigrateSqlInitializer.cs" />
+    <Compile Include="Migrations\201202141304566_InitialCreate.cs" />
+    <Compile Include="Migrations\201202141304566_InitialCreate.Designer.cs">
+      <DependentUpon>201202141304566_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201202141307425_AddEventReservationLink.cs" />
+    <Compile Include="Migrations\201202141307425_AddEventReservationLink.Designer.cs">
+      <DependentUpon>201202141307425_AddEventReservationLink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201202141804343_AddEventThumbnailLink.cs" />
+    <Compile Include="Migrations\201202141804343_AddEventThumbnailLink.Designer.cs">
+      <DependentUpon>201202141804343_AddEventThumbnailLink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201202141817367_AddVideoTable.cs" />
+    <Compile Include="Migrations\201202141817367_AddVideoTable.Designer.cs">
+      <DependentUpon>201202141817367_AddVideoTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Repositories\VideoRepository.cs" />
     <Compile Include="Repositories\PictureRepository.cs" />
+    <Compile Include="Repositories\Specifications\VideoPagedDataInputSpecification.cs" />
     <Compile Include="Repositories\Specifications\PicturePagedDataInputSpecification.cs" />
     <Compile Include="SqlRepositoryInitializer.cs" />
     <Compile Include="Initializers\DropCreateIfModelChangesSqlCeInitializer.cs" />

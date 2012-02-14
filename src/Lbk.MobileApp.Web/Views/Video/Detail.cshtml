@@ -1,0 +1,38 @@
+﻿@model Lbk.MobileApp.Web.Models.VideoFormModel
+@{
+    ViewBag.Title = "Video - [Detail Video]";
+}
+<h2>
+    Detail</h2>
+<fieldset>
+    <legend>Detail Video</legend>
+    <div class="display-label">
+        Description</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+    <div class="display-label">
+        FileName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FileName)
+    </div>
+    <div class="display-label">
+        Link</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Link)
+    </div>
+    <div class="display-label">
+        SortOrder</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SortOrder)
+    </div>
+    <div class="display-label">
+        Thumbnaillink</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ThumbnailLink)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "List")
+</p>

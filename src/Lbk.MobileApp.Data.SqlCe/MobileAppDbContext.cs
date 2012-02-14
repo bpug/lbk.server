@@ -35,6 +35,8 @@ namespace Lbk.MobileApp.Data.SqlCe
 
         public DbSet<Serie> Series { get; set; }
 
+        public DbSet<Video> Videos { get; set; }
+
         #endregion
 
         #region - Implemented Interfaces -
@@ -69,6 +71,8 @@ namespace Lbk.MobileApp.Data.SqlCe
             SetupEventEntity(modelBuilder);
 
             SetupPictureEntity(modelBuilder);
+
+            SetupVideoEntity(modelBuilder);
         }
 
         private static void SetupAnswerEntity(DbModelBuilder modelBuilder)
@@ -104,6 +108,8 @@ namespace Lbk.MobileApp.Data.SqlCe
             modelBuilder.Entity<Event>().Property(e => e.ExpiresAt);
             modelBuilder.Entity<Event>().Property(e => e.IsActivated).IsRequired();
             modelBuilder.Entity<Event>().Property(e => e.Title).HasMaxLength(255);
+            modelBuilder.Entity<Event>().Property(e => e.ReservationLink).HasMaxLength(255);
+            modelBuilder.Entity<Event>().Property(e => e.ThumbnailLink).HasMaxLength(255);
         }
 
         private static void SetupFoodEntity(DbModelBuilder modelBuilder)
@@ -160,6 +166,18 @@ namespace Lbk.MobileApp.Data.SqlCe
             modelBuilder.Entity<Serie>().Property(s => s.ExpiresAt).IsRequired();
             modelBuilder.Entity<Serie>().Property(s => s.IsActivated).IsRequired();
             modelBuilder.Entity<Serie>().HasMany(s => s.Questions);
+        }
+
+        private static void SetupVideoEntity(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Video>().HasKey(e => e.Id);
+            modelBuilder.Entity<Video>().Property(e => e.Id).HasDatabaseGeneratedOption(
+                DatabaseGeneratedOption.Identity);
+            modelBuilder.Entity<Video>().Property(e => e.Description).HasMaxLength(255);
+            modelBuilder.Entity<Video>().Property(e => e.FileName).HasMaxLength(255).IsRequired();
+            modelBuilder.Entity<Video>().Property(e => e.Link).HasMaxLength(255).IsRequired();
+            modelBuilder.Entity<Video>().Property(e => e.SortOrder);
+            modelBuilder.Entity<Video>().Property(e => e.ThumbnailLink).HasMaxLength(255);
         }
 
         #endregion

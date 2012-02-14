@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="EventRepository.cs" company="ip-connect GmbH">
+// <copyright file="VideoRepository.cs" company="ip-connect GmbH">
 //   Copyright (c) ip-connect GmbH. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
@@ -18,11 +18,11 @@ namespace Lbk.MobileApp.Data.SqlCe.Repositories
 
     #endregion
 
-    public class EventRepository : BaseRepository, IEventRepository
+    public class VideoRepository : BaseRepository, IVideoRepository
     {
         #region - Constructors and Destructors -
 
-        public EventRepository(IUnitOfWork unitOfWork)
+        public VideoRepository(IUnitOfWork unitOfWork)
             : base(unitOfWork)
         {
         }
@@ -31,31 +31,31 @@ namespace Lbk.MobileApp.Data.SqlCe.Repositories
 
         #region - Implemented Interfaces -
 
-        #region IEventRepository
+        #region IVideoRepository
 
-        public void Create(Event @event)
+        public void Create(Video @video)
         {
-            this.GetDbSet<Event>().Add(@event);
+            this.GetDbSet<Video>().Add(@video);
 
             this.UnitOfWork.SaveChanges();
         }
 
-        public void Delete(long eventId)
+        public void Delete(long videoId)
         {
-            var entity = this.GetDbSet<Event>().Where(x => x.Id == eventId).Single();
-            this.GetDbSet<Event>().Remove(entity);
+            var entity = this.GetDbSet<Video>().Single(x => x.Id == videoId);
+            this.GetDbSet<Video>().Remove(entity);
 
             this.UnitOfWork.SaveChanges();
         }
 
-        public Event GetEvent(long eventId)
+        public Video GetVideo(long videoId)
         {
-            return this.GetDbSet<Event>().Where(x => x.Id == eventId).Single();
+            return this.GetDbSet<Video>().Single(x => x.Id == videoId);
         }
 
-        public PagedDataList<Event> GetEvents(PagedDataInput<Event> pagedDataInput)
+        public PagedDataList<Video> GetVideos(PagedDataInput<Video> pagedDataInput)
         {
-            var specification = new EventPagedDataInputSpecification(pagedDataInput);
+            var specification = new VideoPagedDataInputSpecification(pagedDataInput);
 
             return this.GetPagedDataListElements(
                 pagedDataInput.PageIndex, 
@@ -65,19 +65,15 @@ namespace Lbk.MobileApp.Data.SqlCe.Repositories
                 specification);
         }
 
-        public void Update(Event @event)
+        public void Update(Video @video)
         {
-            var entity = this.GetDbSet<Event>().Where(x => x.Id == @event.Id).Single();
+            var entity = this.GetDbSet<Video>().Single(x => x.Id == @video.Id);
 
-            entity.ActivatedAt = @event.ActivatedAt;
-            entity.Date = @event.Date;
-            entity.DateOrder = @event.DateOrder;
-            entity.Description = @event.Description;
-            entity.ExpiresAt = @event.ExpiresAt;
-            entity.IsActivated = @event.IsActivated;
-            entity.Title = @event.Title;
-            entity.ReservationLink = @event.ReservationLink;
-            entity.ThumbnailLink = @event.ThumbnailLink;
+            entity.Description = @video.Description;
+            entity.FileName = @video.FileName;
+            entity.Link = @video.Link;
+            entity.SortOrder = @video.SortOrder;
+            entity.ThumbnailLink = @video.ThumbnailLink;
 
             this.SetEntityState(entity, entity.Id == 0 ? EntityState.Added : EntityState.Modified);
 

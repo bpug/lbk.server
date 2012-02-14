@@ -40,16 +40,18 @@ namespace Lbk.MobileApp.Web.Models.Extensions
             }
 
             return new EventFormModel
-                {
-                    ActivatedAt = model.ActivatedAt, 
-                    Date = model.Date, 
-                    DateOrder = model.DateOrder, 
-                    Description = model.Description, 
-                    ExpiresAt = model.ExpiresAt, 
-                    Id = model.Id, 
-                    IsActivated = model.IsActivated, 
-                    Title = model.Title
-                };
+                       {
+                           ActivatedAt = model.ActivatedAt, 
+                           Date = model.Date, 
+                           DateOrder = model.DateOrder, 
+                           Description = model.Description, 
+                           ExpiresAt = model.ExpiresAt, 
+                           Id = model.Id, 
+                           IsActivated = model.IsActivated, 
+                           Title = model.Title, 
+                           ReservationLink = model.ReservationLink, 
+                           ThumbnailLink = model.ThumbnailLink
+                       };
         }
 
         public static Event ToModel(EventSearchFormModel model)
@@ -60,13 +62,13 @@ namespace Lbk.MobileApp.Web.Models.Extensions
             }
 
             return new Event
-                {
-                    ActivatedAt = model.ActivatedAt.HasValue ? model.ActivatedAt.Value : new DateTime(1900, 01, 01), 
-                    Description = model.Description, 
-                    ExpiresAt = model.ExpiresAt.HasValue ? model.ExpiresAt.Value : new DateTime(1900, 01, 01), 
-                    Id = model.Id, 
-                    Title = model.Title
-                };
+                       {
+                           ActivatedAt = model.ActivatedAt.HasValue ? model.ActivatedAt.Value : new DateTime(1900, 01, 01), 
+                           Description = model.Description, 
+                           ExpiresAt = model.ExpiresAt.HasValue ? model.ExpiresAt.Value : new DateTime(1900, 01, 01), 
+                           Id = model.Id, 
+                           Title = model.Title
+                       };
         }
 
         public static EventSearchFormModel ToSearchFormModel(Event model)
@@ -77,13 +79,14 @@ namespace Lbk.MobileApp.Web.Models.Extensions
             }
 
             return new EventSearchFormModel
-                {
-                    ActivatedAt = model.ActivatedAt > new DateTime(1900, 01, 01) ? model.ActivatedAt : new DateTime?(), 
-                    ExpiresAt = model.ExpiresAt > new DateTime(1900, 01, 01) ? model.ExpiresAt : new DateTime?(), 
-                    Description = model.Description, 
-                    Id = model.Id, 
-                    Title = model.Title
-                };
+                       {
+                           ActivatedAt =
+                               model.ActivatedAt > new DateTime(1900, 01, 01) ? model.ActivatedAt : new DateTime?(), 
+                           ExpiresAt = model.ExpiresAt > new DateTime(1900, 01, 01) ? model.ExpiresAt : new DateTime?(), 
+                           Description = model.Description, 
+                           Id = model.Id, 
+                           Title = model.Title
+                       };
         }
 
         #endregion

@@ -56,6 +56,18 @@ namespace Lbk.MobileApp.Web.Models
         [Display(Name = "EventIsActivatedLabelText", ResourceType = typeof(Messages))]
         public bool IsActivated { get; set; }
 
+        [StringLength(255, ErrorMessageResourceName = "EventReservationLinkStringLengthValidationError", 
+            ErrorMessageResourceType = typeof(Messages))]
+        [TextLineInputValidator]
+        [Display(Name = "EventReservationLinkLabelText", ResourceType = typeof(Messages))]
+        public string ReservationLink { get; set; }
+
+        [StringLength(255, ErrorMessageResourceName = "EventThumbnailLinkStringLengthValidationError", 
+            ErrorMessageResourceType = typeof(Messages))]
+        [TextLineInputValidator]
+        [Display(Name = "EventThumbnailLinkLabelText", ResourceType = typeof(Messages))]
+        public string ThumbnailLink { get; set; }
+
         [StringLength(255, ErrorMessageResourceName = "EventTitleStringLengthValidationError", 
             ErrorMessageResourceType = typeof(Messages))]
         [TextLineInputValidator]

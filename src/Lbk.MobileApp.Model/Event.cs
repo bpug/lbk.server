@@ -28,6 +28,10 @@ namespace Lbk.MobileApp.Model
 
         public bool IsActivated { get; set; }
 
+        public string ReservationLink { get; set; }
+
+        public string ThumbnailLink { get; set; }
+
         public string Title { get; set; }
 
         #endregion

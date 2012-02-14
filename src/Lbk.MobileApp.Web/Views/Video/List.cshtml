@@ -1,0 +1,14 @@
+﻿@model Lbk.MobileApp.Web.Models.GenericListViewModel<Lbk.MobileApp.Model.Video, Lbk.MobileApp.Web.Models.VideoSearchFormModel>
+@{
+    ViewBag.Title = "Video - [List Videos]";
+}
+<h3>
+    Video</h3>
+<h2>
+    List Videos</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div id="mainSearch">
+    @Html.Partial("_search", Model)
+</div>

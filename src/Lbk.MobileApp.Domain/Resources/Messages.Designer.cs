@@ -322,6 +322,42 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reservationlink.
+        /// </summary>
+        public static string EventReservationLinkLabelText {
+            get {
+                return ResourceManager.GetString("EventReservationLinkLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reservationlink must be less than 255 characters..
+        /// </summary>
+        public static string EventReservationLinkStringLengthValidationError {
+            get {
+                return ResourceManager.GetString("EventReservationLinkStringLengthValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thumbnaillink.
+        /// </summary>
+        public static string EventThumbnailLinkLabelText {
+            get {
+                return ResourceManager.GetString("EventThumbnailLinkLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thumbnaillink must be less than 255 characters..
+        /// </summary>
+        public static string EventThumbnailLinkStringLengthValidationError {
+            get {
+                return ResourceManager.GetString("EventThumbnailLinkStringLengthValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Title.
         /// </summary>
         public static string EventTitleLabelText {
@@ -817,7 +853,7 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ^(?!.*--)[\w\.,&apos;_ \-]*$.
+        ///   Looks up a localized string similar to ^(?!.*--)[\w\.,&apos;_ \-:\\\/]*$.
         /// </summary>
         public static string TextLineInputValidatorRegEx {
             get {
@@ -826,7 +862,7 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ^(?!.*--)[A-Za-z0-9\.,&apos;_ \-]*$.
+        ///   Looks up a localized string similar to ^(?!.*--)[A-Za-z0-9\.,&apos;_ \-:\\\/]*$.
         /// </summary>
         public static string TextLineInputValidatorRegExUnicode {
             get {
@@ -835,7 +871,7 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ^(?!.*--)([\w\.,&apos;_ \-]|\r|\n)*$.
+        ///   Looks up a localized string similar to ^(?!.*--)([\w\.,&apos;_ \-:\\\/]|\r|\n)*$.
         /// </summary>
         public static string TextMultilineValidatorRegEx {
             get {
@@ -844,7 +880,7 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ^(?!.*--)([A-Za-z0-9\.,&apos;_ \-]|\r|\n)*$.
+        ///   Looks up a localized string similar to ^(?!.*--)([A-Za-z0-9\.,&apos;_ \-:\\\/]|\r|\n)*$.
         /// </summary>
         public static string TextMultilineValidatorRegExUnicode {
             get {
@@ -921,6 +957,15 @@ namespace Lbk.MobileApp.Domain.Resources {
         public static string UnableToAddSerieExceptionMessage {
             get {
                 return ResourceManager.GetString("UnableToAddSerieExceptionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to add video..
+        /// </summary>
+        public static string UnableToAddVideoExceptionMessage {
+            get {
+                return ResourceManager.GetString("UnableToAddVideoExceptionMessage", resourceCulture);
             }
         }
         
@@ -1006,6 +1051,15 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unable to delete video..
+        /// </summary>
+        public static string UnableToDeleteVideoExceptionMessage {
+            get {
+                return ResourceManager.GetString("UnableToDeleteVideoExceptionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unable to retrieve answer..
         /// </summary>
         public static string UnableToRetrieveAnswerExceptionMessage {
@@ -1078,6 +1132,15 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unable to retrieve video..
+        /// </summary>
+        public static string UnableToRetrieveVideoExceptionMessage {
+            get {
+                return ResourceManager.GetString("UnableToRetrieveVideoExceptionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unable to update answer..
         /// </summary>
         public static string UnableToUpdateAnswerExceptionMessage {
@@ -1146,6 +1209,141 @@ namespace Lbk.MobileApp.Domain.Resources {
         public static string UnableToUpdateSerieExceptionMessage {
             get {
                 return ResourceManager.GetString("UnableToUpdateSerieExceptionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to update video..
+        /// </summary>
+        public static string UnableToUpdateVideoExceptionMessage {
+            get {
+                return ResourceManager.GetString("UnableToUpdateVideoExceptionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string VideoDescriptionLabelText {
+            get {
+                return ResourceManager.GetString("VideoDescriptionLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description is required..
+        /// </summary>
+        public static string VideoDescriptionRequired {
+            get {
+                return ResourceManager.GetString("VideoDescriptionRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description must be less than 255 characters..
+        /// </summary>
+        public static string VideoDescriptionStringLengthValidationError {
+            get {
+                return ResourceManager.GetString("VideoDescriptionStringLengthValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FileName.
+        /// </summary>
+        public static string VideoFileNameLabelText {
+            get {
+                return ResourceManager.GetString("VideoFileNameLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FileName is required..
+        /// </summary>
+        public static string VideoFileNameRequired {
+            get {
+                return ResourceManager.GetString("VideoFileNameRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FileName must be less than 255 characters..
+        /// </summary>
+        public static string VideoFileNameStringLengthValidationError {
+            get {
+                return ResourceManager.GetString("VideoFileNameStringLengthValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Link.
+        /// </summary>
+        public static string VideoLinkLabelText {
+            get {
+                return ResourceManager.GetString("VideoLinkLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Link is required..
+        /// </summary>
+        public static string VideoLinkRequired {
+            get {
+                return ResourceManager.GetString("VideoLinkRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Link must be less than 255 characters..
+        /// </summary>
+        public static string VideoLinkStringLengthValidationError {
+            get {
+                return ResourceManager.GetString("VideoLinkStringLengthValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sortorder.
+        /// </summary>
+        public static string VideoSortOrderLabelText {
+            get {
+                return ResourceManager.GetString("VideoSortOrderLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Sortorder must be between 1 and 10000..
+        /// </summary>
+        public static string VideoSortOrderRangeValidationError {
+            get {
+                return ResourceManager.GetString("VideoSortOrderRangeValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sortorder is required..
+        /// </summary>
+        public static string VideoSortOrderRequired {
+            get {
+                return ResourceManager.GetString("VideoSortOrderRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thumbnaillink.
+        /// </summary>
+        public static string VideoThumbnailLinkLabelText {
+            get {
+                return ResourceManager.GetString("VideoThumbnailLinkLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thumbnaillink must be less than 255 characters..
+        /// </summary>
+        public static string VideoThumbnailLinkStringLengthValidationError {
+            get {
+                return ResourceManager.GetString("VideoThumbnailLinkStringLengthValidationError", resourceCulture);
             }
         }
     }

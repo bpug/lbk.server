@@ -41,6 +41,16 @@
     <div class="display-field">
         @Html.DisplayFor(model => model.IsActivated)
     </div>
+    <div class="display-label">
+        Reservationlink</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ReservationLink)
+    </div>
+    <div class="display-label">
+        Thumbnaillink</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ThumbnailLink)
+    </div>
 </fieldset>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
