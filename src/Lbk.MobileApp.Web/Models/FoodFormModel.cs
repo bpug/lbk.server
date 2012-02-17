@@ -25,6 +25,7 @@ namespace Lbk.MobileApp.Web.Models
 
         public string CategoryName { get; set; }
 
+        [DataType(DataType.MultilineText)]
         [StringLength(255, ErrorMessageResourceName = "FoodDescriptionStringLengthValidationError", 
             ErrorMessageResourceType = typeof(Messages))]
         [TextMultilineValidator]

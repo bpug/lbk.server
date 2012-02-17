@@ -26,9 +26,10 @@ namespace Lbk.MobileApp.Web.Models
         [Display(Name = "MenuDateLabelText", ResourceType = typeof(Messages))]
         public DateTime Date { get; set; }
 
+        [DataType(DataType.MultilineText)]
         [StringLength(255, ErrorMessageResourceName = "MenuDescriptionStringLengthValidationError", 
             ErrorMessageResourceType = typeof(Messages))]
-        [TextLineInputValidator]
+        [TextMultilineValidator]
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "MenuDescriptionRequired", 
             ErrorMessageResourceType = typeof(Messages))]
         [Display(Name = "MenuDescriptionLabelText", ResourceType = typeof(Messages))]

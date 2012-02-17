@@ -40,9 +40,10 @@ namespace Lbk.MobileApp.Web.Models
         [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
         public DateTime DateOrder { get; set; }
 
+        [DataType(DataType.MultilineText)]
         [StringLength(255, ErrorMessageResourceName = "EventDescriptionStringLengthValidationError", 
             ErrorMessageResourceType = typeof(Messages))]
-        [TextLineInputValidator]
+        [TextMultilineValidator]
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "EventDescriptionRequired", 
             ErrorMessageResourceType = typeof(Messages))]
         [Display(Name = "EventDescriptionLabelText", ResourceType = typeof(Messages))]

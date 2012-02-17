@@ -20,9 +20,10 @@ namespace Lbk.MobileApp.Web.Models
     {
         #region - Properties -
 
+        [DataType(DataType.MultilineText)]
         [StringLength(255, ErrorMessageResourceName = "VideoDescriptionStringLengthValidationError", 
             ErrorMessageResourceType = typeof(Messages))]
-        [TextLineInputValidator]
+        [TextMultilineValidator]
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "VideoDescriptionRequired", 
             ErrorMessageResourceType = typeof(Messages))]
         [Display(Name = "VideoDescriptionLabelText", ResourceType = typeof(Messages))]

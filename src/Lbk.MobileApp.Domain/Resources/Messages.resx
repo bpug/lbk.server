@@ -145,7 +145,7 @@
     <value>Explanation must be less than 255 characters.</value>
   </data>
   <data name="InvalidInputCharacter" xml:space="preserve">
-    <value>Only alpha-numeric characters and [.,_-'] are allowed.</value>
+    <value>Only alpha-numeric characters and [.,_-:\/?'] are allowed.</value>
   </data>
   <data name="QuestionDescriptionLabelText" xml:space="preserve">
     <value>Description</value>
@@ -205,7 +205,7 @@
     <value>Is activated</value>
   </data>
   <data name="TextLineInputValidatorRegEx" xml:space="preserve">
-    <value>^(?!.*--)[\w\.,'_ \-:\\\/]*$</value>
+    <value>^(?!.*--)[\w\.,'_ \-:\\\/?=]*$</value>
   </data>
   <data name="UnableToAddSerieExceptionMessage" xml:space="preserve">
     <value>Unable to add serie.</value>
@@ -217,7 +217,7 @@
     <value>Unable to update serie.</value>
   </data>
   <data name="TextLineInputValidatorRegExUnicode" xml:space="preserve">
-    <value>^(?!.*--)[A-Za-z0-9\.,'_ \-:\\\/]*$</value>
+    <value>^(?!.*--)[A-Za-z0-9\.,'_ \-:\\\/?=]*$</value>
   </data>
   <data name="UnableToAddAnswerExceptionMessage" xml:space="preserve">
     <value>Unable to add answer.</value>
@@ -298,13 +298,13 @@
     <value>Title must be less than 255 characters.</value>
   </data>
   <data name="InvalidMultilineInput" xml:space="preserve">
-    <value>Only alpha-numeric characters, new lines, and [.,_-'] are allowed.</value>
+    <value>Only alpha-numeric characters, new lines, and [.,_-:\/?'] are allowed.</value>
   </data>
   <data name="TextMultilineValidatorRegEx" xml:space="preserve">
-    <value>^(?!.*--)([\w\.,'_ \-:\\\/]|\r|\n)*$</value>
+    <value>^(?!.*--)([\w\.,'_ \-:\\\/?=]|\r|\n)*$</value>
   </data>
   <data name="TextMultilineValidatorRegExUnicode" xml:space="preserve">
-    <value>^(?!.*--)([A-Za-z0-9\.,'_ \-:\\\/]|\r|\n)*$</value>
+    <value>^(?!.*--)([A-Za-z0-9\.,'_ \-:\\\/?=]|\r|\n)*$</value>
   </data>
   <data name="UnableToAddMenuExceptionMessage" xml:space="preserve">
     <value>Unable to add menu.</value>

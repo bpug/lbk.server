@@ -20,9 +20,10 @@ namespace Lbk.MobileApp.Web.Models
     {
         #region - Properties -
 
+        [DataType(DataType.MultilineText)]
         [StringLength(255, ErrorMessageResourceName = "CategoryDescriptionStringLengthValidationError", 
             ErrorMessageResourceType = typeof(Messages))]
-        [TextLineInputValidator]
+        [TextMultilineValidator]
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "CategoryDescriptionRequired", 
             ErrorMessageResourceType = typeof(Messages))]
         [Display(Name = "CategoryDescriptionLabelText", ResourceType = typeof(Messages))]

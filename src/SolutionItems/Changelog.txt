@@ -1,3 +1,9 @@
+2012-02-17
+    - Update regex to allow ? and =
+    - Textbox width extended
+    - Description fields are multiline textboxes
+    - Associated with release: 1.3.20217.0 | 1.3.2-rc2
+
 2012-02-14
     - Update ef to 4.3.0
     - Update jquery.ui to x.16

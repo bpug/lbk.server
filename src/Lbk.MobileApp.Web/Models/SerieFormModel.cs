@@ -27,9 +27,10 @@ namespace Lbk.MobileApp.Web.Models
         [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
         public DateTime ActivatedAt { get; set; }
 
+        [DataType(DataType.MultilineText)]
         [StringLength(255, ErrorMessageResourceName = "SerieDescriptionStringLengthValidationError", 
             ErrorMessageResourceType = typeof(Messages))]
-        [TextLineInputValidator]
+        [TextMultilineValidator]
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "SerieDescriptionRequired", 
             ErrorMessageResourceType = typeof(Messages))]
         [Display(Name = "SerieDescriptionLabelText", ResourceType = typeof(Messages))]

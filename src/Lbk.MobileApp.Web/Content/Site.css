@@ -196,7 +196,7 @@ input[type="password"] {
     padding: 2px;
     font-size: 1.2em;
     color: #444;
-    width: 200px;
+    width: 600px;
 }
 
 select {
@@ -317,6 +317,7 @@ div#title {
 
 .text-box.multi-line {
     height: 6.5em;
+    width: 600px;
 }
 
 .tri-state {

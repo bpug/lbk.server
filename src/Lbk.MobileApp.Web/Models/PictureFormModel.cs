@@ -20,9 +20,10 @@ namespace Lbk.MobileApp.Web.Models
     {
         #region - Properties -
 
+        [DataType(DataType.MultilineText)]
         [StringLength(255, ErrorMessageResourceName = "PictureDescriptionStringLengthValidationError", 
             ErrorMessageResourceType = typeof(Messages))]
-        [TextLineInputValidator]
+        [TextMultilineValidator]
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "PictureDescriptionRequired", 
             ErrorMessageResourceType = typeof(Messages))]
         [Display(Name = "PictureDescriptionLabelText", ResourceType = typeof(Messages))]
