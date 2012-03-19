@@ -36,8 +36,6 @@ namespace Lbk.MobileApp.Web.Models
 
         public long MenuId { get; set; }
 
-        [Range(0.0d, 1000.0d, ErrorMessageResourceName = "FoodPriceRangeValidationError", 
-            ErrorMessageResourceType = typeof(Messages))]
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "FoodPriceRequired", 
             ErrorMessageResourceType = typeof(Messages))]
         [Display(Name = "FoodPriceLabelText", ResourceType = typeof(Messages))]
