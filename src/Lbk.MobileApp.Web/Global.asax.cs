@@ -77,7 +77,7 @@ namespace Lbk.MobileApp.Web
             ////ModelBinders.Binders.Add(typeof(DateTime), new MyDateTimeModelBinder());
 
             InitializeDependencyInjectionContainer();
-            InitializeDatabase();
+            //InitializeDatabase();
         }
 
         private static void InitializeDatabase()
