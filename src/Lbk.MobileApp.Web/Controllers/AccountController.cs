@@ -4,6 +4,8 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System.Web.Configuration;
+
 namespace Lbk.MobileApp.Web.Controllers
 {
     #region using directives
@@ -73,10 +75,18 @@ namespace Lbk.MobileApp.Web.Controllers
         {
             FormsAuthentication.SignOut();
 
-            return this.RedirectToAction("Index", "Home");
+            // return this.RedirectToAction("Index", "Home");
+            return RedirectToAction("LogOn");
         }
 
         public ActionResult LogOn()
+        {
+            return this.View();
+        }
+
+        // GET: /Account/GeneratePassword
+        //[Authorize]
+        public ActionResult GeneratePassword()
         {
             return this.View();
         }
@@ -88,7 +98,8 @@ namespace Lbk.MobileApp.Web.Controllers
         {
             if (this.ModelState.IsValid)
             {
-                if (Membership.ValidateUser(model.UserName, model.Password))
+                //if (Membership.ValidateUser(model.UserName, model.Password))
+                if (ValidateLogOn(model.UserName, model.Password))
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
                     if (this.Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
@@ -146,10 +157,36 @@ namespace Lbk.MobileApp.Web.Controllers
             return View(model);
         }
 
+        // POST: /Account/GeneratePassword
+        [HttpPost]
+        public ActionResult GeneratePassword(GeneratePasswordModel model)
+        {
+            if (this.ModelState.IsValid)
+            {
+                model.Hash = FormsAuthentication.HashPasswordForStoringInConfigFile(model.Password, model.Format);
+            }
+            return this.View(model);
+        }
+
         #endregion
 
         // GET: /Account/ChangePassword
         #region - Methods -
+
+        private bool ValidateLogOn(string userName, string password)
+        {
+           
+            if (string.IsNullOrEmpty(userName))
+                ModelState.AddModelError("UserName", "User name required");
+
+            if (string.IsNullOrEmpty(password))
+                ModelState.AddModelError("Password", "Password required");
+
+            if (ModelState.IsValid && !FormsAuthentication.Authenticate(userName, password))
+                ModelState.AddModelError("_FORM", "Wrong user name or password");
+
+            return ModelState.IsValid;
+        }
 
         private static string ErrorCodeToString(MembershipCreateStatus createStatus)
         {

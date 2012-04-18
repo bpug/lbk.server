@@ -10,4 +10,6 @@
     Version: @ViewData["AppSemanticVersion"]<br />
     <small>Fileversion: @ViewData["AppVersion"]
     </small>
+   
 </h5>
+<div>@Html.ActionLink("Generate Password", "GeneratePassword", "Account", null, new { style = "color:#ffffff;" })</div>

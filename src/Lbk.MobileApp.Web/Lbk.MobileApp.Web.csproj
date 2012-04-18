@@ -86,6 +86,7 @@
     <Compile Include="Models\AnswerFormModel.cs" />
     <Compile Include="Models\CategoryFormModel.cs" />
     <Compile Include="Models\CategorySearchFormModel.cs" />
+    <Compile Include="Models\GeneratePasswordModel.cs" />
     <Compile Include="Models\Extensions\VideoModelExtensions.cs" />
     <Compile Include="Models\VideoFormModel.cs" />
     <Compile Include="Models\VideoSearchFormModel.cs" />
@@ -463,6 +464,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Video\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\GeneratePassword.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
