@@ -36,7 +36,11 @@ namespace Lbk.MobileApp.Model
         public Serie Serie { get; set; }
 
         public long SerieId { get; set; }
+        
+        public QuestionCategory Category { get; set; }
 
-        #endregion
+        public long CategoryId { get; set; }
+        
+       #endregion
     }
 }

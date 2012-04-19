@@ -53,10 +53,10 @@
       <Link>Properties\CommonAssemblyInfoVersion.cs</Link>
     </Compile>
     <Compile Include="Initializers\CreateIfNotExistsAndMigrateSqlInitializer.cs" />
-    <None Include="Migrations\201202141304566_InitialCreate.cs" />
-    <None Include="Migrations\201202141304566_InitialCreate.Designer.cs">
+    <Compile Include="Migrations\201202141304566_InitialCreate.cs" />
+    <Compile Include="Migrations\201202141304566_InitialCreate.Designer.cs">
       <DependentUpon>201202141304566_InitialCreate.cs</DependentUpon>
-    </None>
+    </Compile>
     <Compile Include="Migrations\201202141307425_AddEventReservationLink.cs" />
     <Compile Include="Migrations\201202141307425_AddEventReservationLink.Designer.cs">
       <DependentUpon>201202141307425_AddEventReservationLink.cs</DependentUpon>
@@ -69,7 +69,13 @@
     <Compile Include="Migrations\201202141817367_AddVideoTable.Designer.cs">
       <DependentUpon>201202141817367_AddVideoTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201204191019379_AddQuestionCategoryTable.cs" />
+    <Compile Include="Migrations\201204191019379_AddQuestionCategoryTable.Designer.cs">
+      <DependentUpon>201204191019379_AddQuestionCategoryTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Repositories\QuestionCategoryRepository.cs" />
+    <Compile Include="Repositories\Specifications\QuestionCategoryPagedDataInputSpecification.cs" />
     <Compile Include="Repositories\VideoRepository.cs" />
     <Compile Include="Repositories\PictureRepository.cs" />
     <Compile Include="Repositories\Specifications\VideoPagedDataInputSpecification.cs" />

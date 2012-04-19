@@ -1,16 +1,16 @@
-﻿@model Lbk.MobileApp.Web.Models.GenericListViewModel<Lbk.MobileApp.Model.Question, Lbk.MobileApp.Web.Models.QuestionSearchFormModel>
+﻿@using Lbk.MobileApp.Domain.Resources
+@model Lbk.MobileApp.Web.Models.GenericListViewModel<Lbk.MobileApp.Model.Question, Lbk.MobileApp.Web.Models.QuestionSearchFormModel>
 @{
-    ViewBag.Title = "Quiz - [List Questions]";
+    ViewBag.Title = "Quiz - " + @Messages.QuestionListViewTitle;
 }
 <h3>
     @Html.ActionLink("Quiz", "List", new { controller = "Serie" })
     > @Html.Raw(ViewBag.SerieDescription)
     @*> @Html.ActionLink((string)ViewBag.SerieDescription, "List", new { controller = "Question", id = (object)ViewBag.SerieId })*@
 </h3>
-<h2>
-    List Questions</h2>
+<h2>@Messages.QuestionListViewTitle</h2>
 <p>
-    @Html.ActionLink("Create New", "Create", new { id = @Model.SearchItem.SerieId })
+    @Html.ActionLink(Messages.QuestionCreateNew, "Create", new { id = @Model.SearchItem.SerieId })
 </p>
 <div id="mainSearch">
     @Html.Partial("_search", Model)

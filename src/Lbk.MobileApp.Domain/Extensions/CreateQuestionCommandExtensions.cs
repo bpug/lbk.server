@@ -30,7 +30,8 @@ namespace Lbk.MobileApp.Domain.Extensions
                     Id = source.Id, 
                     Number = source.Number, 
                     Points = source.Points, 
-                    SerieId = source.SerieId
+                    SerieId = source.SerieId,
+                    CategoryId = source.CategoryId
                 };
         }
 

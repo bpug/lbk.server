@@ -8,6 +8,7 @@
 </script>
 @{
     var grid = new WebGrid(canPage: true, canSort: true, rowsPerPage: Model.PageSize, ajaxUpdateContainerId: "grid");
+    
     grid.Bind(Model.Items, rowCount: Model.TotalItemCount, autoSortAndPage: false);
     @grid.GetHtml(htmlAttributes: new { id = "grid", width = "100%" },
                 columns: grid.Columns(

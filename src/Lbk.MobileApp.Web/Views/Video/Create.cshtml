@@ -1,6 +1,7 @@
-﻿@model Lbk.MobileApp.Web.Models.VideoFormModel
+﻿@using Lbk.MobileApp.Domain.Resources
+@model Lbk.MobileApp.Web.Models.VideoFormModel
 @{
-    ViewBag.Title = "Video - [Create Video]";
+    ViewBag.Title = string.Format("Video - [{0}]", Messages.VideoCreateNew);
 }
 <h2>
     Create</h2>
@@ -12,7 +13,7 @@
 {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>New Video</legend>
+        <legend>@Messages.VideoCreateNew</legend>
         <div class="editor-label">
             @Html.LabelFor(model => model.Description)
         </div>
@@ -49,10 +50,10 @@
             @Html.ValidationMessageFor(model => model.ThumbnailLink)
         </div>
         <p>
-            <input type="submit" value="Create" />
+            <input type="submit" value=@Messages.Create />
         </p>
     </fieldset>
 }
 <div>
-    @Html.ActionLink("Back to List", "List")
+    @Html.ActionLink(Messages.BackToList, "List")
 </div>

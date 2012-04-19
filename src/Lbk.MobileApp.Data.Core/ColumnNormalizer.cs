@@ -19,7 +19,6 @@ namespace Lbk.MobileApp.Data.Core
 
             return sort;
         }
-
         #endregion
     }
 }

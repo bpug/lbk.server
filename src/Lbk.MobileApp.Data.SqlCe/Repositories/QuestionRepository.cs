@@ -9,10 +9,12 @@ namespace Lbk.MobileApp.Data.SqlCe.Repositories
     #region using directives
 
     using System.Data;
+    using System.Data.Entity;
     using System.Linq;
 
     using Lbk.MobileApp.Core;
     using Lbk.MobileApp.Data.Core;
+    using Lbk.MobileApp.Data.Core.Extensions;
     using Lbk.MobileApp.Data.SqlCe.Repositories.Specifications;
     using Lbk.MobileApp.Model;
 
@@ -33,8 +35,9 @@ namespace Lbk.MobileApp.Data.SqlCe.Repositories
 
         #region IQuestionRepository
 
-        public void Create(long serieId, Question question)
+        public void Create(long serieId, long categoryId, Question question)
         {
+            question.CategoryId = categoryId;
             question.SerieId = serieId;
             this.GetDbSet<Question>().Add(question);
 
@@ -51,7 +54,7 @@ namespace Lbk.MobileApp.Data.SqlCe.Repositories
 
         public Question GetQuestion(long questionId)
         {
-            return this.GetDbSet<Question>().Include("Answers").Where(x => x.Id == questionId).Single();
+            return this.GetDbSet<Question>().Include("Answers").Include(x => x.Category).Where(x => x.Id == questionId).Single();
         }
 
         public PagedDataList<Question> GetQuestions(PagedDataInput<Question> pagedDataInput)
@@ -63,13 +66,15 @@ namespace Lbk.MobileApp.Data.SqlCe.Repositories
                 pagedDataInput.PageSize, 
                 ColumnNormalizer.FixupSortColumn(pagedDataInput.Sort), 
                 pagedDataInput.Ascending, 
-                specification);
+                specification,
+                x => x.Category);
         }
 
         public void Update(Question question)
         {
             var entity = this.GetDbSet<Question>().Where(x => x.Id == question.Id).Single();
 
+            entity.CategoryId = question.CategoryId;
             entity.Description = question.Description;
             entity.Number = question.Number;
             entity.Points = question.Points;

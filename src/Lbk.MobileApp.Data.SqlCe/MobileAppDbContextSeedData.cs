@@ -42,6 +42,10 @@ namespace Lbk.MobileApp.Data.SqlCe
             // Seed for pictures
             this.SeedPictures();
             this.SaveChanges();
+
+            // Seed for questionCategorys
+            this.SeedQuestionCategory();
+            this.SaveChanges();
         }
 
         #endregion
@@ -495,6 +499,46 @@ namespace Lbk.MobileApp.Data.SqlCe
             return serie.Id;
         }
 
+      
+        private void SeedQuestionCategory()
+        {
+            this.QuestionCategorys.Add(
+                new QuestionCategory
+                {
+                    Title = "NONE"
+                });
+            this.QuestionCategorys.Add(
+                 new QuestionCategory
+                 {
+                     Title = "BAY"
+                 });
+            this.QuestionCategorys.Add(
+                 new QuestionCategory
+                 {
+                     Title = "BIE"
+                 });
+            this.QuestionCategorys.Add(
+                new QuestionCategory
+                {
+                    Title = "FOD"
+                });
+            this.QuestionCategorys.Add(
+                new QuestionCategory
+                {
+                    Title = "LBK"
+                });
+            this.QuestionCategorys.Add(
+                new QuestionCategory
+                {
+                    Title = "MUC"
+                });
+            this.QuestionCategorys.Add(
+                new QuestionCategory
+                {
+                    Title = "SCH"
+                });
+        }
+         
         #endregion
     }
 }

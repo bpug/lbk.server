@@ -20,6 +20,8 @@ namespace Lbk.MobileApp.Domain.Contracts
 
         long SerieId { get; set; }
 
+        long CategoryId { get; set; }
+
         #endregion
     }
 }

@@ -1,3 +1,15 @@
+2012-04-19
+	- Change databaseInitializer from Global.asax to Web.Config
+    - Update regex to allow: () &
+	- Add AddQuestionCategoryTable - Migration
+	- Extend Model to QuestionCategory
+    - Implement QuestionCategory in repo and domain
+	- Implement QuestionCategory in models and views
+	- Add Category in Question
+    - Start Localisation
+	- Add FormAuthentication
+	- Change default sort by menu list
+    
 2012-02-17
     - Update regex to allow ? and =
     - Textbox width extended

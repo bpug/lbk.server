@@ -45,6 +45,11 @@ namespace Lbk.MobileApp.Web.Models
 
         public long SerieId { get; set; }
 
+        [Display(Name = "QuestionCategoryIdLabelText", ResourceType = typeof(Messages))]
+        public long CategoryId { get; set; }
+
+        public string Category { get; set; }
+
         #endregion
     }
 }

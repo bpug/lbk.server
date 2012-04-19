@@ -1,31 +1,27 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="IQuestionRepository.cs" company="ip-connect GmbH">
+// <copyright file="QuetionCategoryExtensions.cs" company="ip-connect GmbH">
 //   Copyright (c) ip-connect GmbH. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.MobileApp.Data
+namespace Lbk.MobileApp.Web.Models.Extensions
 {
     #region using directives
 
-    using Lbk.MobileApp.Core;
     using Lbk.MobileApp.Model;
 
     #endregion
 
-    public interface IQuestionRepository
+    public static class QuetionCategoryExtensions
     {
         #region - Public Methods -
 
-        void Create(long serieId, long categoryId, Question question);
-
-        void Delete(long questionId);
-
-        Question GetQuestion(long questionId);
-
-        PagedDataList<Question> GetQuestions(PagedDataInput<Question> pagedDataInput);
-
-        void Update(Question question);
+        public static string GetCategoryCompleteDescription(this QuestionCategory category)
+        {
+            return !string.IsNullOrWhiteSpace(category.Title)
+                       ? category.Title
+                       : string.Empty;
+        }
 
         #endregion
     }

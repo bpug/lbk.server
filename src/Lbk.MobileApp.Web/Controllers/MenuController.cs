@@ -112,6 +112,7 @@ namespace Lbk.MobileApp.Web.Controllers
 
         public ActionResult List(MenuSearchFormModel menu, PagedDataInput pagedDataInput, string btnSubmit)
         {
+            //ColumnNormalizer.
             var pagedDataInputOfMenu = new PagedDataInput<Menu>(pagedDataInput);
             pagedDataInputOfMenu.PageSize =
                 (int)
@@ -122,6 +123,8 @@ namespace Lbk.MobileApp.Web.Controllers
                     MenuSearchFormModelExtensions.ToModel(menu.GetValueOrDefault()), 
                     keyPrefix: "SearchItem_", 
                     removeValue: btnSubmit == "Clear");
+            pagedDataInputOfMenu.Sort = FixupMenuSortColumn(pagedDataInputOfMenu.Sort);
+            pagedDataInputOfMenu.SortDir = FixupMenuSortDir(pagedDataInputOfMenu.SortDir);
 
             var series = this.Using<GetMenus>().Execute(pagedDataInputOfMenu);
 
@@ -140,6 +143,26 @@ namespace Lbk.MobileApp.Web.Controllers
             return this.View(viewModel);
         }
 
+        #endregion
+
+        #region - Methods -
+        private static string FixupMenuSortColumn(string sort)
+        {
+            if (string.IsNullOrWhiteSpace(sort))
+            {
+                return "Date";
+            }
+            return sort;
+        }
+
+        private static string FixupMenuSortDir(string sortDir)
+        {
+            if (string.IsNullOrWhiteSpace(sortDir))
+            {
+                return "desc";
+            }
+            return sortDir;
+        }
         #endregion
     }
 }

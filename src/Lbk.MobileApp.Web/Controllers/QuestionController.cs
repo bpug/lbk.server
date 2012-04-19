@@ -4,6 +4,9 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System.Collections.Generic;
+using System.Linq;
+
 namespace Lbk.MobileApp.Web.Controllers
 {
     #region using directives
@@ -35,11 +38,11 @@ namespace Lbk.MobileApp.Web.Controllers
         #region - Public Methods -
 
         [HttpPost]
-        public ActionResult Create(long serieId, QuestionFormModel model)
+        public ActionResult Create(long serieId, long categoryId, QuestionFormModel model)
         {
             if (model != null && this.ModelState.IsValid)
             {
-                this.Using<AddQuestion>().Execute(serieId, model);
+                this.Using<AddQuestion>().Execute(serieId, categoryId, model);
 
                 return this.RedirectToAction("List", new { controller = "Answer", id = model.Id });
             }
@@ -49,6 +52,7 @@ namespace Lbk.MobileApp.Web.Controllers
 
         public ActionResult Create(long id)
         {
+            this.AddCategorySelectListToViewData();
             return this.View(new QuestionFormModel { SerieId = id });
         }
 
@@ -91,6 +95,8 @@ namespace Lbk.MobileApp.Web.Controllers
         {
             var question = this.Using<GetQuestionById>().Execute(id);
 
+            this.AddCategorySelectListToViewData(QuestionSearchFormModelExtensions.ToFormModel(question));
+
             return this.View(QuestionSearchFormModelExtensions.ToFormModel(question));
         }
 
@@ -130,6 +136,23 @@ namespace Lbk.MobileApp.Web.Controllers
             }
 
             return this.View(viewModel);
+        }
+
+        #endregion
+
+        #region - Methods -
+        private void AddCategorySelectListToViewData(QuestionFormModel model = null)
+        {
+            var categories =
+                this.Using<GetQuestionCategories>().Execute(
+                    new PagedDataInput<QuestionCategory> { Ascending = true, PageIndex = 0, PageSize = 1000 });
+           
+            this.ViewData["Categories"] =
+                new SelectList(
+                    categories.Select(x => new { Value = x.Id, Text = x.GetCategoryCompleteDescription() }),
+                    "Value",
+                    "Text",
+                    (model != null) ? model.CategoryId : 0);
         }
 
         #endregion

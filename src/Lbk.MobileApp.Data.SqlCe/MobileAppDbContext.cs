@@ -37,6 +37,8 @@ namespace Lbk.MobileApp.Data.SqlCe
 
         public DbSet<Video> Videos { get; set; }
 
+        public DbSet<QuestionCategory> QuestionCategorys { get; set; }
+
         #endregion
 
         #region - Implemented Interfaces -
@@ -73,6 +75,8 @@ namespace Lbk.MobileApp.Data.SqlCe
             SetupPictureEntity(modelBuilder);
 
             SetupVideoEntity(modelBuilder);
+
+            SetupQuestionCategoryEntity(modelBuilder);
         }
 
         private static void SetupAnswerEntity(DbModelBuilder modelBuilder)
@@ -154,6 +158,7 @@ namespace Lbk.MobileApp.Data.SqlCe
             modelBuilder.Entity<Question>().Property(q => q.Number).IsRequired();
             modelBuilder.Entity<Question>().Property(q => q.Points).IsRequired();
             modelBuilder.Entity<Question>().HasRequired(q => q.Serie);
+            modelBuilder.Entity<Question>().HasRequired(q => q.Category);
         }
 
         private static void SetupSeriesEntity(DbModelBuilder modelBuilder)
@@ -180,6 +185,15 @@ namespace Lbk.MobileApp.Data.SqlCe
             modelBuilder.Entity<Video>().Property(e => e.ThumbnailLink).HasMaxLength(255);
         }
 
+       
+        private static void SetupQuestionCategoryEntity(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<QuestionCategory>().HasKey(e => e.Id);
+            modelBuilder.Entity<QuestionCategory>().Property(e => e.Id).HasDatabaseGeneratedOption(
+                DatabaseGeneratedOption.Identity);
+            modelBuilder.Entity<QuestionCategory>().Property(e => e.Title).HasMaxLength(5).IsRequired();
+        }
+        
         #endregion
     }
 }

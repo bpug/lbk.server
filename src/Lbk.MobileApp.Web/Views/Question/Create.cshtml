@@ -14,6 +14,14 @@
     <fieldset>
         <legend>New Question</legend>
         <div class="editor-label">
+            @Html.LabelFor(model => model.CategoryId)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.CategoryId, ViewData["Categories"] as SelectList, "--Select a Category--", new { @class = "editor-textbox" })
+            @Html.ValidationMessageFor(model => model.CategoryId)
+        </div>
+
+        <div class="editor-label">
             @Html.LabelFor(model => model.Description)
         </div>
         <div class="editor-field">

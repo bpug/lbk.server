@@ -1,9 +1,10 @@
-﻿@model Lbk.MobileApp.Web.Models.GenericListViewModel<Lbk.MobileApp.Model.Category, Lbk.MobileApp.Web.Models.CategorySearchFormModel>
+﻿@using Lbk.MobileApp.Domain.Resources
+@model Lbk.MobileApp.Web.Models.GenericListViewModel<Lbk.MobileApp.Model.Category, Lbk.MobileApp.Web.Models.CategorySearchFormModel>
 <div id="searchRegion">
     @using (Ajax.BeginForm("List", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "mainSearch" }))
     {
         <fieldset>
-            <legend>Search</legend>
+            <legend>@Messages.Search</legend>
             <div style="vertical-align: middle; margin-top: 0.80em;">
                 <div style="float: left;">
                     <div>

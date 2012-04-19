@@ -4,6 +4,8 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
+using Lbk.MobileApp.Model;
+
 namespace Lbk.MobileApp.Web.Models
 {
     #region using directives
@@ -42,6 +44,8 @@ namespace Lbk.MobileApp.Web.Models
         public int? Points { get; set; }
 
         public long SerieId { get; set; }
+
+        public long CategoryId { get; set; }
 
         #endregion
     }

@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="IQuestionRepository.cs" company="ip-connect GmbH">
+// <copyright file="IQuestionCategoryRepository.cs" company="ip-connect GmbH">
 //   Copyright (c) ip-connect GmbH. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
@@ -13,19 +13,19 @@ namespace Lbk.MobileApp.Data
 
     #endregion
 
-    public interface IQuestionRepository
+    public interface IQuestionCategoryRepository
     {
         #region - Public Methods -
 
-        void Create(long serieId, long categoryId, Question question);
+        void Create(QuestionCategory category);
 
-        void Delete(long questionId);
+        void Delete(long categoryId);
 
-        Question GetQuestion(long questionId);
+        PagedDataList<QuestionCategory> GetCategories(PagedDataInput<QuestionCategory> pagedDataInput);
 
-        PagedDataList<Question> GetQuestions(PagedDataInput<Question> pagedDataInput);
+        QuestionCategory GetCategory(long categoryId);
 
-        void Update(Question question);
+        void Update(QuestionCategory category);
 
         #endregion
     }

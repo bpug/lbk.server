@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="AddQuestion.cs" company="ip-connect GmbH">
+// <copyright file="GetQuestionCategoryById.cs" company="ip-connect GmbH">
 //   Copyright (c) ip-connect GmbH. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
@@ -12,47 +12,39 @@ namespace Lbk.MobileApp.Domain.Handlers
 
     using Lbk.MobileApp.Data;
     using Lbk.MobileApp.Domain.Contracts;
-    using Lbk.MobileApp.Domain.Extensions;
     using Lbk.MobileApp.Domain.Resources;
+    using Lbk.MobileApp.Model;
 
     #endregion
 
-    public class AddQuestion
+    public class GetQuestionCategoryById
     {
         #region - Constants and Fields -
 
-        private readonly IQuestionRepository _questionRepository;
+        private readonly IQuestionCategoryRepository _categoryRepository;
 
         #endregion
 
         #region - Constructors and Destructors -
 
-        public AddQuestion(IQuestionRepository questionRepository)
+        public GetQuestionCategoryById(IQuestionCategoryRepository categoryRepository)
         {
-            this._questionRepository = questionRepository;
+            this._categoryRepository = categoryRepository;
         }
 
         #endregion
 
         #region - Public Methods -
 
-        public virtual void Execute(long serieId, long categoryId, ICreateQuestionCommand question)
+        public virtual QuestionCategory Execute(long id)
         {
-            if (question == null)
-            {
-                throw new ArgumentNullException("question");
-            }
-
             try
             {
-                var entity = question.ToEntity();
-                this._questionRepository.Create(serieId,categoryId, entity);
-
-                question.Id = entity.Id;
+                return this._categoryRepository.GetCategory(id);
             }
             catch (InvalidOperationException ex)
             {
-                throw new BusinessServicesException(Messages.UnableToAddQuestionExceptionMessage, ex);
+                throw new BusinessServicesException(Messages.UnableToRetrieveCategoryExceptionMessage, ex);
             }
         }
 

@@ -42,7 +42,9 @@ namespace Lbk.MobileApp.Web.Models.Extensions
                     Description = model.Description, 
                     Number = model.Number, 
                     Points = model.Points, 
-                    SerieId = model.SerieId
+                    SerieId = model.SerieId,
+                    CategoryId = model.CategoryId,
+                    Category = model.Category != null ? model.Category.GetCategoryCompleteDescription() : null, 
                 };
         }
 
@@ -59,7 +61,8 @@ namespace Lbk.MobileApp.Web.Models.Extensions
                     Description = model.Description, 
                     Number = model.Number.HasValue ? model.Number.Value : 0, 
                     Points = model.Points.HasValue ? model.Points.Value : 0, 
-                    SerieId = model.SerieId
+                    SerieId = model.SerieId,
+                    CategoryId = model.CategoryId
                 };
         }
 
@@ -76,7 +79,8 @@ namespace Lbk.MobileApp.Web.Models.Extensions
                     Description = model.Description, 
                     Number = model.Number > 0 ? model.Number : new int?(), 
                     Points = model.Points > 0 ? model.Points : new int?(), 
-                    SerieId = model.SerieId
+                    SerieId = model.SerieId,
+                    CategoryId = model.CategoryId
                 };
         }
 
