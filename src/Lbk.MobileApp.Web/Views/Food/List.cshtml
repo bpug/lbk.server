@@ -1,6 +1,8 @@
-﻿@model Lbk.MobileApp.Web.Models.GenericListViewModel<Lbk.MobileApp.Web.Models.FoodListViewModel, Lbk.MobileApp.Web.Models.FoodSearchFormModel>
+﻿@using Lbk.MobileApp.Domain.Resources
+@using Lbk.MobileApp.Web.Helpers
+@model Lbk.MobileApp.Web.Models.GenericListViewModel<Lbk.MobileApp.Web.Models.FoodListViewModel, Lbk.MobileApp.Web.Models.FoodSearchFormModel>
 @{
-    ViewBag.Title = "Menu - [List Foods]";
+    ViewBag.Title = string.Format("Menu - [List {0}]", Messages.Foods);
 }
 <h3>
     @Html.ActionLink("Menu", "List", new { controller = "Menu" })
@@ -8,11 +10,20 @@
     @*> @Html.ActionLink((string)ViewBag.SerieDescription, "List", new { controller = "Question", id = (object)ViewBag.SerieId })*@
 </h3>
 <h2>
-    List Foods</h2>
-<p>
-    @Html.ActionLink("Create New", "Create", new { id = @Model.SearchItem.MenuId })
-    | @Html.ActionLink("Manage Categories...", "List", new { controller = "Category", @Model.SearchItem.MenuId })
-</p>
+    List  @Messages.Foods</h2>
+<div>
+    <span>
+        @Html.ImageActionLink(Url.Content("~/Content/Images/add.png"), "", "Create", null, new { title = Messages.FoodCreateNew, style = "image-icon" })
+        @Html.ActionLink(Messages.FoodCreateNew, "Create", new { id = @Model.SearchItem.MenuId })
+    </span>
+    <span>
+    @Html.ImageActionLink(Url.Content("~/Content/Images/edit.png"), "", "List", new { controller = "Category", @Model.SearchItem.MenuId },
+                new { title = string.Format("{0} {1}", Messages.Category, Messages.Manage), style = "image-icon" })
+    @Html.ActionLink(string.Format("{0} {1}", Messages.Category, Messages.Manage), "List", new { controller = "Category", @Model.SearchItem.MenuId })
+</span>
+   
+</div>
+
 <div id="mainSearch">
     @Html.Partial("_search", Model)
 </div>

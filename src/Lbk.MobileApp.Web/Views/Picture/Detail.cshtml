@@ -1,33 +1,44 @@
-﻿@model Lbk.MobileApp.Web.Models.PictureFormModel
+﻿@using Lbk.MobileApp.Domain.Resources
+@using Lbk.MobileApp.Web.Helpers
+@model Lbk.MobileApp.Web.Models.PictureFormModel
 @{
-    ViewBag.Title = "Picture - [Detail Picture]";
+    ViewBag.Title = string.Format("{0} - [{0} {1} ]", Messages.Picture, Messages.Details); 
 }
 <h2>
-    Detail</h2>
+    @Messages.Details</h2>
 <fieldset>
-    <legend>Detail Picture</legend>
-    <div class="display-label">
-        Description</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Description)
-    </div>
-    <div class="display-label">
-        FileName</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.FileName)
-    </div>
-    <div class="display-label">
-        Link</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Link)
-    </div>
-    <div class="display-label">
-        SortOrder</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.SortOrder)
+    <legend>@Messages.Picture @Messages.Details</legend>
+    <div>
+        <div class="picture-data">
+            <div class="display-label">
+                @Html.LabelFor(model => model.Description)</div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Description)
+            </div>
+            <div class="display-label">
+                @Html.LabelFor(model => model.FileName)</div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.FileName)
+            </div>
+            <div class="display-label">
+                @Html.LabelFor(model => model.Link)</div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Link) 
+
+            </div>
+            <div class="display-label">
+                @Html.LabelFor(model => model.SortOrder)</div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.SortOrder)
+            </div>
+        </div>
+        <div class="picture-image">
+             @Html.Image(Url.Content(Model.Link), Html.Encode(Model.Description), new { title = Model.Description, border = 0, height = 320 })
+        </div>
+        <div style="clear: both;" />
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "List")
+    @Html.ActionLink(Messages.Edit, "Edit", new { id = Model.Id }) |
+    @Html.ActionLink(Messages.BackToList, "List")
 </p>

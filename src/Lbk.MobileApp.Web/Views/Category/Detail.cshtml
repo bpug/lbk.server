@@ -1,24 +1,25 @@
-﻿@model Lbk.MobileApp.Web.Models.CategoryFormModel
+﻿@using Lbk.MobileApp.Domain.Resources
+@model Lbk.MobileApp.Web.Models.CategoryFormModel
 @{
-    ViewBag.Title = "Menu - [Detail Category]";
+    ViewBag.Title = string.Format("Menu - [{0} {1}]", Messages.Category, Messages.Details);
 }
 <h2>
-    Detail</h2>
+    @Messages.Details</h2>
 <fieldset>
     <legend>Detail Category</legend>
     <div class="display-label">
-        Date</div>
+         @Html.LabelFor(model => model.Title)</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Title)
     </div>
     <div class="display-label">
-        Description</div>
+        @Html.LabelFor(model => model.Description)</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Description)
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id, MenuId = (object)ViewBag.MenuId })
+    @Html.ActionLink(Messages.Edit, "Edit", new { id = Model.Id, MenuId = (object)ViewBag.MenuId })
     |
-    @Html.ActionLink("Back to List", "List", new { MenuId = (object)ViewBag.MenuId })
+    @Html.ActionLink(Messages.BackToList, "List", new { MenuId = (object)ViewBag.MenuId })
 </p>

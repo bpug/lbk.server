@@ -1,58 +1,59 @@
-﻿@model Lbk.MobileApp.Web.Models.EventFormModel
+﻿@using Lbk.MobileApp.Domain.Resources
+@model Lbk.MobileApp.Web.Models.EventFormModel
 @{
-    ViewBag.Title = "Event - [Detail Event]";
+    ViewBag.Title = string.Format("{0} - [{0} {1} ]", Messages.Event, Messages.Details);
 }
 <h2>
-    Detail</h2>
+    @Messages.Details</h2>
 <fieldset>
-    <legend>Detail Event</legend>
+    <legend>@Messages.Event @Messages.Details</legend>
     <div class="display-label">
-        Title</div>
+         @Html.LabelFor(model => model.Title)</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Title)
     </div>
     <div class="display-label">
-        Description</div>
+        @Html.LabelFor(model => model.Description)</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Description)
     </div>
     <div class="display-label">
-        Date</div>
+        @Html.LabelFor(model => model.Date)</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Date)
     </div>
     <div class="display-label">
-        DateOrder</div>
+        @Html.LabelFor(model => model.DateOrder)</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.DateOrder)
     </div>
     <div class="display-label">
-        ActivatedAt</div>
+         @Html.LabelFor(model => model.ActivatedAt)</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.ActivatedAt)
     </div>
     <div class="display-label">
-        ExpiresAt</div>
+        @Html.LabelFor(model => model.ExpiresAt)</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.ExpiresAt)
     </div>
     <div class="display-label">
-        IsActivated</div>
+        @Html.LabelFor(model => model.IsActivated)</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.IsActivated)
     </div>
     <div class="display-label">
-        Reservationlink</div>
+        @Html.LabelFor(model => model.ReservationLink)</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.ReservationLink)
     </div>
     <div class="display-label">
-        Thumbnaillink</div>
+        @Html.LabelFor(model => model.ThumbnailLink)</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.ThumbnailLink)
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "List")
+    @Html.ActionLink(Messages.Edit, "Edit", new { id = Model.Id }) |
+    @Html.ActionLink(Messages.BackToList, "List")
 </p>

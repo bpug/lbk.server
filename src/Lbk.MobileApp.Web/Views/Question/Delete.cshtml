@@ -1,25 +1,26 @@
-﻿@model Lbk.MobileApp.Web.Models.QuestionFormModel
+﻿@using Lbk.MobileApp.Domain.Resources
+@model Lbk.MobileApp.Web.Models.QuestionFormModel
 @{
-    ViewBag.Title = "Quiz - [Delete Question]";
+    ViewBag.Title = string.Format("{0} - [{1} {0} ]", Messages.Delete, Messages.Question); 
 }
 <h2>
-    Delete</h2>
+    @Messages.Delete</h2>
 <h3>
-    Are you sure you want to delete this?</h3>
+    @Messages.DeleteSecurityQuestion</h3>
 <fieldset>
-    <legend>Delete Question</legend>
+    <legend>@Messages.Question @Messages.Delete</legend>
     <div class="display-label">
-        Description</div>
+        @Html.LabelFor(model => model.Description)</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Description)
     </div>
     <div class="display-label">
-        Number</div>
+        @Html.LabelFor(model => model.Number)</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Number)
     </div>
     <div class="display-label">
-        Points</div>
+        @Html.LabelFor(model => model.Points)</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Points)
     </div>
@@ -28,8 +29,8 @@
 {
     @Html.HiddenFor(model => model.SerieId)
     <p>
-        <input type="submit" value="Delete" />
+        <input type="submit" value=@Messages.Delete />
         |
-        @Html.ActionLink("Back to List", "List", new { id = Model.SerieId })
+        @Html.ActionLink(Messages.BackToList, "List", new { id = Model.SerieId })
     </p>
 }

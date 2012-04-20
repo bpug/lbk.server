@@ -61,6 +61,24 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Antwort.
+        /// </summary>
+        public static string Answer {
+            get {
+                return ResourceManager.GetString("Answer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Neue Antwort.
+        /// </summary>
+        public static string AnswerCreateNew {
+            get {
+                return ResourceManager.GetString("AnswerCreateNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Description.
         /// </summary>
         public static string AnswerDescriptionLabelText {
@@ -124,11 +142,38 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Antworten.
+        /// </summary>
+        public static string Answers {
+            get {
+                return ResourceManager.GetString("Answers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Zurück zu Liste.
         /// </summary>
         public static string BackToList {
             get {
                 return ResourceManager.GetString("BackToList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kategorie.
+        /// </summary>
+        public static string Category {
+            get {
+                return ResourceManager.GetString("Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Neue Kategorie.
+        /// </summary>
+        public static string CategoryCreateNew {
+            get {
+                return ResourceManager.GetString("CategoryCreateNew", resourceCulture);
             }
         }
         
@@ -160,6 +205,15 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to --Wählen Sie  eine Kategorie--.
+        /// </summary>
+        public static string CategorySelect {
+            get {
+                return ResourceManager.GetString("CategorySelect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Title.
         /// </summary>
         public static string CategoryTitleLabelText {
@@ -183,6 +237,33 @@ namespace Lbk.MobileApp.Domain.Resources {
         public static string CategoryTitleStringLengthValidationError {
             get {
                 return ResourceManager.GetString("CategoryTitleStringLengthValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Löchen.
+        /// </summary>
+        public static string Clear {
+            get {
+                return ResourceManager.GetString("Clear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Befehle.
+        /// </summary>
+        public static string Commands {
+            get {
+                return ResourceManager.GetString("Commands", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kopieren.
+        /// </summary>
+        public static string Copy {
+            get {
+                return ResourceManager.GetString("Copy", resourceCulture);
             }
         }
         
@@ -214,11 +295,29 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Detail.
+        /// </summary>
+        public static string Details {
+            get {
+                return ResourceManager.GetString("Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Editieren.
         /// </summary>
         public static string Edit {
             get {
                 return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Veranstaltung.
+        /// </summary>
+        public static string Event {
+            get {
+                return ResourceManager.GetString("Event", resourceCulture);
             }
         }
         
@@ -246,6 +345,15 @@ namespace Lbk.MobileApp.Domain.Resources {
         public static string EventActivatedAtYearRangeValidationError {
             get {
                 return ResourceManager.GetString("EventActivatedAtYearRangeValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Neue Veranstaltung.
+        /// </summary>
+        public static string EventCreateNew {
+            get {
+                return ResourceManager.GetString("EventCreateNew", resourceCulture);
             }
         }
         
@@ -385,6 +493,15 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Veranstaltungen.
+        /// </summary>
+        public static string Events {
+            get {
+                return ResourceManager.GetString("Events", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Thumbnaillink.
         /// </summary>
         public static string EventThumbnailLinkLabelText {
@@ -430,6 +547,15 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lebensmittel.
+        /// </summary>
+        public static string Food {
+            get {
+                return ResourceManager.GetString("Food", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Category.
         /// </summary>
         public static string FoodCategoryIdLabelText {
@@ -444,6 +570,15 @@ namespace Lbk.MobileApp.Domain.Resources {
         public static string FoodCategoryNameLabelText {
             get {
                 return ResourceManager.GetString("FoodCategoryNameLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Neues Lebensmittel.
+        /// </summary>
+        public static string FoodCreateNew {
+            get {
+                return ResourceManager.GetString("FoodCreateNew", resourceCulture);
             }
         }
         
@@ -498,6 +633,15 @@ namespace Lbk.MobileApp.Domain.Resources {
         public static string FoodPriceRequired {
             get {
                 return ResourceManager.GetString("FoodPriceRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lebensmittel.
+        /// </summary>
+        public static string Foods {
+            get {
+                return ResourceManager.GetString("Foods", resourceCulture);
             }
         }
         
@@ -565,6 +709,42 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to List.
+        /// </summary>
+        public static string List {
+            get {
+                return ResourceManager.GetString("List", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Verwalten.
+        /// </summary>
+        public static string Manage {
+            get {
+                return ResourceManager.GetString("Manage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Menu.
+        /// </summary>
+        public static string Menu {
+            get {
+                return ResourceManager.GetString("Menu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Neue Menu.
+        /// </summary>
+        public static string MenuCreateNew {
+            get {
+                return ResourceManager.GetString("MenuCreateNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Date.
         /// </summary>
         public static string MenuDateLabelText {
@@ -615,6 +795,24 @@ namespace Lbk.MobileApp.Domain.Resources {
         public static string MenuDescriptionStringLengthValidationError {
             get {
                 return ResourceManager.GetString("MenuDescriptionStringLengthValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bild.
+        /// </summary>
+        public static string Picture {
+            get {
+                return ResourceManager.GetString("Picture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Neues Bild.
+        /// </summary>
+        public static string PictureCreateNew {
+            get {
+                return ResourceManager.GetString("PictureCreateNew", resourceCulture);
             }
         }
         
@@ -700,6 +898,15 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bilder.
+        /// </summary>
+        public static string Pictures {
+            get {
+                return ResourceManager.GetString("Pictures", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sortorder.
         /// </summary>
         public static string PictureSortOrderLabelText {
@@ -727,7 +934,16 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Category.
+        ///   Looks up a localized string similar to Frage.
+        /// </summary>
+        public static string Question {
+            get {
+                return ResourceManager.GetString("Question", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kategorie.
         /// </summary>
         public static string QuestionCategoryIdLabelText {
             get {
@@ -835,7 +1051,16 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Speichern.
+        ///   Looks up a localized string similar to Questions.
+        /// </summary>
+        public static string Questions {
+            get {
+                return ResourceManager.GetString("Questions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
         /// </summary>
         public static string Save {
             get {
@@ -844,11 +1069,20 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Suchen.
+        ///   Looks up a localized string similar to Search.
         /// </summary>
         public static string Search {
             get {
                 return ResourceManager.GetString("Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quiz.
+        /// </summary>
+        public static string Serie {
+            get {
+                return ResourceManager.GetString("Serie", resourceCulture);
             }
         }
         
@@ -876,6 +1110,15 @@ namespace Lbk.MobileApp.Domain.Resources {
         public static string SerieActivatedAtYearRangeValidationError {
             get {
                 return ResourceManager.GetString("SerieActivatedAtYearRangeValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Neue Quiz.
+        /// </summary>
+        public static string SerieCreateNew {
+            get {
+                return ResourceManager.GetString("SerieCreateNew", resourceCulture);
             }
         }
         
@@ -939,6 +1182,15 @@ namespace Lbk.MobileApp.Domain.Resources {
         public static string SerieIsActivatedLabelText {
             get {
                 return ResourceManager.GetString("SerieIsActivatedLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show.
+        /// </summary>
+        public static string Show {
+            get {
+                return ResourceManager.GetString("Show", resourceCulture);
             }
         }
         
@@ -1312,7 +1564,16 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Neue Video.
+        ///   Looks up a localized string similar to Video.
+        /// </summary>
+        public static string Video {
+            get {
+                return ResourceManager.GetString("Video", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New Video.
         /// </summary>
         public static string VideoCreateNew {
             get {

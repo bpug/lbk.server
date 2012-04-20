@@ -1,4 +1,6 @@
-﻿@model Lbk.MobileApp.Core.PagedDataList<Lbk.MobileApp.Model.Event>
+﻿@using Lbk.MobileApp.Domain.Resources
+@using Lbk.MobileApp.Web.Helpers
+@model Lbk.MobileApp.Core.PagedDataList<Lbk.MobileApp.Model.Event>
 <script type="text/javascript">
     $(function () {
         $('#selectPageSize select').change(function () {
@@ -9,21 +11,25 @@
 @{
     var grid = new WebGrid(canPage: true, canSort: true, rowsPerPage: Model.PageSize, ajaxUpdateContainerId: "grid");
     grid.Bind(Model.Items, rowCount: Model.TotalItemCount, autoSortAndPage: false);
-    @grid.GetHtml(htmlAttributes: new { id = "grid", width = "100%" },
+    @grid.GetHtml(htmlAttributes: new { id = "grid", width = "100%" }, 
+                headerStyle: "webgrid-header",
+                alternatingRowStyle: "webgrid-alternating-row",
+                rowStyle: "webgrid-row-style",
+                selectedRowStyle: "webgrid-selected-row",
                 columns: grid.Columns(
-                    grid.Column("Title"),
-                    grid.Column("Description"),
-                    grid.Column("Date"),
-                    grid.Column("DateOrder", format: @<text>@item.DateOrder.ToShortDateString()</text>),
-                    grid.Column("ActivatedAt", format: @<text>@item.ActivatedAt.ToShortDateString()</text>),
-                    grid.Column("ExpiresAt", format: @<text>@item.ExpiresAt.ToShortDateString()</text>),
-                    grid.Column("IsActivated"),
-                    grid.Column("Commands", format: (item) =>
+                    grid.Column("Title", header: Messages.EventTitleLabelText, style: "event-title"),
+                    grid.Column("Description",header:Messages.EventDescriptionLabelText, style:"event-description"),
+                    grid.Column("Date", header:Messages.EventDateLabelText,style: "event-date"),
+                    grid.Column("DateOrder",header:Messages.EventDateOrderLabelText, format: @<text>@item.DateOrder.ToShortDateString()</text>),
+                    grid.Column("ActivatedAt", header: Messages.EventActivatedAtLabelText, format: @<text>@item.ActivatedAt.ToShortDateString()</text>),
+                    grid.Column("ExpiresAt",header: Messages.EventExpiresAtLabelText, format: @<text>@item.ExpiresAt.ToShortDateString()</text>),
+                    grid.Column("IsActivated", header:Messages.EventIsActivatedLabelText),
+                    grid.Column(Messages.Commands, style: "webgrid-commands", format: (item) =>
                     {
-                        return new MvcHtmlString(string.Join(" | ",
-                            Html.ActionLink("Details", "Detail", new { id = item.Id }),
-                            Html.ActionLink("Edit", "Edit", new { id = item.Id }),
-                            Html.ActionLink("Delete", "Delete", new { id = item.Id })));
+                        return new MvcHtmlString(string.Join("  ",
+                            Html.ImageActionLink(Url.Content("~/Content/Images/detail.png"), "", "Detail", new { id = item.Id }, new { title = Messages.Details, style = "image-icon" }),
+                            Html.ImageActionLink(Url.Content("~/Content/Images/edit.png"), "", "Edit", new { id = item.Id }, new { title = Messages.Edit, style = "image-icon" }),
+                            Html.ImageActionLink(Url.Content("~/Content/Images/delete.png"), "", "Delete", new { id = item.Id }, new { title = Messages.Delete, style = "image-icon" })));
                     }, canSort: false)),
                     mode: WebGridPagerModes.FirstLast | WebGridPagerModes.Numeric | WebGridPagerModes.NextPrevious)
 }

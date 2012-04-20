@@ -1,4 +1,5 @@
-﻿@model Lbk.MobileApp.Web.Models.SerieFormModel
+﻿@using Lbk.MobileApp.Domain.Resources
+@model Lbk.MobileApp.Web.Models.SerieFormModel
 @{
     ViewBag.Title = "Quiz - [Edit Serie]";
 }
@@ -43,10 +44,10 @@
         </div>
         @Html.HiddenFor(model => model.Id)
         <p>
-            <input type="submit" value="Save" />
+            <input type="submit" value=@Messages.Save />
         </p>
     </fieldset>
 }
 <div>
-    @Html.ActionLink("Back to List", "List")
+    @Html.ActionLink(Messages.BackToList, "List")
 </div>

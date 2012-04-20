@@ -83,6 +83,7 @@
     <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Handler\PagedListCookieHandler.cs" />
+    <Compile Include="Helpers\ImageExtension.cs" />
     <Compile Include="Models\AnswerFormModel.cs" />
     <Compile Include="Models\CategoryFormModel.cs" />
     <Compile Include="Models\CategorySearchFormModel.cs" />
@@ -136,6 +137,10 @@
       <Link>ReleaseNotes.txt</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Images\add.png" />
+    <Content Include="Content\Images\delete.png" />
+    <Content Include="Content\Images\detail.png" />
+    <Content Include="Content\Images\edit.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />

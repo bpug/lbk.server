@@ -1,4 +1,6 @@
-﻿@model Lbk.MobileApp.Core.PagedDataList<Lbk.MobileApp.Model.Serie>
+﻿@using Lbk.MobileApp.Domain.Resources
+@using Lbk.MobileApp.Web.Helpers
+@model Lbk.MobileApp.Core.PagedDataList<Lbk.MobileApp.Model.Serie>
 <script type="text/javascript">
     $(function () {
         $('#selectPageSize select').change(function () {
@@ -10,22 +12,26 @@
     var grid = new WebGrid(canPage: true, canSort: true, rowsPerPage: Model.PageSize, ajaxUpdateContainerId: "grid");
     grid.Bind(Model.Items, rowCount: Model.TotalItemCount, autoSortAndPage: false);
     @grid.GetHtml(htmlAttributes: new { id = "grid", width = "100%" },
+                        headerStyle: "webgrid-header",
+                        alternatingRowStyle: "webgrid-alternating-row",
+                        rowStyle: "webgrid-row-style",
+                        selectedRowStyle: "webgrid-selected-row",
                 columns: grid.Columns(
             ////grid.Column("Id"),
-                    grid.Column("Description"),
-                    grid.Column("ActivatedAt", format: @<text>@item.ActivatedAt.ToShortDateString()</text>),
-                    grid.Column("ExpiresAt", format: @<text>@item.ExpiresAt.ToShortDateString()</text>),
-                    grid.Column("IsActivated"),
-                    grid.Column("Questions", format: (item) =>
+                    grid.Column("Description", header:Messages.SerieDescriptionLabelText),
+                    grid.Column("ActivatedAt",header:Messages.SerieActivatedAtLabelText, format: @<text>@item.ActivatedAt.ToShortDateString()</text>),
+                    grid.Column("ExpiresAt",header:Messages.SerieExpiresAtLabelText, format: @<text>@item.ExpiresAt.ToShortDateString()</text>),
+                    grid.Column("IsActivated", header:Messages.SerieIsActivatedLabelText),
+                    grid.Column("Questions",header:Messages.Questions, format: (item) =>
                     {
-                        return Html.ActionLink("Show Questions", "List", new { controller = "Question", id = item.Id });
+                        return Html.ActionLink(string.Format("{0}", Messages.Show), "List", new { controller = "Question", id = item.Id });
                     }, canSort: false),
-                    grid.Column("Commands", format: (item) =>
+                    grid.Column(Messages.Commands, style: "webgrid-commands", format: (item) =>
                     {
-                        return new MvcHtmlString(string.Join(" | ",
-                            Html.ActionLink("Details", "Detail", new { id = item.Id }),
-                            Html.ActionLink("Edit", "Edit", new { id = item.Id }),
-                            Html.ActionLink("Delete", "Delete", new { id = item.Id })));
+                        return new MvcHtmlString(string.Join("  ",
+                            Html.ImageActionLink(Url.Content("~/Content/Images/detail.png"), "", "Detail", new { id = item.Id }, new { title = Messages.Details, style = "image-icon" }),
+                            Html.ImageActionLink(Url.Content("~/Content/Images/edit.png"), "", "Edit", new { id = item.Id }, new { title = Messages.Edit, style = "image-icon" }),
+                            Html.ImageActionLink(Url.Content("~/Content/Images/delete.png"), "", "Delete", new { id = item.Id }, new { title = Messages.Delete, style = "image-icon" })));
                     }, canSort: false)),
                     mode: WebGridPagerModes.FirstLast | WebGridPagerModes.Numeric | WebGridPagerModes.NextPrevious)
 }

@@ -547,7 +547,7 @@
     <value>Thumbnaillink must be less than 255 characters.</value>
   </data>
   <data name="QuestionCategoryIdLabelText" xml:space="preserve">
-    <value>Category</value>
+    <value>Kategorie</value>
   </data>
   <data name="BackToList" xml:space="preserve">
     <value>Zurück zu Liste</value>
@@ -571,12 +571,99 @@
     <value>Fragen</value>
   </data>
   <data name="Save" xml:space="preserve">
-    <value>Speichern</value>
+    <value>Save</value>
   </data>
   <data name="Search" xml:space="preserve">
-    <value>Suchen</value>
+    <value>Search</value>
   </data>
   <data name="VideoCreateNew" xml:space="preserve">
-    <value>Neue Video</value>
+    <value>New Video</value>
+  </data>
+  <data name="Answer" xml:space="preserve">
+    <value>Antwort</value>
+  </data>
+  <data name="AnswerCreateNew" xml:space="preserve">
+    <value>Neue Antwort</value>
+  </data>
+  <data name="Answers" xml:space="preserve">
+    <value>Antworten</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Kategorie</value>
+  </data>
+  <data name="CategoryCreateNew" xml:space="preserve">
+    <value>Neue Kategorie</value>
+  </data>
+  <data name="CategorySelect" xml:space="preserve">
+    <value>--Wählen Sie  eine Kategorie--</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>Löchen</value>
+  </data>
+  <data name="Commands" xml:space="preserve">
+    <value>Befehle</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Kopieren</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Detail</value>
+  </data>
+  <data name="Event" xml:space="preserve">
+    <value>Veranstaltung</value>
+  </data>
+  <data name="EventCreateNew" xml:space="preserve">
+    <value>Neue Veranstaltung</value>
+  </data>
+  <data name="Events" xml:space="preserve">
+    <value>Veranstaltungen</value>
+  </data>
+  <data name="Food" xml:space="preserve">
+    <value>Lebensmittel</value>
+  </data>
+  <data name="FoodCreateNew" xml:space="preserve">
+    <value>Neues Lebensmittel</value>
+  </data>
+  <data name="Foods" xml:space="preserve">
+    <value>Lebensmittel</value>
+  </data>
+  <data name="Manage" xml:space="preserve">
+    <value>Verwalten</value>
+  </data>
+  <data name="MenuCreateNew" xml:space="preserve">
+    <value>Neue Menu</value>
+  </data>
+  <data name="Picture" xml:space="preserve">
+    <value>Bild</value>
+  </data>
+  <data name="PictureCreateNew" xml:space="preserve">
+    <value>Neues Bild</value>
+  </data>
+  <data name="Pictures" xml:space="preserve">
+    <value>Bilder</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value>Frage</value>
+  </data>
+  <data name="Questions" xml:space="preserve">
+    <value>Questions</value>
+  </data>
+  <data name="Serie" xml:space="preserve">
+    <value>Quiz</value>
+  </data>
+  <data name="SerieCreateNew" xml:space="preserve">
+    <value>Neue Quiz</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>Show</value>
+  </data>
+  <data name="Video" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="List" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>Menu</value>
   </data>
 </root>

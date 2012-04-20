@@ -301,6 +301,9 @@ div#title {
 
 /* Styles for editor and display helpers
 ----------------------------------------------------------*/
+.display-label {
+	font-weight: bold;
+}
 .display-label, 
 .editor-label {
     margin: 1em 0 0 0;
@@ -322,4 +325,75 @@ div#title {
 
 .tri-state {
     width: 6em;
+}
+
+.webgrid-header th {
+	/*text-align: center;*/
+	white-space: nowrap;
+}
+
+.webgrid-alternating-row
+{
+    height: 30px;
+	background-color: #f2f2f2;
+    border-bottom: 1px solid #d2d2d2;
+    border-left: 2px solid #D6E8FF;
+    border-right: 2px solid #D6E8FF;
+}
+.webgrid-row-style
+{
+    height: 30px;
+    border-bottom: 1px solid #d2d2d2;
+    border-left: 2px solid #D6E8FF;
+    border-right: 2px solid #D6E8FF;
+
+}
+.webgrid-selected-row
+{
+    font-weight: bold;
+}
+
+.webgrid-selected-row
+{
+	font-weight: bold;
+}
+
+.event-description {
+	width: 400px;
+}
+
+.webgrid-commands {
+	width: 100px;
+}
+
+.event-title {
+	width: 300px;
+	vertical-align: top;
+}
+
+.picture-data {
+	
+	float: left;
+}
+
+.picture-image {
+	float: right;
+	
+}
+
+.picture-image-grid {
+	width: 80px;
+	text-align: center;
+}
+.image-icon {
+	border: none;
+	margin-left: 10px;
+}
+
+#mainSearch {
+	margin-top: 10px;
+}
+
+#searchRegion input[type="text"]  {
+	width: 200px;
 }

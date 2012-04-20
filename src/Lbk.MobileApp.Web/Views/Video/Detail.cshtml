@@ -1,34 +1,34 @@
 ﻿@using Lbk.MobileApp.Domain.Resources
 @model Lbk.MobileApp.Web.Models.VideoFormModel
 @{
-    ViewBag.Title = "Video - [Detail Video]";
+    ViewBag.Title = string.Format("Video - [Video {0}]", Messages.Details);
 }
 <h2>
-    Detail</h2>
+    @Messages.Details</h2>
 <fieldset>
-    <legend>Detail Video</legend>
+    <legend>Video @Messages.Details</legend>
     <div class="display-label">
-        Description</div>
+         @Html.LabelFor(model => model.Description)</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Description)
     </div>
     <div class="display-label">
-        FileName</div>
+        @Html.LabelFor(model => model.FileName)</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.FileName)
     </div>
     <div class="display-label">
-        Link</div>
+          @Html.LabelFor(model => model.Link)</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Link)
     </div>
     <div class="display-label">
-        SortOrder</div>
+         @Html.LabelFor(model => model.SortOrder)</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.SortOrder)
     </div>
     <div class="display-label">
-        Thumbnaillink</div>
+        @Html.LabelFor(model => model.ThumbnailLink)</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.ThumbnailLink)
     </div>

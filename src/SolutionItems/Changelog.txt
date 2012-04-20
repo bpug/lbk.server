@@ -1,3 +1,7 @@
+2012-04-20
+	- Localization
+	- Design
+	- Add HtmlHelper for Image
 2012-04-19
 	- Change databaseInitializer from Global.asax to Web.Config
     - Update regex to allow: () &
@@ -6,7 +10,7 @@
     - Implement QuestionCategory in repo and domain
 	- Implement QuestionCategory in models and views
 	- Add Category in Question
-    - Start Localisation
+    - Start Localization
 	- Add FormAuthentication
 	- Change default sort by menu list
     

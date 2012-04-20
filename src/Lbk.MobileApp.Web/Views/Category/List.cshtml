@@ -1,6 +1,8 @@
-﻿@model Lbk.MobileApp.Web.Models.GenericListViewModel<Lbk.MobileApp.Model.Category, Lbk.MobileApp.Web.Models.CategorySearchFormModel>
+﻿@using Lbk.MobileApp.Domain.Resources
+@using Lbk.MobileApp.Web.Helpers
+@model Lbk.MobileApp.Web.Models.GenericListViewModel<Lbk.MobileApp.Model.Category, Lbk.MobileApp.Web.Models.CategorySearchFormModel>
 @{
-    ViewBag.Title = "Menu - [List Categories]";
+    ViewBag.Title = string.Format("Menu - [List {0}]", Messages.Category);
 }
 <h3>
     @Html.ActionLink("Menu", "List", new { controller = "Menu" })
@@ -8,10 +10,11 @@
     @*> @Html.ActionLink((string)ViewBag.SerieDescription, "List", new { controller = "Question", id = (object)ViewBag.SerieId })*@
 </h3>
 <h2>
-    List Categories</h2>
-<p>
-    @Html.ActionLink("Create New", "Create", new { MenuId = (object)ViewBag.MenuId })
-</p>
+    @Messages.Category @Messages.List</h2>
+<div>
+    @Html.ImageActionLink(Url.Content("~/Content/Images/add.png"), "", "Create", null, new { title = Messages.CategoryCreateNew, style = "image-icon" })
+    @Html.ActionLink(Messages.CategoryCreateNew, "Create", new { MenuId = (object)ViewBag.MenuId })
+</div>
 <div id="mainSearch">
     @Html.Partial("_search", Model)
 </div>

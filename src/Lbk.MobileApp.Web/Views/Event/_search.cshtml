@@ -9,7 +9,7 @@
             <div style="vertical-align: middle; margin-top: 0.80em;">
                 <div style="float: left;">
                     <div>
-                        Title
+                        @Messages.EventTitleLabelText
                     </div>
                     <div>
                         <input type="text" id="title" name="Title" value="@Model.SearchItem.Title" />
@@ -17,7 +17,7 @@
                 </div>
                 <div style="float: left; margin-left: 0.80em;">
                     <div>
-                        Description
+                        @Messages.EventDescriptionLabelText
                     </div>
                     <div>
                         <input type="text" id="description" name="Description" value="@Model.SearchItem.Description" />
@@ -25,7 +25,7 @@
                 </div>
                 <div style="float: left; margin-left: 0.80em;">
                     <div>
-                        ActivatedAt
+                        @Messages.EventActivatedAtLabelText
                     </div>
                     <div style="float: left;">
                         <input type="text" id="activatedAt" name="ActivatedAt" value="@string.Format("{0:d}", @Model.SearchItem.ActivatedAt)" class="date" />
@@ -33,15 +33,15 @@
                 </div>
                 <div style="float: left; margin-left: 0.80em;">
                     <div>
-                        ExpiresAt
+                        @Messages.EventExpiresAtLabelText
                     </div>
                     <div style="float: left;">
                         <input type="text" id="expiresAt" name="ExpiresAt" value="@string.Format("{0:d}", @Model.SearchItem.ExpiresAt)" class="date" />
                     </div>
                 </div>
                 <div style="height: 1.80em; float: left; font-size: 0.80em; margin-top: 1.1em; margin-left: 0.80em;">
-                    <input type="submit" name="btnSubmit" value="Search" />
-                    <input type="submit" name="btnSubmit" value="Clear" />
+                    <input type="submit" name="btnSubmit" value=@Messages.Search />
+                    <input type="submit" name="btnSubmit" value=@Messages.Clear />
                 </div>
             </div>
         </fieldset>

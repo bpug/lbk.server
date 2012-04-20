@@ -1,4 +1,5 @@
 ﻿@using Lbk.MobileApp.Domain.Resources
+@using Lbk.MobileApp.Web.Helpers
 @model Lbk.MobileApp.Web.Models.GenericListViewModel<Lbk.MobileApp.Model.Question, Lbk.MobileApp.Web.Models.QuestionSearchFormModel>
 @{
     ViewBag.Title = "Quiz - " + @Messages.QuestionListViewTitle;
@@ -10,6 +11,7 @@
 </h3>
 <h2>@Messages.QuestionListViewTitle</h2>
 <p>
+    @Html.ImageActionLink(Url.Content("~/Content/Images/add.png"), "", "Create", null, new { title = Messages.QuestionCreateNew, style = "image-icon" })
     @Html.ActionLink(Messages.QuestionCreateNew, "Create", new { id = @Model.SearchItem.SerieId })
 </p>
 <div id="mainSearch">

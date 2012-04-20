@@ -1,13 +1,16 @@
-﻿@model Lbk.MobileApp.Web.Models.GenericListViewModel<Lbk.MobileApp.Model.Serie, Lbk.MobileApp.Web.Models.SerieSearchFormModel>
+﻿@using Lbk.MobileApp.Domain.Resources
+@using Lbk.MobileApp.Web.Helpers
+@model Lbk.MobileApp.Web.Models.GenericListViewModel<Lbk.MobileApp.Model.Serie, Lbk.MobileApp.Web.Models.SerieSearchFormModel>
 @{
-    ViewBag.Title = "Quiz - [List Series]";
+    ViewBag.Title = string.Format("{0} - [List {0}]", Messages.Serie);
 }
 <h3>
-    Quiz</h3>
+    @Messages.Serie</h3>
 <h2>
-    List Series</h2>
+    List @Messages.Serie</h2>
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ImageActionLink(Url.Content("~/Content/Images/add.png"), "", "Create", null, new { title = Messages.SerieCreateNew, style = "image-icon" })
+    @Html.ActionLink(Messages.SerieCreateNew, "Create")
 </p>
 <div id="mainSearch">
     @Html.Partial("_search", Model)

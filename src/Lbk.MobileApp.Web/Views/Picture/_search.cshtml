@@ -9,7 +9,7 @@
             <div style="vertical-align: middle; margin-top: 0.80em;">
                <div style="float: left; margin-left: 0.80em;">
                     <div>
-                        Description
+                         @Messages.PictureDescriptionLabelText
                     </div>
                     <div>
                         <input type="text" id="description" name="Description" value="@Model.SearchItem.Description" />
@@ -17,7 +17,7 @@
                 </div>
                 <div style="float: left; margin-left: 0.80em;">
                     <div>
-                        FileName
+                         @Messages.PictureFileNameLabelText
                     </div>
                     <div>
                         <input type="text" id="fileName" name="FileName" value="@Model.SearchItem.FileName" />
@@ -25,15 +25,15 @@
                 </div>
                 <div style="float: left; margin-left: 0.80em;">
                     <div>
-                        Link
+                         @Messages.PictureLinkLabelText
                     </div>
                     <div>
                         <input type="text" id="link" name="Link" value="@Model.SearchItem.Link" />
                     </div>
                 </div>
                 <div style="height: 1.80em; float: left; font-size: 0.80em; margin-top: 1.1em; margin-left: 0.80em;">
-                    <input type="submit" name="btnSubmit" value="Search" />
-                    <input type="submit" name="btnSubmit" value="Clear" />
+                    <input type="submit" name="btnSubmit" value=@Messages.Search />
+                    <input type="submit" name="btnSubmit" value=@Messages.Clear />
                 </div>
             </div>
         </fieldset>

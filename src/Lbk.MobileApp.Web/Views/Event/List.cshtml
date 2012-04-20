@@ -1,14 +1,17 @@
-﻿@model Lbk.MobileApp.Web.Models.GenericListViewModel<Lbk.MobileApp.Model.Event, Lbk.MobileApp.Web.Models.EventSearchFormModel>
+﻿@using Lbk.MobileApp.Domain.Resources
+@using Lbk.MobileApp.Web.Helpers
+@model Lbk.MobileApp.Web.Models.GenericListViewModel<Lbk.MobileApp.Model.Event, Lbk.MobileApp.Web.Models.EventSearchFormModel>
 @{
-    ViewBag.Title = "Event - [List Events]";
+    ViewBag.Title = string.Format("{0} - [List {1}]",Messages.Events, Messages.Events);
 }
 <h3>
-    Event</h3>
+    @Messages.Events</h3>
 <h2>
-    List Events</h2>
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+    List @Messages.Events</h2>
+<div>
+    @Html.ImageActionLink(Url.Content("~/Content/Images/add.png"), "", "Create", null, new { title = Messages.EventCreateNew, style = "image-icon" })
+    @Html.ActionLink(Messages.EventCreateNew, "Create")
+</div>
 <div id="mainSearch">
     @Html.Partial("_search", Model)
 </div>

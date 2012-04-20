@@ -1,9 +1,10 @@
-﻿@model Lbk.MobileApp.Web.Models.CategoryFormModel
+﻿@using Lbk.MobileApp.Domain.Resources
+@model Lbk.MobileApp.Web.Models.CategoryFormModel
 @{
-    ViewBag.Title = "Menu - [Edit Category]";
+    ViewBag.Title = string.Format("Menu - [{0} {1}]", Messages.Category, Messages.Edit); 
 }
 <h2>
-    Edit</h2>
+     @Messages.Edit</h2>
 <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/methods_de.js")" type="text/javascript"></script>
@@ -12,7 +13,7 @@
 {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>Edit Category</legend>
+        <legend>@Messages.Category @Messages.Edit</legend>
         <div class="editor-label">
             @Html.LabelFor(model => model.Title)
         </div>
@@ -30,10 +31,10 @@
         @Html.HiddenFor(model => model.Id)
         @Html.Hidden("MenuId", (object)ViewBag.MenuId)
         <p>
-            <input type="submit" value="Save" />
+            <input type="submit" value=@Messages.Save />
         </p>
     </fieldset>
 }
 <div>
-    @Html.ActionLink("Back to List", "List", new { MenuId = (object)ViewBag.MenuId })
+    @Html.ActionLink(Messages.BackToList, "List", new { MenuId = (object)ViewBag.MenuId })
 </div>

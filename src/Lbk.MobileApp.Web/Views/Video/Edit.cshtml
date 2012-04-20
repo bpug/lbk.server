@@ -1,7 +1,7 @@
 ﻿@using Lbk.MobileApp.Domain.Resources
 @model Lbk.MobileApp.Web.Models.VideoFormModel
 @{
-    ViewBag.Title = "Video - [Edit Video]";
+    ViewBag.Title = string.Format("Video - [Video {0}]", Messages.Edit); 
 }
 <h2>@Messages.Edit</h2>
 <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>

@@ -1,0 +1,669 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Answer" xml:space="preserve">
+    <value>Antwort</value>
+  </data>
+  <data name="AnswerCreateNew" xml:space="preserve">
+    <value>Neue Antwort</value>
+  </data>
+  <data name="AnswerDescriptionLabelText" xml:space="preserve">
+    <value>Beschreibung</value>
+  </data>
+  <data name="AnswerDescriptionRequired" xml:space="preserve">
+    <value>Beschreibung erforderlich</value>
+  </data>
+  <data name="AnswerDescriptionStringLengthValidationError" xml:space="preserve">
+    <value>Beschreibung darf nur 255 Zeichen lang sein</value>
+  </data>
+  <data name="AnswerExplanationLabelText" xml:space="preserve">
+    <value>Erklärung</value>
+  </data>
+  <data name="AnswerExplanationRequired" xml:space="preserve">
+    <value>Erklärung erforderlich</value>
+  </data>
+  <data name="AnswerExplanationStringLengthValidationError" xml:space="preserve">
+    <value>Erklärung darf nur 255 Zeichen lang sein</value>
+  </data>
+  <data name="AnswerIsRightLabelText" xml:space="preserve">
+    <value>Korrekt</value>
+  </data>
+  <data name="Answers" xml:space="preserve">
+    <value>Antworten</value>
+  </data>
+  <data name="BackToList" xml:space="preserve">
+    <value>Zurück zu Liste</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Kategorie</value>
+  </data>
+  <data name="CategoryCreateNew" xml:space="preserve">
+    <value>Neue Kategorie</value>
+  </data>
+  <data name="CategoryDescriptionLabelText" xml:space="preserve">
+    <value>Beschreibung der Kategorie</value>
+  </data>
+  <data name="CategoryDescriptionRequired" xml:space="preserve">
+    <value>Beschreibung der Kategorie ist erforderlich</value>
+  </data>
+  <data name="CategoryDescriptionStringLengthValidationError" xml:space="preserve">
+    <value>Beschreibung der Kategorie darf nur 255 Zeichen lang sein</value>
+  </data>
+  <data name="CategorySelect" xml:space="preserve">
+    <value>--Wählen Sie  eine Kategorie--</value>
+  </data>
+  <data name="CategoryTitleLabelText" xml:space="preserve">
+    <value>Titel</value>
+  </data>
+  <data name="CategoryTitleRequired" xml:space="preserve">
+    <value>Titel ist erforderlich</value>
+  </data>
+  <data name="CategoryTitleStringLengthValidationError" xml:space="preserve">
+    <value>Titel darf nur 255 Zeichen lang sein</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="Commands" xml:space="preserve">
+    <value>Befehle</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Kopieren</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Erstellen</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="DeleteSecurityQuestion" xml:space="preserve">
+    <value>Sind Sie sicher, dass Sie es löschen wollen ?</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Detail</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Bearbeiten</value>
+  </data>
+  <data name="Event" xml:space="preserve">
+    <value>Veranstaltung</value>
+  </data>
+  <data name="EventActivatedAtLabelText" xml:space="preserve">
+    <value>Aktivieren ab</value>
+  </data>
+  <data name="EventActivatedAtRequired" xml:space="preserve">
+    <value>Aktivierung ist erforderlich</value>
+  </data>
+  <data name="EventActivatedAtYearRangeValidationError" xml:space="preserve">
+    <value>Das Aktivierungsjahr muss zwischen 1900 und 2100 liegen</value>
+  </data>
+  <data name="EventCreateNew" xml:space="preserve">
+    <value>Neue Veranstaltung</value>
+  </data>
+  <data name="EventDateLabelText" xml:space="preserve">
+    <value>Datum</value>
+  </data>
+  <data name="EventDateOrderLabelText" xml:space="preserve">
+    <value>Bestelldatum</value>
+  </data>
+  <data name="EventDateOrderRequired" xml:space="preserve">
+    <value>Bestelldatum ist erforderlich</value>
+  </data>
+  <data name="EventDateOrderYearRangeValidationError" xml:space="preserve">
+    <value>Bestelldatum muss zwischen 1900 und 2100 liegen</value>
+  </data>
+  <data name="EventDateRequired" xml:space="preserve">
+    <value>Datum ist erforderlich</value>
+  </data>
+  <data name="EventDateStringLengthValidationError" xml:space="preserve">
+    <value>Datum darf nur 255 Zeichen lang sein</value>
+  </data>
+  <data name="EventDescriptionLabelText" xml:space="preserve">
+    <value>Erklärung</value>
+  </data>
+  <data name="EventDescriptionRequired" xml:space="preserve">
+    <value>Erklärung ist erforderlich</value>
+  </data>
+  <data name="EventDescriptionStringLengthValidationError" xml:space="preserve">
+    <value>Erklärung darf nur 255 Zeichen lang sein</value>
+  </data>
+  <data name="EventExpiresAtLabelText" xml:space="preserve">
+    <value>Enddatum</value>
+  </data>
+  <data name="EventExpiresAtRequired" xml:space="preserve">
+    <value>Enddatum ist erforderlich</value>
+  </data>
+  <data name="EventExpiresAtYearRangeValidationError" xml:space="preserve">
+    <value>Das Enddatum muss zwischen 1900 und 2100 liegen</value>
+  </data>
+  <data name="EventIsActivatedLabelText" xml:space="preserve">
+    <value>Aktiviert</value>
+  </data>
+  <data name="EventReservationLinkLabelText" xml:space="preserve">
+    <value>Reservierungslink</value>
+  </data>
+  <data name="EventReservationLinkStringLengthValidationError" xml:space="preserve">
+    <value>Der Reservierungslink darf nur 255 Zeichen lang sein</value>
+  </data>
+  <data name="Events" xml:space="preserve">
+    <value>Veranstaltungen</value>
+  </data>
+  <data name="EventThumbnailLinkLabelText" xml:space="preserve">
+    <value>Link zum Vorschaubild</value>
+  </data>
+  <data name="EventThumbnailLinkStringLengthValidationError" xml:space="preserve">
+    <value>Der Link zum Vorschaubild darf nur 255 Zeichen lang sein</value>
+  </data>
+  <data name="EventTitleLabelText" xml:space="preserve">
+    <value>Titel</value>
+  </data>
+  <data name="EventTitleRequired" xml:space="preserve">
+    <value>Titel ist erforderlich</value>
+  </data>
+  <data name="EventTitleStringLengthValidationError" xml:space="preserve">
+    <value>Der Titel darf nur 255 Zeichen lang sein</value>
+  </data>
+  <data name="Food" xml:space="preserve">
+    <value>Lebensmittel</value>
+  </data>
+  <data name="FoodCategoryIdLabelText" xml:space="preserve">
+    <value>Kategorie</value>
+  </data>
+  <data name="FoodCategoryNameLabelText" xml:space="preserve">
+    <value>Kategorie</value>
+  </data>
+  <data name="FoodCreateNew" xml:space="preserve">
+    <value>Neues Lebensmittel</value>
+  </data>
+  <data name="FoodDescriptionLabelText" xml:space="preserve">
+    <value>Erklärung</value>
+  </data>
+  <data name="FoodDescriptionRequired" xml:space="preserve">
+    <value>Erklärung ist erforderlich.</value>
+  </data>
+  <data name="FoodDescriptionStringLengthValidationError" xml:space="preserve">
+    <value>Die Erklärung darf nur 255 Zeichen lang sein</value>
+  </data>
+  <data name="FoodPriceLabelText" xml:space="preserve">
+    <value>Preis</value>
+  </data>
+  <data name="FoodPriceRangeValidationError" xml:space="preserve">
+    <value>Der Preis muss zwischen 0 und 1000 liegen</value>
+  </data>
+  <data name="FoodPriceRequired" xml:space="preserve">
+    <value>Preis ist erforderlich</value>
+  </data>
+  <data name="Foods" xml:space="preserve">
+    <value>Lebensmittel</value>
+  </data>
+  <data name="FoodSortOrderLabelText" xml:space="preserve">
+    <value>Reihenfolge</value>
+  </data>
+  <data name="FoodSortOrderRangeValidationError" xml:space="preserve">
+    <value>Die Reihenfolge muss zwischen 1 und 10000 liegen</value>
+  </data>
+  <data name="FoodSortOrderRequired" xml:space="preserve">
+    <value>Reihenfolge ist erforderlich </value>
+  </data>
+  <data name="FoodTitleLabelText" xml:space="preserve">
+    <value>Titel</value>
+  </data>
+  <data name="FoodTitleStringLengthValidationError" xml:space="preserve">
+    <value>Der Titel darf nur 255 Zeichen lang sein</value>
+  </data>
+  <data name="InvalidInputCharacter" xml:space="preserve">
+    <value>Es sind nur alphanumerische Zeichen und  [.,_-:\/?'] erlaubt</value>
+  </data>
+  <data name="InvalidMultilineInput" xml:space="preserve">
+    <value>Es sind nur alphanumerische Zeichen, neue Zeilen und [.,_-:\/?'] erlaubt</value>
+  </data>
+  <data name="Manage" xml:space="preserve">
+    <value>Verwaltung</value>
+  </data>
+  <data name="MenuCreateNew" xml:space="preserve">
+    <value>Neues Menü</value>
+  </data>
+  <data name="MenuDateLabelText" xml:space="preserve">
+    <value>Datum</value>
+  </data>
+  <data name="MenuDateRequired" xml:space="preserve">
+    <value>Datum ist erforderlich</value>
+  </data>
+  <data name="MenuDateYearRangeValidationError" xml:space="preserve">
+    <value>Das Datum muss zwischen 1900 und 2100 liegen</value>
+  </data>
+  <data name="MenuDescriptionLabelText" xml:space="preserve">
+    <value>Menü</value>
+  </data>
+  <data name="MenuDescriptionRequired" xml:space="preserve">
+    <value>Menü ist erforderlich</value>
+  </data>
+  <data name="MenuDescriptionStringLengthValidationError" xml:space="preserve">
+    <value>Die Erklärung darf nur 255 Zeichen enthalten</value>
+  </data>
+  <data name="Picture" xml:space="preserve">
+    <value>Bild</value>
+  </data>
+  <data name="PictureCreateNew" xml:space="preserve">
+    <value>Neues Bild</value>
+  </data>
+  <data name="PictureDescriptionLabelText" xml:space="preserve">
+    <value>Beschreibung</value>
+  </data>
+  <data name="PictureDescriptionRequired" xml:space="preserve">
+    <value>Erklärung ist erforderlich</value>
+  </data>
+  <data name="PictureDescriptionStringLengthValidationError" xml:space="preserve">
+    <value>Die Erklärung darf nur 255 Zeichen enthalten</value>
+  </data>
+  <data name="PictureFileNameLabelText" xml:space="preserve">
+    <value>Dateiname</value>
+  </data>
+  <data name="PictureFileNameRequired" xml:space="preserve">
+    <value>Dateiname ist erforderlich</value>
+  </data>
+  <data name="PictureFileNameStringLengthValidationError" xml:space="preserve">
+    <value>Der Dateiname darf nur 255 Zeichen lang sein</value>
+  </data>
+  <data name="PictureLinkLabelText" xml:space="preserve">
+    <value>Link</value>
+  </data>
+  <data name="PictureLinkRequired" xml:space="preserve">
+    <value>Link ist erforderlich</value>
+  </data>
+  <data name="PictureLinkStringLengthValidationError" xml:space="preserve">
+    <value>Der Link darf nur 255 Zeichen lang sein</value>
+  </data>
+  <data name="Pictures" xml:space="preserve">
+    <value>Bilder</value>
+  </data>
+  <data name="PictureSortOrderLabelText" xml:space="preserve">
+    <value>Reihenfolge</value>
+  </data>
+  <data name="PictureSortOrderRangeValidationError" xml:space="preserve">
+    <value>Die Reihenfolge muss zwischen 1 und 10000 liegen</value>
+  </data>
+  <data name="PictureSortOrderRequired" xml:space="preserve">
+    <value>Reihenfolge ist erforderlich</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value>Frage</value>
+  </data>
+  <data name="QuestionCategoryIdLabelText" xml:space="preserve">
+    <value>Kategorie</value>
+  </data>
+  <data name="QuestionCreateNew" xml:space="preserve">
+    <value>Neue Frage</value>
+  </data>
+  <data name="QuestionDescriptionLabelText" xml:space="preserve">
+    <value>Erklärung</value>
+  </data>
+  <data name="QuestionDescriptionRequired" xml:space="preserve">
+    <value>Erklärung ist erforderlich</value>
+  </data>
+  <data name="QuestionDescriptionStringLengthValidationError" xml:space="preserve">
+    <value>Die Erklärung darf nur 255 Zeichen lang sein</value>
+  </data>
+  <data name="QuestionListViewTitle" xml:space="preserve">
+    <value>Fragen</value>
+  </data>
+  <data name="QuestionNumberLabelText" xml:space="preserve">
+    <value>Nummer</value>
+  </data>
+  <data name="QuestionNumberRangeValidationError" xml:space="preserve">
+    <value>Die Nummer muss zwischen 1 und 255 liegen</value>
+  </data>
+  <data name="QuestionNumberRequired" xml:space="preserve">
+    <value>Nummer ist erforderlich</value>
+  </data>
+  <data name="QuestionPointsLabelText" xml:space="preserve">
+    <value>Punkte</value>
+  </data>
+  <data name="QuestionPointsRangeValidationError" xml:space="preserve">
+    <value>Die Punkte müssen zwischen 1 und 255 liegen</value>
+  </data>
+  <data name="QuestionPointsRequired" xml:space="preserve">
+    <value>Punkte sind erforderlich</value>
+  </data>
+  <data name="Questions" xml:space="preserve">
+    <value>Fragen</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Speichern</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Suchen</value>
+  </data>
+  <data name="Serie" xml:space="preserve">
+    <value>Serie</value>
+  </data>
+  <data name="SerieActivatedAtLabelText" xml:space="preserve">
+    <value>Aktivieren ab</value>
+  </data>
+  <data name="SerieActivatedAtRequired" xml:space="preserve">
+    <value>Aktivierung ist erforderlich</value>
+  </data>
+  <data name="SerieActivatedAtYearRangeValidationError" xml:space="preserve">
+    <value>Das Aktivierungsjahr muss zwischen 1900 und 2100 liegen</value>
+  </data>
+  <data name="SerieCreateNew" xml:space="preserve">
+    <value>Neue Serie</value>
+  </data>
+  <data name="SerieDescriptionLabelText" xml:space="preserve">
+    <value>Erklärung</value>
+  </data>
+  <data name="SerieDescriptionRequired" xml:space="preserve">
+    <value>Erklärung ist erforderlich</value>
+  </data>
+  <data name="SerieDescriptionStringLengthValidationError" xml:space="preserve">
+    <value>Die Erklärung darf nur 255 Zeichen lang sein</value>
+  </data>
+  <data name="SerieExpiresAtLabelText" xml:space="preserve">
+    <value>Enddatum</value>
+  </data>
+  <data name="SerieExpiresAtRequired" xml:space="preserve">
+    <value>Enddatum ist erforderlich</value>
+  </data>
+  <data name="SerieExpiresAtYearRangeValidationError" xml:space="preserve">
+    <value>Das Enddatum muss zwischen 1900 und 2100 liegen</value>
+  </data>
+  <data name="SerieIsActivatedLabelText" xml:space="preserve">
+    <value>Ist aktiviert</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>Anzeigen</value>
+  </data>
+  <data name="TextLineInputValidatorRegEx" xml:space="preserve">
+    <value>^(?!.*--)[\w\.,'_ \-:\\\/?=()&amp;]*$</value>
+  </data>
+  <data name="TextLineInputValidatorRegExUnicode" xml:space="preserve">
+    <value>^(?!.*--)[A-Za-z0-9\.,'_ \-:\\\/?=()&amp;]*$</value>
+  </data>
+  <data name="TextMultilineValidatorRegEx" xml:space="preserve">
+    <value>^(?!.*--)([\w\.,'_ \-:\\\/?=]|\r|\n)*$</value>
+  </data>
+  <data name="TextMultilineValidatorRegExUnicode" xml:space="preserve">
+    <value>^(?!.*--)([A-Za-z0-9\.,'_ \-:\\\/?=]|\r|\n)*$</value>
+  </data>
+  <data name="UnableToAddAnswerExceptionMessage" xml:space="preserve">
+    <value>Eingabe einer Antwort nicht möglich</value>
+  </data>
+  <data name="UnableToAddCategoryExceptionMessage" xml:space="preserve">
+    <value>Auswahl einer Kategorie nicht möglich</value>
+  </data>
+  <data name="UnableToAddEventExceptionMessage" xml:space="preserve">
+    <value>Auswahl einer Veranstaltung nicht möglich</value>
+  </data>
+  <data name="UnableToAddFoodExceptionMessage" xml:space="preserve">
+    <value>Auswahl eines Lebensmittel nicht möglich</value>
+  </data>
+  <data name="UnableToAddMenuExceptionMessage" xml:space="preserve">
+    <value>Auswahl eines Menüs nicht möglich</value>
+  </data>
+  <data name="UnableToAddPictureExceptionMessage" xml:space="preserve">
+    <value>Auswahl eines Bildes nicht möglich</value>
+  </data>
+  <data name="UnableToAddQuestionExceptionMessage" xml:space="preserve">
+    <value>Auswahl einer Frage nicht möglich</value>
+  </data>
+  <data name="UnableToAddSerieExceptionMessage" xml:space="preserve">
+    <value>Auswahl einer Serie nicht möglich</value>
+  </data>
+  <data name="UnableToAddVideoExceptionMessage" xml:space="preserve">
+    <value>Auswahl eines Videos nicht möglich</value>
+  </data>
+  <data name="UnableToCopyMenuExceptionMessage" xml:space="preserve">
+    <value>Kopieren des Menüs nicht möglich</value>
+  </data>
+  <data name="UnableToDeleteAnswerExceptionMessage" xml:space="preserve">
+    <value>Löschen der Antwort nicht möglich</value>
+  </data>
+  <data name="UnableToDeleteCategoryExceptionMessage" xml:space="preserve">
+    <value>Löschen der Kategorie nicht möglich</value>
+  </data>
+  <data name="UnableToDeleteEventExceptionMessage" xml:space="preserve">
+    <value>Löschen der Veranstaltung nicht möglich</value>
+  </data>
+  <data name="UnableToDeleteFoodExceptionMessage" xml:space="preserve">
+    <value>Löschen des Lebensmittels nicht möglich</value>
+  </data>
+  <data name="UnableToDeleteMenuExceptionMessage" xml:space="preserve">
+    <value>Löschen des Menüs nicht möglich</value>
+  </data>
+  <data name="UnableToDeletePictureExceptionMessage" xml:space="preserve">
+    <value>Löschen des Bildes nicht möglich</value>
+  </data>
+  <data name="UnableToDeleteQuestionExceptionMessage" xml:space="preserve">
+    <value>Löschen der Frage nicht möglich</value>
+  </data>
+  <data name="UnableToDeleteSerieExceptionMessage" xml:space="preserve">
+    <value>Löschen der Serie nicht möglich</value>
+  </data>
+  <data name="UnableToDeleteVideoExceptionMessage" xml:space="preserve">
+    <value>Löschen des Videos nicht möglich</value>
+  </data>
+  <data name="UnableToRetrieveAnswerExceptionMessage" xml:space="preserve">
+    <value>Abfrage der Antwort nicht möglich</value>
+  </data>
+  <data name="UnableToRetrieveCategoryExceptionMessage" xml:space="preserve">
+    <value>Abfrage der Kategorie nicht möglich</value>
+  </data>
+  <data name="UnableToRetrieveEventExceptionMessage" xml:space="preserve">
+    <value>Abfrage der Veranstaltung nicht möglich</value>
+  </data>
+  <data name="UnableToRetrieveFoodExceptionMessage" xml:space="preserve">
+    <value>Abfrage der Lebensmittel nicht möglich</value>
+  </data>
+  <data name="UnableToRetrieveMenuExceptionMessage" xml:space="preserve">
+    <value>Abfrage des Menüs nicht möglich</value>
+  </data>
+  <data name="UnableToRetrievePictureExceptionMessage" xml:space="preserve">
+    <value>Abfrage des Bildes nicht möglich</value>
+  </data>
+  <data name="UnableToRetrieveQuestionExceptionMessage" xml:space="preserve">
+    <value>Abruf der Frage nicht möglich</value>
+  </data>
+  <data name="UnableToRetrieveSerieExceptionMessage" xml:space="preserve">
+    <value>Abfrage der Serie nicht möglich.</value>
+  </data>
+  <data name="UnableToRetrieveVideoExceptionMessage" xml:space="preserve">
+    <value>Abfrage des Videos nicht möglich</value>
+  </data>
+  <data name="UnableToUpdateAnswerExceptionMessage" xml:space="preserve">
+    <value>Aktualisierung der Antwort nicht möglich</value>
+  </data>
+  <data name="UnableToUpdateCategoryExceptionMessage" xml:space="preserve">
+    <value>Aktualisierung der Kategorie nicht möglich</value>
+  </data>
+  <data name="UnableToUpdateEventExceptionMessage" xml:space="preserve">
+    <value>Aktualisierung der Veranstaltung nicht möglich</value>
+  </data>
+  <data name="UnableToUpdateFoodExceptionMessage" xml:space="preserve">
+    <value>Aktualisierung der Lebensmittel nicht möglich</value>
+  </data>
+  <data name="UnableToUpdateMenuExceptionMessage" xml:space="preserve">
+    <value>Aktualisierung des Menüs nicht möglich</value>
+  </data>
+  <data name="UnableToUpdatePictureExceptionMessage" xml:space="preserve">
+    <value>Aktualisierung des Bildes nicht möglich</value>
+  </data>
+  <data name="UnableToUpdateQuestionExceptionMessage" xml:space="preserve">
+    <value>Aktualisierung der Frage nicht möglich</value>
+  </data>
+  <data name="UnableToUpdateSerieExceptionMessage" xml:space="preserve">
+    <value>Aktualisierung der Serie nicht möglich</value>
+  </data>
+  <data name="UnableToUpdateVideoExceptionMessage" xml:space="preserve">
+    <value>Aktualisierung des Videos nicht möglich</value>
+  </data>
+  <data name="Video" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="VideoCreateNew" xml:space="preserve">
+    <value>Neues Video</value>
+  </data>
+  <data name="VideoDescriptionLabelText" xml:space="preserve">
+    <value>Erklärung</value>
+  </data>
+  <data name="VideoDescriptionRequired" xml:space="preserve">
+    <value>Erklärung ist erforderlich</value>
+  </data>
+  <data name="VideoDescriptionStringLengthValidationError" xml:space="preserve">
+    <value>Die Erklärung darf nur 255 Zeichen lang sein</value>
+  </data>
+  <data name="VideoFileNameLabelText" xml:space="preserve">
+    <value>Dateiname</value>
+  </data>
+  <data name="VideoFileNameRequired" xml:space="preserve">
+    <value>Dateiname ist erforderlich</value>
+  </data>
+  <data name="VideoFileNameStringLengthValidationError" xml:space="preserve">
+    <value>Der Dateiname darf nur 255 Zeichen lang sein</value>
+  </data>
+  <data name="VideoLinkLabelText" xml:space="preserve">
+    <value>Link</value>
+  </data>
+  <data name="VideoLinkRequired" xml:space="preserve">
+    <value>Link ist erforderlich</value>
+  </data>
+  <data name="VideoLinkStringLengthValidationError" xml:space="preserve">
+    <value>Der Link darf nur 255 Zeichen lang sein</value>
+  </data>
+  <data name="VideoSortOrderLabelText" xml:space="preserve">
+    <value>Reihenfolge</value>
+  </data>
+  <data name="VideoSortOrderRangeValidationError" xml:space="preserve">
+    <value>Die Reihenfolge muss zwischen 1 und 10000 liegen</value>
+  </data>
+  <data name="VideoSortOrderRequired" xml:space="preserve">
+    <value>Reihenfolge ist erforderlich</value>
+  </data>
+  <data name="VideoThumbnailLinkLabelText" xml:space="preserve">
+    <value>Vorschaubild</value>
+  </data>
+  <data name="VideoThumbnailLinkStringLengthValidationError" xml:space="preserve">
+    <value>Das Vorschaubild darf nur 255 Zeichen lang sein</value>
+  </data>
+  <data name="List" xml:space="preserve">
+    <value>Liste</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>Menü</value>
+  </data>
+</root>

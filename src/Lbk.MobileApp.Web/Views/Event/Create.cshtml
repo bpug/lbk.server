@@ -1,9 +1,10 @@
-﻿@model Lbk.MobileApp.Web.Models.EventFormModel
+﻿@using Lbk.MobileApp.Domain.Resources
+@model Lbk.MobileApp.Web.Models.EventFormModel
 @{
-    ViewBag.Title = "Event - [Create Event]";
+    ViewBag.Title = string.Format("{0} - [{1}]", @Messages.Event, @Messages.EventCreateNew);
 }
 <h2>
-    Create</h2>
+    @Messages.Create</h2>
 <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/methods_de.js")" type="text/javascript"></script>
@@ -12,7 +13,7 @@
 {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>New Event</legend>
+        <legend>@Messages.EventCreateNew</legend>
         <div class="editor-label">
             @Html.LabelFor(model => model.Title)
         </div>
@@ -77,10 +78,10 @@
             @Html.ValidationMessageFor(model => model.ThumbnailLink)
         </div>
         <p>
-            <input type="submit" value="Create" />
+            <input type="submit" value=@Messages.Create />
         </p>
     </fieldset>
 }
 <div>
-    @Html.ActionLink("Back to List", "List")
+    @Html.ActionLink(Messages.BackToList, "List")
 </div>

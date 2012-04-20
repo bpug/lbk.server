@@ -1,9 +1,10 @@
-﻿@model Lbk.MobileApp.Web.Models.FoodFormModel
+﻿@using Lbk.MobileApp.Domain.Resources
+@model Lbk.MobileApp.Web.Models.FoodFormModel
 @{
-    ViewBag.Title = "Menu - [Edit Food]";
+    ViewBag.Title = string.Format("Menu - [{0} {1}]", Messages.Food, Messages.Edit);
 }
 <h2>
-    Edit</h2>
+    @Messages.Edit</h2>
 <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/methods_de.js")" type="text/javascript"></script>
@@ -12,7 +13,7 @@
 {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>Edit Food</legend>
+        <legend>@Messages.Food @Messages.Edit</legend>
         <div class="editor-label">
             @Html.LabelFor(model => model.CategoryId)
         </div>
@@ -51,10 +52,10 @@
         @Html.HiddenFor(model => model.MenuId)
         @Html.HiddenFor(model => model.Id)
         <p>
-            <input type="submit" value="Save" />
+            <input type="submit" value=@Messages.Save />
         </p>
     </fieldset>
 }
 <div>
-    @Html.ActionLink("Back to List", "List", new { id = Model.MenuId })
+    @Html.ActionLink(Messages.BackToList, "List", new { id = Model.MenuId })
 </div>

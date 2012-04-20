@@ -1,14 +1,15 @@
-﻿@model Lbk.MobileApp.Web.Models.CategoryFormModel
+﻿@using Lbk.MobileApp.Domain.Resources
+@model Lbk.MobileApp.Web.Models.CategoryFormModel
 @{
-    ViewBag.Title = "Menu - [Delete Category]";
+    ViewBag.Title = string.Format("Menu - [{0} {1}]", Messages.Delete, Messages.Category); 
 }
 <h2>
-    Delete</h2>
+    @Messages.Delete</h2>
 <h3>
-    Are you sure you want to delete this?<br />
+    @Messages.DeleteSecurityQuestion<br />
     All assigned foods also deleted!</h3>
 <fieldset>
-    <legend>Delete Category</legend>
+    <legend> @Messages.Delete @Messages.Category</legend>
     <div class="display-label">
         Title</div>
     <div class="display-field">
@@ -24,8 +25,8 @@
 {
     @Html.Hidden("MenuId", (object)ViewBag.MenuId)
     <p>
-        <input type="submit" value="Delete" />
+        <input type="submit" value=@Messages.Delete />
         |
-        @Html.ActionLink("Back to List", "List", new { MenuId = (object)ViewBag.MenuId })
+        @Html.ActionLink(Messages.BackToList, "List", new { MenuId = (object)ViewBag.MenuId })
     </p>
 }

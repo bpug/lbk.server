@@ -1,9 +1,12 @@
-﻿@model Lbk.MobileApp.Web.Models.PictureFormModel
+﻿@using Lbk.MobileApp.Domain.Resources
+@using Lbk.MobileApp.Web.Helpers
+
+@model Lbk.MobileApp.Web.Models.PictureFormModel
 @{
-    ViewBag.Title = "Picture - [Edit Picture]";
+    ViewBag.Title = string.Format("{0} - [{0} {1} ]", Messages.Picture, Messages.Edit);
 }
 <h2>
-    Edit</h2>
+    @Messages.Edit</h2>
 <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/methods_de.js")" type="text/javascript"></script>
@@ -13,6 +16,8 @@
     @Html.ValidationSummary(true)
     <fieldset>
         <legend>Edit Picture</legend>
+        <div>
+        <div class="picture-data">
         <div class="editor-label">
             @Html.LabelFor(model => model.Description)
         </div>
@@ -42,11 +47,17 @@
             @Html.ValidationMessageFor(model => model.SortOrder)
         </div>
         @Html.HiddenFor(model => model.Id)
-        <p>
-            <input type="submit" value="Save" />
-        </p>
+            <p>
+                <input type="submit" value=@Messages.Save />
+            </p>
+            </div>
+        <div class="picture-image">
+            @Html.Image(Url.Content(Model.Link), Html.Encode(Model.Description), new { title = Model.Description, border = 0, height = 320 })
+        </div>
+        <div style="clear: both;" />
+    </div>
     </fieldset>
 }
 <div>
-    @Html.ActionLink("Back to List", "List")
+    @Html.ActionLink(Messages.BackToList, "List")
 </div>
