@@ -1,4 +1,5 @@
-﻿@using Lbk.MobileApp.Domain.Resources
+﻿@using System.Configuration
+@using Lbk.MobileApp.Domain.Resources
 @using Lbk.MobileApp.Web.Helpers
 @model Lbk.MobileApp.Core.PagedDataList<Lbk.MobileApp.Model.Picture>
 <script type="text/javascript">
@@ -18,12 +19,18 @@
                         selectedRowStyle: "webgrid-selected-row",
                 columns: grid.Columns(
                      grid.Column(style: "picture-image-grid", format: (item) =>
-                                @Html.ImageActionLink(Url.Content((string)item.Link), Html.Encode((string)item.Description), "Detail", new { id = item.Id }, 
-                                    new { title = item.Description, border = 0, height = 40 })),
-                    grid.Column("Description", header:Messages.PictureDescriptionLabelText),
-                    grid.Column("FileName", header:Messages.PictureFileNameLabelText),
+                     {
+                         var location = string.IsNullOrEmpty(item.Link) ? Path.Combine(ConfigurationManager.AppSettings["PictureHttpBasePath"], item.FileName) : item.Link;
+                         return @Html.ImageActionLink(Url.Content((string)location),
+                                           Html.Encode((string) item.Description), "Detail", new {id = item.Id},
+                                           new {title = item.Description, border = 0, height = 40});
+                    }),
+                    grid.Column("Title", header: Messages.PictureTitleLabelText),
+                    grid.Column("Description", header: Messages.PictureDescriptionLabelText),
+                    //grid.Column("FileName", header:Messages.PictureFileNameLabelText),
                     //grid.Column("Link", header:Messages.PictureLinkLabelText),
                     grid.Column("SortOrder", header: Messages.PictureSortOrderLabelText),
+                    
                     grid.Column(Messages.Commands, style: "webgrid-commands", format: (item) =>
                     {
                         return new MvcHtmlString(string.Join("  ",

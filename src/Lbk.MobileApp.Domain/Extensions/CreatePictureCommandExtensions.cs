@@ -26,6 +26,7 @@ namespace Lbk.MobileApp.Domain.Extensions
 
             return new Picture
                        {
+                           Title = source.Title,
                            Description = source.Description, 
                            FileName = source.FileName, 
                            Id = source.Id, 

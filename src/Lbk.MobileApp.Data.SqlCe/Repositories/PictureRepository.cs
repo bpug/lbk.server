@@ -70,6 +70,7 @@ namespace Lbk.MobileApp.Data.SqlCe.Repositories
             var entity = this.GetDbSet<Picture>().Where(x => x.Id == @picture.Id).Single();
 
             entity.Description = @picture.Description;
+            entity.Title = @picture.Title;
             entity.FileName = @picture.FileName;
             entity.Link = @picture.Link;
             entity.SortOrder = @picture.SortOrder;

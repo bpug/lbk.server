@@ -20,7 +20,7 @@ namespace Lbk.MobileApp.Web.Models.Extensions
         {
             if (item == null
                 ||
-                (string.IsNullOrWhiteSpace(item.Description) && string.IsNullOrWhiteSpace(item.FileName)
+                (string.IsNullOrWhiteSpace(item.Description) && string.IsNullOrWhiteSpace(item.Title)  && string.IsNullOrWhiteSpace(item.FileName)
                  && string.IsNullOrWhiteSpace(item.Link)))
             {
                 return null;
@@ -38,6 +38,7 @@ namespace Lbk.MobileApp.Web.Models.Extensions
 
             return new PictureFormModel
                        {
+                           Title = model.Title,
                            Description = model.Description, 
                            FileName = model.FileName, 
                            Id = model.Id, 
@@ -55,7 +56,7 @@ namespace Lbk.MobileApp.Web.Models.Extensions
 
             return new Picture
                        {
-                          Description = model.Description, FileName = model.FileName, Id = model.Id, Link = model.Link 
+                          Title= model.Title, Description = model.Description, FileName = model.FileName, Id = model.Id, Link = model.Link 
                        };
         }
 
@@ -68,7 +69,11 @@ namespace Lbk.MobileApp.Web.Models.Extensions
 
             return new PictureSearchFormModel
                        {
-                          Description = model.Description, FileName = model.FileName, Id = model.Id, Link = model.Link 
+                           Title = model.Title,
+                           Description = model.Description,
+                           FileName = model.FileName,
+                           Id = model.Id,
+                           Link = model.Link 
                        };
         }
 

@@ -73,6 +73,10 @@
     <Compile Include="Migrations\201204191019379_AddQuestionCategoryTable.Designer.cs">
       <DependentUpon>201204191019379_AddQuestionCategoryTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201204211634340_AddPictureTitleColumn.cs" />
+    <Compile Include="Migrations\201204211634340_AddPictureTitleColumn.Designer.cs">
+      <DependentUpon>201204211634340_AddPictureTitleColumn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\QuestionCategoryRepository.cs" />
     <Compile Include="Repositories\Specifications\QuestionCategoryPagedDataInputSpecification.cs" />

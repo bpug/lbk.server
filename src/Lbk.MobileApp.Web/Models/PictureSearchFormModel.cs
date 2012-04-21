@@ -19,6 +19,14 @@ namespace Lbk.MobileApp.Web.Models
     {
         #region - Properties -
 
+        [StringLength(255, ErrorMessageResourceName = "PictureTitleStringLengthValidationError",
+            ErrorMessageResourceType = typeof(Messages))]
+        [TextLineInputValidator]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "PictureTitleRequired",
+            ErrorMessageResourceType = typeof(Messages))]
+        [Display(Name = "PictureTitleLabelText", ResourceType = typeof(Messages))]
+        public string Title { get; set; }
+
         [StringLength(255, ErrorMessageResourceName = "PictureDescriptionStringLengthValidationError", 
             ErrorMessageResourceType = typeof(Messages))]
         [TextLineInputValidator]

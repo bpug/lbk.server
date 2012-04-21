@@ -142,9 +142,10 @@ namespace Lbk.MobileApp.Data.SqlCe
             modelBuilder.Entity<Picture>().HasKey(e => e.Id);
             modelBuilder.Entity<Picture>().Property(e => e.Id).HasDatabaseGeneratedOption(
                 DatabaseGeneratedOption.Identity);
+            modelBuilder.Entity<Picture>().Property(e => e.Title).HasMaxLength(255).IsRequired();
             modelBuilder.Entity<Picture>().Property(e => e.Description).HasMaxLength(255);
-            modelBuilder.Entity<Picture>().Property(e => e.FileName).HasMaxLength(255).IsRequired();
-            modelBuilder.Entity<Picture>().Property(e => e.Link).HasMaxLength(255).IsRequired();
+            modelBuilder.Entity<Picture>().Property(e => e.FileName).HasMaxLength(255);
+            modelBuilder.Entity<Picture>().Property(e => e.Link).HasMaxLength(255);
             modelBuilder.Entity<Picture>().Property(e => e.SortOrder);
         }
 

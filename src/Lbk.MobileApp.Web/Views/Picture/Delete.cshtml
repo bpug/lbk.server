@@ -10,6 +10,11 @@
 <fieldset>
     <legend>@Messages.Picture @Messages.Delete</legend>
     <div class="display-label">
+        @Html.LabelFor(model => model.Title)</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+    <div class="display-label">
         @Html.LabelFor(model => model.Description)</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Description)

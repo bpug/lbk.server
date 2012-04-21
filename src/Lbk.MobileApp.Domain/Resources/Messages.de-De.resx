@@ -385,7 +385,7 @@
     <value>Link</value>
   </data>
   <data name="PictureLinkRequired" xml:space="preserve">
-    <value>Link ist erforderlich</value>
+    <value>Link ist erforderlich.</value>
   </data>
   <data name="PictureLinkStringLengthValidationError" xml:space="preserve">
     <value>Der Link darf nur 255 Zeichen lang sein</value>
@@ -665,5 +665,23 @@
   </data>
   <data name="Menu" xml:space="preserve">
     <value>Menü</value>
+  </data>
+  <data name="PictureFileRequired" xml:space="preserve">
+    <value>Datei ist erforderlich.</value>
+  </data>
+  <data name="PictureTitleLabelText" xml:space="preserve">
+    <value>Titel</value>
+  </data>
+  <data name="PictureTitleRequired" xml:space="preserve">
+    <value>Titel ist erforderlich.</value>
+  </data>
+  <data name="PictureTitleStringLengthValidationError" xml:space="preserve">
+    <value>Den Titel darf nur 255 Zeichen enthalten</value>
+  </data>
+  <data name="PictureFileLabelText" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="PictureLinkOrFileRequired" xml:space="preserve">
+    <value>Link oder File ist erforderlich.</value>
   </data>
 </root>

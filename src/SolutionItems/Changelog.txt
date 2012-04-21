@@ -1,4 +1,8 @@
 2012-04-20
+	- Add Picture-Title Column
+	- FileName -> Title
+	- Picture upload
+2012-04-20
 	- Localization
 	- Design
 	- Add HtmlHelper for Image

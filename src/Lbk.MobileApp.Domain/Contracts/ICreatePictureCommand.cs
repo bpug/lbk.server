@@ -10,6 +10,8 @@ namespace Lbk.MobileApp.Domain.Contracts
     {
         #region - Properties -
 
+        string Title { get; set; }
+
         string Description { get; set; }
 
         string FileName { get; set; }

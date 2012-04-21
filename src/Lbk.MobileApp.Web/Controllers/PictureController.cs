@@ -4,19 +4,22 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System;
+using System.Configuration;
+using System.IO;
+using Lbk.MobileApp.Domain.Resources;
+
 namespace Lbk.MobileApp.Web.Controllers
 {
     #region using directives
 
     using System.Web.Mvc;
-
     using Lbk.MobileApp.Core;
     using Lbk.MobileApp.Domain.Handlers;
     using Lbk.MobileApp.Model;
     using Lbk.MobileApp.Web.Handler;
     using Lbk.MobileApp.Web.Models;
     using Lbk.MobileApp.Web.Models.Extensions;
-
     using Microsoft.Practices.ServiceLocation;
 
     #endregion
@@ -39,12 +42,51 @@ namespace Lbk.MobileApp.Web.Controllers
         {
             if (model != null && this.ModelState.IsValid)
             {
-                this.Using<AddPicture>().Execute(model);
+                Validate(model);
 
-                return this.RedirectToAction("List");
+                if (Upload(model))
+                {
+                    this.Using<AddPicture>().Execute(model);
+                    return this.RedirectToAction("List");
+                }
+                return this.View(model);
             }
 
             return this.View(model);
+        }
+
+        private bool Upload(PictureFormModel model)
+        {
+            if (model.File != null)
+            {
+                try
+                {
+                    var path = ConfigurationManager.AppSettings["PictureServerBasePath"];
+                    string filename = Path.GetFileName(model.File.FileName);
+                    if (filename != null)
+                    {
+                        model.FileName = filename;
+                        model.File.SaveAs(Path.Combine(path, filename));
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError("File", ex.Message);
+                }
+            }
+            return ModelState.IsValid;
+        }
+
+        private bool Validate(PictureFormModel model)
+        {
+            if (string.IsNullOrEmpty(model.Link) && (model.File == null && string.IsNullOrEmpty(model.FileName)))
+                ModelState.AddModelError(string.Empty, Messages.PictureLinkOrFileRequired);
+
+            return ModelState.IsValid;
+        }
+
+        private void Upload()
+        {
         }
 
         public ActionResult Create()
@@ -79,9 +121,13 @@ namespace Lbk.MobileApp.Web.Controllers
         {
             if (model != null && this.ModelState.IsValid)
             {
-                this.Using<UpdatePicture>().Execute(model);
-
-                return this.RedirectToAction("List");
+                Validate(model);
+                if (Upload(model))
+                {
+                    this.Using<UpdatePicture>().Execute(model);
+                    return this.RedirectToAction("List");
+                }
+                return this.View(model);
             }
 
             return this.View(model);
@@ -103,8 +149,8 @@ namespace Lbk.MobileApp.Web.Controllers
                     pagedDataInputOfPicture.PageSize as object, defaultValue: 10, nullValue: 0, keyName: "PageSize");
             pagedDataInputOfPicture.SearchItem =
                 this.GetItemFromTempData(
-                    PictureModelExtensions.ToModel(@picture.GetValueOrDefault()), 
-                    keyPrefix: "SearchItem_", 
+                    PictureModelExtensions.ToModel(@picture.GetValueOrDefault()),
+                    keyPrefix: "SearchItem_",
                     removeValue: btnSubmit == "Clear");
 
             var pictures = this.Using<GetPictures>().Execute(pagedDataInputOfPicture);

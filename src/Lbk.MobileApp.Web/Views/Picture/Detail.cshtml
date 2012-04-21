@@ -11,29 +11,38 @@
     <div>
         <div class="picture-data">
             <div class="display-label">
+                @Html.LabelFor(model => model.Title)</div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Title)
+            </div>
+            <div class="display-label">
                 @Html.LabelFor(model => model.Description)</div>
             <div class="display-field">
                 @Html.DisplayFor(model => model.Description)
-            </div>
-            <div class="display-label">
-                @Html.LabelFor(model => model.FileName)</div>
-            <div class="display-field">
-                @Html.DisplayFor(model => model.FileName)
-            </div>
-            <div class="display-label">
-                @Html.LabelFor(model => model.Link)</div>
-            <div class="display-field">
-                @Html.DisplayFor(model => model.Link) 
-
             </div>
             <div class="display-label">
                 @Html.LabelFor(model => model.SortOrder)</div>
             <div class="display-field">
                 @Html.DisplayFor(model => model.SortOrder)
             </div>
+            <div class="display-label">
+                @Html.LabelFor(model => model.Link)</div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Link)
+            </div>
+            <div class="display-label">
+                @Html.LabelFor(model => model.FileName)</div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.FileName)
+            </div>
         </div>
         <div class="picture-image">
-             @Html.Image(Url.Content(Model.Link), Html.Encode(Model.Description), new { title = Model.Description, border = 0, height = 320 })
+            @{
+                if (!string.IsNullOrEmpty(Model.PictureLocation))
+                {
+                    @Html.Image(Url.Content(Model.PictureLocation), Html.Encode(Model.Description), new {title = Model.Description, border = 0, height = 320});
+                }
+            }
         </div>
         <div style="clear: both;" />
     </div>

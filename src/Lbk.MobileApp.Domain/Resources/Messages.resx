@@ -666,4 +666,22 @@
   <data name="Menu" xml:space="preserve">
     <value>Menu</value>
   </data>
+  <data name="PictureFileRequired" xml:space="preserve">
+    <value>File is required.</value>
+  </data>
+  <data name="PictureTitleLabelText" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="PictureTitleRequired" xml:space="preserve">
+    <value>Title is required.</value>
+  </data>
+  <data name="PictureTitleStringLengthValidationError" xml:space="preserve">
+    <value>Title must be less than 255 characters.</value>
+  </data>
+  <data name="PictureFileLabelText" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="PictureLinkOrFileRequired" xml:space="preserve">
+    <value>Link or File is required.</value>
+  </data>
 </root>

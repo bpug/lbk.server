@@ -47,6 +47,13 @@ namespace Lbk.MobileApp.Data.SqlCe.Repositories.Specifications
 
             if (this._pagedDataInput.SearchItem != null)
             {
+                if (!string.IsNullOrWhiteSpace(this._pagedDataInput.SearchItem.Title))
+                {
+                    specification &=
+                        new DirectSpecification<Picture>(
+                            p => p.Description.ToLower().Contains(this._pagedDataInput.SearchItem.Title.ToLower()));
+                }
+
                 if (!string.IsNullOrWhiteSpace(this._pagedDataInput.SearchItem.Description))
                 {
                     specification &=
