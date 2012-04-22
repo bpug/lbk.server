@@ -55,40 +55,6 @@ namespace Lbk.MobileApp.Web.Controllers
             return this.View(model);
         }
 
-        private bool Upload(PictureFormModel model)
-        {
-            if (model.File != null)
-            {
-                try
-                {
-                    var path = ConfigurationManager.AppSettings["PictureServerBasePath"];
-                    string filename = Path.GetFileName(model.File.FileName);
-                    if (filename != null)
-                    {
-                        model.FileName = filename;
-                        model.File.SaveAs(Path.Combine(path, filename));
-                    }
-                }
-                catch (Exception ex)
-                {
-                    ModelState.AddModelError("File", ex.Message);
-                }
-            }
-            return ModelState.IsValid;
-        }
-
-        private bool Validate(PictureFormModel model)
-        {
-            if (string.IsNullOrEmpty(model.Link) && (model.File == null && string.IsNullOrEmpty(model.FileName)))
-                ModelState.AddModelError(string.Empty, Messages.PictureLinkOrFileRequired);
-
-            return ModelState.IsValid;
-        }
-
-        private void Upload()
-        {
-        }
-
         public ActionResult Create()
         {
             return this.View(new PictureFormModel());
@@ -104,9 +70,14 @@ namespace Lbk.MobileApp.Web.Controllers
         [HttpPost]
         public ActionResult Delete(long id, object dummy)
         {
-            this.Using<DeletePictureById>().Execute(id);
-
-            return this.RedirectToAction("List");
+            var @picture = this.Using<GetPictureById>().Execute(id);
+            var model = PictureModelExtensions.ToFormModel(@picture);
+            if (DeleteFile(model))
+            {
+                this.Using<DeletePictureById>().Execute(id);
+                return this.RedirectToAction("List");
+            }
+            return this.View(model);
         }
 
         public ActionResult Detail(long id)
@@ -171,5 +142,53 @@ namespace Lbk.MobileApp.Web.Controllers
         }
 
         #endregion
+
+        private bool Upload(PictureFormModel model)
+        {
+            if (model.File != null)
+            {
+                try
+                {
+                    var path = ConfigurationManager.AppSettings["PictureServerBasePath"];
+                    string filename = Path.GetFileName(model.File.FileName);
+                    if (filename != null)
+                    {
+                        model.FileName = filename;
+                        model.File.SaveAs(Path.Combine(path, filename));
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError("File", ex.Message);
+                }
+            }
+            return ModelState.IsValid;
+        }
+
+        private bool DeleteFile(PictureFormModel model)
+        {
+            if (!string.IsNullOrEmpty(model.FileName))
+            {
+                try
+                {
+                    var path = ConfigurationManager.AppSettings["PictureServerBasePath"];
+                    var filename = model.FileName;
+                    if (filename != null) System.IO.File.Delete(Path.Combine(path, filename));
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError(string.Empty, ex.Message);
+                }
+            }
+            return ModelState.IsValid;
+        }
+
+        private bool Validate(PictureFormModel model)
+        {
+            if (string.IsNullOrEmpty(model.Link) && (model.File == null && string.IsNullOrEmpty(model.FileName)))
+                ModelState.AddModelError(string.Empty, Messages.PictureLinkOrFileRequired);
+
+            return ModelState.IsValid;
+        }
     }
 }

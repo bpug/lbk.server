@@ -28,9 +28,11 @@
                     grid.Column(Messages.Commands, style: "webgrid-commands", format: (item) =>
                     {
                         return new MvcHtmlString(string.Join("  ",
-                            Html.ImageActionLink(Url.Content("~/Content/Images/detail.png"), "", "Detail", new { id = item.Id }, new { title = Messages.Details, style = "image-icon" }),
-                            Html.ImageActionLink(Url.Content("~/Content/Images/edit.png"), "", "Edit", new { id = item.Id }, new { title = Messages.Edit, style = "image-icon" }),
-                            Html.ImageActionLink(Url.Content("~/Content/Images/delete.png"), "", "Delete", new { id = item.Id }, new { title = Messages.Delete, style = "image-icon" })));
+                                                            Html.ImageActionLink(Url.Content("~/Content/Images/detail.png"), "", "Detail", new {id = item.Id}, new {title = Messages.Details, style = "image-icon"}),
+                                                            Html.ImageActionLink(Url.Content("~/Content/Images/edit.png"), "", "Edit", new {id = item.Id}, new {title = Messages.Edit, style = "image-icon"}),
+                                                            Html.ImageActionLink(Url.Content("~/Content/Images/delete.png"), "", "Delete", new {id = item.Id}, new {title = Messages.Delete, style = "image-icon"}),
+                                                            Html.ImageActionLink(Url.Content("~/Content/Images/copy.jpg"), "", "Copy", new { id = item.Id }, new { title = Messages.Copy, style = "image-icon" })));
+
                     }, canSort: false)),
                     mode: WebGridPagerModes.FirstLast | WebGridPagerModes.Numeric | WebGridPagerModes.NextPrevious)
 }

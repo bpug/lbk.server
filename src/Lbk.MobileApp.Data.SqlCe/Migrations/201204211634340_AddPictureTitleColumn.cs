@@ -16,6 +16,7 @@ namespace Lbk.MobileApp.Data.SqlCe.Migrations
         
         public override void Down()
         {
+            Sql("UPDATE Pictures SET FileName=Title");
             AlterColumn("Pictures", "Link", c => c.String(nullable: false, maxLength: 255));
             AlterColumn("Pictures", "FileName", c => c.String(nullable: false, maxLength: 255));
             DropColumn("Pictures", "Title");

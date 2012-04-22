@@ -40,7 +40,7 @@
             @{
                 if (!string.IsNullOrEmpty(Model.PictureLocation))
                 {
-                    @Html.Image(Url.Content(Model.PictureLocation), Html.Encode(Model.Description), new {title = Model.Description, border = 0, height = 320});
+                    @Html.Image(Url.Content(Model.PictureLocation), Html.Encode(Model.Description), new {title = Model.Description, border = 0, height = 320})
                 }
             }
         </div>
