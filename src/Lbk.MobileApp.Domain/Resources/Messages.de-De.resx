@@ -490,16 +490,16 @@
     <value>Anzeigen</value>
   </data>
   <data name="TextLineInputValidatorRegEx" xml:space="preserve">
-    <value>^(?!.*--)[\w\.,'_ \-:\\\/?=()&amp;]*$</value>
+    <value>^(?!.*--)[\w\.,'_ \-:\\\/?=()&amp;!"]*$</value>
   </data>
   <data name="TextLineInputValidatorRegExUnicode" xml:space="preserve">
-    <value>^(?!.*--)[A-Za-z0-9\.,'_ \-:\\\/?=()&amp;]*$</value>
+    <value>^(?!.*--)[A-Za-z0-9\.,'_ \-:\\\/?=()&amp;!"]*$</value>
   </data>
   <data name="TextMultilineValidatorRegEx" xml:space="preserve">
-    <value>^(?!.*--)([\w\.,'_ \-:\\\/?=]|\r|\n)*$</value>
+    <value>^(?!.*--)([\w\.,'_ \-:\\\/?=()&amp;!"]|\r|\n)*$</value>
   </data>
   <data name="TextMultilineValidatorRegExUnicode" xml:space="preserve">
-    <value>^(?!.*--)([A-Za-z0-9\.,'_ \-:\\\/?=]|\r|\n)*$</value>
+    <value>^(?!.*--)([A-Za-z0-9\.,'_ \-:\\\/?=()&amp;!"]|\r|\n)*$</value>
   </data>
   <data name="UnableToAddAnswerExceptionMessage" xml:space="preserve">
     <value>Eingabe einer Antwort nicht möglich</value>

@@ -93,6 +93,12 @@ namespace Lbk.MobileApp.Web.Controllers
             if (model != null && this.ModelState.IsValid)
             {
                 Validate(model);
+                
+                if (!DeleteFile(model))
+                {
+                    return this.View(model);
+                }
+
                 if (Upload(model))
                 {
                     this.Using<UpdatePicture>().Execute(model);
@@ -145,7 +151,7 @@ namespace Lbk.MobileApp.Web.Controllers
 
         private bool Upload(PictureFormModel model)
         {
-            if (model.File != null)
+           if (model.File != null)
             {
                 try
                 {
@@ -172,8 +178,7 @@ namespace Lbk.MobileApp.Web.Controllers
                 try
                 {
                     var path = ConfigurationManager.AppSettings["PictureServerBasePath"];
-                    var filename = model.FileName;
-                    if (filename != null) System.IO.File.Delete(Path.Combine(path, filename));
+                    System.IO.File.Delete(Path.Combine(path, model.FileName));
                 }
                 catch (Exception ex)
                 {

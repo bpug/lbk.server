@@ -1,4 +1,7 @@
 2012-04-20
+	- Add Picture File-Delete (Commands: Delete, Edit)
+	- Update regex to allow: ! and "
+2012-04-20
 	- Add Picture-Title Column
 	- FileName -> Title
 	- Picture upload

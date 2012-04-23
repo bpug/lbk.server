@@ -21,6 +21,15 @@ namespace Lbk.MobileApp.Web.Extensions
             return JavaScriptSerializer.Deserialize<T>(source);
         }
 
+        public static string GetValueOrDefault(this string source, string @default)
+        {
+            if (string.IsNullOrWhiteSpace(source))
+            {
+                return @default;
+            }
+            return source;
+        }
+
         #endregion
     }
 }
