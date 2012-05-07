@@ -102,6 +102,7 @@ namespace Lbk.MobileApp.Web.Controllers
             {
                 if (Upload(model))
                 {
+                    model.ThumbnailLink = model.ThumbnailLocation;
                     this.Using<UpdateEvent>().Execute(model);
                     return this.RedirectToAction("List");
                 }

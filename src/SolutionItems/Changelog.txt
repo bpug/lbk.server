@@ -1,20 +1,25 @@
 2012-05-07
 	- Refactoring Model-Extensions
+
 2012-05-07
 	- Add ThumbnailName in Events
 	- Add Thumbnail-Upload in Events
 	- Add Migration AddEventThumbnailNameColumn
+
 2012-04-20
 	- Add Picture File-Delete (Commands: Delete, Edit)
 	- Update regex to allow: ! and "
+
 2012-04-20
 	- Add Picture-Title Column
 	- FileName -> Title
 	- Picture upload
+
 2012-04-20
 	- Localization
 	- Design
 	- Add HtmlHelper for Image
+
 2012-04-19
 	- Change databaseInitializer from Global.asax to Web.Config
     - Update regex to allow: () &

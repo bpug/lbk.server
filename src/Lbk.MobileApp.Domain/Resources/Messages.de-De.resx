@@ -133,7 +133,7 @@
     <value>Beschreibung darf nur 255 Zeichen lang sein</value>
   </data>
   <data name="AnswerExplanationLabelText" xml:space="preserve">
-    <value>Erklärung</value>
+    <value>Text</value>
   </data>
   <data name="AnswerExplanationRequired" xml:space="preserve">
     <value>Erklärung erforderlich</value>
@@ -235,7 +235,7 @@
     <value>Datum darf nur 255 Zeichen lang sein</value>
   </data>
   <data name="EventDescriptionLabelText" xml:space="preserve">
-    <value>Erklärung</value>
+    <value>Text</value>
   </data>
   <data name="EventDescriptionRequired" xml:space="preserve">
     <value>Erklärung ist erforderlich</value>
@@ -292,7 +292,7 @@
     <value>Neues Lebensmittel</value>
   </data>
   <data name="FoodDescriptionLabelText" xml:space="preserve">
-    <value>Erklärung</value>
+    <value>Text</value>
   </data>
   <data name="FoodDescriptionRequired" xml:space="preserve">
     <value>Erklärung ist erforderlich.</value>
@@ -412,7 +412,7 @@
     <value>Neue Frage</value>
   </data>
   <data name="QuestionDescriptionLabelText" xml:space="preserve">
-    <value>Erklärung</value>
+    <value>Frage</value>
   </data>
   <data name="QuestionDescriptionRequired" xml:space="preserve">
     <value>Erklärung ist erforderlich</value>
@@ -466,7 +466,7 @@
     <value>Neue Serie</value>
   </data>
   <data name="SerieDescriptionLabelText" xml:space="preserve">
-    <value>Erklärung</value>
+    <value>Text</value>
   </data>
   <data name="SerieDescriptionRequired" xml:space="preserve">
     <value>Erklärung ist erforderlich</value>
@@ -619,7 +619,7 @@
     <value>Neues Video</value>
   </data>
   <data name="VideoDescriptionLabelText" xml:space="preserve">
-    <value>Erklärung</value>
+    <value>Beschreibung</value>
   </data>
   <data name="VideoDescriptionRequired" xml:space="preserve">
     <value>Erklärung ist erforderlich</value>
