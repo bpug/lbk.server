@@ -29,7 +29,7 @@ namespace Lbk.MobileApp.Web.Models.Extensions
             return item;
         }
 
-        public static VideoFormModel ToFormModel(Video model)
+        public static VideoFormModel ToFormModel(this Video model)
         {
             if (model == null)
             {
@@ -47,7 +47,7 @@ namespace Lbk.MobileApp.Web.Models.Extensions
                        };
         }
 
-        public static Video ToModel(VideoSearchFormModel model)
+        public static Video ToModel(this VideoSearchFormModel model)
         {
             if (model == null)
             {
@@ -60,7 +60,7 @@ namespace Lbk.MobileApp.Web.Models.Extensions
                        };
         }
 
-        public static VideoSearchFormModel ToSearchFormModel(Video model)
+        public static VideoSearchFormModel ToSearchFormModel(this Video model)
         {
             if (model == null)
             {

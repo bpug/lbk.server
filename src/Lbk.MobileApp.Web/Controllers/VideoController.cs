@@ -58,7 +58,7 @@ namespace Lbk.MobileApp.Web.Controllers
         {
             var @video = this.Using<GetVideoById>().Execute(id);
 
-            return this.View(VideoModelExtensions.ToFormModel(@video));
+            return this.View(@video.ToFormModel());
         }
 
         [HttpPost]
@@ -73,7 +73,7 @@ namespace Lbk.MobileApp.Web.Controllers
         {
             var @video = this.Using<GetVideoById>().Execute(id);
 
-            return this.View(VideoModelExtensions.ToFormModel(@video));
+            return this.View(@video.ToFormModel());
         }
 
         [HttpPost]
@@ -93,7 +93,7 @@ namespace Lbk.MobileApp.Web.Controllers
         {
             var @video = this.Using<GetVideoById>().Execute(id);
 
-            return this.View(VideoModelExtensions.ToFormModel(@video));
+            return this.View(@video.ToFormModel());
         }
 
         public ActionResult List(VideoSearchFormModel @video, PagedDataInput pagedDataInput, string btnSubmit)
@@ -105,7 +105,7 @@ namespace Lbk.MobileApp.Web.Controllers
                     pagedDataInputOfVideo.PageSize as object, defaultValue: 10, nullValue: 0, keyName: "PageSize");
             pagedDataInputOfVideo.SearchItem =
                 this.GetItemFromTempData(
-                    VideoModelExtensions.ToModel(@video.GetValueOrDefault()), 
+                    @video.GetValueOrDefault().ToModel(), 
                     keyPrefix: "SearchItem_", 
                     removeValue: btnSubmit == Messages.Clear);
 
@@ -115,7 +115,7 @@ namespace Lbk.MobileApp.Web.Controllers
             viewModel.Results = videos;
             viewModel.SearchItem = btnSubmit == Messages.Clear
                                        ? new VideoSearchFormModel()
-                                       : VideoModelExtensions.ToSearchFormModel(pagedDataInputOfVideo.SearchItem)
+                                       : pagedDataInputOfVideo.SearchItem.ToSearchFormModel()
                                          ?? @video;
 
             if (this.Request.IsAjaxRequest())

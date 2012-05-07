@@ -31,7 +31,7 @@ namespace Lbk.MobileApp.Web.Models.Extensions
             return item;
         }
 
-        public static MenuFormModel ToFormModel(Menu model)
+        public static MenuFormModel ToFormModel(this Menu model)
         {
             if (model == null)
             {
@@ -41,7 +41,7 @@ namespace Lbk.MobileApp.Web.Models.Extensions
             return new MenuFormModel { Id = model.Id, Date = model.Date, Description = model.Description };
         }
 
-        public static Menu ToModel(MenuSearchFormModel model)
+        public static Menu ToModel(this MenuSearchFormModel model)
         {
             if (model == null)
             {
@@ -56,7 +56,7 @@ namespace Lbk.MobileApp.Web.Models.Extensions
                 };
         }
 
-        public static MenuSearchFormModel ToSearchFormModel(Menu model)
+        public static MenuSearchFormModel ToSearchFormModel(this Menu model)
         {
             if (model == null)
             {

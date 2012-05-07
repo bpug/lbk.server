@@ -26,7 +26,7 @@ namespace Lbk.MobileApp.Web.Models.Extensions
             return item;
         }
 
-        public static CategoryFormModel ToFormModel(Category model)
+        public static CategoryFormModel ToFormModel(this Category model)
         {
             if (model == null)
             {
@@ -36,7 +36,7 @@ namespace Lbk.MobileApp.Web.Models.Extensions
             return new CategoryFormModel { Id = model.Id, Description = model.Description, Title = model.Title };
         }
 
-        public static Category ToModel(CategorySearchFormModel model)
+        public static Category ToModel(this CategorySearchFormModel model)
         {
             if (model == null)
             {
@@ -46,7 +46,7 @@ namespace Lbk.MobileApp.Web.Models.Extensions
             return new Category { Id = model.Id, Description = model.Description, Title = model.Title };
         }
 
-        public static CategorySearchFormModel ToSearchFormModel(Category model)
+        public static CategorySearchFormModel ToSearchFormModel(this Category model)
         {
             if (model == null)
             {

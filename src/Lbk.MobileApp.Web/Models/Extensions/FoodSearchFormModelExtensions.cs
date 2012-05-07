@@ -29,7 +29,7 @@ namespace Lbk.MobileApp.Web.Models.Extensions
             return item;
         }
 
-        public static FoodListViewModel ToFoodListViewModel(Food model)
+        public static FoodListViewModel ToFoodListViewModel(this Food model)
         {
             if (model == null)
             {
@@ -50,12 +50,12 @@ namespace Lbk.MobileApp.Web.Models.Extensions
                 };
         }
 
-        public static IEnumerable<FoodListViewModel> ToFoodListViewModels(IEnumerable<Food> models)
+        public static IEnumerable<FoodListViewModel> ToFoodListViewModels(this IEnumerable<Food> models)
         {
             return models.Select(ToFoodListViewModel);
         }
 
-        public static FoodFormModel ToFormModel(Food model)
+        public static FoodFormModel ToFormModel(this Food model)
         {
             if (model == null)
             {
@@ -75,7 +75,7 @@ namespace Lbk.MobileApp.Web.Models.Extensions
                 };
         }
 
-        public static Food ToModel(FoodSearchFormModel model)
+        public static Food ToModel(this FoodSearchFormModel model)
         {
             if (model == null)
             {
@@ -92,7 +92,7 @@ namespace Lbk.MobileApp.Web.Models.Extensions
                 };
         }
 
-        public static FoodSearchFormModel ToSearchFormModel(Food model)
+        public static FoodSearchFormModel ToSearchFormModel(this Food model)
         {
             if (model == null)
             {

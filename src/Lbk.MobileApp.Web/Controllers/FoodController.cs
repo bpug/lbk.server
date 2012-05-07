@@ -62,7 +62,7 @@ namespace Lbk.MobileApp.Web.Controllers
         {
             var answer = this.Using<GetFoodById>().Execute(id);
 
-            return this.View(FoodSearchFormModelExtensions.ToFormModel(answer));
+            return this.View(answer.ToFormModel());
         }
 
         [HttpPost]
@@ -77,7 +77,7 @@ namespace Lbk.MobileApp.Web.Controllers
         {
             var food = this.Using<GetFoodById>().Execute(id);
 
-            return this.View(FoodSearchFormModelExtensions.ToFormModel(food));
+            return this.View(food.ToFormModel());
         }
 
         [HttpPost]
@@ -96,11 +96,11 @@ namespace Lbk.MobileApp.Web.Controllers
         public ActionResult Edit(long id)
         {
             var food = this.Using<GetFoodById>().Execute(id);
-            var vm = FoodSearchFormModelExtensions.ToFormModel(food);
+            var vm = food.ToFormModel();
 
             this.AddCategorySelectListToViewData(vm);
 
-            return this.View(FoodSearchFormModelExtensions.ToFormModel(food));
+            return this.View(food.ToFormModel());
         }
 
         public ActionResult List(long id, FoodSearchFormModel question, PagedDataInput pagedDataInput, string btnSubmit)
@@ -118,7 +118,7 @@ namespace Lbk.MobileApp.Web.Controllers
                     pagedDataInputOfFoods.PageSize as object, defaultValue: 10, nullValue: 0, keyName: "PageSize");
             pagedDataInputOfFoods.SearchItem =
                 this.GetItemFromTempData(
-                    FoodSearchFormModelExtensions.ToModel(question.GetValueOrDefault()), 
+                    question.GetValueOrDefault().ToModel(), 
                     defaultValue: new Food { MenuId = id }, 
                     keyPrefix: "SearchItem_" + id, 
                     removeValue: btnSubmit == Messages.Clear);
@@ -126,7 +126,7 @@ namespace Lbk.MobileApp.Web.Controllers
             var foods = this.Using<GetFoods>().Execute(pagedDataInputOfFoods);
             var foodListViewModels =
                 new PagedDataList<FoodListViewModel>(
-                    FoodSearchFormModelExtensions.ToFoodListViewModels(foods.Items), 
+                    foods.Items.ToFoodListViewModels(), 
                     foods.PageIndex, 
                     foods.PageSize, 
                     foods.TotalItemCount);
@@ -135,8 +135,7 @@ namespace Lbk.MobileApp.Web.Controllers
             viewModel.Results = foodListViewModels;
             viewModel.SearchItem = btnSubmit == Messages.Clear
                                        ? new FoodSearchFormModel()
-                                       : FoodSearchFormModelExtensions.ToSearchFormModel(
-                                           pagedDataInputOfFoods.SearchItem) ?? question;
+                                       : pagedDataInputOfFoods.SearchItem.ToSearchFormModel() ?? question;
 
             if (this.Request.IsAjaxRequest())
             {

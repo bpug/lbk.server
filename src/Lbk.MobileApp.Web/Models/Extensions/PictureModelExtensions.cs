@@ -29,7 +29,7 @@ namespace Lbk.MobileApp.Web.Models.Extensions
             return item;
         }
 
-        public static PictureFormModel ToFormModel(Picture model)
+        public static PictureFormModel ToFormModel(this Picture model)
         {
             if (model == null)
             {
@@ -47,7 +47,7 @@ namespace Lbk.MobileApp.Web.Models.Extensions
                        };
         }
 
-        public static Picture ToModel(PictureSearchFormModel model)
+        public static Picture ToModel(this PictureSearchFormModel model)
         {
             if (model == null)
             {
@@ -60,7 +60,7 @@ namespace Lbk.MobileApp.Web.Models.Extensions
                        };
         }
 
-        public static PictureSearchFormModel ToSearchFormModel(Picture model)
+        public static PictureSearchFormModel ToSearchFormModel(this Picture model)
         {
             if (model == null)
             {

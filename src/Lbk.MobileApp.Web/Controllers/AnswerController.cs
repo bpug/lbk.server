@@ -58,7 +58,7 @@ namespace Lbk.MobileApp.Web.Controllers
         {
             var answer = this.Using<GetAnswerById>().Execute(id);
 
-            return this.View(AnswerSearchFormModelExtensions.ToFormModel(answer));
+            return this.View(answer.ToFormModel());
         }
 
         [HttpPost]
@@ -73,7 +73,7 @@ namespace Lbk.MobileApp.Web.Controllers
         {
             var answer = this.Using<GetAnswerById>().Execute(id);
 
-            return this.View(AnswerSearchFormModelExtensions.ToFormModel(answer));
+            return this.View(answer.ToFormModel());
         }
 
         [HttpPost]
@@ -93,7 +93,7 @@ namespace Lbk.MobileApp.Web.Controllers
         {
             var answer = this.Using<GetAnswerById>().Execute(id);
 
-            return this.View(AnswerSearchFormModelExtensions.ToFormModel(answer));
+            return this.View(answer.ToFormModel());
         }
 
         public ActionResult List(long id, AnswerSearchFormModel answer, PagedDataInput pagedDataInput, string btnSubmit)
@@ -114,7 +114,7 @@ namespace Lbk.MobileApp.Web.Controllers
                     pagedDataInputOfQuestion.PageSize as object, defaultValue: 10, nullValue: 0, keyName: "PageSize");
             pagedDataInputOfQuestion.SearchItem =
                 this.GetItemFromTempData(
-                    AnswerSearchFormModelExtensions.ToModel(answer.GetValueOrDefault()), 
+                    answer.GetValueOrDefault().ToModel(), 
                     defaultValue: new Answer { QuestionId = id },
                     keyPrefix: "SearchItem_" + id,
                     removeValue: btnSubmit == Messages.Clear);
@@ -125,8 +125,7 @@ namespace Lbk.MobileApp.Web.Controllers
             viewModel.Results = answers;
             viewModel.SearchItem = btnSubmit == Messages.Clear
                                        ? new AnswerSearchFormModel()
-                                       : AnswerSearchFormModelExtensions.ToSearchFormModel(
-                                           pagedDataInputOfQuestion.SearchItem) ?? answer;
+                                       : pagedDataInputOfQuestion.SearchItem.ToSearchFormModel() ?? answer;
 
             if (this.Request.IsAjaxRequest())
             {

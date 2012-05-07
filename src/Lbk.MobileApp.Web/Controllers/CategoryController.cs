@@ -62,7 +62,7 @@ namespace Lbk.MobileApp.Web.Controllers
 
             var category = this.Using<GetCategoryById>().Execute(id);
 
-            return this.View(CategoryModelExtensions.ToFormModel(category));
+            return this.View(category.ToFormModel());
         }
 
         [HttpPost]
@@ -79,7 +79,7 @@ namespace Lbk.MobileApp.Web.Controllers
 
             var category = this.Using<GetCategoryById>().Execute(id);
 
-            return this.View(CategoryModelExtensions.ToFormModel(category));
+            return this.View(category.ToFormModel());
         }
 
         [HttpPost]
@@ -103,7 +103,7 @@ namespace Lbk.MobileApp.Web.Controllers
 
             var category = this.Using<GetCategoryById>().Execute(id);
 
-            return this.View(CategoryModelExtensions.ToFormModel(category));
+            return this.View(category.ToFormModel());
         }
 
         public ActionResult List(long menuId, CategorySearchFormModel category, PagedDataInput pagedDataInput, string btnSubmit)
@@ -119,7 +119,7 @@ namespace Lbk.MobileApp.Web.Controllers
                     pagedDataInputOfCategory.PageSize as object, defaultValue: 10, nullValue: 0, keyName: "PageSize");
             pagedDataInputOfCategory.SearchItem =
                 this.GetItemFromTempData(
-                    CategoryModelExtensions.ToModel(category.GetValueOrDefault()), 
+                    category.GetValueOrDefault().ToModel(), 
                     keyPrefix: "SearchItem_", 
                     removeValue: btnSubmit == Messages.Clear);
 
@@ -129,7 +129,7 @@ namespace Lbk.MobileApp.Web.Controllers
             viewModel.Results = categories;
             viewModel.SearchItem = btnSubmit == Messages.Clear
                                        ? new CategorySearchFormModel()
-                                       : CategoryModelExtensions.ToSearchFormModel(pagedDataInputOfCategory.SearchItem)
+                                       : pagedDataInputOfCategory.SearchItem.ToSearchFormModel()
                                          ?? category;
 
             if (this.Request.IsAjaxRequest())

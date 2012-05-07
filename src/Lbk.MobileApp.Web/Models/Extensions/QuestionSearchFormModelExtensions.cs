@@ -29,7 +29,7 @@ namespace Lbk.MobileApp.Web.Models.Extensions
             return item;
         }
 
-        public static QuestionFormModel ToFormModel(Question model)
+        public static QuestionFormModel ToFormModel(this Question model)
         {
             if (model == null)
             {
@@ -48,7 +48,7 @@ namespace Lbk.MobileApp.Web.Models.Extensions
                 };
         }
 
-        public static Question ToModel(QuestionSearchFormModel model)
+        public static Question ToModel(this QuestionSearchFormModel model)
         {
             if (model == null)
             {
@@ -66,7 +66,7 @@ namespace Lbk.MobileApp.Web.Models.Extensions
                 };
         }
 
-        public static QuestionSearchFormModel ToSearchFormModel(Question model)
+        public static QuestionSearchFormModel ToSearchFormModel(this Question model)
         {
             if (model == null)
             {

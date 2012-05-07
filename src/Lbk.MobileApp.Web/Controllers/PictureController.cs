@@ -64,14 +64,14 @@ namespace Lbk.MobileApp.Web.Controllers
         {
             var @picture = this.Using<GetPictureById>().Execute(id);
 
-            return this.View(PictureModelExtensions.ToFormModel(@picture));
+            return this.View(@picture.ToFormModel());
         }
 
         [HttpPost]
         public ActionResult Delete(long id, object dummy)
         {
             var @picture = this.Using<GetPictureById>().Execute(id);
-            var model = PictureModelExtensions.ToFormModel(@picture);
+            var model = @picture.ToFormModel();
             if (DeleteFile(model))
             {
                 this.Using<DeletePictureById>().Execute(id);
@@ -84,7 +84,7 @@ namespace Lbk.MobileApp.Web.Controllers
         {
             var @picture = this.Using<GetPictureById>().Execute(id);
 
-            return this.View(PictureModelExtensions.ToFormModel(@picture));
+            return this.View(@picture.ToFormModel());
         }
 
         [HttpPost]
@@ -117,7 +117,7 @@ namespace Lbk.MobileApp.Web.Controllers
         {
             var @picture = this.Using<GetPictureById>().Execute(id);
 
-            return this.View(PictureModelExtensions.ToFormModel(@picture));
+            return this.View(@picture.ToFormModel());
         }
 
         public ActionResult List(PictureSearchFormModel @picture, PagedDataInput pagedDataInput, string btnSubmit)
@@ -129,7 +129,7 @@ namespace Lbk.MobileApp.Web.Controllers
                     pagedDataInputOfPicture.PageSize as object, defaultValue: 10, nullValue: 0, keyName: "PageSize");
             pagedDataInputOfPicture.SearchItem =
                 this.GetItemFromTempData(
-                    PictureModelExtensions.ToModel(@picture.GetValueOrDefault()),
+                    @picture.GetValueOrDefault().ToModel(),
                     keyPrefix: "SearchItem_",
                     removeValue: btnSubmit == Messages.Clear);
 
@@ -139,7 +139,7 @@ namespace Lbk.MobileApp.Web.Controllers
             viewModel.Results = pictures;
             viewModel.SearchItem = btnSubmit == Messages.Clear
                                        ? new PictureSearchFormModel()
-                                       : PictureModelExtensions.ToSearchFormModel(pagedDataInputOfPicture.SearchItem)
+                                       : pagedDataInputOfPicture.SearchItem.ToSearchFormModel()
                                          ?? @picture;
 
             if (this.Request.IsAjaxRequest())

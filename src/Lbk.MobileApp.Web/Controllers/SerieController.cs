@@ -59,7 +59,7 @@ namespace Lbk.MobileApp.Web.Controllers
         {
             var serie = this.Using<GetSerieById>().Execute(id);
 
-            return this.View(SerieSearchFormModelExtensions.ToFormModel(serie));
+            return this.View(serie.ToFormModel());
         }
 
         [HttpPost]
@@ -74,7 +74,7 @@ namespace Lbk.MobileApp.Web.Controllers
         {
             var serie = this.Using<GetSerieById>().Execute(id);
 
-            return this.View(SerieSearchFormModelExtensions.ToFormModel(serie));
+            return this.View(serie.ToFormModel());
         }
 
         [HttpPost]
@@ -94,7 +94,7 @@ namespace Lbk.MobileApp.Web.Controllers
         {
             var serie = this.Using<GetSerieById>().Execute(id);
 
-            return this.View(SerieSearchFormModelExtensions.ToFormModel(serie));
+            return this.View(serie.ToFormModel());
         }
 
         public ActionResult List(SerieSearchFormModel serie, PagedDataInput pagedDataInput, string btnSubmit)
@@ -106,7 +106,7 @@ namespace Lbk.MobileApp.Web.Controllers
                     pagedDataInputOfSerie.PageSize as object, defaultValue: 10, nullValue: 0, keyName: "PageSize");
             pagedDataInputOfSerie.SearchItem =
                 this.GetItemFromTempData(
-                    SerieSearchFormModelExtensions.ToModel(serie.GetValueOrDefault()), 
+                    serie.GetValueOrDefault().ToModel(), 
                     keyPrefix: "SearchItem_", 
                     removeValue: btnSubmit == Messages.Clear);
 
@@ -116,8 +116,7 @@ namespace Lbk.MobileApp.Web.Controllers
             viewModel.Results = series;
             viewModel.SearchItem = btnSubmit == Messages.Clear
                                        ? new SerieSearchFormModel()
-                                       : SerieSearchFormModelExtensions.ToSearchFormModel(
-                                           pagedDataInputOfSerie.SearchItem) ?? serie;
+                                       : pagedDataInputOfSerie.SearchItem.ToSearchFormModel() ?? serie;
 
             if (this.Request.IsAjaxRequest())
             {

@@ -42,7 +42,7 @@ namespace Lbk.MobileApp.Web.Controllers
         {
             var menu = this.Using<GetMenuById>().Execute(id);
 
-            return this.View(MenuSearchFormModelExtensions.ToFormModel(menu));
+            return this.View(menu.ToFormModel());
         }
 
         [HttpPost]
@@ -75,7 +75,7 @@ namespace Lbk.MobileApp.Web.Controllers
         {
             var menu = this.Using<GetMenuById>().Execute(id);
 
-            return this.View(MenuSearchFormModelExtensions.ToFormModel(menu));
+            return this.View(menu.ToFormModel());
         }
 
         [HttpPost]
@@ -90,7 +90,7 @@ namespace Lbk.MobileApp.Web.Controllers
         {
             var menu = this.Using<GetMenuById>().Execute(id);
 
-            return this.View(MenuSearchFormModelExtensions.ToFormModel(menu));
+            return this.View(menu.ToFormModel());
         }
 
         [HttpPost]
@@ -110,7 +110,7 @@ namespace Lbk.MobileApp.Web.Controllers
         {
             var menu = this.Using<GetMenuById>().Execute(id);
 
-            return this.View(MenuSearchFormModelExtensions.ToFormModel(menu));
+            return this.View(menu.ToFormModel());
         }
 
         public ActionResult List(MenuSearchFormModel menu, PagedDataInput pagedDataInput, string btnSubmit)
@@ -123,7 +123,7 @@ namespace Lbk.MobileApp.Web.Controllers
                     pagedDataInputOfMenu.PageSize as object, defaultValue: 10, nullValue: 0, keyName: "PageSize");
             pagedDataInputOfMenu.SearchItem =
                 this.GetItemFromTempData(
-                    MenuSearchFormModelExtensions.ToModel(menu.GetValueOrDefault()), 
+                    menu.GetValueOrDefault().ToModel(), 
                     keyPrefix: "SearchItem_", 
                     removeValue: btnSubmit == Messages.Clear);
             pagedDataInputOfMenu.Sort = pagedDataInputOfMenu.Sort.GetValueOrDefault("Date");
@@ -135,8 +135,7 @@ namespace Lbk.MobileApp.Web.Controllers
             viewModel.Results = series;
             viewModel.SearchItem = btnSubmit == Messages.Clear
                                        ? new MenuSearchFormModel()
-                                       : MenuSearchFormModelExtensions.ToSearchFormModel(
-                                           pagedDataInputOfMenu.SearchItem) ?? menu;
+                                       : pagedDataInputOfMenu.SearchItem.ToSearchFormModel() ?? menu;
 
             if (this.Request.IsAjaxRequest())
             {

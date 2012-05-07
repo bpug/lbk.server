@@ -32,7 +32,7 @@ namespace Lbk.MobileApp.Web.Models.Extensions
             return item;
         }
 
-        public static SerieFormModel ToFormModel(Serie model)
+        public static SerieFormModel ToFormModel(this Serie model)
         {
             if (model == null)
             {
@@ -49,7 +49,7 @@ namespace Lbk.MobileApp.Web.Models.Extensions
                 };
         }
 
-        public static Serie ToModel(SerieSearchFormModel model)
+        public static Serie ToModel(this SerieSearchFormModel model)
         {
             if (model == null)
             {
@@ -65,7 +65,7 @@ namespace Lbk.MobileApp.Web.Models.Extensions
                 };
         }
 
-        public static SerieSearchFormModel ToSearchFormModel(Serie model)
+        public static SerieSearchFormModel ToSearchFormModel(this Serie model)
         {
             if (model == null)
             {

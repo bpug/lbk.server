@@ -1,4 +1,6 @@
 2012-05-07
+	- Refactoring Model-Extensions
+2012-05-07
 	- Add ThumbnailName in Events
 	- Add Thumbnail-Upload in Events
 	- Add Migration AddEventThumbnailNameColumn
