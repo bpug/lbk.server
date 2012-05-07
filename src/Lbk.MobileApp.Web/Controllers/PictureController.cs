@@ -94,10 +94,13 @@ namespace Lbk.MobileApp.Web.Controllers
             {
                 Validate(model);
                 
-                if (!DeleteFile(model))
-                {
-                    return this.View(model);
-                }
+                //if (model.File == null)
+                //{
+                //    if (!DeleteFile(model))
+                //    {
+                //        return this.View(model);
+                //    }
+                //}
 
                 if (Upload(model))
                 {
@@ -128,13 +131,13 @@ namespace Lbk.MobileApp.Web.Controllers
                 this.GetItemFromTempData(
                     PictureModelExtensions.ToModel(@picture.GetValueOrDefault()),
                     keyPrefix: "SearchItem_",
-                    removeValue: btnSubmit == "Clear");
+                    removeValue: btnSubmit == Messages.Clear);
 
             var pictures = this.Using<GetPictures>().Execute(pagedDataInputOfPicture);
 
             var viewModel = new GenericListViewModel<Picture, PictureSearchFormModel>();
             viewModel.Results = pictures;
-            viewModel.SearchItem = btnSubmit == "Clear"
+            viewModel.SearchItem = btnSubmit == Messages.Clear
                                        ? new PictureSearchFormModel()
                                        : PictureModelExtensions.ToSearchFormModel(pagedDataInputOfPicture.SearchItem)
                                          ?? @picture;
@@ -153,6 +156,7 @@ namespace Lbk.MobileApp.Web.Controllers
         {
            if (model.File != null)
             {
+                DeleteFile(model);
                 try
                 {
                     var path = ConfigurationManager.AppSettings["PictureServerBasePath"];
@@ -168,12 +172,13 @@ namespace Lbk.MobileApp.Web.Controllers
                     ModelState.AddModelError("File", ex.Message);
                 }
             }
+          
             return ModelState.IsValid;
         }
 
         private bool DeleteFile(PictureFormModel model)
         {
-            if (!string.IsNullOrEmpty(model.FileName))
+            if (!string.IsNullOrEmpty(model.FileName) )
             {
                 try
                 {

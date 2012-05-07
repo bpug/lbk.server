@@ -4,12 +4,15 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
+
+
 namespace Lbk.MobileApp.Web.Models.Extensions
 {
     #region using directives
 
     using System;
-
+    using System.Linq;
+    using Lbk.MobileApp.Core;
     using Lbk.MobileApp.Model;
 
     #endregion
@@ -32,7 +35,13 @@ namespace Lbk.MobileApp.Web.Models.Extensions
             return item;
         }
 
-        public static EventFormModel ToFormModel(Event model)
+        public static PagedDataList<EventFormModel> ToFormModel(this PagedDataList<Event> models)
+        {
+            var items = models.Items.Select(p => p.ToFormModel());
+            return  new PagedDataList<EventFormModel>(items, models.PageIndex, models.PageSize, models.TotalItemCount);
+        }
+
+        public static EventFormModel ToFormModel(this Event model)
         {
             if (model == null)
             {
@@ -50,11 +59,12 @@ namespace Lbk.MobileApp.Web.Models.Extensions
                            IsActivated = model.IsActivated, 
                            Title = model.Title, 
                            ReservationLink = model.ReservationLink, 
-                           ThumbnailLink = model.ThumbnailLink
+                           ThumbnailLink = model.ThumbnailLink,
+                           ThumbnailName = model.ThumbnailName
                        };
         }
 
-        public static Event ToModel(EventSearchFormModel model)
+        public static Event ToModel(this EventSearchFormModel model)
         {
             if (model == null)
             {
@@ -71,7 +81,7 @@ namespace Lbk.MobileApp.Web.Models.Extensions
                        };
         }
 
-        public static EventSearchFormModel ToSearchFormModel(Event model)
+        public static EventSearchFormModel ToSearchFormModel(this Event model)
         {
             if (model == null)
             {

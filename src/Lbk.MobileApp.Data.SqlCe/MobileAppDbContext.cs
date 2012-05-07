@@ -114,6 +114,7 @@ namespace Lbk.MobileApp.Data.SqlCe
             modelBuilder.Entity<Event>().Property(e => e.Title).HasMaxLength(255);
             modelBuilder.Entity<Event>().Property(e => e.ReservationLink).HasMaxLength(255);
             modelBuilder.Entity<Event>().Property(e => e.ThumbnailLink).HasMaxLength(255);
+            modelBuilder.Entity<Event>().Property(e => e.ThumbnailName).HasMaxLength(255);
         }
 
         private static void SetupFoodEntity(DbModelBuilder modelBuilder)

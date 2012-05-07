@@ -1,4 +1,5 @@
 ﻿@using Lbk.MobileApp.Domain.Resources
+@using Lbk.MobileApp.Web.Helpers
 @model Lbk.MobileApp.Web.Models.EventFormModel
 @{
     ViewBag.Title = string.Format("{0} - [{0} {1} ]", Messages.Event, Messages.Edit);
@@ -9,78 +10,99 @@
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/methods_de.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/EditorHookup.js")" type="text/javascript"></script>
-@using (Html.BeginForm())
+@using (Html.BeginForm("Edit", "Event", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.ValidationSummary(true)
     <fieldset>
         <legend>@Messages.Event @Messages.Edit</legend>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Title)
+         <div>
+            <div class="picture-data">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Title)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Title)
+                @Html.ValidationMessageFor(model => model.Title)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Description)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Description)
+                @Html.ValidationMessageFor(model => model.Description)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Date)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Date)
+                @Html.ValidationMessageFor(model => model.Date)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.DateOrder)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.DateOrder)
+                @Html.ValidationMessageFor(model => model.DateOrder)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ActivatedAt)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ActivatedAt)
+                @Html.ValidationMessageFor(model => model.ActivatedAt)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ExpiresAt)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ExpiresAt)
+                @Html.ValidationMessageFor(model => model.ExpiresAt)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.IsActivated)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.IsActivated)
+                @Html.ValidationMessageFor(model => model.IsActivated)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ReservationLink)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ReservationLink)
+                @Html.ValidationMessageFor(model => model.ReservationLink)
+            </div>
+                
+            <div class="display-label">
+                @Html.LabelFor(model => model.ThumbnailName)
+             </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.ThumbnailName)
+            </div>
+               <div class="display-label">
+                @Html.LabelFor(model => model.Thumbnail)
+            </div>
+             <div>
+                <input type="file" name="Thumbnail" id="Thumbnail" /> 
+                @Html.ValidationMessageFor(model => model.Thumbnail)
+            </div> 
+            @Html.HiddenFor(model => model.Id)
+            @Html.HiddenFor(model => model.ThumbnailName)
+            <p>
+                <input type="submit" value=@Messages.Save />
+            </p>
+         </div>
+        <div class="picture-image">
+            @{
+                if (!string.IsNullOrEmpty(Model.ThumbnailLocation))
+                {
+                    @Html.Image(Url.Content(Model.ThumbnailLocation), Html.Encode(Model.Description), new { title = Model.Description, border = 0, width = 120, height = 120 })
+                }
+            }
         </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Title)
-            @Html.ValidationMessageFor(model => model.Title)
-        </div>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Description)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Description)
-            @Html.ValidationMessageFor(model => model.Description)
-        </div>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Date)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Date)
-            @Html.ValidationMessageFor(model => model.Date)
-        </div>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.DateOrder)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.DateOrder)
-            @Html.ValidationMessageFor(model => model.DateOrder)
-        </div>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.ActivatedAt)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.ActivatedAt)
-            @Html.ValidationMessageFor(model => model.ActivatedAt)
-        </div>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.ExpiresAt)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.ExpiresAt)
-            @Html.ValidationMessageFor(model => model.ExpiresAt)
-        </div>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.IsActivated)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.IsActivated)
-            @Html.ValidationMessageFor(model => model.IsActivated)
-        </div>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.ReservationLink)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.ReservationLink)
-            @Html.ValidationMessageFor(model => model.ReservationLink)
-        </div>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.ThumbnailLink)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.ThumbnailLink)
-            @Html.ValidationMessageFor(model => model.ThumbnailLink)
-        </div>
-        @Html.HiddenFor(model => model.Id)
-        <p>
-            <input type="submit" value=@Messages.Save />
-        </p>
+        <div style="clear: both;" />
+    </div>
     </fieldset>
 }
 <div>

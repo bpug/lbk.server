@@ -4,6 +4,10 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System.Configuration;
+using System.IO;
+using System.Web;
+
 namespace Lbk.MobileApp.Web.Models
 {
     #region using directives
@@ -76,6 +80,24 @@ namespace Lbk.MobileApp.Web.Models
             ErrorMessageResourceType = typeof(Messages))]
         [Display(Name = "EventTitleLabelText", ResourceType = typeof(Messages))]
         public string Title { get; set; }
+
+        [Display(Name = "EventThumbnailLabelText", ResourceType = typeof(Messages))]
+        public HttpPostedFileBase Thumbnail { get; set; }
+
+        [Display(Name = "ThumbnailNameLabelText", ResourceType = typeof(Messages))]
+        public string ThumbnailName { get; set; }
+
+        public string ThumbnailLocation
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(ThumbnailName))
+                    return string.Empty;
+
+                var path = ConfigurationManager.AppSettings["EventThumbnailHttpBasePath"];
+                return Path.Combine(path, ThumbnailName);
+            }
+        }
 
         #endregion
     }

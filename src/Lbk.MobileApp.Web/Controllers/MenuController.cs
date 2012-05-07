@@ -4,6 +4,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
+using Lbk.MobileApp.Domain.Resources;
 using Lbk.MobileApp.Web.Extensions;
 
 namespace Lbk.MobileApp.Web.Controllers
@@ -124,7 +125,7 @@ namespace Lbk.MobileApp.Web.Controllers
                 this.GetItemFromTempData(
                     MenuSearchFormModelExtensions.ToModel(menu.GetValueOrDefault()), 
                     keyPrefix: "SearchItem_", 
-                    removeValue: btnSubmit == "Clear");
+                    removeValue: btnSubmit == Messages.Clear);
             pagedDataInputOfMenu.Sort = pagedDataInputOfMenu.Sort.GetValueOrDefault("Date");
             pagedDataInputOfMenu.SortDir = pagedDataInputOfMenu.SortDir.GetValueOrDefault("desc"); ;
 
@@ -132,7 +133,7 @@ namespace Lbk.MobileApp.Web.Controllers
 
             var viewModel = new GenericListViewModel<Menu, MenuSearchFormModel>();
             viewModel.Results = series;
-            viewModel.SearchItem = btnSubmit == "Clear"
+            viewModel.SearchItem = btnSubmit == Messages.Clear
                                        ? new MenuSearchFormModel()
                                        : MenuSearchFormModelExtensions.ToSearchFormModel(
                                            pagedDataInputOfMenu.SearchItem) ?? menu;

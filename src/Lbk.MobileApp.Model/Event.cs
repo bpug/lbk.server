@@ -34,6 +34,8 @@ namespace Lbk.MobileApp.Model
 
         public string Title { get; set; }
 
+        public string ThumbnailName { get; set; }
+
         #endregion
     }
 }

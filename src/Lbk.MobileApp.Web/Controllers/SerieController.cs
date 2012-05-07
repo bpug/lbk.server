@@ -4,6 +4,8 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
+using Lbk.MobileApp.Domain.Resources;
+
 namespace Lbk.MobileApp.Web.Controllers
 {
     #region using directives
@@ -106,13 +108,13 @@ namespace Lbk.MobileApp.Web.Controllers
                 this.GetItemFromTempData(
                     SerieSearchFormModelExtensions.ToModel(serie.GetValueOrDefault()), 
                     keyPrefix: "SearchItem_", 
-                    removeValue: btnSubmit == "Clear");
+                    removeValue: btnSubmit == Messages.Clear);
 
             var series = this.Using<GetSeries>().Execute(pagedDataInputOfSerie);
 
             var viewModel = new GenericListViewModel<Serie, SerieSearchFormModel>();
             viewModel.Results = series;
-            viewModel.SearchItem = btnSubmit == "Clear"
+            viewModel.SearchItem = btnSubmit == Messages.Clear
                                        ? new SerieSearchFormModel()
                                        : SerieSearchFormModelExtensions.ToSearchFormModel(
                                            pagedDataInputOfSerie.SearchItem) ?? serie;

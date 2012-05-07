@@ -4,6 +4,8 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
+using Lbk.MobileApp.Domain.Resources;
+
 namespace Lbk.MobileApp.Web.Controllers
 {
     #region using directives
@@ -114,14 +116,14 @@ namespace Lbk.MobileApp.Web.Controllers
                 this.GetItemFromTempData(
                     AnswerSearchFormModelExtensions.ToModel(answer.GetValueOrDefault()), 
                     defaultValue: new Answer { QuestionId = id },
-                    keyPrefix: "SearchItem_" + id, 
-                    removeValue: btnSubmit == "Clear");
+                    keyPrefix: "SearchItem_" + id,
+                    removeValue: btnSubmit == Messages.Clear);
 
             var answers = this.Using<GetAnswers>().Execute(pagedDataInputOfQuestion);
 
             var viewModel = new GenericListViewModel<Answer, AnswerSearchFormModel>();
             viewModel.Results = answers;
-            viewModel.SearchItem = btnSubmit == "Clear"
+            viewModel.SearchItem = btnSubmit == Messages.Clear
                                        ? new AnswerSearchFormModel()
                                        : AnswerSearchFormModelExtensions.ToSearchFormModel(
                                            pagedDataInputOfQuestion.SearchItem) ?? answer;

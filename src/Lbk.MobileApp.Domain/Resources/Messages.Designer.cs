@@ -502,6 +502,15 @@ namespace Lbk.MobileApp.Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Thumbnail (120 x 120).
+        /// </summary>
+        public static string EventThumbnailLabelText {
+            get {
+                return ResourceManager.GetString("EventThumbnailLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Thumbnaillink.
         /// </summary>
         public static string EventThumbnailLinkLabelText {
@@ -1281,6 +1290,15 @@ namespace Lbk.MobileApp.Domain.Resources {
         public static string TextMultilineValidatorRegExUnicode {
             get {
                 return ResourceManager.GetString("TextMultilineValidatorRegExUnicode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thumbnail name.
+        /// </summary>
+        public static string ThumbnailNameLabelText {
+            get {
+                return ResourceManager.GetString("ThumbnailNameLabelText", resourceCulture);
             }
         }
         

@@ -35,7 +35,8 @@ namespace Lbk.MobileApp.Domain.Extensions
                            IsActivated = source.IsActivated, 
                            Title = source.Title, 
                            ReservationLink = source.ReservationLink, 
-                           ThumbnailLink = source.ThumbnailLink
+                           ThumbnailLink = source.ThumbnailLink,
+                           ThumbnailName = source.ThumbnailName
                        };
         }
 

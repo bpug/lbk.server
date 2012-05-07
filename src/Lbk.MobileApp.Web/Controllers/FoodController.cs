@@ -4,6 +4,8 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
+using Lbk.MobileApp.Domain.Resources;
+
 namespace Lbk.MobileApp.Web.Controllers
 {
     #region using directives
@@ -119,7 +121,7 @@ namespace Lbk.MobileApp.Web.Controllers
                     FoodSearchFormModelExtensions.ToModel(question.GetValueOrDefault()), 
                     defaultValue: new Food { MenuId = id }, 
                     keyPrefix: "SearchItem_" + id, 
-                    removeValue: btnSubmit == "Clear");
+                    removeValue: btnSubmit == Messages.Clear);
 
             var foods = this.Using<GetFoods>().Execute(pagedDataInputOfFoods);
             var foodListViewModels =
@@ -131,7 +133,7 @@ namespace Lbk.MobileApp.Web.Controllers
 
             var viewModel = new GenericListViewModel<FoodListViewModel, FoodSearchFormModel>();
             viewModel.Results = foodListViewModels;
-            viewModel.SearchItem = btnSubmit == "Clear"
+            viewModel.SearchItem = btnSubmit == Messages.Clear
                                        ? new FoodSearchFormModel()
                                        : FoodSearchFormModelExtensions.ToSearchFormModel(
                                            pagedDataInputOfFoods.SearchItem) ?? question;

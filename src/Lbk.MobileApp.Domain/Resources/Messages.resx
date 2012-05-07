@@ -684,4 +684,10 @@
   <data name="PictureLinkOrFileRequired" xml:space="preserve">
     <value>Link or File is required.</value>
   </data>
+  <data name="EventThumbnailLabelText" xml:space="preserve">
+    <value>Thumbnail (120 x 120)</value>
+  </data>
+  <data name="ThumbnailNameLabelText" xml:space="preserve">
+    <value>Thumbnail name</value>
+  </data>
 </root>

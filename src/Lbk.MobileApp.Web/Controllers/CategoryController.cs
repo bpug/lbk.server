@@ -4,6 +4,8 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
+using Lbk.MobileApp.Domain.Resources;
+
 namespace Lbk.MobileApp.Web.Controllers
 {
     #region using directives
@@ -119,13 +121,13 @@ namespace Lbk.MobileApp.Web.Controllers
                 this.GetItemFromTempData(
                     CategoryModelExtensions.ToModel(category.GetValueOrDefault()), 
                     keyPrefix: "SearchItem_", 
-                    removeValue: btnSubmit == "Clear");
+                    removeValue: btnSubmit == Messages.Clear);
 
             var categories = this.Using<GetCategories>().Execute(pagedDataInputOfCategory);
 
             var viewModel = new GenericListViewModel<Category, CategorySearchFormModel>();
             viewModel.Results = categories;
-            viewModel.SearchItem = btnSubmit == "Clear"
+            viewModel.SearchItem = btnSubmit == Messages.Clear
                                        ? new CategorySearchFormModel()
                                        : CategoryModelExtensions.ToSearchFormModel(pagedDataInputOfCategory.SearchItem)
                                          ?? category;

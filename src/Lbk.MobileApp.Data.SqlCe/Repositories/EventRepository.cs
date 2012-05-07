@@ -78,6 +78,7 @@ namespace Lbk.MobileApp.Data.SqlCe.Repositories
             entity.Title = @event.Title;
             entity.ReservationLink = @event.ReservationLink;
             entity.ThumbnailLink = @event.ThumbnailLink;
+            entity.ThumbnailName = @event.ThumbnailName;
 
             this.SetEntityState(entity, entity.Id == 0 ? EntityState.Added : EntityState.Modified);
 

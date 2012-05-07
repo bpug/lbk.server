@@ -301,7 +301,7 @@ div#title {
 
 /* Styles for editor and display helpers
 ----------------------------------------------------------*/
-.display-label {
+.display-label, .editor-label {
 	font-weight: bold;
 }
 .display-label, 
@@ -372,8 +372,8 @@ div#title {
 }
 
 .picture-data {
-	
 	float: left;
+	max-width: 600px;
 }
 
 .picture-image {

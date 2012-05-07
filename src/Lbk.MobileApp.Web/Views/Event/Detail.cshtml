@@ -1,4 +1,5 @@
 ﻿@using Lbk.MobileApp.Domain.Resources
+@using Lbk.MobileApp.Web.Helpers
 @model Lbk.MobileApp.Web.Models.EventFormModel
 @{
     ViewBag.Title = string.Format("{0} - [{0} {1} ]", Messages.Event, Messages.Details);
@@ -7,50 +8,63 @@
     @Messages.Details</h2>
 <fieldset>
     <legend>@Messages.Event @Messages.Details</legend>
-    <div class="display-label">
-         @Html.LabelFor(model => model.Title)</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Title)
-    </div>
-    <div class="display-label">
-        @Html.LabelFor(model => model.Description)</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Description)
-    </div>
-    <div class="display-label">
-        @Html.LabelFor(model => model.Date)</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Date)
-    </div>
-    <div class="display-label">
-        @Html.LabelFor(model => model.DateOrder)</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.DateOrder)
-    </div>
-    <div class="display-label">
-         @Html.LabelFor(model => model.ActivatedAt)</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.ActivatedAt)
-    </div>
-    <div class="display-label">
-        @Html.LabelFor(model => model.ExpiresAt)</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.ExpiresAt)
-    </div>
-    <div class="display-label">
-        @Html.LabelFor(model => model.IsActivated)</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.IsActivated)
-    </div>
-    <div class="display-label">
-        @Html.LabelFor(model => model.ReservationLink)</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.ReservationLink)
-    </div>
-    <div class="display-label">
-        @Html.LabelFor(model => model.ThumbnailLink)</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.ThumbnailLink)
+     <div>
+        <div class="picture-data">
+            <div class="display-label">
+                 @Html.LabelFor(model => model.Title)</div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Title)
+            </div>
+            <div class="display-label">
+                @Html.LabelFor(model => model.Description)</div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Description)
+            </div>
+            <div class="display-label">
+                @Html.LabelFor(model => model.Date)</div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Date)
+            </div>
+            <div class="display-label">
+                @Html.LabelFor(model => model.DateOrder)</div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.DateOrder)
+            </div>
+            <div class="display-label">
+                 @Html.LabelFor(model => model.ActivatedAt)</div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.ActivatedAt)
+            </div>
+            <div class="display-label">
+                @Html.LabelFor(model => model.ExpiresAt)</div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.ExpiresAt)
+            </div>
+            <div class="display-label">
+                @Html.LabelFor(model => model.IsActivated)</div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.IsActivated)
+            </div>
+            <div class="display-label">
+                @Html.LabelFor(model => model.ReservationLink)</div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.ReservationLink)
+            </div>
+            <div class="display-label">
+                @Html.LabelFor(model => model.ThumbnailName)</div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.ThumbnailName)
+            </div>
+        </div>
+        <div class="picture-image">
+            @{
+                if (!string.IsNullOrEmpty(Model.ThumbnailLocation))
+                {
+                    @Html.Image(Url.Content(Model.ThumbnailLocation), Html.Encode(Model.Description), new { title = Model.Description, border = 0, width = 120, height = 120 })
+                }
+            }
+        </div>
+        <div style="clear: both;" />
     </div>
 </fieldset>
 <p>

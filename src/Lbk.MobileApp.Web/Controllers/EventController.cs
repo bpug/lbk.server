@@ -4,6 +4,10 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System.Configuration;
+using System.IO;
+using Lbk.MobileApp.Domain.Resources;
+
 namespace Lbk.MobileApp.Web.Controllers
 {
     #region using directives
@@ -40,9 +44,12 @@ namespace Lbk.MobileApp.Web.Controllers
         {
             if (model != null && this.ModelState.IsValid)
             {
-                this.Using<AddEvent>().Execute(model);
-
-                return this.RedirectToAction("List");
+                if (Upload(model))
+                {
+                    this.Using<AddEvent>().Execute(model);
+                    return this.RedirectToAction("List");
+                }
+                return this.View(model);
             }
 
             return this.View(model);
@@ -65,22 +72,27 @@ namespace Lbk.MobileApp.Web.Controllers
         {
             var @event = this.Using<GetEventById>().Execute(id);
 
-            return this.View(EventModelExtensions.ToFormModel(@event));
+            return this.View(@event.ToFormModel());
         }
 
         [HttpPost]
         public ActionResult Delete(long id, object dummy)
         {
-            this.Using<DeleteEventById>().Execute(id);
-
-            return this.RedirectToAction("List");
+            var @event = this.Using<GetEventById>().Execute(id);
+            var model = @event.ToFormModel();
+            if (DeleteFile(model))
+            {
+                this.Using<DeleteEventById>().Execute(id);
+                return this.RedirectToAction("List");
+            }
+            return this.View(model);
         }
 
         public ActionResult Detail(long id)
         {
             var @event = this.Using<GetEventById>().Execute(id);
 
-            return this.View(EventModelExtensions.ToFormModel(@event));
+            return this.View(@event.ToFormModel());
         }
 
         [HttpPost]
@@ -88,11 +100,13 @@ namespace Lbk.MobileApp.Web.Controllers
         {
             if (model != null && this.ModelState.IsValid)
             {
-                this.Using<UpdateEvent>().Execute(model);
-
-                return this.RedirectToAction("List");
+                if (Upload(model))
+                {
+                    this.Using<UpdateEvent>().Execute(model);
+                    return this.RedirectToAction("List");
+                }
+                return this.View(model);
             }
-
             return this.View(model);
         }
 
@@ -100,29 +114,30 @@ namespace Lbk.MobileApp.Web.Controllers
         {
             var @event = this.Using<GetEventById>().Execute(id);
 
-            return this.View(EventModelExtensions.ToFormModel(@event));
+            return this.View(@event.ToFormModel());
         }
 
         public ActionResult List(EventSearchFormModel @event, PagedDataInput pagedDataInput, string btnSubmit)
         {
             var pagedDataInputOfEvent = new PagedDataInput<Event>(pagedDataInput);
+            //var pagedDataInputOfEvent = new PagedDataInput<EventFormModel>(pagedDataInput);
             pagedDataInputOfEvent.PageSize =
                 (int)
                 this.GetItemFromTempData(
                     pagedDataInputOfEvent.PageSize as object, defaultValue: 10, nullValue: 0, keyName: "PageSize");
             pagedDataInputOfEvent.SearchItem =
-                this.GetItemFromTempData(
-                    EventModelExtensions.ToModel(@event.GetValueOrDefault()), 
-                    keyPrefix: "SearchItem_", 
-                    removeValue: btnSubmit == "Clear");
+                this.GetItemFromTempData(@event.GetValueOrDefault().ToModel(), 
+                    keyPrefix: "SearchItem_",
+                    removeValue: btnSubmit == Messages.Clear);
 
-            var events = this.Using<GetEvents>().Execute(pagedDataInputOfEvent);
+            var events = this.Using<GetEvents>().Execute(pagedDataInputOfEvent).ToFormModel();
 
-            var viewModel = new GenericListViewModel<Event, EventSearchFormModel>();
+            //var viewModel = new GenericListViewModel<Event, EventSearchFormModel>();
+            var viewModel = new GenericListViewModel<EventFormModel, EventSearchFormModel>();
             viewModel.Results = events;
-            viewModel.SearchItem = btnSubmit == "Clear"
+            viewModel.SearchItem = btnSubmit == Messages.Clear
                                        ? new EventSearchFormModel()
-                                       : EventModelExtensions.ToSearchFormModel(pagedDataInputOfEvent.SearchItem)
+                                       : pagedDataInputOfEvent.SearchItem.ToSearchFormModel()
                                          ?? @event;
 
             if (this.Request.IsAjaxRequest())
@@ -134,5 +149,46 @@ namespace Lbk.MobileApp.Web.Controllers
         }
 
         #endregion
+
+        private bool Upload(EventFormModel model)
+        {
+            if (model.Thumbnail != null)
+            {
+                DeleteFile(model);
+                try
+                {
+                    var path = ConfigurationManager.AppSettings["EventThumbnailServerBasePath"];
+                    string filename = Path.GetFileName(model.Thumbnail.FileName);
+                    if (filename != null)
+                    {
+                        model.ThumbnailName = filename;
+                        model.Thumbnail.SaveAs(Path.Combine(path, filename));
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError("Thumbnail", ex.Message);
+                }
+            }
+
+            return ModelState.IsValid;
+        }
+
+        private bool DeleteFile(EventFormModel model)
+        {
+            if (!string.IsNullOrEmpty(model.ThumbnailName))
+            {
+                try
+                {
+                    var path = ConfigurationManager.AppSettings["EventThumbnailServerBasePath"];
+                    System.IO.File.Delete(Path.Combine(path, model.ThumbnailName));
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError(string.Empty, ex.Message);
+                }
+            }
+            return ModelState.IsValid;
+        }
     }
 }

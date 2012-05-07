@@ -6,6 +6,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using Lbk.MobileApp.Domain.Resources;
 
 namespace Lbk.MobileApp.Web.Controllers
 {
@@ -119,13 +120,13 @@ namespace Lbk.MobileApp.Web.Controllers
                     QuestionSearchFormModelExtensions.ToModel(question.GetValueOrDefault()), 
                     defaultValue: new Question { SerieId = id }, 
                     keyPrefix: "SearchItem_" + id, 
-                    removeValue: btnSubmit == "Clear");
+                    removeValue: btnSubmit == Messages.Clear);
 
             var questions = this.Using<GetQuestions>().Execute(pagedDataInputOfQuestion);
 
             var viewModel = new GenericListViewModel<Question, QuestionSearchFormModel>();
             viewModel.Results = questions;
-            viewModel.SearchItem = btnSubmit == "Clear"
+            viewModel.SearchItem = btnSubmit == Messages.Clear
                                        ? new QuestionSearchFormModel()
                                        : QuestionSearchFormModelExtensions.ToSearchFormModel(
                                            pagedDataInputOfQuestion.SearchItem) ?? question;

@@ -4,6 +4,8 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
+using Lbk.MobileApp.Domain.Resources;
+
 namespace Lbk.MobileApp.Web.Controllers
 {
     #region using directives
@@ -105,13 +107,13 @@ namespace Lbk.MobileApp.Web.Controllers
                 this.GetItemFromTempData(
                     VideoModelExtensions.ToModel(@video.GetValueOrDefault()), 
                     keyPrefix: "SearchItem_", 
-                    removeValue: btnSubmit == "Clear");
+                    removeValue: btnSubmit == Messages.Clear);
 
             var videos = this.Using<GetVideos>().Execute(pagedDataInputOfVideo);
 
             var viewModel = new GenericListViewModel<Video, VideoSearchFormModel>();
             viewModel.Results = videos;
-            viewModel.SearchItem = btnSubmit == "Clear"
+            viewModel.SearchItem = btnSubmit == Messages.Clear
                                        ? new VideoSearchFormModel()
                                        : VideoModelExtensions.ToSearchFormModel(pagedDataInputOfVideo.SearchItem)
                                          ?? @video;

@@ -1,8 +1,9 @@
 ﻿@using Lbk.MobileApp.Domain.Resources
 @using Lbk.MobileApp.Web.Helpers
-@model Lbk.MobileApp.Web.Models.GenericListViewModel<Lbk.MobileApp.Model.Event, Lbk.MobileApp.Web.Models.EventSearchFormModel>
+@*@model Lbk.MobileApp.Web.Models.GenericListViewModel<Lbk.MobileApp.Model.Event, Lbk.MobileApp.Web.Models.EventSearchFormModel>*@
+@model Lbk.MobileApp.Web.Models.GenericListViewModel<Lbk.MobileApp.Web.Models.EventFormModel, Lbk.MobileApp.Web.Models.EventSearchFormModel>
 @{
-    ViewBag.Title = string.Format("{0} - [List {1}]",Messages.Events, Messages.Events);
+    ViewBag.Title = string.Format("{0} - [List {1}]", Messages.Events, Messages.Events);
 }
 <h3>
     @Messages.Events</h3>

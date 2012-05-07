@@ -36,6 +36,9 @@ namespace Lbk.MobileApp.Domain.Contracts
 
         string Title { get; set; }
 
+        string ThumbnailName { get; set; }
+        
+
         #endregion
     }
 }

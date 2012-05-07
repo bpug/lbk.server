@@ -1,3 +1,7 @@
+2012-05-07
+	- Add ThumbnailName in Events
+	- Add Thumbnail-Upload in Events
+	- Add Migration AddEventThumbnailNameColumn
 2012-04-20
 	- Add Picture File-Delete (Commands: Delete, Edit)
 	- Update regex to allow: ! and "

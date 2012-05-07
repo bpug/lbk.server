@@ -220,7 +220,7 @@
     <value>Datum</value>
   </data>
   <data name="EventDateOrderLabelText" xml:space="preserve">
-    <value>Bestelldatum</value>
+    <value>Sortierung</value>
   </data>
   <data name="EventDateOrderRequired" xml:space="preserve">
     <value>Bestelldatum ist erforderlich</value>
@@ -683,5 +683,11 @@
   </data>
   <data name="PictureLinkOrFileRequired" xml:space="preserve">
     <value>Link oder File ist erforderlich.</value>
+  </data>
+  <data name="EventThumbnailLabelText" xml:space="preserve">
+    <value>Thumbnail (120 x 120)</value>
+  </data>
+  <data name="ThumbnailNameLabelText" xml:space="preserve">
+    <value>Thumbnail Name</value>
   </data>
 </root>
