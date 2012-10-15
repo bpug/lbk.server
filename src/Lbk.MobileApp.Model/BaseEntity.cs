@@ -6,7 +6,7 @@
 
 namespace Lbk.MobileApp.Model
 {
-    public abstract class BaseEntity
+    public abstract class BaseEntity : IEntity
     {
         #region - Properties -
 

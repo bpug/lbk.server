@@ -4,14 +4,18 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
+using Lbk.MobileApp.Model.Attributes;
+
 namespace Lbk.MobileApp.Model
 {
     public class Picture : BaseEntity
     {
         #region - Properties -
 
+        [Translate(true)]
         public string Title { get; set; }
 
+        [Translate(true)]
         public string Description { get; set; }
 
         public string FileName { get; set; }

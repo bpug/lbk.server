@@ -1,0 +1,48 @@
+﻿@using Lbk.MobileApp.Domain.Resources
+@using Lbk.MobileApp.Web.Helpers
+
+@model Lbk.MobileApp.Web.Models.SpeisekarteFormModel
+@{
+    ViewBag.Title = string.Format("{0} - [{0} {1} ]", Messages.Speisekarte, Messages.Edit);
+}
+<h2>
+    @Messages.Edit</h2>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/methods_de.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/EditorHookup.js")" type="text/javascript"></script>
+@using (Html.BeginForm("Edit", "Speisekarte", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>@Messages.Edit @Messages.Speisekarte </legend>
+        <div>
+            <div class="picture-data">
+                 <div style="margin: 15px 0px">
+                    @{
+                        if (Model.IsFileExist())
+                        {
+                            @Html.ActionLink(Model.FileName + " " + Messages.Show, "DisplayPdf", new { filename = Model.FileName })                       
+                        }
+                    }
+                </div>
+                <div class="editor-label"> 
+                    @Html.LabelFor(model => model.File)
+                </div>
+                <div>
+                    <input type="file" name="File" id="Image" /> 
+                    @Html.ValidationMessageFor(model => model.File)
+                </div>
+                @Html.HiddenFor(model => model.FileName)
+                <p>
+                    <input type="submit" value="@Messages.Save" />
+                </p>
+            </div>
+        <div style="clear: both;" />
+    </div>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink(Messages.BackToDetails, "Detail")
+</div>

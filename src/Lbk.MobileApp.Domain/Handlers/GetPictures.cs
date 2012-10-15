@@ -9,6 +9,7 @@ namespace Lbk.MobileApp.Domain.Handlers
     #region using directives
 
     using System;
+    using System.Linq;
 
     using Lbk.MobileApp.Core;
     using Lbk.MobileApp.Data;
@@ -18,7 +19,7 @@ namespace Lbk.MobileApp.Domain.Handlers
 
     #endregion
 
-    public class GetPictures
+    public class GetPictures : BaseHandler
     {
         #region - Constants and Fields -
 
@@ -28,7 +29,8 @@ namespace Lbk.MobileApp.Domain.Handlers
 
         #region - Constructors and Destructors -
 
-        public GetPictures(IPictureRepository pictureRepository)
+        public GetPictures(IPictureRepository pictureRepository, ILocalizationRepository localizationRepository)
+            : base(localizationRepository)
         {
             this._pictureRepository = pictureRepository;
         }
@@ -41,7 +43,9 @@ namespace Lbk.MobileApp.Domain.Handlers
         {
             try
             {
-                return this._pictureRepository.GetPictures(pagedDataInput);
+                var pictures = this._pictureRepository.GetPictures(pagedDataInput);
+                pictures.Items = pictures.Items.Select(Translate).ToList();
+                return pictures;
             }
             catch (InvalidOperationException ex)
             {

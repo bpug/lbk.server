@@ -70,7 +70,10 @@
     </Compile>
     <Compile Include="Controllers\AnswerController.cs" />
     <Compile Include="Controllers\AuthorizedController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\LocaleController.cs" />
+    <Compile Include="Controllers\SpeisekarteController.cs" />
     <Compile Include="Controllers\VideoController.cs" />
     <Compile Include="Controllers\PictureController.cs" />
     <Compile Include="Controllers\EventController.cs" />
@@ -79,14 +82,18 @@
     <Compile Include="Controllers\QuestionController.cs" />
     <Compile Include="Controllers\SerieController.cs" />
     <Compile Include="Extensions\AppInfoExtensions.cs" />
+    <Compile Include="Extensions\HtmlHelperExtensions.cs" />
+    <Compile Include="Extensions\HttpPostedFileBaseExtensions.cs" />
     <Compile Include="Extensions\ModelBinder\MyDateTimeModelBinder.cs" />
     <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Handler\PagedListCookieHandler.cs" />
+    <Compile Include="Helpers\CultureHelper.cs" />
     <Compile Include="Helpers\ImageExtension.cs" />
     <Compile Include="Models\AnswerFormModel.cs" />
     <Compile Include="Models\CategoryFormModel.cs" />
     <Compile Include="Models\CategorySearchFormModel.cs" />
+    <Compile Include="Models\SpeisekarteFormModel.cs" />
     <Compile Include="Models\Extensions\QuetionCategoryExtensions.cs" />
     <Compile Include="Models\GeneratePasswordModel.cs" />
     <Compile Include="Models\Extensions\VideoModelExtensions.cs" />
@@ -117,6 +124,11 @@
     <Compile Include="Models\AnswerSearchFormModel.cs" />
     <Compile Include="Models\SerieFormModel.cs" />
     <Compile Include="Models\SerieSearchFormModel.cs" />
+    <Content Include="Scripts\common.js" />
+    <Content Include="Scripts\globalization\cultures\globalize.culture.de-DE.js" />
+    <Content Include="Scripts\globalization\cultures\globalize.culture.en-GB.js" />
+    <Content Include="Scripts\globalization\cultures\globalize.culture.en-US.js" />
+    <Content Include="Scripts\globalization\globalize.js" />
     <Compile Include="Serializer\JavaScriptSerializer.cs" />
     <Compile Include="UnityDependencyResolver.cs" />
     <Compile Include="UnityContainerFactory.cs" />
@@ -201,6 +213,7 @@
     <Content Include="Global.asax" />
     <Content Include="README.jQuery.vsdoc.txt" />
     <Content Include="Scripts\EditorHookup.js" />
+    <Content Include="Scripts\globdatepicker\jquery.ui.datepicker.de-DE.js" />
     <Content Include="Scripts\jquery-1.7.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
@@ -474,6 +487,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Account\GeneratePassword.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_LanguagePartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Speisekarte\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Speisekarte\Detail.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

@@ -39,6 +39,12 @@ namespace Lbk.MobileApp.Data.SqlCe
 
         public DbSet<QuestionCategory> QuestionCategorys { get; set; }
 
+        public DbSet<Language> Languages { get; set; }
+
+        public DbSet<LocalizableEntityTranslation> LocalizableEntityTranslations { get; set; }
+
+        public DbSet<LocalizableEntity> LocalizableEntitys { get; set; }
+
         #endregion
 
         #region - Implemented Interfaces -
@@ -77,6 +83,47 @@ namespace Lbk.MobileApp.Data.SqlCe
             SetupVideoEntity(modelBuilder);
 
             SetupQuestionCategoryEntity(modelBuilder);
+
+            SetupLanguageEntity(modelBuilder);
+
+            SetupTranslationsEntity(modelBuilder);
+
+            SetupLocalizableEntity(modelBuilder);
+        }
+
+        private static void SetupLanguageEntity(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Language>().ToTable("Language");
+            modelBuilder.Entity<Language>().HasKey(a => a.Id);
+            modelBuilder.Entity<Language>().Property(a => a.Id).HasDatabaseGeneratedOption(
+                DatabaseGeneratedOption.Identity);
+            modelBuilder.Entity<Language>().Property(a => a.Code).HasMaxLength(10).IsRequired();
+            modelBuilder.Entity<Language>().Property(a => a.Name).HasMaxLength(50).IsRequired();
+            modelBuilder.Entity<Language>().HasMany(m => m.LocalizableEntityTranslation);
+        }
+
+        private static void SetupLocalizableEntity(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<LocalizableEntity>().ToTable("LocalizableEntity");
+            modelBuilder.Entity<LocalizableEntity>().HasKey(a => a.Id);
+            modelBuilder.Entity<LocalizableEntity>().Property(a => a.Id).HasDatabaseGeneratedOption(
+                DatabaseGeneratedOption.Identity);
+            modelBuilder.Entity<LocalizableEntity>().Property(a => a.EntityName).HasMaxLength(255).IsRequired();
+            modelBuilder.Entity<LocalizableEntity>().Property(a => a.PrimaryKeyFieldName).HasMaxLength(int.MaxValue).IsRequired();
+            modelBuilder.Entity<LocalizableEntity>().HasMany(m => m.LocalizableEntityTranslation);
+        }
+
+        private static void SetupTranslationsEntity(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<LocalizableEntityTranslation>().ToTable("LocalizableEntityTranslation");
+            modelBuilder.Entity<LocalizableEntityTranslation>().HasKey(a => a.Id);
+            modelBuilder.Entity<LocalizableEntityTranslation>().Property(a => a.Id).HasDatabaseGeneratedOption(
+                DatabaseGeneratedOption.Identity);
+            modelBuilder.Entity<LocalizableEntityTranslation>().Property(a => a.Text).HasMaxLength(int.MaxValue).IsRequired();
+            modelBuilder.Entity<LocalizableEntityTranslation>().Property(a => a.FieldName).HasMaxLength(255).IsRequired();
+            modelBuilder.Entity<LocalizableEntityTranslation>().Property(a => a.PrimaryKeyValue).IsRequired();
+            modelBuilder.Entity<LocalizableEntityTranslation>().HasRequired(q => q.Language);
+            modelBuilder.Entity<LocalizableEntityTranslation>().HasRequired(q => q.LocalizableEntity);
         }
 
         private static void SetupAnswerEntity(DbModelBuilder modelBuilder)

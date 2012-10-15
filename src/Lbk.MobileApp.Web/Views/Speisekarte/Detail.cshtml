@@ -1,0 +1,24 @@
+﻿@using Lbk.MobileApp.Domain.Resources
+@using Lbk.MobileApp.Web.Helpers
+
+@model Lbk.MobileApp.Web.Models.SpeisekarteFormModel
+@{
+    ViewBag.Title = string.Format("{0} - [{0} {1} ]", Messages.Speisekarte, Messages.Details);
+}
+<h2>@Messages.Details</h2>
+   
+    <fieldset>
+        <legend>@Messages.Speisekarte @Messages.Details</legend>
+        <div style="margin: 15px 0px">  
+            @{
+                if (Model.IsFileExist())
+                {
+                    @Html.ActionLink(Model.FileName + " " + Messages.Show, "DisplayPdf", new { filename = Model.FileName })                       
+                }
+            }
+        </div>
+    </fieldset>
+
+<p>
+    @Html.ActionLink(Messages.Edit, "Edit") 
+</p>

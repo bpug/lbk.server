@@ -4,6 +4,8 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
+using Lbk.MobileApp.Model.Extensions;
+
 namespace Lbk.MobileApp.Domain.Handlers
 {
     #region using directives
@@ -17,7 +19,7 @@ namespace Lbk.MobileApp.Domain.Handlers
 
     #endregion
 
-    public class GetPictureById
+    public class GetPictureById : BaseHandler
     {
         #region - Constants and Fields -
 
@@ -27,7 +29,8 @@ namespace Lbk.MobileApp.Domain.Handlers
 
         #region - Constructors and Destructors -
 
-        public GetPictureById(IPictureRepository pictureRepository)
+        public GetPictureById(IPictureRepository pictureRepository, ILocalizationRepository localizationRepository)
+            : base(localizationRepository)
         {
             this._pictureRepository = pictureRepository;
         }
@@ -40,7 +43,8 @@ namespace Lbk.MobileApp.Domain.Handlers
         {
             try
             {
-                return this._pictureRepository.GetPicture(id);
+                var pic = this._pictureRepository.GetPicture(id);
+                return Translate(this._pictureRepository.GetPicture(id));
             }
             catch (InvalidOperationException ex)
             {

@@ -4,6 +4,10 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System;
+using System.Web;
+using Lbk.MobileApp.Web.Helpers;
+
 namespace Lbk.MobileApp.Web.Controllers
 {
     #region using directives
@@ -31,6 +35,34 @@ namespace Lbk.MobileApp.Web.Controllers
             this.ViewBag.Message = "Welcome!";
 
             return this.View();
+        }
+
+        public ActionResult SetCulture(string culture, string currentAction,string currentController, string currentId)
+        {
+            // Validate input
+            culture = CultureHelper.GetValidCulture(culture);
+
+            // Save culture in a cookie
+            HttpCookie cookie = Request.Cookies["_culture"];
+            if (cookie != null)
+            {
+                cookie.Value = culture; // update cookie value
+            }
+            else
+            {
+                cookie = new HttpCookie("_culture");
+                cookie.HttpOnly = false; // Not accessible by JS.
+                cookie.Value = culture;
+                cookie.Expires = DateTime.Now.AddYears(1);
+            }
+            Response.Cookies.Add(cookie);
+
+            //return RedirectToAction("Index");
+            if (currentId != null)
+            {
+                return RedirectToAction(currentAction, currentController, new { id = currentId });
+            }
+            return RedirectToAction(currentAction, currentController);
         }
 
         #endregion

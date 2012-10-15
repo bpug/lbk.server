@@ -1,2 +1,6 @@
-﻿@model DateTime   
+﻿@*@model DateTime   
 @string.Format("{0:d}", Model.Date)
+*@
+
+@model System.DateTime?
+@Html.Label("", (Model.HasValue ? Model.Value.ToShortDateString() : string.Empty))

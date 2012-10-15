@@ -41,6 +41,11 @@ namespace Lbk.MobileApp.Web.Helpers
             object routeValues,
             object imgHtmlAttributes)
         {
+            if (string.IsNullOrEmpty(imageUrl))
+            {
+                return null;
+            }
+
             var imgAttributes = AnonymousObjectToKeyValue(imgHtmlAttributes);
             var imgBuilder = new TagBuilder("img");
             imgBuilder.MergeAttribute("src", imageUrl);

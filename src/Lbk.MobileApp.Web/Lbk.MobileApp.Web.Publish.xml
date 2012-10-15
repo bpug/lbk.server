@@ -2,331 +2,340 @@
 <publishData>
   <publishProfile publishUrl="D:\projects\ipconnect\ipc.Loewenbraeukeller.MobileApp\build\web" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Debug" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="False">
     <file relUrl="Scripts/jquery.validate.unobtrusive.js" publishTime="11/07/2011 10:54:59" />
+    <file relUrl="Content/themes/base/minified/jquery.ui.all.min.css" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Content/themes/base/jquery.ui.resizable.css" publishTime="11/07/2011 11:10:29" />
+    <file relUrl="Scripts/jquery-ui-1.8.16.js" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Views/Account/Register.cshtml" publishTime="11/07/2011 10:54:59" />
     <file relUrl="Content/themes/base/images/ui-bg_flat_75_ffffff_40x100.png" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Views/Serie/_search.cshtml" publishTime="11/08/2011 10:30:24" />
-    <file relUrl="Scripts/jquery-1.7-vsdoc.js" publishTime="11/07/2011 11:10:30" />
-    <file relUrl="Content/themes/base/minified/images/ui-bg_glass_75_dadada_1x400.png" publishTime="11/07/2011 11:10:29" />
+    <file relUrl="Scripts/MicrosoftAjax.js" publishTime="11/07/2011 10:54:59" />
+    <file relUrl="Content/themes/base/minified/images/ui-icons_cd0a0a_256x240.png" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Views/Account/LogOn.cshtml" publishTime="11/07/2011 10:54:59" />
     <file relUrl="Views/Serie/Create.cshtml" publishTime="11/08/2011 12:15:10" />
-    <file relUrl="Scripts/jquery.validate.min.js" publishTime="11/07/2011 11:10:31" />
+    <file relUrl="Content/themes/base/jquery.ui.accordion.css" publishTime="11/07/2011 11:10:29" />
     <file relUrl="bin/EntityFramework.xml" publishTime="11/05/2011 01:32:06" />
     <file relUrl="unity.debug.config" publishTime="11/07/2011 16:38:15" />
     <file relUrl="Scripts/MicrosoftMvcValidation.debug.js" publishTime="11/07/2011 10:54:59" />
     <file relUrl="Views/Serie/Delete.cshtml" publishTime="11/08/2011 01:21:33" />
     <file relUrl="Content/themes/base/jquery.ui.button.css" publishTime="11/07/2011 11:10:29" />
     <file relUrl="bin/Microsoft.Practices.Unity.Configuration.dll" publishTime="11/07/2011 11:17:25" />
-    <file relUrl="Views/_ViewStart.cshtml" publishTime="11/07/2011 11:48:10" />
+    <file relUrl="Content/themes/base/minified/jquery.ui.progressbar.min.css" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Web.config" publishTime="11/09/2011 01:02:52" />
     <file relUrl="Views/Serie/List.cshtml" publishTime="11/08/2011 14:07:06" />
     <file relUrl="bin/Microsoft.Practices.Unity.dll" publishTime="11/07/2011 11:17:25" />
     <file relUrl="Scripts/jquery-1.7.js" publishTime="11/07/2011 11:10:30" />
+    <file relUrl="Views/Question/List.cshtml" publishTime="11/08/2011 15:18:39" />
+    <file relUrl="Content/themes/base/images/ui-bg_glass_65_ffffff_1x400.png" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Content/themes/base/images/ui-icons_cd0a0a_256x240.png" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Scripts/MicrosoftMvcAjax.js" publishTime="11/07/2011 10:54:59" />
-    <file relUrl="Content/themes/base/jquery.ui.theme.css" publishTime="11/07/2011 11:10:29" />
-    <file relUrl="Scripts/jquery.unobtrusive-ajax.js" publishTime="11/07/2011 10:54:59" />
-    <file relUrl="Content/themes/base/minified/jquery.ui.tabs.min.css" publishTime="11/07/2011 11:10:29" />
+    <file relUrl="Content/themes/base/jquery.ui.datepicker.css" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Views/Shared/DisplayTemplates/DateTime.cshtml" publishTime="11/08/2011 09:57:39" />
-    <file relUrl="Content/themes/base/minified/jquery.ui.button.min.css" publishTime="11/07/2011 11:10:29" />
     <file relUrl="bin/Microsoft.Practices.Unity.Configuration.xml" publishTime="11/07/2011 11:17:25" />
     <file relUrl="bin/Lbk.MobileApp.Core.dll" publishTime="11/09/2011 00:57:46" />
-    <file relUrl="Scripts/MicrosoftAjax.js" publishTime="11/07/2011 10:54:59" />
     <file relUrl="Content/themes/base/minified/images/ui-icons_222222_256x240.png" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Views/Question/Detail.cshtml" publishTime="11/08/2011 15:41:49" />
-    <file relUrl="Views/Shared/Error.cshtml" publishTime="11/07/2011 11:48:06" />
+    <file relUrl="Content/themes/base/minified/images/ui-icons_888888_256x240.png" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Content/themes/base/images/ui-icons_2e83ff_256x240.png" publishTime="11/07/2011 11:10:29" />
+    <file relUrl="Content/themes/base/images/ui-icons_222222_256x240.png" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Content/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png" publishTime="11/07/2011 11:10:29" />
-    <file relUrl="Views/Serie/_grid.cshtml" publishTime="11/08/2011 23:28:55" />
+    <file relUrl="Content/themes/base/minified/jquery.ui.selectable.min.css" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Content/themes/base/minified/jquery.ui.autocomplete.min.css" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Content/themes/base/jquery.ui.slider.css" publishTime="11/07/2011 11:10:29" />
-    <file relUrl="Content/themes/base/minified/images/ui-bg_glass_65_ffffff_1x400.png" publishTime="11/07/2011 11:10:29" />
+    <file relUrl="Views/Answer/Detail.cshtml" publishTime="11/08/2011 16:20:54" />
+    <file relUrl="Views/Answer/_grid.cshtml" publishTime="11/08/2011 23:29:38" />
     <file relUrl="Scripts/jquery.unobtrusive-ajax.min.js" publishTime="11/07/2011 10:54:59" />
-    <file relUrl="Views/Question/Delete.cshtml" publishTime="11/08/2011 16:10:55" />
     <file relUrl="Views/Answer/List.cshtml" publishTime="11/08/2011 16:28:06" />
     <file relUrl="Views/Serie/Edit.cshtml" publishTime="11/08/2011 12:20:54" />
     <file relUrl="Views/Shared/_LogOnPartial.cshtml" publishTime="11/07/2011 11:48:03" />
     <file relUrl="bin/Lbk.MobileApp.Data.Core.dll" publishTime="11/09/2011 01:00:01" />
     <file relUrl="Content/themes/base/images/ui-bg_glass_55_fbf9ee_1x400.png" publishTime="11/07/2011 11:10:29" />
-    <file relUrl="Content/themes/base/minified/jquery.ui.progressbar.min.css" publishTime="11/07/2011 11:10:29" />
-    <file relUrl="Scripts/MicrosoftAjax.debug.js" publishTime="11/07/2011 10:54:59" />
-    <file relUrl="Content/themes/base/jquery.ui.accordion.css" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Views/Shared/EditorTemplates/DateTime.cshtml" publishTime="11/08/2011 10:39:19" />
     <file relUrl="Content/themes/base/jquery.ui.core.css" publishTime="11/07/2011 11:10:29" />
+    <file relUrl="Content/themes/base/minified/jquery.ui.button.min.css" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Content/themes/base/minified/images/ui-bg_glass_95_fef1ec_1x400.png" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Content/themes/base/images/ui-bg_glass_75_dadada_1x400.png" publishTime="11/07/2011 11:10:29" />
-    <file relUrl="Views/Answer/Delete.cshtml" publishTime="11/08/2011 16:06:40" />
     <file relUrl="Content/themes/base/jquery.ui.base.css" publishTime="11/07/2011 11:10:29" />
     <file relUrl="bin/Lbk.MobileApp.Web.dll" publishTime="11/09/2011 01:02:51" />
-    <file relUrl="bin/Microsoft.Practices.ServiceLocation.dll" publishTime="11/07/2011 11:17:25" />
-    <file relUrl="Content/themes/base/jquery.ui.datepicker.css" publishTime="11/07/2011 11:10:29" />
-    <file relUrl="Views/Home/Index.cshtml" publishTime="11/07/2011 12:04:00" />
+    <file relUrl="Content/themes/base/minified/jquery.ui.tabs.min.css" publishTime="11/07/2011 11:10:29" />
+    <file relUrl="Global.asax" publishTime="11/07/2011 10:54:59" />
     <file relUrl="Content/themes/base/jquery.ui.selectable.css" publishTime="11/07/2011 11:10:29" />
-    <file relUrl="Content/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Scripts/jquery-1.7.min.js" publishTime="11/07/2011 11:10:30" />
+    <file relUrl="bin/Microsoft.Practices.ServiceLocation.dll" publishTime="11/07/2011 11:17:25" />
     <file relUrl="Views/Question/_search.cshtml" publishTime="11/08/2011 00:31:26" />
+    <file relUrl="Views/Home/Index.cshtml" publishTime="11/07/2011 12:04:00" />
     <file relUrl="Content/themes/base/jquery.ui.progressbar.css" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Views/Serie/Detail.cshtml" publishTime="11/08/2011 09:38:08" />
     <file relUrl="packages.config" publishTime="11/07/2011 11:17:27" />
-    <file relUrl="Content/themes/base/minified/images/ui-icons_888888_256x240.png" publishTime="11/07/2011 11:10:29" />
-    <file relUrl="Scripts/EditorHookup.js" publishTime="11/08/2011 10:46:32" />
+    <file relUrl="Content/themes/base/minified/jquery.ui.core.min.css" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Views/Question/Create.cshtml" publishTime="11/08/2011 16:04:43" />
     <file relUrl="Views/Answer/Edit.cshtml" publishTime="11/08/2011 16:22:12" />
     <file relUrl="Views/Home/About.cshtml" publishTime="11/07/2011 11:53:38" />
     <file relUrl="Views/Account/ChangePasswordSuccess.cshtml" publishTime="11/07/2011 10:54:59" />
-    <file relUrl="Scripts/jquery-ui-1.8.16.js" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Content/themes/base/minified/jquery.ui.datepicker.min.css" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Scripts/modernizr-2.0.6-development-only.js" publishTime="11/07/2011 11:10:24" />
     <file relUrl="Content/themes/base/images/ui-icons_454545_256x240.png" publishTime="11/07/2011 11:10:29" />
-    <file relUrl="bin/EntityFramework.dll" publishTime="11/05/2011 01:32:06" />
     <file relUrl="Content/themes/base/minified/jquery.ui.accordion.min.css" publishTime="11/07/2011 11:10:29" />
-    <file relUrl="Content/themes/base/jquery.ui.tabs.css" publishTime="11/07/2011 11:10:29" />
-    <file relUrl="Content/themes/base/images/ui-bg_glass_65_ffffff_1x400.png" publishTime="11/07/2011 11:10:29" />
+    <file relUrl="Scripts/jquery.validate.min.js" publishTime="11/07/2011 11:10:31" />
+    <file relUrl="Content/themes/base/minified/jquery.ui.theme.min.css" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Content/themes/base/minified/images/ui-bg_highlight-soft_75_cccccc_1x100.png" publishTime="11/07/2011 11:10:29" />
-    <file relUrl="Content/themes/base/minified/jquery.ui.all.min.css" publishTime="11/07/2011 11:10:29" />
+    <file relUrl="README.jQuery.vsdoc.txt" publishTime="11/07/2011 11:10:30" />
     <file relUrl="Content/themes/base/minified/images/ui-bg_glass_55_fbf9ee_1x400.png" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Views/Answer/_search.cshtml" publishTime="11/08/2011 00:37:06" />
     <file relUrl="Views/Account/ChangePassword.cshtml" publishTime="11/07/2011 10:54:59" />
-    <file relUrl="Views/Answer/Detail.cshtml" publishTime="11/08/2011 16:20:54" />
     <file relUrl="Scripts/jquery.validate-vsdoc.js" publishTime="11/07/2011 11:10:31" />
     <file relUrl="Content/themes/base/minified/jquery.ui.resizable.min.css" publishTime="11/07/2011 11:10:29" />
     <file relUrl="bin/Lbk.MobileApp.Data.SqlCe.dll" publishTime="11/09/2011 01:00:01" />
-    <file relUrl="Views/Question/List.cshtml" publishTime="11/08/2011 15:18:39" />
-    <file relUrl="Content/themes/base/minified/jquery.ui.core.min.css" publishTime="11/07/2011 11:10:29" />
+    <file relUrl="Views/Serie/_grid.cshtml" publishTime="11/08/2011 23:28:55" />
+    <file relUrl="Content/themes/base/minified/images/ui-icons_2e83ff_256x240.png" publishTime="11/07/2011 11:10:29" />
     <file relUrl="bin/Microsoft.Practices.Unity.xml" publishTime="11/07/2011 11:17:25" />
+    <file relUrl="Content/themes/base/jquery.ui.tabs.css" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Views/Shared/_Layout.cshtml" publishTime="11/08/2011 23:29:08" />
     <file relUrl="Views/Question/_grid.cshtml" publishTime="11/08/2011 23:29:30" />
+    <file relUrl="Scripts/MicrosoftAjax.debug.js" publishTime="11/07/2011 10:54:59" />
     <file relUrl="Content/themes/base/minified/images/ui-icons_454545_256x240.png" publishTime="11/07/2011 11:10:29" />
+    <file relUrl="Scripts/jquery-1.7-vsdoc.js" publishTime="11/07/2011 11:10:30" />
     <file relUrl="Views/Web.config" publishTime="11/07/2011 10:54:59" />
-    <file relUrl="Content/themes/base/minified/images/ui-bg_flat_75_ffffff_40x100.png" publishTime="11/07/2011 11:10:29" />
-    <file relUrl="Views/Answer/_grid.cshtml" publishTime="11/08/2011 23:29:38" />
+    <file relUrl="Content/themes/base/minified/images/ui-bg_glass_75_dadada_1x400.png" publishTime="11/07/2011 11:10:29" />
+    <file relUrl="Content/themes/base/jquery.ui.dialog.css" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Content/Site.css" publishTime="11/07/2011 10:54:59" />
     <file relUrl="Content/themes/base/minified/jquery.ui.dialog.min.css" publishTime="11/07/2011 11:10:29" />
+    <file relUrl="Content/themes/base/images/ui-icons_888888_256x240.png" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Scripts/MicrosoftMvcValidation.js" publishTime="11/07/2011 10:54:59" />
     <file relUrl="bin/Lbk.MobileApp.Domain.dll" publishTime="11/09/2011 00:59:17" />
-    <file relUrl="README.jQuery.vsdoc.txt" publishTime="11/07/2011 11:10:30" />
-    <file relUrl="Content/themes/base/images/ui-icons_888888_256x240.png" publishTime="11/07/2011 11:10:29" />
+    <file relUrl="Content/themes/base/minified/jquery-ui.min.css" publishTime="11/07/2011 11:10:29" />
+    <file relUrl="bin/EntityFramework.dll" publishTime="11/05/2011 01:32:06" />
+    <file relUrl="Content/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Content/themes/base/minified/jquery.ui.base.min.css" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Content/themes/base/jquery-ui.css" publishTime="11/07/2011 11:10:29" />
-    <file relUrl="Content/themes/base/images/ui-icons_222222_256x240.png" publishTime="11/07/2011 11:10:29" />
+    <file relUrl="Views/Answer/Delete.cshtml" publishTime="11/08/2011 16:06:40" />
     <file relUrl="bin/Lbk.MobileApp.Model.dll" publishTime="11/09/2011 00:59:17" />
-    <file relUrl="Content/themes/base/minified/jquery.ui.theme.min.css" publishTime="11/07/2011 11:10:29" />
+    <file relUrl="Views/Question/Edit.cshtml" publishTime="11/08/2011 15:41:35" />
+    <file relUrl="Scripts/EditorHookup.js" publishTime="11/08/2011 10:46:32" />
     <file relUrl="Scripts/methods_de.js" publishTime="11/08/2011 12:14:49" />
     <file relUrl="bin/Lbk.MobileApp.Data.dll" publishTime="11/09/2011 00:59:17" />
-    <file relUrl="Content/themes/base/minified/jquery.ui.selectable.min.css" publishTime="11/07/2011 11:10:29" />
+    <file relUrl="Content/themes/base/jquery.ui.theme.css" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Scripts/jquery-ui-1.8.16.min.js" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Content/themes/base/jquery.ui.all.css" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Content/themes/base/minified/jquery.ui.slider.min.css" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Content/themes/base/minified/images/ui-bg_glass_75_e6e6e6_1x400.png" publishTime="11/07/2011 11:10:29" />
+    <file relUrl="Content/themes/base/minified/images/ui-bg_flat_75_ffffff_40x100.png" publishTime="11/07/2011 11:10:29" />
     <file relUrl="bin/Microsoft.Practices.ServiceLocation.xml" publishTime="11/07/2011 11:17:25" />
-    <file relUrl="Content/themes/base/minified/jquery-ui.min.css" publishTime="11/07/2011 11:10:29" />
+    <file relUrl="Scripts/jquery.unobtrusive-ajax.js" publishTime="11/07/2011 10:54:59" />
     <file relUrl="Scripts/MicrosoftMvcAjax.debug.js" publishTime="11/07/2011 10:54:59" />
     <file relUrl="Views/Answer/Create.cshtml" publishTime="11/08/2011 16:05:04" />
+    <file relUrl="Views/Question/Delete.cshtml" publishTime="11/08/2011 16:10:55" />
+    <file relUrl="Views/_ViewStart.cshtml" publishTime="11/07/2011 11:48:10" />
     <file relUrl="Scripts/jquery.validate.js" publishTime="11/07/2011 11:10:31" />
-    <file relUrl="Content/themes/base/minified/images/ui-icons_cd0a0a_256x240.png" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Content/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png" publishTime="11/07/2011 11:10:29" />
-    <file relUrl="Views/Question/Edit.cshtml" publishTime="11/08/2011 15:41:35" />
     <file relUrl="Content/themes/base/minified/images/ui-bg_flat_0_aaaaaa_40x100.png" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Scripts/jquery.validate.unobtrusive.min.js" publishTime="11/07/2011 10:54:59" />
-    <file relUrl="Global.asax" publishTime="11/07/2011 10:54:59" />
+    <file relUrl="Content/themes/base/minified/images/ui-bg_glass_65_ffffff_1x400.png" publishTime="11/07/2011 11:10:29" />
+    <file relUrl="Views/Shared/Error.cshtml" publishTime="11/07/2011 11:48:06" />
     <file relUrl="Content/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png" publishTime="11/07/2011 11:10:29" />
-    <file relUrl="Content/themes/base/minified/images/ui-icons_2e83ff_256x240.png" publishTime="11/07/2011 11:10:29" />
     <file relUrl="Content/themes/base/jquery.ui.autocomplete.css" publishTime="11/07/2011 11:10:29" />
-    <file relUrl="Content/themes/base/jquery.ui.dialog.css" publishTime="11/07/2011 11:10:29" />
   </publishProfile>
   <publishProfile publishUrl="D:\PrecompiledWeb\Lbk" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Release" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
-    <file relUrl="Views/Shared/DisplayTemplates/DateTime.cshtml" publishTime="04/18/2012 10:33:17" />
-    <file relUrl="bin/Lbk.MobileApp.Data.Core.pdb" publishTime="05/07/2012 14:42:09" />
+    <file relUrl="Scripts/MicrosoftAjax.js" publishTime="04/18/2012 10:33:15" />
+    <file relUrl="bin/Lbk.MobileApp.Data.Core.pdb" publishTime="10/15/2012 18:25:41" />
     <file relUrl="Views/Video/Edit.cshtml" publishTime="04/20/2012 14:50:02" />
-    <file relUrl="bin/Lbk.MobileApp.Core.dll" publishTime="05/07/2012 14:42:09" />
-    <file relUrl="Views/Answer/Create.cshtml" publishTime="04/20/2012 12:20:03" />
+    <file relUrl="bin/Lbk.MobileApp.Core.dll" publishTime="10/15/2012 18:25:40" />
+    <file relUrl="Scripts/jquery-ui-1.8.17.js" publishTime="04/18/2012 10:33:15" />
+    <file relUrl="Views/Question/Edit.cshtml" publishTime="04/20/2012 12:07:47" />
     <file relUrl="Content/themes/base/jquery.ui.datepicker.css" publishTime="04/18/2012 10:33:19" />
-    <file relUrl="bin/Lbk.MobileApp.Domain.pdb" publishTime="05/07/2012 14:42:10" />
     <file relUrl="bin/Microsoft.Practices.ServiceLocation.xml" publishTime="04/18/2012 10:33:23" />
+    <file relUrl="Scripts/globalization/cultures/globalize.culture.de-DE.js" publishTime="06/05/2012 11:15:20" />
     <file relUrl="Views/Video/Detail.cshtml" publishTime="04/20/2012 14:49:37" />
-    <file relUrl="Content/themes/base/minified/jquery-ui.min.css" publishTime="04/18/2012 10:33:19" />
+    <file relUrl="Views/Serie/_grid.cshtml" publishTime="04/20/2012 18:28:03" />
+    <file relUrl="Scripts/jquery.unobtrusive-ajax.js" publishTime="04/18/2012 10:33:15" />
+    <file relUrl="Views/Shared/_Layout.cshtml" publishTime="10/15/2012 19:31:23" />
+    <file relUrl="Views/Video/Delete.cshtml" publishTime="04/20/2012 14:36:02" />
     <file relUrl="Content/themes/base/minified/jquery.ui.autocomplete.min.css" publishTime="04/18/2012 10:33:19" />
     <file relUrl="bin/Microsoft.Practices.Unity.xml" publishTime="04/18/2012 10:33:24" />
     <file relUrl="Views/Account/ChangePasswordSuccess.cshtml" publishTime="04/18/2012 10:33:17" />
     <file relUrl="Views/Event/Edit.cshtml" publishTime="05/04/2012 15:20:42" />
-    <file relUrl="Scripts/MicrosoftAjax.debug.js" publishTime="04/18/2012 10:33:16" />
     <file relUrl="Content/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png" publishTime="04/18/2012 10:33:19" />
+    <file relUrl="Views/Shared/_LanguagePartial.cshtml" publishTime="06/06/2012 16:17:20" />
     <file relUrl="bin/Microsoft.Practices.Unity.dll" publishTime="04/18/2012 10:33:24" />
     <file relUrl="Views/Web.config" publishTime="04/18/2012 10:33:16" />
     <file relUrl="Content/themes/base/jquery.ui.selectable.css" publishTime="04/18/2012 10:33:19" />
-    <file relUrl="Content/themes/base/jquery.ui.theme.css" publishTime="04/18/2012 10:33:18" />
     <file relUrl="Content/themes/base/minified/images/ui-icons_222222_256x240.png" publishTime="04/18/2012 10:33:19" />
-    <file relUrl="Content/themes/base/minified/jquery.ui.progressbar.min.css" publishTime="04/18/2012 10:33:19" />
     <file relUrl="Scripts/jquery.validate.js" publishTime="04/18/2012 10:33:15" />
     <file relUrl="Views/Category/Create.cshtml" publishTime="04/20/2012 11:20:56" />
     <file relUrl="Views/Question/Detail.cshtml" publishTime="04/20/2012 12:01:30" />
-    <file relUrl="bin/Lbk.MobileApp.Web.dll" publishTime="05/07/2012 14:42:12" />
+    <file relUrl="bin/Lbk.MobileApp.Web.dll" publishTime="10/15/2012 20:02:06" />
     <file relUrl="Content/themes/base/minified/jquery.ui.base.min.css" publishTime="04/18/2012 10:33:19" />
-    <file relUrl="Views/Food/Delete.cshtml" publishTime="04/20/2012 10:41:37" />
-    <file relUrl="bin/Lbk.MobileApp.Model.dll" publishTime="05/07/2012 14:42:09" />
+    <file relUrl="Content/themes/base/minified/jquery-ui.min.css" publishTime="04/18/2012 10:33:19" />
+    <file relUrl="bin/Lbk.MobileApp.Model.dll" publishTime="10/15/2012 20:02:04" />
     <file relUrl="Content/themes/base/jquery.ui.all.css" publishTime="04/18/2012 10:33:19" />
     <file relUrl="Views/Serie/_search.cshtml" publishTime="04/20/2012 11:32:07" />
     <file relUrl="Views/Home/Index.cshtml" publishTime="04/18/2012 12:26:35" />
     <file relUrl="Views/Menu/_search.cshtml" publishTime="04/20/2012 09:38:06" />
-    <file relUrl="Views/Event/Detail.cshtml" publishTime="05/04/2012 12:08:55" />
     <file relUrl="Views/Menu/Delete.cshtml" publishTime="04/20/2012 18:40:54" />
     <file relUrl="Views/Shared/Error.cshtml" publishTime="04/18/2012 10:33:17" />
-    <file relUrl="Views/Food/_search.cshtml" publishTime="04/19/2012 10:53:19" />
-    <file relUrl="Scripts/MicrosoftAjax.js" publishTime="04/18/2012 10:33:15" />
+    <file relUrl="Content/themes/base/minified/jquery.ui.progressbar.min.css" publishTime="04/18/2012 10:33:19" />
+    <file relUrl="Content/themes/base/minified/jquery.ui.all.min.css" publishTime="04/18/2012 10:33:19" />
     <file relUrl="Scripts/jquery-1.7.1.min.js" publishTime="04/18/2012 10:33:16" />
-    <file relUrl="Views/Event/List.cshtml" publishTime="05/04/2012 16:04:13" />
     <file relUrl="Views/Answer/_grid.cshtml" publishTime="04/20/2012 19:29:11" />
+    <file relUrl="Views/Shared/_LogOnPartial.cshtml" publishTime="04/18/2012 10:33:17" />
+    <file relUrl="Scripts/jquery-1.7.1.js" publishTime="04/18/2012 10:33:15" />
     <file relUrl="Scripts/jquery-ui-1.8.17.min.js" publishTime="04/18/2012 10:33:15" />
     <file relUrl="README.jQuery.vsdoc.txt" publishTime="04/18/2012 10:33:18" />
-    <file relUrl="Content/themes/base/minified/jquery.ui.resizable.min.css" publishTime="04/18/2012 10:33:19" />
     <file relUrl="Views/Answer/List.cshtml" publishTime="04/20/2012 19:28:44" />
-    <file relUrl="Content/Images/delete.png" publishTime="04/20/2012 17:40:02" />
+    <file relUrl="Views/Answer/Edit.cshtml" publishTime="04/20/2012 12:22:04" />
     <file relUrl="Content/themes/base/images/ui-bg_glass_55_fbf9ee_1x400.png" publishTime="04/18/2012 10:33:19" />
-    <file relUrl="bin/Lbk.MobileApp.Data.SqlCe.pdb" publishTime="05/07/2012 14:42:11" />
+    <file relUrl="bin/Lbk.MobileApp.Data.SqlCe.pdb" publishTime="10/15/2012 20:02:05" />
     <file relUrl="Content/themes/base/minified/jquery.ui.accordion.min.css" publishTime="04/18/2012 10:33:19" />
     <file relUrl="Content/themes/base/jquery-ui.css" publishTime="04/18/2012 10:33:18" />
     <file relUrl="Views/Category/_search.cshtml" publishTime="04/19/2012 10:52:55" />
     <file relUrl="Content/themes/base/jquery.ui.resizable.css" publishTime="04/18/2012 10:33:19" />
-    <file relUrl="Views/Serie/_grid.cshtml" publishTime="04/20/2012 18:28:03" />
     <file relUrl="Scripts/MicrosoftMvcAjax.debug.js" publishTime="04/18/2012 10:33:15" />
     <file relUrl="Content/themes/base/jquery.ui.tabs.css" publishTime="04/18/2012 10:33:19" />
     <file relUrl="Views/Category/Edit.cshtml" publishTime="04/20/2012 11:24:36" />
     <file relUrl="Views/Category/Detail.cshtml" publishTime="04/20/2012 11:23:21" />
+    <file relUrl="Content/themes/base/minified/jquery.ui.slider.min.css" publishTime="04/18/2012 10:33:19" />
+    <file relUrl="Scripts/MicrosoftMvcAjax.js" publishTime="04/18/2012 10:33:15" />
     <file relUrl="Content/themes/base/images/ui-icons_2e83ff_256x240.png" publishTime="04/18/2012 10:33:19" />
-    <file relUrl="Scripts/methods_de.js" publishTime="04/18/2012 10:33:15" />
+    <file relUrl="Scripts/methods_de.js" publishTime="06/06/2012 19:56:08" />
     <file relUrl="Views/Answer/Delete.cshtml" publishTime="04/20/2012 12:20:03" />
     <file relUrl="Views/Answer/Detail.cshtml" publishTime="04/20/2012 12:21:33" />
     <file relUrl="bin/Microsoft.Practices.ServiceLocation.dll" publishTime="04/18/2012 10:33:23" />
-    <file relUrl="Views/Picture/Edit.cshtml" publishTime="04/22/2012 13:13:08" />
-    <file relUrl="Views/Account/Register.cshtml" publishTime="04/18/2012 10:33:17" />
+    <file relUrl="bin/de-De/Lbk.MobileApp.Domain.resources.dll" publishTime="10/15/2012 20:02:05" />
     <file relUrl="Views/Serie/List.cshtml" publishTime="04/20/2012 18:26:41" />
-    <file relUrl="bin/Lbk.MobileApp.Data.Core.dll" publishTime="05/07/2012 14:42:09" />
-    <file relUrl="bin/Lbk.MobileApp.Core.pdb" publishTime="05/07/2012 14:42:09" />
+    <file relUrl="Views/Speisekarte/Edit.cshtml" publishTime="08/27/2012 17:24:08" />
+    <file relUrl="bin/Lbk.MobileApp.Data.Core.dll" publishTime="10/15/2012 18:25:41" />
+    <file relUrl="bin/Lbk.MobileApp.Core.pdb" publishTime="10/15/2012 18:25:40" />
     <file relUrl="Views/Food/List.cshtml" publishTime="04/20/2012 19:01:22" />
     <file relUrl="Global.asax" publishTime="04/18/2012 10:33:16" />
-    <file relUrl="Views/Category/Delete.cshtml" publishTime="04/20/2012 10:41:37" />
-    <file relUrl="Content/Images/add.png" publishTime="04/20/2012 17:40:59" />
+    <file relUrl="Views/Answer/_search.cshtml" publishTime="04/20/2012 12:12:26" />
+    <file relUrl="bin/EntityFramework.xml" publishTime="04/18/2012 10:33:24" />
+    <file relUrl="Views/Event/List.cshtml" publishTime="05/04/2012 16:04:13" />
+    <file relUrl="Scripts/common.js" publishTime="10/15/2012 20:02:00" />
     <file relUrl="Scripts/MicrosoftMvcValidation.js" publishTime="04/18/2012 10:33:15" />
+    <file relUrl="Scripts/globalization/cultures/globalize.culture.en-US.js" publishTime="06/05/2012 11:14:16" />
     <file relUrl="Views/Video/_search.cshtml" publishTime="04/20/2012 14:33:10" />
-    <file relUrl="Web.config" publishTime="05/07/2012 14:42:36" />
+    <file relUrl="Web.config" publishTime="10/15/2012 18:25:46" />
     <file relUrl="Content/Images/edit.png" publishTime="04/20/2012 17:41:30" />
     <file relUrl="Views/Serie/Detail.cshtml" publishTime="04/20/2012 11:45:41" />
     <file relUrl="Scripts/MicrosoftMvcValidation.debug.js" publishTime="04/18/2012 10:33:15" />
-    <file relUrl="Content/Images/detail.png" publishTime="04/20/2012 17:54:40" />
     <file relUrl="Content/themes/base/minified/images/ui-bg_glass_65_ffffff_1x400.png" publishTime="04/18/2012 10:33:19" />
     <file relUrl="Views/Question/Delete.cshtml" publishTime="04/20/2012 11:59:44" />
     <file relUrl="packages.config" publishTime="04/18/2012 10:33:14" />
     <file relUrl="Content/themes/base/jquery.ui.dialog.css" publishTime="04/18/2012 10:33:18" />
     <file relUrl="Content/themes/base/minified/images/ui-icons_2e83ff_256x240.png" publishTime="04/18/2012 10:33:19" />
+    <file relUrl="Views/Menu/Create.cshtml" publishTime="04/20/2012 18:41:14" />
     <file relUrl="Views/Event/Create.cshtml" publishTime="05/04/2012 11:24:52" />
-    <file relUrl="Views/Menu/Edit.cshtml" publishTime="04/20/2012 10:08:51" />
+    <file relUrl="Views/Menu/Edit.cshtml" publishTime="06/14/2012 18:52:36" />
     <file relUrl="Content/themes/base/minified/images/ui-bg_glass_55_fbf9ee_1x400.png" publishTime="04/18/2012 10:33:19" />
     <file relUrl="Content/themes/base/images/ui-icons_222222_256x240.png" publishTime="04/18/2012 10:33:19" />
-    <file relUrl="Content/themes/base/minified/jquery.ui.tabs.min.css" publishTime="04/18/2012 10:33:19" />
     <file relUrl="Content/themes/base/minified/images/ui-icons_cd0a0a_256x240.png" publishTime="04/18/2012 10:33:19" />
-    <file relUrl="Scripts/jquery-ui-1.8.17.js" publishTime="04/18/2012 10:33:15" />
     <file relUrl="ReleaseNotes.txt" publishTime="04/18/2012 10:33:25" />
     <file relUrl="Views/Food/_grid.cshtml" publishTime="04/20/2012 18:41:55" />
-    <file relUrl="Scripts/EditorHookup.js" publishTime="04/18/2012 10:33:15" />
+    <file relUrl="Scripts/EditorHookup.js" publishTime="06/06/2012 21:10:31" />
     <file relUrl="Views/Picture/_grid.cshtml" publishTime="05/07/2012 12:51:54" />
     <file relUrl="Views/Category/List.cshtml" publishTime="04/20/2012 19:20:56" />
+    <file relUrl="Content/themes/base/minified/jquery.ui.dialog.min.css" publishTime="04/18/2012 10:33:19" />
     <file relUrl="Scripts/jquery.validate.unobtrusive.min.js" publishTime="04/18/2012 10:33:15" />
+    <file relUrl="bin/Microsoft.Practices.Unity.Configuration.dll" publishTime="04/18/2012 10:33:24" />
+    <file relUrl="Views/Picture/Delete.cshtml" publishTime="04/22/2012 15:18:22" />
     <file relUrl="Content/themes/base/minified/images/ui-bg_glass_75_e6e6e6_1x400.png" publishTime="04/18/2012 10:33:19" />
     <file relUrl="Views/_ViewStart.cshtml" publishTime="04/18/2012 10:33:16" />
-    <file relUrl="Views/Picture/Delete.cshtml" publishTime="04/22/2012 15:18:22" />
+    <file relUrl="Content/Images/add.png" publishTime="04/20/2012 17:40:59" />
     <file relUrl="Content/themes/base/jquery.ui.autocomplete.css" publishTime="04/18/2012 10:33:18" />
-    <file relUrl="Views/Answer/_search.cshtml" publishTime="04/20/2012 12:12:26" />
-    <file relUrl="Views/Home/About.cshtml" publishTime="04/18/2012 12:23:14" />
-    <file relUrl="unity.debug.config" publishTime="04/18/2012 16:30:54" />
-    <file relUrl="Content/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png" publishTime="04/18/2012 10:33:19" />
+    <file relUrl="Content/themes/base/minified/jquery.ui.theme.min.css" publishTime="04/18/2012 10:33:19" />
     <file relUrl="Views/Event/_search.cshtml" publishTime="05/07/2012 10:35:49" />
+    <file relUrl="Views/Event/Detail.cshtml" publishTime="05/04/2012 12:08:55" />
+    <file relUrl="Scripts/globalization/globalize.js" publishTime="08/27/2012 10:49:38" />
+    <file relUrl="Content/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png" publishTime="04/18/2012 10:33:19" />
     <file relUrl="Scripts/jquery.validate-vsdoc.js" publishTime="04/18/2012 10:33:15" />
-    <file relUrl="Views/Question/Create.cshtml" publishTime="04/20/2012 12:07:47" />
-    <file relUrl="Scripts/jquery.unobtrusive-ajax.js" publishTime="04/18/2012 10:33:15" />
+    <file relUrl="Content/themes/base/jquery.ui.theme.css" publishTime="04/18/2012 10:33:18" />
+    <file relUrl="Content/themes/base/minified/images/ui-icons_454545_256x240.png" publishTime="04/18/2012 10:33:19" />
+    <file relUrl="Content/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png" publishTime="04/18/2012 10:33:19" />
     <file relUrl="Content/themes/base/minified/images/ui-bg_glass_75_dadada_1x400.png" publishTime="04/18/2012 10:33:19" />
     <file relUrl="Content/themes/base/minified/images/ui-bg_flat_75_ffffff_40x100.png" publishTime="04/18/2012 10:33:19" />
     <file relUrl="Views/Account/ChangePassword.cshtml" publishTime="04/18/2012 10:33:17" />
     <file relUrl="Views/Picture/Detail.cshtml" publishTime="04/22/2012 15:18:24" />
-    <file relUrl="Content/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png" publishTime="04/18/2012 10:33:19" />
-    <file relUrl="Scripts/MicrosoftMvcAjax.js" publishTime="04/18/2012 10:33:15" />
+    <file relUrl="Views/Serie/Create.cshtml" publishTime="04/20/2012 11:48:22" />
     <file relUrl="Scripts/jquery-1.7.1-vsdoc.js" publishTime="04/18/2012 10:33:16" />
-    <file relUrl="bin/Lbk.MobileApp.Domain.dll" publishTime="05/07/2012 14:42:10" />
-    <file relUrl="bin/Lbk.MobileApp.Model.pdb" publishTime="05/07/2012 14:42:09" />
+    <file relUrl="bin/Lbk.MobileApp.Domain.dll" publishTime="10/15/2012 20:02:05" />
+    <file relUrl="bin/Lbk.MobileApp.Model.pdb" publishTime="10/15/2012 20:02:04" />
     <file relUrl="Content/themes/base/images/ui-bg_glass_75_dadada_1x400.png" publishTime="04/18/2012 10:33:19" />
     <file relUrl="Views/Menu/Copy.cshtml" publishTime="04/20/2012 10:49:30" />
     <file relUrl="Content/themes/base/jquery.ui.button.css" publishTime="04/18/2012 10:33:19" />
     <file relUrl="Views/Food/Edit.cshtml" publishTime="04/20/2012 11:17:39" />
     <file relUrl="Content/themes/base/minified/images/ui-icons_888888_256x240.png" publishTime="04/18/2012 10:33:19" />
-    <file relUrl="bin/Lbk.MobileApp.Web.pdb" publishTime="05/07/2012 14:42:12" />
+    <file relUrl="bin/Lbk.MobileApp.Web.pdb" publishTime="10/15/2012 20:02:06" />
+    <file relUrl="Views/Category/Delete.cshtml" publishTime="04/20/2012 10:41:37" />
     <file relUrl="Scripts/modernizr-2.0.6-development-only.js" publishTime="04/18/2012 10:33:15" />
     <file relUrl="bin/Microsoft.Practices.ServiceLocation.pdb" publishTime="04/18/2012 10:33:24" />
+    <file relUrl="Views/Picture/Edit.cshtml" publishTime="04/22/2012 13:13:08" />
     <file relUrl="Views/Serie/Delete.cshtml" publishTime="04/20/2012 11:47:09" />
     <file relUrl="Content/themes/base/images/ui-bg_glass_65_ffffff_1x400.png" publishTime="04/18/2012 10:33:19" />
+    <file relUrl="Content/themes/base/minified/images/ui-bg_glass_95_fef1ec_1x400.png" publishTime="04/18/2012 10:33:19" />
     <file relUrl="Content/themes/base/minified/jquery.ui.selectable.min.css" publishTime="04/18/2012 10:33:19" />
     <file relUrl="Views/Picture/_search.cshtml" publishTime="04/20/2012 13:49:28" />
-    <file relUrl="Views/Shared/_Layout.cshtml" publishTime="04/18/2012 10:33:17" />
-    <file relUrl="Views/Video/List.cshtml" publishTime="04/20/2012 18:26:00" />
-    <file relUrl="Content/themes/base/minified/images/ui-bg_glass_95_fef1ec_1x400.png" publishTime="04/18/2012 10:33:19" />
+    <file relUrl="Views/Food/_search.cshtml" publishTime="04/19/2012 10:53:19" />
+    <file relUrl="Views/Speisekarte/Detail.cshtml" publishTime="08/27/2012 17:24:18" />
+    <file relUrl="Views/Answer/Create.cshtml" publishTime="04/20/2012 12:20:03" />
+    <file relUrl="Views/Video/_grid.cshtml" publishTime="04/20/2012 18:25:11" />
+    <file relUrl="Views/Food/Delete.cshtml" publishTime="04/20/2012 10:41:37" />
     <file relUrl="Content/themes/base/images/ui-icons_cd0a0a_256x240.png" publishTime="04/18/2012 10:33:19" />
+    <file relUrl="Content/themes/base/images/ui-icons_454545_256x240.png" publishTime="04/18/2012 10:33:19" />
+    <file relUrl="unity.debug.config" publishTime="06/05/2012 17:05:36" />
     <file relUrl="Views/Category/_grid.cshtml" publishTime="04/20/2012 19:27:35" />
+    <file relUrl="Content/themes/base/minified/jquery.ui.tabs.min.css" publishTime="04/18/2012 10:33:19" />
     <file relUrl="Content/themes/base/jquery.ui.accordion.css" publishTime="04/18/2012 10:33:18" />
-    <file relUrl="bin/Lbk.MobileApp.Data.SqlCe.dll" publishTime="05/07/2012 14:42:11" />
-    <file relUrl="Views/Answer/Edit.cshtml" publishTime="04/20/2012 12:22:04" />
+    <file relUrl="bin/Lbk.MobileApp.Data.SqlCe.dll" publishTime="10/15/2012 20:02:05" />
     <file relUrl="Content/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png" publishTime="04/18/2012 10:33:19" />
     <file relUrl="Views/Video/Create.cshtml" publishTime="04/20/2012 14:49:04" />
-    <file relUrl="Content/themes/base/minified/jquery.ui.theme.min.css" publishTime="04/18/2012 10:33:19" />
-    <file relUrl="Content/themes/base/minified/jquery.ui.slider.min.css" publishTime="04/18/2012 10:33:19" />
-    <file relUrl="bin/de-De/Lbk.MobileApp.Domain.resources.dll" publishTime="05/07/2012 14:42:10" />
-    <file relUrl="Content/themes/base/minified/images/ui-icons_454545_256x240.png" publishTime="04/18/2012 10:33:19" />
-    <file relUrl="Views/Picture/Create.cshtml" publishTime="04/22/2012 13:13:08" />
+    <file relUrl="Content/themes/base/jquery.ui.slider.css" publishTime="04/18/2012 10:33:19" />
+    <file relUrl="Content/themes/base/minified/jquery.ui.resizable.min.css" publishTime="04/18/2012 10:33:19" />
     <file relUrl="Views/Question/_search.cshtml" publishTime="04/20/2012 11:29:37" />
     <file relUrl="Content/themes/base/minified/jquery.ui.core.min.css" publishTime="04/18/2012 10:33:19" />
-    <file relUrl="bin/Gapon.SemanticVersion.dll" publishTime="04/18/2012 10:33:20" />
     <file relUrl="Views/Food/Create.cshtml" publishTime="04/20/2012 11:06:38" />
+    <file relUrl="bin/Lbk.MobileApp.Data.pdb" publishTime="10/15/2012 20:02:04" />
     <file relUrl="Content/themes/base/images/ui-bg_flat_75_ffffff_40x100.png" publishTime="04/18/2012 10:33:19" />
-    <file relUrl="Views/Serie/Create.cshtml" publishTime="04/20/2012 11:48:22" />
+    <file relUrl="bin/Lbk.MobileApp.Domain.pdb" publishTime="10/15/2012 20:02:05" />
     <file relUrl="Views/Menu/List.cshtml" publishTime="04/20/2012 18:39:09" />
-    <file relUrl="Views/Shared/_LogOnPartial.cshtml" publishTime="04/18/2012 10:33:17" />
-    <file relUrl="Content/themes/base/jquery.ui.slider.css" publishTime="04/18/2012 10:33:19" />
-    <file relUrl="Content/themes/base/images/ui-icons_454545_256x240.png" publishTime="04/18/2012 10:33:19" />
-    <file relUrl="Views/Food/Detail.cshtml" publishTime="04/20/2012 11:12:49" />
-    <file relUrl="Content/Site.css" publishTime="05/07/2012 11:15:16" />
-    <file relUrl="bin/Microsoft.Practices.Unity.Configuration.dll" publishTime="04/18/2012 10:33:24" />
+    <file relUrl="Views/Home/About.cshtml" publishTime="04/18/2012 12:23:14" />
+    <file relUrl="Content/Site.css" publishTime="06/18/2012 17:57:03" />
     <file relUrl="Scripts/jquery.validate.unobtrusive.js" publishTime="04/18/2012 10:33:15" />
-    <file relUrl="Content/themes/base/minified/jquery.ui.all.min.css" publishTime="04/18/2012 10:33:19" />
-    <file relUrl="Scripts/jquery-1.7.1.js" publishTime="04/18/2012 10:33:15" />
     <file relUrl="Views/Menu/_grid.cshtml" publishTime="04/22/2012 15:52:30" />
-    <file relUrl="bin/EntityFramework.xml" publishTime="04/18/2012 10:33:24" />
+    <file relUrl="Scripts/MicrosoftAjax.debug.js" publishTime="04/18/2012 10:33:16" />
     <file relUrl="Views/Picture/List.cshtml" publishTime="04/20/2012 18:15:53" />
+    <file relUrl="Scripts/globalization/cultures/globalize.culture.en-GB.js" publishTime="06/06/2012 15:20:18" />
     <file relUrl="Views/Event/Delete.cshtml" publishTime="05/04/2012 12:10:48" />
     <file relUrl="bin/EntityFramework.dll" publishTime="04/18/2012 10:33:24" />
-    <file relUrl="Views/Menu/Create.cshtml" publishTime="04/20/2012 18:41:14" />
-    <file relUrl="Content/themes/base/jquery.ui.core.css" publishTime="04/18/2012 10:33:19" />
-    <file relUrl="bin/ReleaseNotes.txt" publishTime="04/18/2012 10:33:25" />
-    <file relUrl="Content/themes/base/images/ui-icons_888888_256x240.png" publishTime="04/18/2012 10:33:19" />
-    <file relUrl="Content/themes/base/jquery.ui.progressbar.css" publishTime="04/18/2012 10:33:19" />
-    <file relUrl="Content/themes/base/minified/jquery.ui.dialog.min.css" publishTime="04/18/2012 10:33:19" />
-    <file relUrl="Views/Video/_grid.cshtml" publishTime="04/20/2012 18:25:11" />
-    <file relUrl="Views/Shared/EditorTemplates/DateTime.cshtml" publishTime="04/18/2012 10:33:17" />
-    <file relUrl="Content/Images/copy.jpg" publishTime="04/22/2012 15:46:59" />
-    <file relUrl="Views/Account/GeneratePassword.cshtml" publishTime="04/18/2012 12:12:25" />
-    <file relUrl="bin/Lbk.MobileApp.Data.pdb" publishTime="05/07/2012 14:42:09" />
-    <file relUrl="Views/Serie/Edit.cshtml" publishTime="04/20/2012 10:12:46" />
-    <file relUrl="Content/themes/base/minified/images/ui-bg_flat_0_aaaaaa_40x100.png" publishTime="04/18/2012 10:33:19" />
+    <file relUrl="Views/Picture/Create.cshtml" publishTime="04/22/2012 13:13:08" />
+    <file relUrl="bin/Gapon.SemanticVersion.dll" publishTime="04/18/2012 10:33:20" />
     <file relUrl="Views/Question/List.cshtml" publishTime="04/20/2012 18:29:03" />
+    <file relUrl="Views/Shared/DisplayTemplates/DateTime.cshtml" publishTime="06/06/2012 17:11:05" />
+    <file relUrl="Content/themes/base/jquery.ui.core.css" publishTime="04/18/2012 10:33:19" />
+    <file relUrl="Content/themes/base/images/ui-icons_888888_256x240.png" publishTime="04/18/2012 10:33:19" />
+    <file relUrl="Content/Images/delete.png" publishTime="04/20/2012 17:40:02" />
+    <file relUrl="Content/themes/base/jquery.ui.progressbar.css" publishTime="04/18/2012 10:33:19" />
+    <file relUrl="Views/Account/GeneratePassword.cshtml" publishTime="04/18/2012 12:12:25" />
+    <file relUrl="Views/Shared/EditorTemplates/DateTime.cshtml" publishTime="06/06/2012 17:10:45" />
+    <file relUrl="Views/Question/Create.cshtml" publishTime="04/20/2012 12:07:47" />
+    <file relUrl="bin/ReleaseNotes.txt" publishTime="04/18/2012 10:33:25" />
+    <file relUrl="Content/Images/copy.jpg" publishTime="04/22/2012 15:46:59" />
+    <file relUrl="Views/Account/Register.cshtml" publishTime="04/18/2012 10:33:17" />
+    <file relUrl="Views/Serie/Edit.cshtml" publishTime="04/20/2012 10:12:46" />
+    <file relUrl="Scripts/globdatepicker/jquery.ui.datepicker.de-DE.js" publishTime="06/06/2012 21:02:31" />
+    <file relUrl="Content/themes/base/minified/images/ui-bg_flat_0_aaaaaa_40x100.png" publishTime="04/18/2012 10:33:19" />
     <file relUrl="bin/Microsoft.Practices.Unity.Configuration.xml" publishTime="04/18/2012 10:33:24" />
-    <file relUrl="bin/Lbk.MobileApp.Data.dll" publishTime="05/07/2012 14:42:09" />
+    <file relUrl="bin/Lbk.MobileApp.Data.dll" publishTime="10/15/2012 20:02:04" />
     <file relUrl="Scripts/jquery.validate.min.js" publishTime="04/18/2012 10:33:15" />
     <file relUrl="Views/Question/_grid.cshtml" publishTime="04/20/2012 18:28:41" />
-    <file relUrl="Views/Video/Delete.cshtml" publishTime="04/20/2012 14:36:02" />
-    <file relUrl="Views/Question/Edit.cshtml" publishTime="04/20/2012 12:07:47" />
-    <file relUrl="Views/Event/_grid.cshtml" publishTime="05/07/2012 11:22:57" />
+    <file relUrl="Views/Video/List.cshtml" publishTime="04/20/2012 18:26:00" />
+    <file relUrl="Content/Images/detail.png" publishTime="04/20/2012 17:54:40" />
+    <file relUrl="Views/Event/_grid.cshtml" publishTime="08/27/2012 10:54:02" />
     <file relUrl="Content/themes/base/minified/jquery.ui.button.min.css" publishTime="04/18/2012 10:33:19" />
     <file relUrl="Scripts/jquery.unobtrusive-ajax.min.js" publishTime="04/18/2012 10:33:15" />
-    <file relUrl="Views/Account/LogOn.cshtml" publishTime="04/18/2012 11:53:39" />
-    <file relUrl="Content/themes/base/jquery.ui.base.css" publishTime="04/18/2012 10:33:19" />
+    <file relUrl="Views/Account/LogOn.cshtml" publishTime="06/05/2012 12:08:09" />
+    <file relUrl="Views/Food/Detail.cshtml" publishTime="04/20/2012 11:12:49" />
     <file relUrl="Content/themes/base/minified/jquery.ui.datepicker.min.css" publishTime="04/18/2012 10:33:19" />
     <file relUrl="Views/Menu/Detail.cshtml" publishTime="04/20/2012 18:40:44" />
+    <file relUrl="Content/themes/base/jquery.ui.base.css" publishTime="04/18/2012 10:33:19" />
     <file relUrl="Content/themes/base/minified/images/ui-bg_highlight-soft_75_cccccc_1x100.png" publishTime="04/18/2012 10:33:19" />
   </publishProfile>
 </publishData>

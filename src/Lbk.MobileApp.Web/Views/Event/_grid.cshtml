@@ -23,7 +23,8 @@
                             grid.Column(style: "picture-image-grid", format: (item) =>
                             {
                                 //var location = Path.Combine(ConfigurationManager.AppSettings["EventThumbnailHttpBasePath"], item.ThumbnailName);
-                                return @Html.ImageActionLink(Url.Content((string)item.ThumbnailLocation),
+                                var location = string.IsNullOrEmpty(item.ThumbnailLocation) ? null : Url.Content((string)item.ThumbnailLocation);
+                                return @Html.ImageActionLink(location,
                                                   Html.Encode((string)item.Description), "Detail", new { id = item.Id },
                                                   new { title = item.Description, border = 0, height = 40, width=40 });
                             }),

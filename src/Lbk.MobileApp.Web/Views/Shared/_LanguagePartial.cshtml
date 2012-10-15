@@ -1,0 +1,19 @@
+﻿<div>
+    <span>Current culture: @Culture</span> |
+    <span>@Html.ActionLink("de", "SetCulture", "Home", new
+     {
+         culture = "de-DE",
+         currentAction = @ViewContext.Controller.ValueProvider.GetValue("action").RawValue,
+         currentController = @ViewContext.Controller.ValueProvider.GetValue("controller").RawValue,
+         currentId = @ViewContext.Controller.ValueProvider.GetValue("id") == null ? null : @ViewContext.Controller.ValueProvider.GetValue("id").RawValue
+
+     }, null)</span> |
+    <span>@Html.ActionLink("eng", "SetCulture", "Home", new
+    {
+        culture = "en-US",
+        currentAction = @ViewContext.Controller.ValueProvider.GetValue("action").RawValue,
+        currentController = @ViewContext.Controller.ValueProvider.GetValue("controller").RawValue,
+        currentId = @ViewContext.Controller.ValueProvider.GetValue("id") == null ? null : @ViewContext.Controller.ValueProvider.GetValue("id").RawValue
+    }, null)
+    </span>
+</div>

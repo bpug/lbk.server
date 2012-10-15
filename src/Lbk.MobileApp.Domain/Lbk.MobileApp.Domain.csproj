@@ -70,6 +70,7 @@
     <Compile Include="Handlers\AddSerie.cs" />
     <Compile Include="Handlers\AddPicture.cs" />
     <Compile Include="Handlers\AddVideo.cs" />
+    <Compile Include="Handlers\BaseHandler.cs" />
     <Compile Include="Handlers\GetQuestionCategories.cs" />
     <Compile Include="Handlers\GetQuestionCategoryById.cs" />
     <Compile Include="Handlers\DeleteVideoById.cs" />

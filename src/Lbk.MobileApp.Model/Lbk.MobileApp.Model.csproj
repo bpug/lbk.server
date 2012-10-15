@@ -41,13 +41,19 @@
       <Link>Properties\CommonAssemblyInfoVersion.cs</Link>
     </Compile>
     <Compile Include="Answer.cs" />
+    <Compile Include="Attributes\TranslateAttribute.cs" />
     <Compile Include="BaseEntity.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="Extensions\AnswerExtensions.cs" />
+    <Compile Include="Extensions\IEntityExtensions.cs" />
     <Compile Include="Extensions\QuestionExtensions.cs" />
     <Compile Include="Extensions\SerieExtensions.cs" />
     <Compile Include="Food.cs" />
+    <Compile Include="IEntity.cs" />
+    <Compile Include="Language.cs" />
+    <Compile Include="LocalizableEntity.cs" />
+    <Compile Include="LocalizableEntityTranslation.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Picture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

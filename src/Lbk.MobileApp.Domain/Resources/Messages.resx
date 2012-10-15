@@ -690,4 +690,19 @@
   <data name="ThumbnailNameLabelText" xml:space="preserve">
     <value>Thumbnail name</value>
   </data>
+  <data name="LogOn" xml:space="preserve">
+    <value>Log On</value>
+  </data>
+  <data name="BackToDetails" xml:space="preserve">
+    <value>Zurück zu Details</value>
+  </data>
+  <data name="OnlyPdfFileAllowed" xml:space="preserve">
+    <value>Only pdf-file is allowed</value>
+  </data>
+  <data name="Speisekarte" xml:space="preserve">
+    <value>Speisekarte</value>
+  </data>
+  <data name="SpeisekarteFileLabelText" xml:space="preserve">
+    <value>Speisekarte</value>
+  </data>
 </root>

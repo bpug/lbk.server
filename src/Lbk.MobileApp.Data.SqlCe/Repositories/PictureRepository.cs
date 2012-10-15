@@ -50,7 +50,9 @@ namespace Lbk.MobileApp.Data.SqlCe.Repositories
 
         public Picture GetPicture(long pictureId)
         {
-            return this.GetDbSet<Picture>().Where(x => x.Id == pictureId).Single();
+            //return this.GetDbSet<Picture>().Where(x => x.Id == pictureId).Single();
+            var pic = this.GetDbSet<Picture>().Where(x => x.Id == pictureId).Single().TranslateTo();
+            return pic;
         }
 
         public PagedDataList<Picture> GetPictures(PagedDataInput<Picture> pagedDataInput)

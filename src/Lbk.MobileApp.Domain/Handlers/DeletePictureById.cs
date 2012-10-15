@@ -13,10 +13,11 @@ namespace Lbk.MobileApp.Domain.Handlers
     using Lbk.MobileApp.Data;
     using Lbk.MobileApp.Domain.Contracts;
     using Lbk.MobileApp.Domain.Resources;
+    using Lbk.MobileApp.Model;
 
     #endregion
 
-    public class DeletePictureById
+    public class DeletePictureById : BaseHandler
     {
         #region - Constants and Fields -
 
@@ -26,7 +27,8 @@ namespace Lbk.MobileApp.Domain.Handlers
 
         #region - Constructors and Destructors -
 
-        public DeletePictureById(IPictureRepository pictureRepository)
+        public DeletePictureById(IPictureRepository pictureRepository, ILocalizationRepository localizationRepository)
+            : base(localizationRepository)
         {
             this._pictureRepository = pictureRepository;
         }
@@ -40,6 +42,7 @@ namespace Lbk.MobileApp.Domain.Handlers
             try
             {
                 this._pictureRepository.Delete(id);
+                DeleteTranslate(typeof(Picture), id);
             }
             catch (InvalidOperationException ex)
             {

@@ -21,6 +21,7 @@ namespace Lbk.MobileApp.Web.Models
     {
         #region - Properties -
 
+        [DataType(DataType.Date)]
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "MenuDateRequired", 
             ErrorMessageResourceType = typeof(Messages))]
         [Display(Name = "MenuDateLabelText", ResourceType = typeof(Messages))]

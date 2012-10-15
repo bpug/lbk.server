@@ -1,2 +1,5 @@
-﻿@model DateTime
-@Html.TextBox("", string.Format("{0:d}", Model.Date.ToShortDateString()), new { @class = "date" })
+﻿@*@model DateTime
+@Html.TextBox("", string.Format("{0:d}", Model.Date.ToShortDateString()), new { @class = "date" })*@
+
+@model System.DateTime?
+@Html.TextBox("", (Model.HasValue ? Model.Value.ToShortDateString() : string.Empty), new { @class = "date" })

@@ -1,10 +1,11 @@
-﻿@model Lbk.MobileApp.Web.Models.LogOnModel
+﻿@using Lbk.MobileApp.Domain.Resources
+@model Lbk.MobileApp.Web.Models.LogOnModel
 
 @{
-    ViewBag.Title = "Log On";
+    ViewBag.Title = Messages.LogOn;
 }
 
-<h2>Log On</h2>
+<h2>@Messages.LogOn</h2>
 <p>
     @*Please enter your user name and password. @Html.ActionLink("Register", "Register") if you don't have an account.*@
 </p>

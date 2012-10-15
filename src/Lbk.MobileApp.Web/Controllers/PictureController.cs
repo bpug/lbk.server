@@ -63,7 +63,7 @@ namespace Lbk.MobileApp.Web.Controllers
         public ActionResult Delete(long id)
         {
             var @picture = this.Using<GetPictureById>().Execute(id);
-
+           
             return this.View(@picture.ToFormModel());
         }
 

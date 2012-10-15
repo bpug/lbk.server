@@ -53,6 +53,7 @@
       <Link>Properties\CommonAssemblyInfoVersion.cs</Link>
     </Compile>
     <Compile Include="Initializers\CreateIfNotExistsAndMigrateSqlInitializer.cs" />
+    <Compile Include="Localization.cs" />
     <Compile Include="Migrations\201202141304566_InitialCreate.cs" />
     <Compile Include="Migrations\201202141304566_InitialCreate.Designer.cs">
       <DependentUpon>201202141304566_InitialCreate.cs</DependentUpon>
@@ -81,7 +82,13 @@
     <Compile Include="Migrations\201205040959335_AddEventThumbnailNameColumn.Designer.cs">
       <DependentUpon>201205040959335_AddEventThumbnailNameColumn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201206051308148_AddLocalization.cs" />
+    <Compile Include="Migrations\201206051308148_AddLocalization.Designer.cs">
+      <DependentUpon>201206051308148_AddLocalization.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Repositories\LanguageRepository.cs" />
+    <Compile Include="Repositories\LocalizationRepository.cs" />
     <Compile Include="Repositories\QuestionCategoryRepository.cs" />
     <Compile Include="Repositories\Specifications\QuestionCategoryPagedDataInputSpecification.cs" />
     <Compile Include="Repositories\VideoRepository.cs" />

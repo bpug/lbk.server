@@ -4,6 +4,10 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System.Globalization;
+using System.Threading;
+using Lbk.MobileApp.Web.Helpers;
+
 namespace Lbk.MobileApp.Web
 {
     #region using directives
@@ -47,6 +51,15 @@ namespace Lbk.MobileApp.Web
             routes.IgnoreRoute("{*favicon}", new { favicon = @"(.*/)?favicon.([iI][cC][oO]|[gG][iI][fF])(/.*)?" });
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+
+            routes.MapRoute(
+               "Speisekarte",
+                            // Route name
+               "Speisekarte/DisplayPdf/{fileName}",
+                            // URL with parameters
+               new { controller = "Speisekarte", action = "DisplayPdf", fileName = UrlParameter.Optional }
+               );
+
             routes.MapRoute(
                 "Default", 
                 // Route name
@@ -54,7 +67,30 @@ namespace Lbk.MobileApp.Web
                 // URL with parameters
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
                 );
+
+
         }
+
+        protected void Application_AcquireRequestState(object sender, EventArgs e)
+        {
+            string cultureName = CultureHelper.GetCultureFromCookies(Request);
+
+            // Modify current thread's culture            
+            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(cultureName);
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture(cultureName);
+        }
+
+        //public override string GetVaryByCustomString(HttpContext context, string arg)
+        //{
+        //    // It seems this executes multiple times and early, so we need to extract language again from cookie.
+        //    if (arg == "culture") // culture name (e.g. "en-US") is what should vary caching
+        //    {
+        //        string cultureName = CultureHelper.GetCultureFromCookies(Request);
+        //        return cultureName.ToLower();// use culture name as cache key, "es", "en-us", "es-cl", etc.
+        //    }
+
+        //    return base.GetVaryByCustomString(context, arg);
+        //}
 
         public override void Init()
         {

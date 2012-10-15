@@ -4,6 +4,8 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System.Threading;
+
 namespace Lbk.MobileApp.Domain.Handlers
 {
     #region using directives
@@ -17,7 +19,7 @@ namespace Lbk.MobileApp.Domain.Handlers
 
     #endregion
 
-    public class UpdatePicture
+    public class UpdatePicture : BaseHandler
     {
         #region - Constants and Fields -
 
@@ -27,7 +29,8 @@ namespace Lbk.MobileApp.Domain.Handlers
 
         #region - Constructors and Destructors -
 
-        public UpdatePicture(IPictureRepository pictureRepository)
+        public UpdatePicture(IPictureRepository pictureRepository, ILocalizationRepository localizationRepository)
+            : base(localizationRepository)
         {
             this._pictureRepository = pictureRepository;
         }
@@ -40,7 +43,16 @@ namespace Lbk.MobileApp.Domain.Handlers
         {
             try
             {
-                this._pictureRepository.Update(@picture.ToEntity());
+
+                if (IsDefaultLanguage)
+                {
+                    this._pictureRepository.Update(@picture.ToEntity());
+                }
+                else
+                {
+                    UpdateTranslate(@picture.ToEntity());
+                }
+                
             }
             catch (InvalidOperationException ex)
             {
