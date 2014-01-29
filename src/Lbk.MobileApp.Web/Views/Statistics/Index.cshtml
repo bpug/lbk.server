@@ -1,0 +1,15 @@
+﻿@model Lbk.MobileApp.Web.Models.GenericListViewModel<Lbk.MobileApp.Domain.Models.StatisticsWeekFlatModel, Lbk.MobileApp.Web.Models.StatisticsSearchFormModel>
+@{
+    ViewBag.Title = "Statistik";
+}
+<h3>Statistik</h3>
+<h2>Auswertung nach Kalenderwochen</h2>
+
+<div id="mainSearch">
+    @Html.Partial(MVC.Statistics.Views._search, Model.SearchItem)
+</div>
+
+<div id="resultGrid">
+    @Html.Partial(MVC.Statistics.Views._grid, Model.Results)
+</div>
+

@@ -7,13 +7,13 @@ using System.Web.Mvc;
 
 namespace Lbk.MobileApp.Web.Controllers
 {
-    public class LocaleController : Controller
+    public partial class LocaleController : Controller
     {
         //
         // GET: /Locale/
 
         [HttpGet]
-        public ActionResult CurrentCulture()
+        public virtual ActionResult CurrentCulture()
         {
             return Json(Thread.CurrentThread.CurrentCulture.IetfLanguageTag, JsonRequestBehavior.AllowGet);
         }

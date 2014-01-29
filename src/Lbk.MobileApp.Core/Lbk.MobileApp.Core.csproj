@@ -42,6 +42,8 @@
     </Compile>
     <Compile Include="Contracts\IPagedDataInput.cs" />
     <Compile Include="Contracts\IPagedDataInputOfT.cs" />
+    <Compile Include="Extensions\DateTimeExtensions.cs" />
+    <Compile Include="Extensions\IEnumerableExtensions.cs" />
     <Compile Include="Extensions\PagedDataListExtensions.cs" />
     <Compile Include="PagedDataList.cs" />
     <Compile Include="PagedDataInputOfT.cs" />

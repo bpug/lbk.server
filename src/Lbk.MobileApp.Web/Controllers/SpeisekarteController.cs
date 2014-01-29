@@ -17,26 +17,26 @@ namespace Lbk.MobileApp.Web.Controllers
     /// <summary>
     /// The speisekarte controller.
     /// </summary>
-    public class SpeisekarteController : Controller
+    public partial class SpeisekarteController : Controller
     {
         #region Public Methods and Operators
 
-      public ActionResult Detail()
+        public virtual ActionResult Detail()
         {
             var @model = new SpeisekarteFormModel();
 
             return this.View(@model);
         }
 
-        public FilePathResult DisplayPdf(string fileName)
+        public virtual FilePathResult DisplayPdf(string fileName)
         {
             var @model = new SpeisekarteFormModel();
             @model.FileName = fileName;
 
             return this.File(@model.FilePath, "application/pdf", fileName);
         }
-      
-        public ActionResult Edit()
+
+        public virtual ActionResult Edit()
         {
             var @model = new SpeisekarteFormModel();
 
@@ -44,7 +44,7 @@ namespace Lbk.MobileApp.Web.Controllers
         }
         
         [HttpPost]
-        public ActionResult Edit(SpeisekarteFormModel model)
+        public virtual ActionResult Edit(SpeisekarteFormModel model)
         {
             if (model != null && this.ModelState.IsValid)
             {

@@ -15,7 +15,7 @@ namespace Lbk.MobileApp.Web.Controllers
 
     #endregion
 
-    public class AuthorizedController : Controller
+    public abstract partial class AuthorizedController : Controller
     {
         ////protected readonly IUserServices UserServices;
         #region - Constants and Fields -

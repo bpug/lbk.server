@@ -11,6 +11,7 @@ namespace Lbk.MobileApp.Data.SqlCe
     using System.ComponentModel.DataAnnotations;
     using System.Data.Entity;
 
+    using Lbk.MobileApp.Data.SqlCe.Mapping;
     using Lbk.MobileApp.Model;
 
     #endregion
@@ -44,6 +45,10 @@ namespace Lbk.MobileApp.Data.SqlCe
         public DbSet<LocalizableEntityTranslation> LocalizableEntityTranslations { get; set; }
 
         public DbSet<LocalizableEntity> LocalizableEntitys { get; set; }
+
+        public DbSet<Log> Logs { get; set; }
+
+        public DbSet<LogType> LogTypes { get; set; }
 
         #endregion
 
@@ -89,6 +94,9 @@ namespace Lbk.MobileApp.Data.SqlCe
             SetupTranslationsEntity(modelBuilder);
 
             SetupLocalizableEntity(modelBuilder);
+
+            modelBuilder.Configurations.Add(new LogMap());
+            modelBuilder.Configurations.Add(new LogTypeMap());
         }
 
         private static void SetupLanguageEntity(DbModelBuilder modelBuilder)

@@ -26,7 +26,7 @@ namespace Lbk.MobileApp.Web.Controllers
 
     #endregion
 
-    public class EventController : AuthorizedController
+    public partial class EventController : AuthorizedController
     {
         #region - Constructors and Destructors -
 
@@ -40,7 +40,7 @@ namespace Lbk.MobileApp.Web.Controllers
         #region - Public Methods -
 
         [HttpPost]
-        public ActionResult Create(EventFormModel model)
+        public virtual ActionResult Create(EventFormModel model)
         {
             if (model != null && this.ModelState.IsValid)
             {
@@ -55,7 +55,7 @@ namespace Lbk.MobileApp.Web.Controllers
             return this.View(model);
         }
 
-        public ActionResult Create()
+        public virtual ActionResult Create()
         {
             return
                 this.View(
@@ -68,7 +68,7 @@ namespace Lbk.MobileApp.Web.Controllers
                         });
         }
 
-        public ActionResult Delete(long id)
+        public virtual ActionResult Delete(long id)
         {
             var @event = this.Using<GetEventById>().Execute(id);
 
@@ -76,7 +76,7 @@ namespace Lbk.MobileApp.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Delete(long id, object dummy)
+        public virtual ActionResult Delete(long id, object dummy)
         {
             var @event = this.Using<GetEventById>().Execute(id);
             var model = @event.ToFormModel();
@@ -88,7 +88,7 @@ namespace Lbk.MobileApp.Web.Controllers
             return this.View(model);
         }
 
-        public ActionResult Detail(long id)
+        public virtual ActionResult Detail(long id)
         {
             var @event = this.Using<GetEventById>().Execute(id);
 
@@ -96,7 +96,7 @@ namespace Lbk.MobileApp.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(EventFormModel model)
+        public virtual ActionResult Edit(EventFormModel model)
         {
             if (model != null && this.ModelState.IsValid)
             {
@@ -111,14 +111,14 @@ namespace Lbk.MobileApp.Web.Controllers
             return this.View(model);
         }
 
-        public ActionResult Edit(long id)
+        public virtual ActionResult Edit(long id)
         {
             var @event = this.Using<GetEventById>().Execute(id);
 
             return this.View(@event.ToFormModel());
         }
 
-        public ActionResult List(EventSearchFormModel @event, PagedDataInput pagedDataInput, string btnSubmit)
+        public virtual ActionResult List(EventSearchFormModel @event, PagedDataInput pagedDataInput, string btnSubmit)
         {
             var pagedDataInputOfEvent = new PagedDataInput<Event>(pagedDataInput);
             //var pagedDataInputOfEvent = new PagedDataInput<EventFormModel>(pagedDataInput);

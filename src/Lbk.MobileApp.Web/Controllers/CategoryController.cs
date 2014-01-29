@@ -23,7 +23,7 @@ namespace Lbk.MobileApp.Web.Controllers
 
     #endregion
 
-    public class CategoryController : AuthorizedController
+    public partial class CategoryController : AuthorizedController
     {
         #region - Constructors and Destructors -
 
@@ -37,7 +37,7 @@ namespace Lbk.MobileApp.Web.Controllers
         #region - Public Methods -
 
         [HttpPost]
-        public ActionResult Create(long menuId, CategoryFormModel model)
+        public virtual ActionResult Create(long menuId, CategoryFormModel model)
         {
             if (model != null && this.ModelState.IsValid)
             {
@@ -49,14 +49,14 @@ namespace Lbk.MobileApp.Web.Controllers
             return this.View(model);
         }
 
-        public ActionResult Create(long menuId)
+        public virtual ActionResult Create(long menuId)
         {
             this.ViewBag.MenuId = menuId;
 
             return this.View();
         }
 
-        public ActionResult Delete(long menuId, long id)
+        public virtual ActionResult Delete(long menuId, long id)
         {
             this.ViewBag.MenuId = menuId;
 
@@ -66,14 +66,14 @@ namespace Lbk.MobileApp.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Delete(long menuId, long id, object dummy)
+        public virtual ActionResult Delete(long menuId, long id, object dummy)
         {
             this.Using<DeleteCategoryById>().Execute(id);
 
             return this.RedirectToAction("List", new { MenuId = menuId });
         }
 
-        public ActionResult Detail(long menuId, long id)
+        public virtual ActionResult Detail(long menuId, long id)
         {
             this.ViewBag.MenuId = menuId;
 
@@ -83,7 +83,7 @@ namespace Lbk.MobileApp.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(long menuId, CategoryFormModel model)
+        public virtual ActionResult Edit(long menuId, CategoryFormModel model)
         {
             this.ViewBag.MenuId = menuId;
 
@@ -97,7 +97,7 @@ namespace Lbk.MobileApp.Web.Controllers
             return this.View(model);
         }
 
-        public ActionResult Edit(long menuId, long id)
+        public virtual ActionResult Edit(long menuId, long id)
         {
             this.ViewBag.MenuId = menuId;
 
@@ -106,7 +106,7 @@ namespace Lbk.MobileApp.Web.Controllers
             return this.View(category.ToFormModel());
         }
 
-        public ActionResult List(long menuId, CategorySearchFormModel category, PagedDataInput pagedDataInput, string btnSubmit)
+        public virtual ActionResult List(long menuId, CategorySearchFormModel category, PagedDataInput pagedDataInput, string btnSubmit)
         {
             var menu = this.Using<GetMenuById>().Execute(menuId);
             this.ViewBag.MenuId = menu.Id;

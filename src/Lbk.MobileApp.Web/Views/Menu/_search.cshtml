@@ -2,7 +2,7 @@
 @model Lbk.MobileApp.Web.Models.GenericListViewModel<Lbk.MobileApp.Model.Menu, Lbk.MobileApp.Web.Models.MenuSearchFormModel>
 <script src="@Url.Content("~/Scripts/EditorHookup.js")" type="text/javascript"></script>
 <div id="searchRegion">
-    @using (Ajax.BeginForm("List", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "mainSearch" }))
+    @using (Ajax.BeginForm("List", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "resultGrid" }))
     {
         <fieldset>
             <legend>@Messages.Search</legend>

@@ -24,7 +24,7 @@ namespace Lbk.MobileApp.Web.Controllers
 
     #endregion
 
-    public class PictureController : AuthorizedController
+    public partial class PictureController : AuthorizedController
     {
         #region - Constructors and Destructors -
 
@@ -38,7 +38,7 @@ namespace Lbk.MobileApp.Web.Controllers
         #region - Public Methods -
 
         [HttpPost]
-        public ActionResult Create(PictureFormModel model)
+        public virtual ActionResult Create(PictureFormModel model)
         {
             if (model != null && this.ModelState.IsValid)
             {
@@ -55,12 +55,12 @@ namespace Lbk.MobileApp.Web.Controllers
             return this.View(model);
         }
 
-        public ActionResult Create()
+        public virtual ActionResult Create()
         {
             return this.View(new PictureFormModel());
         }
 
-        public ActionResult Delete(long id)
+        public virtual ActionResult Delete(long id)
         {
             var @picture = this.Using<GetPictureById>().Execute(id);
            
@@ -68,7 +68,7 @@ namespace Lbk.MobileApp.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Delete(long id, object dummy)
+        public virtual ActionResult Delete(long id, object dummy)
         {
             var @picture = this.Using<GetPictureById>().Execute(id);
             var model = @picture.ToFormModel();
@@ -80,7 +80,7 @@ namespace Lbk.MobileApp.Web.Controllers
             return this.View(model);
         }
 
-        public ActionResult Detail(long id)
+        public virtual ActionResult Detail(long id)
         {
             var @picture = this.Using<GetPictureById>().Execute(id);
 
@@ -88,7 +88,7 @@ namespace Lbk.MobileApp.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(PictureFormModel model)
+        public virtual ActionResult Edit(PictureFormModel model)
         {
             if (model != null && this.ModelState.IsValid)
             {
@@ -113,14 +113,14 @@ namespace Lbk.MobileApp.Web.Controllers
             return this.View(model);
         }
 
-        public ActionResult Edit(long id)
+        public virtual ActionResult Edit(long id)
         {
             var @picture = this.Using<GetPictureById>().Execute(id);
 
             return this.View(@picture.ToFormModel());
         }
 
-        public ActionResult List(PictureSearchFormModel @picture, PagedDataInput pagedDataInput, string btnSubmit)
+        public virtual ActionResult List(PictureSearchFormModel @picture, PagedDataInput pagedDataInput, string btnSubmit)
         {
             var pagedDataInputOfPicture = new PagedDataInput<Picture>(pagedDataInput);
             pagedDataInputOfPicture.PageSize =

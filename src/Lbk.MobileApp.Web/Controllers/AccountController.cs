@@ -18,13 +18,13 @@ namespace Lbk.MobileApp.Web.Controllers
 
     #endregion
 
-    public class AccountController : Controller
+    public partial class AccountController : Controller
     {
         // GET: /Account/LogOn
         #region - Public Methods -
 
         [Authorize]
-        public ActionResult ChangePassword()
+        public virtual ActionResult ChangePassword()
         {
             return this.View();
         }
@@ -33,7 +33,7 @@ namespace Lbk.MobileApp.Web.Controllers
 
         [Authorize]
         [HttpPost]
-        public ActionResult ChangePassword(ChangePasswordModel model)
+        public virtual ActionResult ChangePassword(ChangePasswordModel model)
         {
             if (this.ModelState.IsValid)
             {
@@ -66,12 +66,12 @@ namespace Lbk.MobileApp.Web.Controllers
         }
 
         // GET: /Account/ChangePasswordSuccess
-        public ActionResult ChangePasswordSuccess()
+        public virtual ActionResult ChangePasswordSuccess()
         {
             return this.View();
         }
 
-        public ActionResult LogOff()
+        public virtual ActionResult LogOff()
         {
             FormsAuthentication.SignOut();
 
@@ -79,14 +79,14 @@ namespace Lbk.MobileApp.Web.Controllers
             return RedirectToAction("LogOn");
         }
 
-        public ActionResult LogOn()
+        public virtual ActionResult LogOn()
         {
             return this.View();
         }
 
         // GET: /Account/GeneratePassword
         //[Authorize]
-        public ActionResult GeneratePassword()
+        public virtual ActionResult GeneratePassword()
         {
             return this.View();
         }
@@ -94,7 +94,7 @@ namespace Lbk.MobileApp.Web.Controllers
         // POST: /Account/LogOn
 
         [HttpPost]
-        public ActionResult LogOn(LogOnModel model, string returnUrl)
+        public virtual ActionResult LogOn(LogOnModel model, string returnUrl)
         {
             if (this.ModelState.IsValid)
             {
@@ -125,7 +125,7 @@ namespace Lbk.MobileApp.Web.Controllers
         // GET: /Account/LogOff
 
         // GET: /Account/Register
-        public ActionResult Register()
+        public virtual ActionResult Register()
         {
             return this.View();
         }
@@ -133,7 +133,7 @@ namespace Lbk.MobileApp.Web.Controllers
         // POST: /Account/Register
 
         [HttpPost]
-        public ActionResult Register(RegisterModel model)
+        public virtual ActionResult Register(RegisterModel model)
         {
             if (this.ModelState.IsValid)
             {
@@ -159,7 +159,7 @@ namespace Lbk.MobileApp.Web.Controllers
 
         // POST: /Account/GeneratePassword
         [HttpPost]
-        public ActionResult GeneratePassword(GeneratePasswordModel model)
+        public virtual ActionResult GeneratePassword(GeneratePasswordModel model)
         {
             if (this.ModelState.IsValid)
             {

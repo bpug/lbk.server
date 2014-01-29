@@ -25,7 +25,7 @@ namespace Lbk.MobileApp.Web.Controllers
 
     #endregion
 
-    public class QuestionController : AuthorizedController
+    public partial class QuestionController : AuthorizedController
     {
         #region - Constructors and Destructors -
 
@@ -39,7 +39,7 @@ namespace Lbk.MobileApp.Web.Controllers
         #region - Public Methods -
 
         [HttpPost]
-        public ActionResult Create(long serieId, long categoryId, QuestionFormModel model)
+        public virtual ActionResult Create(long serieId, long categoryId, QuestionFormModel model)
         {
             if (model != null && this.ModelState.IsValid)
             {
@@ -51,13 +51,13 @@ namespace Lbk.MobileApp.Web.Controllers
             return this.View(model);
         }
 
-        public ActionResult Create(long id)
+        public virtual ActionResult Create(long id)
         {
             this.AddCategorySelectListToViewData();
             return this.View(new QuestionFormModel { SerieId = id });
         }
 
-        public ActionResult Delete(long id)
+        public virtual ActionResult Delete(long id)
         {
             var question = this.Using<GetQuestionById>().Execute(id);
 
@@ -65,14 +65,14 @@ namespace Lbk.MobileApp.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Delete(long id, long serieId)
+        public virtual ActionResult Delete(long id, long serieId)
         {
             this.Using<DeleteQuestionById>().Execute(id);
 
             return this.RedirectToAction("List", new { id = serieId });
         }
 
-        public ActionResult Detail(long id)
+        public virtual ActionResult Detail(long id)
         {
             var question = this.Using<GetQuestionById>().Execute(id);
 
@@ -80,7 +80,7 @@ namespace Lbk.MobileApp.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(QuestionFormModel model)
+        public virtual ActionResult Edit(QuestionFormModel model)
         {
             if (model != null && this.ModelState.IsValid)
             {
@@ -92,7 +92,7 @@ namespace Lbk.MobileApp.Web.Controllers
             return this.View(model);
         }
 
-        public ActionResult Edit(long id)
+        public virtual ActionResult Edit(long id)
         {
             var question = this.Using<GetQuestionById>().Execute(id);
 
@@ -101,7 +101,7 @@ namespace Lbk.MobileApp.Web.Controllers
             return this.View(question.ToFormModel());
         }
 
-        public ActionResult List(
+        public virtual ActionResult List(
             long id, QuestionSearchFormModel question, PagedDataInput pagedDataInput, string btnSubmit)
         {
             var serie = this.Using<GetSerieById>().Execute(id);

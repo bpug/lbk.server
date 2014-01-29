@@ -9,7 +9,7 @@ using Lbk.MobileApp.Web.Helpers;
 
 namespace Lbk.MobileApp.Web.Controllers
 {
-    public class BaseController : Controller
+    public partial class BaseController : Controller
     {
 
         protected override void OnActionExecuted(ActionExecutedContext filterContext)

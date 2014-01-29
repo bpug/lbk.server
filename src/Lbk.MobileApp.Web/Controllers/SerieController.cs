@@ -24,7 +24,7 @@ namespace Lbk.MobileApp.Web.Controllers
 
     #endregion
 
-    public class SerieController : AuthorizedController
+    public partial class SerieController : AuthorizedController
     {
         #region - Constructors and Destructors -
 
@@ -38,7 +38,7 @@ namespace Lbk.MobileApp.Web.Controllers
         #region - Public Methods -
 
         [HttpPost]
-        public ActionResult Create(SerieFormModel model)
+        public virtual ActionResult Create(SerieFormModel model)
         {
             if (model != null && this.ModelState.IsValid)
             {
@@ -50,12 +50,12 @@ namespace Lbk.MobileApp.Web.Controllers
             return this.View(model);
         }
 
-        public ActionResult Create()
+        public virtual ActionResult Create()
         {
             return this.View(new SerieFormModel { ActivatedAt = DateTime.Now, ExpiresAt = DateTime.Now });
         }
 
-        public ActionResult Delete(long id)
+        public virtual ActionResult Delete(long id)
         {
             var serie = this.Using<GetSerieById>().Execute(id);
 
@@ -63,14 +63,14 @@ namespace Lbk.MobileApp.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Delete(long id, object dummy)
+        public virtual ActionResult Delete(long id, object dummy)
         {
             this.Using<DeleteSerieById>().Execute(id);
 
             return this.RedirectToAction("List");
         }
 
-        public ActionResult Detail(long id)
+        public virtual ActionResult Detail(long id)
         {
             var serie = this.Using<GetSerieById>().Execute(id);
 
@@ -78,7 +78,7 @@ namespace Lbk.MobileApp.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(SerieFormModel model)
+        public virtual ActionResult Edit(SerieFormModel model)
         {
             if (model != null && this.ModelState.IsValid)
             {
@@ -90,14 +90,14 @@ namespace Lbk.MobileApp.Web.Controllers
             return this.View(model);
         }
 
-        public ActionResult Edit(long id)
+        public virtual ActionResult Edit(long id)
         {
             var serie = this.Using<GetSerieById>().Execute(id);
 
             return this.View(serie.ToFormModel());
         }
 
-        public ActionResult List(SerieSearchFormModel serie, PagedDataInput pagedDataInput, string btnSubmit)
+        public virtual ActionResult List(SerieSearchFormModel serie, PagedDataInput pagedDataInput, string btnSubmit)
         {
             var pagedDataInputOfSerie = new PagedDataInput<Serie>(pagedDataInput);
             pagedDataInputOfSerie.PageSize =

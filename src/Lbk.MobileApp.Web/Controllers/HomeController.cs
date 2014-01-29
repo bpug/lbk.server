@@ -18,11 +18,11 @@ namespace Lbk.MobileApp.Web.Controllers
 
     #endregion
 
-    public class HomeController : Controller
+    public partial class HomeController : Controller
     {
         #region - Public Methods -
 
-        public ActionResult About()
+        public virtual ActionResult About()
         {
             this.ViewData["AppSemanticVersion"] = AppInfoExtensions.GetApplicationSemanticVersion();
             this.ViewData["AppVersion"] = AppInfoExtensions.GetApplicationVersion();
@@ -30,14 +30,14 @@ namespace Lbk.MobileApp.Web.Controllers
             return this.View();
         }
 
-        public ActionResult Index()
+        public virtual ActionResult Index()
         {
             this.ViewBag.Message = "Welcome!";
 
             return this.View();
         }
 
-        public ActionResult SetCulture(string culture, string currentAction,string currentController, string currentId)
+        public virtual ActionResult SetCulture(string culture, string currentAction, string currentController, string currentId)
         {
             // Validate input
             culture = CultureHelper.GetValidCulture(culture);

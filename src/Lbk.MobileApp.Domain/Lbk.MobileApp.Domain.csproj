@@ -52,6 +52,7 @@
     <Compile Include="Contracts\ICreateMenuCommand.cs" />
     <Compile Include="Contracts\ICreateQuestionCommand.cs" />
     <Compile Include="Contracts\ICreateSerieCommand.cs" />
+    <Compile Include="Contracts\ILogService.cs" />
     <Compile Include="Extensions\CreateVideoCommandExtensions.cs" />
     <Compile Include="Extensions\CreatePictureCommandExtensions.cs" />
     <Compile Include="Extensions\CreateEventCommandExtensions.cs" />
@@ -110,8 +111,11 @@
     <Compile Include="Handlers\UpdateAnswer.cs" />
     <Compile Include="Handlers\UpdateQuestion.cs" />
     <Compile Include="Handlers\UpdateSerie.cs" />
+    <Compile Include="LogService.cs" />
     <Compile Include="Models\AnswerModel.cs" />
     <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\StatisticsWeekFlatModel.cs" />
+    <Compile Include="Models\StatisticsWeekModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Messages.de-De.Designer.cs">
       <AutoGen>True</AutoGen>

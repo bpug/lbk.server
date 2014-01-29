@@ -23,7 +23,7 @@ namespace Lbk.MobileApp.Web.Controllers
 
     #endregion
 
-    public class VideoController : AuthorizedController
+    public partial class VideoController : AuthorizedController
     {
         #region - Constructors and Destructors -
 
@@ -37,7 +37,7 @@ namespace Lbk.MobileApp.Web.Controllers
         #region - Public Methods -
 
         [HttpPost]
-        public ActionResult Create(VideoFormModel model)
+        public virtual ActionResult Create(VideoFormModel model)
         {
             if (model != null && this.ModelState.IsValid)
             {
@@ -49,12 +49,12 @@ namespace Lbk.MobileApp.Web.Controllers
             return this.View(model);
         }
 
-        public ActionResult Create()
+        public virtual ActionResult Create()
         {
             return this.View(new VideoFormModel());
         }
 
-        public ActionResult Delete(long id)
+        public virtual ActionResult Delete(long id)
         {
             var @video = this.Using<GetVideoById>().Execute(id);
 
@@ -62,14 +62,14 @@ namespace Lbk.MobileApp.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Delete(long id, object dummy)
+        public virtual ActionResult Delete(long id, object dummy)
         {
             this.Using<DeleteVideoById>().Execute(id);
 
             return this.RedirectToAction("List");
         }
 
-        public ActionResult Detail(long id)
+        public virtual ActionResult Detail(long id)
         {
             var @video = this.Using<GetVideoById>().Execute(id);
 
@@ -77,7 +77,7 @@ namespace Lbk.MobileApp.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(VideoFormModel model)
+        public virtual ActionResult Edit(VideoFormModel model)
         {
             if (model != null && this.ModelState.IsValid)
             {
@@ -89,14 +89,14 @@ namespace Lbk.MobileApp.Web.Controllers
             return this.View(model);
         }
 
-        public ActionResult Edit(long id)
+        public virtual ActionResult Edit(long id)
         {
             var @video = this.Using<GetVideoById>().Execute(id);
 
             return this.View(@video.ToFormModel());
         }
 
-        public ActionResult List(VideoSearchFormModel @video, PagedDataInput pagedDataInput, string btnSubmit)
+        public virtual ActionResult List(VideoSearchFormModel @video, PagedDataInput pagedDataInput, string btnSubmit)
         {
             var pagedDataInputOfVideo = new PagedDataInput<Video>(pagedDataInput);
             pagedDataInputOfVideo.PageSize =

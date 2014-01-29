@@ -23,7 +23,7 @@ namespace Lbk.MobileApp.Web.Controllers
 
     #endregion
 
-    public class AnswerController : AuthorizedController
+    public partial class AnswerController : AuthorizedController
     {
         #region - Constructors and Destructors -
 
@@ -37,7 +37,7 @@ namespace Lbk.MobileApp.Web.Controllers
         #region - Public Methods -
 
         [HttpPost]
-        public ActionResult Create(long questionId, AnswerFormModel model)
+        public virtual ActionResult Create(long questionId, AnswerFormModel model)
         {
             if (model != null && this.ModelState.IsValid)
             {
@@ -49,12 +49,12 @@ namespace Lbk.MobileApp.Web.Controllers
             return this.View(model);
         }
 
-        public ActionResult Create(long id)
+        public virtual ActionResult Create(long id)
         {
             return this.View(new AnswerFormModel { QuestionId = id });
         }
 
-        public ActionResult Delete(long id)
+        public virtual ActionResult Delete(long id)
         {
             var answer = this.Using<GetAnswerById>().Execute(id);
 
@@ -62,14 +62,14 @@ namespace Lbk.MobileApp.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Delete(long id, long questionId)
+        public virtual ActionResult Delete(long id, long questionId)
         {
             this.Using<DeleteAnswerById>().Execute(id);
 
             return this.RedirectToAction("List", new { id = questionId });
         }
 
-        public ActionResult Detail(long id)
+        public virtual ActionResult Detail(long id)
         {
             var answer = this.Using<GetAnswerById>().Execute(id);
 
@@ -77,7 +77,7 @@ namespace Lbk.MobileApp.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(AnswerFormModel model)
+        public virtual ActionResult Edit(AnswerFormModel model)
         {
             if (model != null && this.ModelState.IsValid)
             {
@@ -89,14 +89,14 @@ namespace Lbk.MobileApp.Web.Controllers
             return this.View(model);
         }
 
-        public ActionResult Edit(long id)
+        public virtual ActionResult Edit(long id)
         {
             var answer = this.Using<GetAnswerById>().Execute(id);
 
             return this.View(answer.ToFormModel());
         }
 
-        public ActionResult List(long id, AnswerSearchFormModel answer, PagedDataInput pagedDataInput, string btnSubmit)
+        public virtual ActionResult List(long id, AnswerSearchFormModel answer, PagedDataInput pagedDataInput, string btnSubmit)
         {
             var question = this.Using<GetQuestionById>().Execute(id);
             this.ViewBag.QuestionId = question.Id;

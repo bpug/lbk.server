@@ -44,6 +44,7 @@
     <Compile Include="Attributes\TranslateAttribute.cs" />
     <Compile Include="BaseEntity.cs" />
     <Compile Include="Category.cs" />
+    <Compile Include="LogType.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="Extensions\AnswerExtensions.cs" />
     <Compile Include="Extensions\IEntityExtensions.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="Language.cs" />
     <Compile Include="LocalizableEntity.cs" />
     <Compile Include="LocalizableEntityTranslation.cs" />
+    <Compile Include="Log.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Picture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

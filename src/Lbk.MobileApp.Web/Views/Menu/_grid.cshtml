@@ -4,7 +4,7 @@
 <script type="text/javascript">
     $(function () {
         $('#selectPageSize select').change(function () {
-            $.post('@Url.Action("List")', { PageSize: $(this).val() }, function (result) { $('#mainSearch').html(result); });
+            $.post('@Url.Action("List")', { PageSize: $(this).val() }, function (result) { $('#resultGrid').html(result); });
         });
     });
 </script>

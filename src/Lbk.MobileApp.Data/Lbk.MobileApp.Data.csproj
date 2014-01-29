@@ -40,6 +40,7 @@
     <Compile Include="..\SolutionItems\CommonAssemblyInfoVersion.cs">
       <Link>Properties\CommonAssemblyInfoVersion.cs</Link>
     </Compile>
+    <Compile Include="ILogRepository.cs" />
     <Compile Include="ILanguageRepository.cs" />
     <Compile Include="ILocalizationRepository.cs" />
     <Compile Include="IQuestionCategoryRepository.cs" />

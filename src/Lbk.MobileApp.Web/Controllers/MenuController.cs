@@ -25,7 +25,7 @@ namespace Lbk.MobileApp.Web.Controllers
 
     #endregion
 
-    public class MenuController : AuthorizedController
+    public partial class MenuController : AuthorizedController
     {
         #region - Constructors and Destructors -
 
@@ -38,7 +38,7 @@ namespace Lbk.MobileApp.Web.Controllers
 
         #region - Public Methods -
 
-        public ActionResult Copy(long id)
+        public virtual ActionResult Copy(long id)
         {
             var menu = this.Using<GetMenuById>().Execute(id);
 
@@ -46,7 +46,7 @@ namespace Lbk.MobileApp.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Copy(MenuFormModel model)
+        public virtual ActionResult Copy(MenuFormModel model)
         {
             this.Using<CopyMenu>().Execute(model);
 
@@ -54,7 +54,7 @@ namespace Lbk.MobileApp.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(MenuFormModel model)
+        public virtual ActionResult Create(MenuFormModel model)
         {
             if (model != null && this.ModelState.IsValid)
             {
@@ -66,12 +66,12 @@ namespace Lbk.MobileApp.Web.Controllers
             return this.View(model);
         }
 
-        public ActionResult Create()
+        public virtual ActionResult Create()
         {
             return this.View(new MenuFormModel { Date = DateTime.Now });
         }
 
-        public ActionResult Delete(long id)
+        public virtual ActionResult Delete(long id)
         {
             var menu = this.Using<GetMenuById>().Execute(id);
 
@@ -79,14 +79,14 @@ namespace Lbk.MobileApp.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Delete(long id, object dummy)
+        public virtual ActionResult Delete(long id, object dummy)
         {
             this.Using<DeleteMenuById>().Execute(id);
 
             return this.RedirectToAction("List");
         }
 
-        public ActionResult Detail(long id)
+        public virtual ActionResult Detail(long id)
         {
             var menu = this.Using<GetMenuById>().Execute(id);
 
@@ -94,7 +94,7 @@ namespace Lbk.MobileApp.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(MenuFormModel model)
+        public virtual ActionResult Edit(MenuFormModel model)
         {
             if (model != null && this.ModelState.IsValid)
             {
@@ -106,14 +106,14 @@ namespace Lbk.MobileApp.Web.Controllers
             return this.View(model);
         }
 
-        public ActionResult Edit(long id)
+        public virtual ActionResult Edit(long id)
         {
             var menu = this.Using<GetMenuById>().Execute(id);
 
             return this.View(menu.ToFormModel());
         }
 
-        public ActionResult List(MenuSearchFormModel menu, PagedDataInput pagedDataInput, string btnSubmit)
+        public virtual ActionResult List(MenuSearchFormModel menu, PagedDataInput pagedDataInput, string btnSubmit)
         {
             //ColumnNormalizer.
             var pagedDataInputOfMenu = new PagedDataInput<Menu>(pagedDataInput);
@@ -139,7 +139,7 @@ namespace Lbk.MobileApp.Web.Controllers
 
             if (this.Request.IsAjaxRequest())
             {
-                return this.PartialView("_search", viewModel);
+                return this.PartialView("_grid", series);
             }
 
             return this.View(viewModel);
