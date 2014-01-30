@@ -26,7 +26,24 @@ namespace Lbk.MobileApp.Data.SqlCe.Repositories
         public IEnumerable<Log> Get(DateTime startDate, DateTime endDate)
         {
             var logs =
-                this.GetDbSet<Log>().Include("Type").Where(p => p.InsertTime >= startDate && p.InsertTime <= endDate);
+                this.GetDbSet<Log>().Include("Event").Where(p => p.InsertTime >= startDate && p.InsertTime <= endDate);
+            return logs;
+        }
+
+        public IEnumerable<Log> GetByDevice(DateTime startDate, DateTime endDate, DeviceType deviceType)
+        {
+            var logs =
+               this.GetDbSet<Log>().Include("Event").Where(p => p.InsertTime >= startDate && p.InsertTime <= endDate);
+
+            switch (deviceType)
+            {
+                case DeviceType.Android:
+                    logs = logs.Where(p => p.Fingerprint.StartsWith("A-"));
+                    break;
+                case DeviceType.Iphone:
+                    logs = logs.Where(p => !p.Fingerprint.StartsWith("A-"));
+                    break;
+            }
             return logs;
         }
 
@@ -38,14 +55,14 @@ namespace Lbk.MobileApp.Data.SqlCe.Repositories
         public IEnumerable<Log> GetByDate(DateTime startDate, DateTime endDate)
         {
             var logs =
-                this.GetDbSet<Log>().Include("Type").Where(p => p.InsertTime >= startDate && p.InsertTime <= endDate);
+                this.GetDbSet<Log>().Include("Event").Where(p => p.InsertTime >= startDate && p.InsertTime <= endDate);
 
             var groupedByWeek = logs.GroupBy(
                 i => new
                     {
                         Week = SqlFunctions.DatePart("wk", i.InsertTime), 
                         i.InsertTime.Year, 
-                        i.Type
+                        Type = i.Event
                     }).Select(
                         g => new
                             {

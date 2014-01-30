@@ -17,7 +17,7 @@ namespace Lbk.MobileApp.Web.Controllers
     /// <summary>
     /// The speisekarte controller.
     /// </summary>
-    public partial class SpeisekarteController : Controller
+    public partial class SpeisekarteController : AuthorizedController
     {
         #region Public Methods and Operators
 

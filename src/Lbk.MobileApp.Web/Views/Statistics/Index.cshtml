@@ -1,4 +1,4 @@
-﻿@model Lbk.MobileApp.Web.Models.GenericListViewModel<Lbk.MobileApp.Domain.Models.StatisticsWeekFlatModel, Lbk.MobileApp.Web.Models.StatisticsSearchFormModel>
+﻿@model Lbk.MobileApp.Web.Models.GenericListViewModel<Lbk.MobileApp.Domain.Models.StatisticsWeekFlatModel, Lbk.MobileApp.Web.Models.StatisticsFormModel>
 @{
     ViewBag.Title = "Statistik";
 }
@@ -10,6 +10,15 @@
 </div>
 
 <div id="resultGrid">
-    @Html.Partial(MVC.Statistics.Views._grid, Model.Results)
+    @{
+        if (this.Model.Results.Count > 0)
+        {
+            @Html.Partial(MVC.Statistics.Views._grid, Model.Results)
+        }
+    }
 </div>
+
+<script src="@Url.Content(Links.Scripts.jquery_fileDownload_js)" type="text/javascript"></script>
+<script src="@Url.Content(Links.Scripts.statistics.list_js)" type="text/javascript"></script>
+    
 

@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
@@ -117,6 +118,8 @@
     <Compile Include="Models\StatisticsWeekFlatModel.cs" />
     <Compile Include="Models\StatisticsWeekModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\CsvExport.cs" />
+    <Compile Include="Reports\CsvExportBase.cs" />
     <Compile Include="Resources\Messages.de-De.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

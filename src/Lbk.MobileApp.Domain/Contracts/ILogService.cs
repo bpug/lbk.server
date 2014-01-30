@@ -17,10 +17,9 @@ namespace Lbk.MobileApp.Domain.Contracts
     /// </summary>
     public interface ILogService
     {
-        IEnumerable<Log> GetAll();
+        IEnumerable<StatisticsWeekModel> Get(DateTime startDate, DateTime endDate, DeviceType deviceType);
 
-        IEnumerable<StatisticsWeekModel> Get(DateTime startDate, DateTime endDate);
-
-        PagedDataList<StatisticsWeekFlatModel> GetFlat(DateTime startDate, DateTime endDate);
+        PagedDataList<StatisticsWeekFlatModel> GetFlatByDevice(DateTime startDate, DateTime endDate, DeviceType deviceType);
+        
     }
 }

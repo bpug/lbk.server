@@ -127,6 +127,7 @@ namespace Links
         public static readonly string jquery_1_7_1_min_js = Url("jquery-1.7.1.min.js");
         public static readonly string jquery_ui_1_8_17_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery-ui-1.8.17.min.js") ? Url("jquery-ui-1.8.17.min.js") : Url("jquery-ui-1.8.17.js");
         public static readonly string jquery_ui_1_8_17_min_js = Url("jquery-ui-1.8.17.min.js");
+        public static readonly string jquery_fileDownload_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.fileDownload.min.js") ? Url("jquery.fileDownload.min.js") : Url("jquery.fileDownload.js");
         public static readonly string jquery_unobtrusive_ajax_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.unobtrusive-ajax.min.js") ? Url("jquery.unobtrusive-ajax.min.js") : Url("jquery.unobtrusive-ajax.js");
         public static readonly string jquery_unobtrusive_ajax_min_js = Url("jquery.unobtrusive-ajax.min.js");
         public static readonly string jquery_validate_vsdoc_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.validate-vsdoc.min.js") ? Url("jquery.validate-vsdoc.min.js") : Url("jquery.validate-vsdoc.js");
@@ -142,6 +143,14 @@ namespace Links
         public static readonly string MicrosoftMvcValidation_debug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/MicrosoftMvcValidation.debug.min.js") ? Url("MicrosoftMvcValidation.debug.min.js") : Url("MicrosoftMvcValidation.debug.js");
         public static readonly string MicrosoftMvcValidation_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/MicrosoftMvcValidation.min.js") ? Url("MicrosoftMvcValidation.min.js") : Url("MicrosoftMvcValidation.js");
         public static readonly string modernizr_2_0_6_development_only_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/modernizr-2.0.6-development-only.min.js") ? Url("modernizr-2.0.6-development-only.min.js") : Url("modernizr-2.0.6-development-only.js");
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class statistics {
+            private const string URLPATH = "~/Scripts/statistics";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+            public static readonly string list_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/list.min.js") ? Url("list.min.js") : Url("list.js");
+        }
+    
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -159,6 +168,7 @@ namespace Links
             public static readonly string delete_png = Url("delete.png");
             public static readonly string detail_png = Url("detail.png");
             public static readonly string edit_png = Url("edit.png");
+            public static readonly string preloader_gif = Url("preloader.gif");
         }
     
         public static readonly string Site_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Site.min.css") ? Url("Site.min.css") : Url("Site.css");

@@ -13,9 +13,9 @@ namespace Lbk.MobileApp.Data.SqlCe.Mapping
     /// <summary>
     /// TODO: Update summary.
     /// </summary>
-    public class LogTypeMap : EntityTypeConfiguration<LogType>
+    public class LogEventMap : EntityTypeConfiguration<LogEvent>
     {
-        public LogTypeMap()
+        public LogEventMap()
         {
             this.ToTable("LogType");
             this.Property(t => t.Id).HasColumnName("ID");

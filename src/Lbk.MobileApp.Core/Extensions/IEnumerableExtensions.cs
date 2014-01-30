@@ -14,7 +14,16 @@ namespace Lbk.MobileApp.Core.Extensions
     /// </summary>
     public static class IEnumerableExtensions
     {
-        public static Dictionary<TFirstKey, Dictionary<TSecondKey, TValue>> Pivot<TSource, TFirstKey, TSecondKey, TValue>(
+        public static void ForEach<T>(this IEnumerable<T> source, Action<T> action)
+        {
+            foreach (var item in source)
+            {
+                action(item);
+            }
+        }
+
+        public static Dictionary<TFirstKey, Dictionary<TSecondKey, TValue>> Pivot
+            <TSource, TFirstKey, TSecondKey, TValue>(
             this IEnumerable<TSource> source, 
             Func<TSource, TFirstKey> firstKeySelector, 
             Func<TSource, TSecondKey> secondKeySelector, 
@@ -37,7 +46,8 @@ namespace Lbk.MobileApp.Core.Extensions
             return retVal;
         }
 
-        public static Dictionary<TFirstKey, Dictionary<TSecondKey, TValue>> Pivot2<TSource, TFirstKey, TSecondKey, TValue>(
+        public static Dictionary<TFirstKey, Dictionary<TSecondKey, TValue>> Pivot2
+            <TSource, TFirstKey, TSecondKey, TValue>(
             this IEnumerable<TSource> source, 
             Func<TSource, TFirstKey> firstKeySelector, 
             Func<TSource, TSecondKey> secondKeySelector, 

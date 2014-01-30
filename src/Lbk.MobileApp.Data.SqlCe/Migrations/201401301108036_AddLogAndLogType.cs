@@ -18,7 +18,7 @@ namespace Lbk.MobileApp.Data.SqlCe.Migrations
             //    .PrimaryKey(t => t.ID)
             //    .ForeignKey("LogType", t => t.LogType, cascadeDelete: true)
             //    .Index(t => t.LogType);
-
+            
             //CreateTable(
             //    "LogType",
             //    c => new

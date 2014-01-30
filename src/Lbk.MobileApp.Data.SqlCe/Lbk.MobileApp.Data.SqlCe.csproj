@@ -54,7 +54,7 @@
     </Compile>
     <Compile Include="Initializers\CreateIfNotExistsAndMigrateSqlInitializer.cs" />
     <Compile Include="Localization.cs" />
-    <Compile Include="Mapping\LogTypeMap.cs" />
+    <Compile Include="Mapping\LogEventMap.cs" />
     <Compile Include="Mapping\LogMap.cs" />
     <Compile Include="Migrations\201202141304566_InitialCreate.cs" />
     <Compile Include="Migrations\201202141304566_InitialCreate.Designer.cs">
@@ -88,9 +88,9 @@
     <Compile Include="Migrations\201206051308148_AddLocalization.Designer.cs">
       <DependentUpon>201206051308148_AddLocalization.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201401281621437_AddLogAndLogType.cs" />
-    <Compile Include="Migrations\201401281621437_AddLogAndLogType.Designer.cs">
-      <DependentUpon>201401281621437_AddLogAndLogType.cs</DependentUpon>
+    <Compile Include="Migrations\201401301108036_AddLogAndLogType.cs" />
+    <Compile Include="Migrations\201401301108036_AddLogAndLogType.Designer.cs">
+      <DependentUpon>201401301108036_AddLogAndLogType.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\LogRepository.cs" />

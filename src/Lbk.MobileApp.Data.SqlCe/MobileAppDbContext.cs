@@ -48,7 +48,7 @@ namespace Lbk.MobileApp.Data.SqlCe
 
         public DbSet<Log> Logs { get; set; }
 
-        public DbSet<LogType> LogTypes { get; set; }
+        public DbSet<LogEvent> LogEvents { get; set; }
 
         #endregion
 
@@ -96,7 +96,7 @@ namespace Lbk.MobileApp.Data.SqlCe
             SetupLocalizableEntity(modelBuilder);
 
             modelBuilder.Configurations.Add(new LogMap());
-            modelBuilder.Configurations.Add(new LogTypeMap());
+            modelBuilder.Configurations.Add(new LogEventMap());
         }
 
         private static void SetupLanguageEntity(DbModelBuilder modelBuilder)

@@ -114,6 +114,7 @@
     </Compile>
     <Compile Include="Handler\PagedListCookieHandler.cs" />
     <Compile Include="Helpers\CultureHelper.cs" />
+    <Compile Include="Helpers\HtmlHelpers\EnumDropDownList.cs" />
     <Compile Include="Helpers\ImageExtension.cs" />
     <Compile Include="HomeController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
@@ -127,7 +128,7 @@
     <Compile Include="Models\AnswerFormModel.cs" />
     <Compile Include="Models\CategoryFormModel.cs" />
     <Compile Include="Models\CategorySearchFormModel.cs" />
-    <Compile Include="Models\StatisticsSearchFormModel.cs" />
+    <Compile Include="Models\StatisticsFormModel.cs" />
     <Compile Include="Models\SpeisekarteFormModel.cs" />
     <Compile Include="Models\Extensions\QuetionCategoryExtensions.cs" />
     <Compile Include="Models\GeneratePasswordModel.cs" />
@@ -182,6 +183,7 @@
     <Compile Include="VideoController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Content Include="Content\Images\preloader.gif" />
     <Content Include="Scripts\common.js" />
     <Content Include="Scripts\globalization\cultures\globalize.culture.de-DE.js" />
     <Content Include="Scripts\globalization\cultures\globalize.culture.en-GB.js" />
@@ -280,12 +282,14 @@
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.17.js" />
     <Content Include="Scripts\jquery-ui-1.8.17.min.js" />
+    <Content Include="Scripts\jquery.fileDownload.js" />
     <Content Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\methods_de.js" />
     <Content Include="Scripts\modernizr-2.0.6-development-only.js" />
     <None Include="T4MVC.tt.settings.xml" />
+    <Content Include="Scripts\statistics\list.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -597,7 +601,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>1660</DevelopmentServerPort>
           <DevelopmentServerVPath>/cms/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:1631/</IISUrl>
+          <IISUrl>http://localhost:1631/cms/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

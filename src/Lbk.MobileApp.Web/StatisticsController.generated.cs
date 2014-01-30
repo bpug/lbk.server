@@ -43,9 +43,9 @@ namespace Lbk.MobileApp.Web.Controllers
 
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public virtual System.Web.Mvc.ActionResult Index()
+        public virtual System.Web.Mvc.ActionResult GetCsv()
         {
-            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.GetCsv);
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -64,12 +64,14 @@ namespace Lbk.MobileApp.Web.Controllers
         public class ActionNamesClass
         {
             public readonly string Index = "Index";
+            public readonly string GetCsv = "GetCsv";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string Index = "Index";
+            public const string GetCsv = "GetCsv";
         }
 
 
@@ -78,6 +80,14 @@ namespace Lbk.MobileApp.Web.Controllers
         public ActionParamsClass_Index IndexParams { get { return s_params_Index; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_Index
+        {
+            public readonly string search = "search";
+        }
+        static readonly ActionParamsClass_GetCsv s_params_GetCsv = new ActionParamsClass_GetCsv();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_GetCsv GetCsvParams { get { return s_params_GetCsv; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_GetCsv
         {
             public readonly string search = "search";
         }
@@ -107,14 +117,37 @@ namespace Lbk.MobileApp.Web.Controllers
         public T4MVC_StatisticsController() : base(Dummy.Instance) { }
 
         [NonAction]
-        partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Lbk.MobileApp.Web.Models.StatisticsSearchFormModel search);
+        partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Index(Lbk.MobileApp.Web.Models.StatisticsSearchFormModel search)
+        public override System.Web.Mvc.ActionResult Index()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
+            IndexOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Lbk.MobileApp.Web.Models.StatisticsFormModel search);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Index(Lbk.MobileApp.Web.Models.StatisticsFormModel search)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "search", search);
             IndexOverride(callInfo, search);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void GetCsvOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Lbk.MobileApp.Web.Models.StatisticsFormModel search);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult GetCsv(Lbk.MobileApp.Web.Models.StatisticsFormModel search)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.GetCsv);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "search", search);
+            GetCsvOverride(callInfo, search);
             return callInfo;
         }
 

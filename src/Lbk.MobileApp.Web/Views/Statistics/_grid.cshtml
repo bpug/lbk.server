@@ -1,14 +1,21 @@
 ﻿@model Lbk.MobileApp.Core.PagedDataList<Lbk.MobileApp.Domain.Models.StatisticsWeekFlatModel>
-<script type="text/javascript">
+@*<script type="text/javascript">
     $(function () {
         $('#selectPageSize select').change(function () {
             $.post('@Url.Action(MVC.Statistics.Index())', { PageSize: $(this).val() }, function (result) { $('#resultGrid').html(result); });
         });
+        $('#export').click(function () {
+            var data = $("#statiscticsForm").serialize();
+            $.fileDownload('@Url.Action(MVC.Statistics.GetCsv())', { httpMethod: 'post', data: data });
+        });
     });
-</script>
+</script>*@
 @{
     if (Model.Count > 0)
     {
+        <div>
+            <a href="#" id="export" data-action="@Url.Action(MVC.Statistics.GetCsv())">Csv</a>
+        </div>
         var grid = new WebGrid(canPage: false, canSort: false, rowsPerPage: Model.PageSize, ajaxUpdateContainerId: "grid");
 
         grid.Bind(Model.Items, rowCount: Model.TotalItemCount, autoSortAndPage: false);
@@ -18,7 +25,9 @@
                             rowStyle: "webgrid-row-style",
                             selectedRowStyle: "webgrid-selected-row",
                     columns: grid.Columns(
+                                    grid.Column("Year", header: "Jahr"),
                                     grid.Column("Week", header: "KW"),
+                                    grid.Column(header: "Datum", format: (item) => string.Format("{0:dd.MM.yyyy}-{1:dd.MM.yyyy}", item.FirstDateOfWeek, item.LasrDateOfWeek)),
                                     grid.Column("Bilder", header: "Bilder abgerufen"),
                                     grid.Column("Events", header: "Events abgerufen"),
                                     grid.Column("Quiz", header: "Quiz gestartet"),

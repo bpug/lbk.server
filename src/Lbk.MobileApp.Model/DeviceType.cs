@@ -1,21 +1,21 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="LogType.cs" company="ip-connect GmbH">
+// <copyright file="DeviceType.cs" company="ip-connect GmbH">
 //   Copyright (c) ip-connect GmbH. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 namespace Lbk.MobileApp.Model
 {
-    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
-    /// <summary>
-    ///   TODO: Update summary.
-    /// </summary>
-    public class LogType
+    public enum DeviceType
     {
-        public string Description { get; set; }
+        [Display(Name = "Alle")]
+        All,
 
-        public int Id { get; set; }
+        [Display(Name = "IPhone")]
+        Iphone,
 
-        public virtual ICollection<Log> Logs { get; set; }
+        [Display(Name = "Android")]
+        Android
     }
 }

@@ -18,6 +18,8 @@ namespace Lbk.MobileApp.Data
     {
         IEnumerable<Log> Get(DateTime startDate, DateTime endDate);
 
+        IEnumerable<Log> GetByDevice(DateTime startDate, DateTime endDate, DeviceType deviceType);
+
         IEnumerable<Log> GetAll();
 
         // PagedDataList<Log> GetLogs(PagedDataInput<Log> pagedDataInput);
