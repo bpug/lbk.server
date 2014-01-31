@@ -12,6 +12,7 @@ namespace Lbk.MobileApp.Web.Controllers
     using Lbk.MobileApp.Domain.Models;
     using Lbk.MobileApp.Domain.Reports;
     using Lbk.MobileApp.Web.Models;
+    using Lbk.MobileApp.Core.Extensions;
 
     using Microsoft.Practices.ServiceLocation;
 
@@ -59,7 +60,10 @@ namespace Lbk.MobileApp.Web.Controllers
             var logs = this.logService.GetFlatByDevice(
                 search.StartDate.GetValueOrDefault(), search.EndDate.GetValueOrDefault(), search.DeviceType);
 
-            var exprort = new CsvExport<StatisticsWeekFlatModel>(logs);
+            var exprort = new CsvExport<StatisticsWeekFlatModel>(logs)
+                {
+                    Title = string.Format("Device type: {0}", search.DeviceType.GetDisplayName())
+                };
             var buffer = exprort.ExportToBytes();
             return this.File(buffer, @"text/csv", "statistics.csv");
         }

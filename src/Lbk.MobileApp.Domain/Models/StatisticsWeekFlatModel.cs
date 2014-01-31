@@ -26,7 +26,7 @@ namespace Lbk.MobileApp.Domain.Models
         {
             get
             {
-                return DateTimeExtensions.FirstDateOfWeek(this.Year, this.Week);
+                return DateTimeExtensions.FirstDateOfIsoWeek(this.Year, this.Week);
             }
         }
 

@@ -30,7 +30,7 @@ namespace Lbk.MobileApp.Domain
 
         public IEnumerable<StatisticsWeekModel> Get(DateTime startDate, DateTime endDate, DeviceType deviceType)
         {
-            var logs = this.repository.GetByDevice(startDate, endDate.FullDay(), deviceType);
+            var logs = this.repository.GetByDevice(startDate, endDate.EndDay(), deviceType);
             var groupedByWeek = logs.GroupBy(
                 i => new
                     {

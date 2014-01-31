@@ -1,6 +1,7 @@
 ﻿$(function () {
     $('#selectPageSize select').change(function () {
-        $.post('@Url.Action(MVC.Statistics.Index())', { PageSize: $(this).val() }, function (result) { $('#resultGrid').html(result); });
+        var actionUrl = $('#selectPageSize').data("action");
+        $.post(actionUrl, { PageSize: $(this).val() }, function (result) { $('#resultGrid').html(result); });
     });
    
     $(document).on('click', "#export", function () {

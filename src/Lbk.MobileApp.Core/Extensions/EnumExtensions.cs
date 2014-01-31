@@ -28,6 +28,39 @@ namespace Lbk.MobileApp.Core.Extensions
             return dictionary;
         }
 
+        public static string GetDisplayName(this Enum value, string noneName = "None")
+        {
+            var type = value.GetType();
+            string name = Enum.GetName(type, value);
+            if (!string.IsNullOrWhiteSpace(name) && !name.Equals(noneName, StringComparison.OrdinalIgnoreCase))
+            {
+                var field = type.GetField(name);
+                if (field != null)
+                {
+                    var attr = Attribute.GetCustomAttribute(field, typeof(DisplayAttribute)) as DisplayAttribute;
+                    if (attr != null)
+                    {
+                        return attr.GetName();
+                    }
+                }
+            }
+
+            return string.Empty;
+        }
+
+        public static string[] GetDisplayNames(this Type type)
+        {
+            if (!type.IsEnum)
+            {
+                throw new InvalidCastException(
+                    "The EnumToDictionary() extension method can only be used on types of enum. All other types will throw this exception.");
+            }
+
+            var dictionary = Enum.GetValues(type).Cast<int>().Select(a => GetDisplayName(type, a)).ToArray();
+
+            return dictionary;
+        }
+
         public static IEnumerable<Enum> GetFlags(this Enum value)
         {
             var values = Enum.GetValues(value.GetType()).Cast<Enum>();
