@@ -17,7 +17,7 @@
                     columns: grid.Columns(
                                     grid.Column("Year", header: "Jahr"),
                                     grid.Column("Week", header: "KW"),
-                                    grid.Column(header: "Datum", format: (item) => string.Format("{0:dd.MM.yyyy}-{1:dd.MM.yyyy}", item.FirstDateOfWeek, item.LasrDateOfWeek)),
+                                    grid.Column(header: "Datum", format: (item) => new MvcHtmlString(string.Format("{0:dd.MM.yyyy}<br/>{1:dd.MM.yyyy}", item.FirstDateOfWeek, item.LasrDateOfWeek))),
                                     grid.Column("Bilder", header: "Bilder abgerufen"),
                                     grid.Column("Events", header: "Events abgerufen"),
                                     grid.Column("Quiz", header: "Quiz gestartet"),
